@@ -1,27 +1,15 @@
-# TodoAngular
+todo app - todoist kind of copy )
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+this is angular front repo
 
-## Development server
+next is going to be same ui built in react too + next
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+back - microservices architecture on node/nest (mby in future ill try same back functional on go(lang))
 
-## Code scaffolding
+at the end test high app load and deploy docker-k8s
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+lets see what im cpable of :3
 
-## Build
+(this readme design also is gonna be changed)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+whatever gl to me
