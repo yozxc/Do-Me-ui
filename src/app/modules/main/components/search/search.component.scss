@@ -1,0 +1,98 @@
+@import "vars";
+
+:host {
+    position: relative;
+}
+
+:host(:hover) {
+    & .search {
+        background-color: #fff;
+        color: #000;
+        width: 400px;
+
+        &::placeholder {
+            color: #000;
+        }
+    }
+
+    & .close__wrapper {
+        opacity: 1;
+    }
+
+    & ::ng-deep .search__loupe {
+        fill: black;
+    }
+}
+
+.search {
+    height: 30px;
+    width: 200px;
+
+    outline: none;
+    border: 0px;
+    border-radius: 3px;
+
+    margin: 0 5px;
+    padding: 5px 5px 5px 32px;
+
+    color: #fff;
+    font-family: $gFont;
+    font-size: 0.8em;
+
+    background-color: #646464;
+
+    transition: 0.15s;
+
+    &::placeholder {
+        color: #fff;
+        font-family: $gFont;
+    }
+
+    &:focus {
+        background-color: #fff;
+        color: #000;
+        width: 400px;
+
+        &::placeholder {
+            color: #000;
+        }
+
+        & ~ .close__wrapper {
+            opacity: 1;
+        }
+    }
+}
+
+.search:focus ~ .loupe__wrapper ::ng-deep .search__loupe {
+    fill: #000;
+}
+
+.loupe__wrapper {
+    position: absolute;
+    top: 56%;
+    left: 7px;
+    transform: translate(0, -50%);
+
+    transition: 0.15s;
+}
+
+.close__wrapper {
+    position: absolute;
+    top: 52%;
+    right: 10px;
+    transform: translate(0, -50%);
+
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    width: 21px;
+    height: 21px;
+
+    opacity: 0;
+    transition: 0.15s;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
