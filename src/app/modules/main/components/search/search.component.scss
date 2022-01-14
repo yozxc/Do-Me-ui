@@ -60,11 +60,11 @@
         & ~ .close__wrapper {
             opacity: 1;
         }
-    }
-}
 
-.search:focus ~ .loupe__wrapper ::ng-deep .search__loupe {
-    fill: #000;
+        & ~ .loupe__wrapper ::ng-deep .search__loupe {
+            fill: #000;
+        }
+    }
 }
 
 .loupe__wrapper {

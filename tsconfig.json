@@ -22,9 +22,9 @@
         "paths": {
             "@app/*": ["src/app/*"],
             "@modules/*": ["src/app/modules/*"],
-            "@assets/*": ["src/assets/*"],
+            "@shared/*": ["src/app/shared/*"],
             "@scss/*": ["src/scss/*"],
-            "@shared/*": ["src/app/shared/*"]
+            "@assets/*": ["src/assets/*"]
         }
     },
     "angularCompilerOptions": {

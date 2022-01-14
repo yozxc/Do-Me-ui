@@ -1,0 +1,9 @@
+@import "vars";
+
+.main {
+    width: 100vw;
+    height: calc(100% - $headerHeight);
+
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,257 @@
+@import "vars";
+@import "colors";
+
+.left__menu {
+    min-width: 300px;
+    height: calc(100vh - $headerHeight);
+
+    padding: 30px 0 30px 35px;
+
+    background-color: #fafafa;
+    position: relative;
+
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.main__tab {
+    padding: 6px 18px 6px 6px;
+    margin: 2px 7px 2px 0;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: 0.15s;
+
+    &:hover {
+        background-color: #ececec;
+    }
+
+    &.active {
+        background-color: #ececec;
+    }
+}
+
+.tab__title {
+    font-family: $gFont;
+    font-size: 0.8em;
+    user-select: none;
+}
+
+.tab__num {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    transform: translate(0, -50%);
+
+    font-size: 0.8em;
+    font-family: $gFont;
+    user-select: none;
+
+    &.gray {
+        color: #aaa;
+    }
+    &.red {
+        color: #d1453b;
+    }
+}
+
+.group__wrapper {
+    margin: 15px 0 0;
+
+    &.active {
+        & .menu__group_tab__arrow {
+            transform: rotate(135deg);
+            top: 26%;
+            left: 14px;
+        }
+
+        & .menu__proj__wrapper {
+            max-height: 1000px;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+
+    &:hover {
+        & app-lm-plus ::ng-deep svg {
+            opacity: 1;
+        }
+    }
+}
+
+.menu__group_tab {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    padding: 8px 0 8px 37px;
+}
+
+.menu__group_tab__text {
+    font-family: $gFont;
+    font-size: 0.9em;
+    font-weight: 700;
+    user-select: none;
+}
+
+.menu__group_tab__arrow {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #777;
+    border-bottom: none;
+    border-left: none;
+
+    position: absolute;
+    top: 36%;
+    left: 12px;
+    transform: translate(0, -50%);
+    transform: rotate(45deg);
+
+    transition: 0.15s;
+}
+
+.menu__proj__wrapper {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.menu__proj {
+    display: flex;
+    align-items: center;
+
+    padding: 8px 0 8px 37px;
+    margin: 2px 7px 2px 0;
+
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.15s;
+
+    &.active {
+        background-color: #ececec;
+    }
+
+    &:hover {
+        background-color: #ececec;
+
+        & .menu__proj__num {
+            display: none;
+        }
+
+        & app-lm-more ::ng-deep svg {
+            display: block;
+        }
+        & app-lm-drag ::ng-deep svg {
+            opacity: 1;
+        }
+    }
+}
+
+.menu__proj__title {
+    font-family: $gFont;
+    font-size: 0.8em;
+    user-select: none;
+}
+
+.menu__proj__num {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    font-size: 0.8em;
+    font-family: "Noto Sans", sans-serif;
+    user-select: none;
+
+    &.gray {
+        color: #aaa;
+    }
+    &.red {
+        color: #d1453b;
+    }
+}
+
+.menu__proj__icon {
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    transform: translate(0, -50%);
+}
+
+.left__menu__resize__bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 5px;
+
+    cursor: col-resize;
+
+    transform: 0.2s;
+    &:hover {
+        background-color: #ececec;
+    }
+}
+
+// svg positions
+
+app-lm-dot,
+app-lm-label,
+app-lm-filter {
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    transform: translate(0, -50%);
+
+    width: 24px;
+    height: 24px;
+}
+
+app-lm-drag {
+    position: absolute;
+    top: 42%;
+    left: -24px;
+    transform: translate(0, -50%);
+
+    height: 20px;
+    width: 20px;
+}
+
+app-lm-more {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translate(0, -50%);
+
+    height: calc(3px + 10px * 2);
+    width: calc(15px + 4px * 2);
+}
+
+app-lm-plus {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+
+    width: 22px;
+    height: 22px;
+}
