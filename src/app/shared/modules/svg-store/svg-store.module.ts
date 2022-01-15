@@ -21,6 +21,13 @@ import { LmFilterComponent } from './components/left-menu/lm-filter.component';
 
 import { MpViewComponent } from './components/main-place/mp-view.component';
 import { MpMoreComponent } from './components/main-place/mp-more.component';
+import { MpTickComponent } from './components/main-place/mp-tick.component';
+import { MpTaskLateComponent } from './components/main-place/mp-task-late.component';
+import { MpTaskEditComponent } from './components/main-place/mp-task-edit.component';
+import { MpTaskScheduleComponent } from './components/main-place/mp-task-schedule.component';
+import { MpTaskMoreComponent } from './components/main-place/mp-task-more.component';
+import { MpTaskDragComponent } from './components/main-place/mp-task-drag.component';
+import { MpTaskAddComponent } from './components/main-place/mp-task-add.component';
 
 @NgModule({
     declarations: [
@@ -42,6 +49,13 @@ import { MpMoreComponent } from './components/main-place/mp-more.component';
         LmFilterComponent,
         MpViewComponent,
         MpMoreComponent,
+        MpTickComponent,
+        MpTaskLateComponent,
+        MpTaskEditComponent,
+        MpTaskScheduleComponent,
+        MpTaskMoreComponent,
+        MpTaskDragComponent,
+        MpTaskAddComponent,
     ],
     exports: [
         HeaderMenuComponent,
@@ -62,6 +76,13 @@ import { MpMoreComponent } from './components/main-place/mp-more.component';
         LmFilterComponent,
         MpViewComponent,
         MpMoreComponent,
+        MpTickComponent,
+        MpTaskLateComponent,
+        MpTaskEditComponent,
+        MpTaskScheduleComponent,
+        MpTaskMoreComponent,
+        MpTaskDragComponent,
+        MpTaskAddComponent,
     ],
     imports: [CommonModule],
 })

@@ -35,7 +35,7 @@
     align-items: flex-end;
 }
 
-.lh__titlw {
+.lh__title {
     font-weight: 700;
     font-family: $gFont;
     font-size: 1.2em;
@@ -81,6 +81,12 @@
     margin-left: 3px;
 
     color: #808080;
+}
+
+.task__list {
+    position: relative;
+
+    // display: none;
 }
 
 // svg positions | sizes
