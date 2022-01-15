@@ -19,6 +19,9 @@ import { LmDragComponent } from './components/left-menu/lm-drag.component';
 import { LmLabelComponent } from './components/left-menu/lm-label.component';
 import { LmFilterComponent } from './components/left-menu/lm-filter.component';
 
+import { MpViewComponent } from './components/main-place/mp-view.component';
+import { MpMoreComponent } from './components/main-place/mp-more.component';
+
 @NgModule({
     declarations: [
         HeaderMenuComponent,
@@ -37,6 +40,8 @@ import { LmFilterComponent } from './components/left-menu/lm-filter.component';
         LmDragComponent,
         LmLabelComponent,
         LmFilterComponent,
+        MpViewComponent,
+        MpMoreComponent,
     ],
     exports: [
         HeaderMenuComponent,
@@ -55,6 +60,8 @@ import { LmFilterComponent } from './components/left-menu/lm-filter.component';
         LmDragComponent,
         LmLabelComponent,
         LmFilterComponent,
+        MpViewComponent,
+        MpMoreComponent,
     ],
     imports: [CommonModule],
 })

@@ -12,6 +12,8 @@ export class LeftMenuComponent implements OnInit {
     filters: any;
     favorites: any;
 
+    activeLabels = [true, true, true, true];
+
     constructor() {
         this.projects = projects;
         this.labels = labels;
@@ -20,4 +22,8 @@ export class LeftMenuComponent implements OnInit {
     }
 
     ngOnInit(): void {}
+
+    classActive(i: number) {
+        this.activeLabels[i] = !this.activeLabels[i];
+    }
 }

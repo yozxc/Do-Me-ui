@@ -16,7 +16,11 @@
         <div class="tab__title">Upcoming</div>
     </div>
 
-    <div class="group__wrapper active">
+    <div
+        class="group__wrapper"
+        [ngClass]="activeLabels[0] ? 'active' : ''"
+        (click)="classActive(0)"
+    >
         <div class="menu__group_tab">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Favorites</div>
@@ -49,7 +53,11 @@
     </div>
     <!-- Favorits | group wrapper -->
 
-    <div class="group__wrapper active">
+    <div
+        class="group__wrapper"
+        [ngClass]="activeLabels[1] ? 'active' : ''"
+        (click)="classActive(1)"
+    >
         <div class="menu__group_tab">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Projects</div>
@@ -73,7 +81,11 @@
     </div>
     <!-- Projects | group wrapper -->
 
-    <div class="group__wrapper active">
+    <div
+        class="group__wrapper"
+        [ngClass]="activeLabels[2] ? 'active' : ''"
+        (click)="classActive(2)"
+    >
         <div class="menu__group_tab">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Labels</div>
@@ -97,7 +109,11 @@
     </div>
     <!-- Labels | group wrapper -->
 
-    <div class="group__wrapper active">
+    <div
+        class="group__wrapper"
+        [ngClass]="activeLabels[3] ? 'active' : ''"
+        (click)="classActive(3)"
+    >
         <div class="menu__group_tab">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Filters</div>
