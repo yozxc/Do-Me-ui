@@ -28,6 +28,10 @@ import { MpTaskScheduleComponent } from './components/main-place/mp-task-schedul
 import { MpTaskMoreComponent } from './components/main-place/mp-task-more.component';
 import { MpTaskDragComponent } from './components/main-place/mp-task-drag.component';
 import { MpTaskAddComponent } from './components/main-place/mp-task-add.component';
+import { MpScheduleComponent } from './components/main-place/mp-schedule.component';
+import { MpInboxComponent } from './components/main-place/mp-inbox.component';
+import { MpLabelComponent } from './components/main-place/mp-label.component';
+import { MpPriorityComponent } from './components/main-place/mp-priority.component';
 
 @NgModule({
     declarations: [
@@ -56,6 +60,10 @@ import { MpTaskAddComponent } from './components/main-place/mp-task-add.componen
         MpTaskMoreComponent,
         MpTaskDragComponent,
         MpTaskAddComponent,
+        MpScheduleComponent,
+        MpInboxComponent,
+        MpLabelComponent,
+        MpPriorityComponent,
     ],
     exports: [
         HeaderMenuComponent,
@@ -83,6 +91,10 @@ import { MpTaskAddComponent } from './components/main-place/mp-task-add.componen
         MpTaskMoreComponent,
         MpTaskDragComponent,
         MpTaskAddComponent,
+        MpScheduleComponent,
+        MpInboxComponent,
+        MpLabelComponent,
+        MpPriorityComponent,
     ],
     imports: [CommonModule],
 })

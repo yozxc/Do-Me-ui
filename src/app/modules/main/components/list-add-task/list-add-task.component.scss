@@ -33,3 +33,122 @@
 
     margin: 1px 0 0 10px;
 }
+
+// task editor
+
+.editor__container {
+    width: 800px;
+    height: 130px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+
+    margin: 5px 0 0 0;
+    padding: 10px;
+
+    position: relative;
+}
+
+.te__title {
+    width: 100%;
+    padding: 5px 0 5px 5px;
+
+    font-family: $gFont;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #202020;
+
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.te__description {
+    width: 100%;
+    padding: 5px 0 5px 5px;
+
+    font-family: $gFont;
+    font-size: 0.8em;
+    color: #202020;
+
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.editor__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: calc(100% - 10px * 2);
+    margin: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex__container {
+    display: flex;
+    align-items: center;
+}
+
+.bottom__butt {
+    padding: 6px;
+    margin-right: 8px;
+
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #eee;
+    }
+}
+
+.bot_but__text {
+    font-family: $gFont;
+    font-size: 0.8em;
+
+    margin-left: 5px;
+
+    color: #555;
+}
+
+.bot_butt__wrapper {
+    display: flex;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+// svg positions | sizes
+
+app-mp-schedule,
+app-mp-inbox {
+    width: 16px;
+    height: 16px;
+}
+
+app-mp-label,
+app-mp-priority {
+    height: 28px;
+    width: 28px;
+
+    padding: 2px;
+    margin-left: 6px;
+}
+
+// todo : add styles for container + ...
