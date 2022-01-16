@@ -89,6 +89,81 @@
     // display: none;
 }
 
+// __temp
+.pltl__header {
+    position: relative;
+
+    padding: 5px 0;
+    margin-top: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+        & .pltli__container {
+            opacity: 1;
+        }
+    }
+}
+.pltlh__title {
+    font-family: $gFont;
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+.pltlh__arrow {
+    stroke: #d1453b;
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: rotate(-90deg) translate(50%, 0);
+    // transform: translate(0,-50%);
+
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ececec;
+    }
+}
+.pltli__container {
+    opacity: 0;
+}
+.pltlh__icon__wrapper {
+    display: flex;
+    align-items: center;
+
+    margin-left: 10px;
+
+    padding: 3px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ececec;
+
+        & .pltl__icon {
+            fill: black;
+        }
+        & .pltl__icon.more {
+            stroke: black;
+        }
+    }
+}
+
+.pltl__icon {
+    width: 24px;
+    height: 24px;
+
+    fill: #808080;
+}
+
+// __temp : end
+
 // svg positions | sizes
 
 app-mp-view,

@@ -12,7 +12,12 @@ export class LeftMenuComponent implements OnInit {
     filters: any;
     favorites: any;
 
-    activeLabels = [true, true, true, true];
+    activeLabels = {
+        favorites: true,
+        projects: true,
+        labels: true,
+        filters: true,
+    };
 
     constructor() {
         this.projects = projects;
@@ -23,7 +28,20 @@ export class LeftMenuComponent implements OnInit {
 
     ngOnInit(): void {}
 
-    classActive(i: number) {
-        this.activeLabels[i] = !this.activeLabels[i];
+    classActive(cat: string) {
+        switch (cat) {
+            case 'favorites':
+                this.activeLabels[cat] = !this.activeLabels[cat];
+                break;
+            case 'projects':
+                this.activeLabels[cat] = !this.activeLabels[cat];
+                break;
+            case 'labels':
+                this.activeLabels[cat] = !this.activeLabels[cat];
+                break;
+            case 'filters':
+                this.activeLabels[cat] = !this.activeLabels[cat];
+                break;
+        }
     }
 }

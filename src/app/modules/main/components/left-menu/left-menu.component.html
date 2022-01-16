@@ -18,10 +18,9 @@
 
     <div
         class="group__wrapper"
-        [ngClass]="activeLabels[0] ? 'active' : ''"
-        (click)="classActive(0)"
+        [ngClass]="activeLabels['favorites'] ? 'active' : ''"
     >
-        <div class="menu__group_tab">
+        <div class="menu__group_tab" (click)="classActive('favorites')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Favorites</div>
         </div>
@@ -55,10 +54,9 @@
 
     <div
         class="group__wrapper"
-        [ngClass]="activeLabels[1] ? 'active' : ''"
-        (click)="classActive(1)"
+        [ngClass]="activeLabels['projects'] ? 'active' : ''"
     >
-        <div class="menu__group_tab">
+        <div class="menu__group_tab" (click)="classActive('projects')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Projects</div>
 
@@ -83,10 +81,9 @@
 
     <div
         class="group__wrapper"
-        [ngClass]="activeLabels[2] ? 'active' : ''"
-        (click)="classActive(2)"
+        [ngClass]="activeLabels['labels'] ? 'active' : ''"
     >
-        <div class="menu__group_tab">
+        <div class="menu__group_tab" (click)="classActive('labels')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Labels</div>
 
@@ -111,10 +108,9 @@
 
     <div
         class="group__wrapper"
-        [ngClass]="activeLabels[3] ? 'active' : ''"
-        (click)="classActive(3)"
+        [ngClass]="activeLabels['filters'] ? 'active' : ''"
     >
-        <div class="menu__group_tab">
+        <div class="menu__group_tab" (click)="classActive('filters')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Filters</div>
 
