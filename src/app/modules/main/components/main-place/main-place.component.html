@@ -19,34 +19,19 @@
         </div>
         <!-- list header -->
 
-        <div class="pltl__header">
-            <!-- <div class="pltlh__title">Overdue</div>
+        <div class="tasks__list__header">
+            <div class="tl__title">Overdue</div>
 
-            <svg class="pltlh__arrow">
-                <path
-                    fill="none"
-                    stroke="currentColor"
-                    d="M16 10l-4 4-4-4"
-                ></path>
-            </svg> -->
+            <app-mp-header-arrow [toggleIsActive]="toggleIsActive" [_isActive]="_isActive"></app-mp-header-arrow>
 
-            <!-- <div class="pltli__container">
-                <div class="pltlh__icon__wrapper">
-                    <svg class="pltl__icon more" stroke="#808080">
-                        <g
-                            fill="none"
-                            stroke-linecap="round"
-                            transform="translate(3 10)"
-                        >
-                            <circle cx="2" cy="2" r="2"></circle>
-                            <circle cx="9" cy="2" r="2"></circle>
-                            <circle cx="16" cy="2" r="2"></circle>
-                        </g>
-                    </svg>
+            <div class="tl__icons__container">
+                <div class="tli__wrapper">
+                    <app-mp-header-more></app-mp-header-more>
                 </div>
-            </div> -->
+            </div>
 
-            <div class="pltlas__main">
+            <!-- todo : set functional + refactor css + buttons margins -->
+            <!-- <div class="pltlas__main">
                 <input
                     class="pltlasm__input"
                     type="text"
@@ -57,13 +42,14 @@
                     <app-button styleCls="black">Save</app-button>
                     <app-button styleCls="white">Cancel</app-button>
                 </div>
-            </div>
+            </div> -->
             <!-- change title -->
 
             <div class="bottom__bar"></div>
         </div>
 
-        <div class="task__list">
+        <!-- todo : try fix with observables -->
+        <div *ngIf="_isActive" class="task__list">
             <app-list-task></app-list-task>
 
             <app-list-add-task></app-list-add-task>

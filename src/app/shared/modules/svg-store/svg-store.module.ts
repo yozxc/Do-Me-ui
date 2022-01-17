@@ -32,6 +32,8 @@ import { MpScheduleComponent } from './components/main-place/mp-schedule.compone
 import { MpInboxComponent } from './components/main-place/mp-inbox.component';
 import { MpLabelComponent } from './components/main-place/mp-label.component';
 import { MpPriorityComponent } from './components/main-place/mp-priority.component';
+import { MpHeaderMoreComponent } from './components/main-place/mp-header-more.component';
+import { MpHeaderArrowComponent } from './components/main-place/mp-header-arrow.component';
 
 @NgModule({
     declarations: [
@@ -66,6 +68,8 @@ import { MpPriorityComponent } from './components/main-place/mp-priority.compone
             MpLabelComponent,
             MpPriorityComponent,
         ],
+        MpHeaderMoreComponent,
+        MpHeaderArrowComponent,
     ],
     exports: [
         ...[
@@ -99,6 +103,8 @@ import { MpPriorityComponent } from './components/main-place/mp-priority.compone
             MpLabelComponent,
             MpPriorityComponent,
         ],
+        MpHeaderMoreComponent,
+        MpHeaderArrowComponent,
     ],
     imports: [CommonModule],
 })
