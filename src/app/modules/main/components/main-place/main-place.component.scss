@@ -85,12 +85,10 @@
 
 .task__list {
     position: relative;
-
-    // display: none;
 }
 
 // __temp
-.pltl__header {
+.tasks__list__header {
     position: relative;
 
     padding: 5px 0;
@@ -101,39 +99,21 @@
     align-items: center;
 
     &:hover {
-        & .pltli__container {
+        & .tl__icons__container {
             opacity: 1;
         }
     }
 }
-.pltlh__title {
+.tl__title {
     font-family: $gFont;
     font-weight: 700;
     font-size: 0.9em;
 }
 
-.pltlh__arrow {
-    stroke: #d1453b;
-    width: 24px;
-    height: 24px;
-
-    position: absolute;
-    top: 50%;
-    left: -30px;
-    transform: rotate(-90deg) translate(50%, 0);
-    // transform: translate(0,-50%);
-
-    border-radius: 3px;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #ececec;
-    }
-}
-.pltli__container {
+.tl__icons__container {
     opacity: 0;
 }
-.pltlh__icon__wrapper {
+.tli__wrapper {
     display: flex;
     align-items: center;
 
@@ -146,20 +126,10 @@
     &:hover {
         background-color: #ececec;
 
-        & .pltl__icon {
-            fill: black;
-        }
-        & .pltl__icon.more {
+        & ::ng-deep app-mp-header-more svg.more {
             stroke: black;
         }
     }
-}
-
-.pltl__icon {
-    width: 24px;
-    height: 24px;
-
-    fill: #808080;
 }
 
 .pltlas__main {
@@ -196,10 +166,31 @@
 
 // __temp : end
 
+.bottom__bar {
+    width: 100%;
+    height: 1px;
+
+    background-color: #f0f0f0;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 // svg positions | sizes
 
 app-mp-view,
-app-mp-more {
+app-mp-more,
+app-mp-header-more {
     width: 24px;
     height: 24px;
+}
+
+app-mp-header-arrow {
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: -30px;
 }
