@@ -33,7 +33,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MpHeaderArrowComponent implements OnInit {
     @Input() toggleIsActive: any;
-    @Input() _isActive: boolean = true;
+    @Input() _isActive: boolean | null = true;
 
     constructor() {}
 
