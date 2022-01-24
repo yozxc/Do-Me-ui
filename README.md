@@ -1,15 +1,26 @@
-todo app - todoist kind of copy )
+<pre>
+TODO app to emulate enterprise development
 
-this is angular front repo
+TODO | Environment :
 
-next is going to be same ui built in react too + next
+Angular UI     : 4/100%
+React UI       : 0/100%
+Node/Nest Back : 0/100%
+Go(lang) Back  : 0/100%
+Databases      : ..? :/
+CI/CD          : ..? :/
 
-back - microservices architecture on node/nest (mby in future ill try same back functional on go(lang))
+Other unknown stuff : ..? :/
 
-at the end test high app load and deploy docker-k8s
+TODO | Angular :
 
-lets see what im cpable of :3
-
-(this readme design also is gonna be changed)
-
-whatever gl to me
+v1.0
+(-) | rewrite on pure BEM
+(-) | config prettier + esLint (files)
+(-) | check for ngrx | ngxs
+(-) | custom ui lib + storybook
+(-) | cover 99% tests
+(-) | PWA
+(-) | angular universal (SSR) | nest core (this for back)
+(-) | graphql + rest | check for appolo rest cache
+</pre>
