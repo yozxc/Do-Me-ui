@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-main-place',
-    templateUrl: './main-place.component.html',
-    styleUrls: ['./main-place.component.scss'],
+    selector: 'app-main-place-sub-list',
+    templateUrl: './main-place-sub-list.component.html',
+    styleUrls: ['./main-place-sub-list.component.scss'],
 })
-export class MainPlaceComponent implements OnInit {
+export class MainPlaceSubListComponent implements OnInit {
     _isActive: boolean = true;
 
     constructor() {}

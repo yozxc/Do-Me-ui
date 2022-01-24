@@ -10,6 +10,7 @@ import { LeftMenuComponent } from './components/left-menu/left-menu.component';
 import { MainPlaceComponent } from './components/main-place/main-place.component';
 import { ListTaskComponent } from './components/list-task/list-task.component';
 import { ListAddTaskComponent } from './components/list-add-task/list-add-task.component';
+import { MainPlaceSubListComponent } from './components/main-place-sub-list/main-place-sub-list.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { ListAddTaskComponent } from './components/list-add-task/list-add-task.c
         MainPlaceComponent,
         ListTaskComponent,
         ListAddTaskComponent,
+        MainPlaceSubListComponent,
     ],
     exports: [TodoMainComponent],
     imports: [CommonModule, SvgStoreModule, UiComponentsModule],

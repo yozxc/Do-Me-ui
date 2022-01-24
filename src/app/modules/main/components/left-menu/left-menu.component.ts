@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { projects, labels, filters, favorites } from '@assets/mock/lm-projects';
 
 @Component({
@@ -19,6 +19,8 @@ export class LeftMenuComponent implements OnInit {
         filters: true,
     };
 
+    @Input() menuIsClosed: boolean = false;
+
     constructor() {
         this.projects = projects;
         this.labels = labels;
@@ -29,19 +31,23 @@ export class LeftMenuComponent implements OnInit {
     ngOnInit(): void {}
 
     classActive(cat: string) {
-        switch (cat) {
-            case 'favorites':
-                this.activeLabels[cat] = !this.activeLabels[cat];
-                break;
-            case 'projects':
-                this.activeLabels[cat] = !this.activeLabels[cat];
-                break;
-            case 'labels':
-                this.activeLabels[cat] = !this.activeLabels[cat];
-                break;
-            case 'filters':
-                this.activeLabels[cat] = !this.activeLabels[cat];
-                break;
-        }
+        if (cat === 'favorites') this.activeLabels[cat] = !this.activeLabels[cat];
+        if (cat === 'projects') this.activeLabels[cat] = !this.activeLabels[cat];
+        if (cat === 'labels') this.activeLabels[cat] = !this.activeLabels[cat];
+        if (cat === 'filters') this.activeLabels[cat] = !this.activeLabels[cat];
+    }
+
+    toggleMenu() {
+        this.menuIsClosed = !this.menuIsClosed;
+    }
+
+    projPlusEvent(e: MouseEvent) {
+        e.stopPropagation();
+    }
+    favPlusEvent(e: MouseEvent) {
+        e.stopPropagation();
+    }
+    filtPlusEvent(e: MouseEvent) {
+        e.stopPropagation();
     }
 }

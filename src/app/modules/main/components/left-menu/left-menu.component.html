@@ -1,4 +1,4 @@
-<div class="left__menu">
+<div class="left__menu" [ngClass]="{ closed: menuIsClosed }">
     <div class="main__tab">
         <app-lm-inbox styleCls="blue"></app-lm-inbox>
         <div class="tab__title">Inbox</div>
@@ -16,10 +16,7 @@
         <div class="tab__title">Upcoming</div>
     </div>
 
-    <div
-        class="group__wrapper"
-        [ngClass]="activeLabels['favorites'] ? 'active' : ''"
-    >
+    <div class="group__wrapper" [ngClass]="activeLabels['favorites'] ? 'active' : ''">
         <div class="menu__group_tab" (click)="classActive('favorites')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Favorites</div>
@@ -27,18 +24,9 @@
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let item of favorites" class="menu__proj">
-                <app-lm-dot
-                    *ngIf="item.type === 'project'"
-                    [styleCls]="item.colorCls"
-                ></app-lm-dot>
-                <app-lm-label
-                    *ngIf="item.type === 'label'"
-                    [styleCls]="item.colorCls"
-                ></app-lm-label>
-                <app-lm-filter
-                    *ngIf="item.type === 'filter'"
-                    [styleCls]="item.colorCls"
-                ></app-lm-filter>
+                <app-lm-dot *ngIf="item.type === 'project'" [styleCls]="item.colorCls"></app-lm-dot>
+                <app-lm-label *ngIf="item.type === 'label'" [styleCls]="item.colorCls"></app-lm-label>
+                <app-lm-filter *ngIf="item.type === 'filter'" [styleCls]="item.colorCls"></app-lm-filter>
 
                 <div class="menu__proj__title">{{ item.name }}</div>
                 <div class="menu__proj__num gray">{{ item._todoTasks }}</div>
@@ -52,15 +40,12 @@
     </div>
     <!-- Favorits | group wrapper -->
 
-    <div
-        class="group__wrapper"
-        [ngClass]="activeLabels['projects'] ? 'active' : ''"
-    >
+    <div class="group__wrapper" [ngClass]="activeLabels['projects'] ? 'active' : ''">
         <div class="menu__group_tab" (click)="classActive('projects')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Projects</div>
 
-            <app-lm-plus></app-lm-plus>
+            <app-lm-plus (click)="projPlusEvent($event)"></app-lm-plus>
         </div>
 
         <div class="menu__proj__wrapper">
@@ -79,15 +64,12 @@
     </div>
     <!-- Projects | group wrapper -->
 
-    <div
-        class="group__wrapper"
-        [ngClass]="activeLabels['labels'] ? 'active' : ''"
-    >
+    <div class="group__wrapper" [ngClass]="activeLabels['labels'] ? 'active' : ''">
         <div class="menu__group_tab" (click)="classActive('labels')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Labels</div>
 
-            <app-lm-plus></app-lm-plus>
+            <app-lm-plus (click)="favPlusEvent($event)"></app-lm-plus>
         </div>
 
         <div class="menu__proj__wrapper">
@@ -106,15 +88,12 @@
     </div>
     <!-- Labels | group wrapper -->
 
-    <div
-        class="group__wrapper"
-        [ngClass]="activeLabels['filters'] ? 'active' : ''"
-    >
+    <div class="group__wrapper" [ngClass]="activeLabels['filters'] ? 'active' : ''">
         <div class="menu__group_tab" (click)="classActive('filters')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Filters</div>
 
-            <app-lm-plus></app-lm-plus>
+            <app-lm-plus (click)="filtPlusEvent($event)"></app-lm-plus>
         </div>
 
         <div class="menu__proj__wrapper">
@@ -132,4 +111,6 @@
         <!-- filters ngFor -->
     </div>
     <!-- Filters | group wrapper -->
+
+    <div class="resize__bar"></div>
 </div>
