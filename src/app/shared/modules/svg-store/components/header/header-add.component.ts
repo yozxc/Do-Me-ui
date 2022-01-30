@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-header-add',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `
             svg {

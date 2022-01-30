@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-lm-today',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `
             svg {
@@ -32,12 +33,7 @@ import { Component, OnInit } from '@angular/core';
                     transform="translate(4 2)"
                     font-weight="500"
                 >
-                    <tspan
-                        x="8"
-                        y="15"
-                        text-anchor="middle"
-                        style="user-select: none"
-                    >
+                    <tspan x="8" y="15" text-anchor="middle" style="user-select: none">
                         {{ date.getDate() }}
                     </tspan>
                 </text>

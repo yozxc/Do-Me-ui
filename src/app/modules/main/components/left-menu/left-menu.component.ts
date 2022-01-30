@@ -1,16 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { projects, labels, filters, favorites } from '@assets/mock/lm-projects';
+import { Subscription } from 'rxjs';
+import { LmStateService } from './lm-state.service';
 
 @Component({
     selector: 'app-left-menu',
     templateUrl: './left-menu.component.html',
     styleUrls: ['./left-menu.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LeftMenuComponent implements OnInit {
+export class LeftMenuComponent implements OnInit, OnDestroy {
     projects: any;
     labels: any;
     filters: any;
     favorites: any;
+
+    isClosed!: boolean;
+    isClosedSub!: Subscription;
 
     activeLabels = {
         favorites: true,
@@ -19,26 +25,30 @@ export class LeftMenuComponent implements OnInit {
         filters: true,
     };
 
-    @Input() menuIsClosed: boolean = false;
+    constructor(private lmStateService: LmStateService, private cdr: ChangeDetectorRef) {}
 
-    constructor() {
+    ngOnInit(): void {
+        // todo : change this :\
         this.projects = projects;
         this.labels = labels;
         this.filters = filters;
         this.favorites = favorites;
+
+        this.isClosedSub = this.lmStateService.isClosed$.subscribe((val) => {
+            this.isClosed = val;
+            this.cdr.detectChanges();
+        });
     }
 
-    ngOnInit(): void {}
+    ngOnDestroy(): void {
+        this.isClosedSub.unsubscribe();
+    }
 
     classActive(cat: string) {
         if (cat === 'favorites') this.activeLabels[cat] = !this.activeLabels[cat];
         if (cat === 'projects') this.activeLabels[cat] = !this.activeLabels[cat];
         if (cat === 'labels') this.activeLabels[cat] = !this.activeLabels[cat];
         if (cat === 'filters') this.activeLabels[cat] = !this.activeLabels[cat];
-    }
-
-    toggleMenu() {
-        this.menuIsClosed = !this.menuIsClosed;
     }
 
     projPlusEvent(e: MouseEvent) {

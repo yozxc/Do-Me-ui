@@ -1,14 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { LmStateService } from './../left-menu/lm-state.service';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-    @Input() toggleMenuIsClosed: any;
-
-    constructor() {}
+    constructor(public lmStateService: LmStateService) {}
 
     ngOnInit(): void {}
+
+    headerMenuCLick() {
+        this.lmStateService.toggleIsClosed();
+    }
 }

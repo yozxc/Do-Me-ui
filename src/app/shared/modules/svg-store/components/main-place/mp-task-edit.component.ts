@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-mp-task-edit',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `
             svg {
@@ -30,11 +31,7 @@ import { Component, OnInit } from '@angular/core';
     template: `
         <svg>
             <g fill="none" fill-rule="evenodd">
-                <path
-                    class="pltmi__edit_f"
-                    fill="#808080"
-                    d="M9.5 19h10a.5.5 0 110 1h-10a.5.5 0 110-1z"
-                ></path>
+                <path class="pltmi__edit_f" fill="#808080" d="M9.5 19h10a.5.5 0 110 1h-10a.5.5 0 110-1z"></path>
                 <path
                     class="pltmi__edit_s"
                     stroke="#808080"

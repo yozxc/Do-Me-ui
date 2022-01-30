@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-search-close',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `
             svg {
