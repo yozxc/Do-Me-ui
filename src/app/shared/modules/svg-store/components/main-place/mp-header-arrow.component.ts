@@ -27,7 +27,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter
         `,
     ],
     template: `
-        <svg [ngClass]="{ active: !isClosed }" (click)="toggleIsClosed()">
+        <svg [ngClass]="{ active: !isClosed }" (click)="onClickEvent.emit()">
             <path fill="none" stroke="currentColor" d="M16 10l-4 4-4-4"></path>
         </svg>
     `,
@@ -40,8 +40,4 @@ export class MpHeaderArrowComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {}
-
-    toggleIsClosed() {
-        this.onClickEvent.emit();
-    }
 }

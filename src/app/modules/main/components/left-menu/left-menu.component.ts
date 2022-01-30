@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { projects, labels, filters, favorites } from '@assets/mock/lm-projects';
 import { Subscription } from 'rxjs';
 import { LmStateService } from './lm-state.service';
