@@ -1,7 +1,7 @@
 <div class="tasks__list__header">
     <div class="tl__title">Overdue</div>
 
-    <app-mp-header-arrow [toggleIsActive]="toggleIsActive" [_isActive]="_isActive"></app-mp-header-arrow>
+    <app-mp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></app-mp-header-arrow>
 
     <div class="tl__icons__container">
         <div class="tli__wrapper">
@@ -24,7 +24,7 @@
 </div>
 
 <!-- todo : try fix with observables -->
-<div *ngIf="_isActive" class="task__list">
+<div *ngIf="!(isClosed$ | async)" class="task__list">
     <app-list-task></app-list-task>
 
     <app-list-add-task></app-list-add-task>

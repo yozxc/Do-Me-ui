@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-mp-header-arrow',
@@ -27,16 +27,21 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
         `,
     ],
     template: `
-        <svg [ngClass]="{ active: _isActive }" (click)="toggleIsActive()">
+        <svg [ngClass]="{ active: !isClosed }" (click)="toggleIsClosed()">
             <path fill="none" stroke="currentColor" d="M16 10l-4 4-4-4"></path>
         </svg>
     `,
 })
 export class MpHeaderArrowComponent implements OnInit {
-    @Input() toggleIsActive: any;
-    @Input() _isActive: boolean | null = true;
+    @Input() isClosed!: boolean | null;
+
+    @Output() onClickEvent: EventEmitter<any> = new EventEmitter();
 
     constructor() {}
 
     ngOnInit(): void {}
+
+    toggleIsClosed() {
+        this.onClickEvent.emit();
+    }
 }

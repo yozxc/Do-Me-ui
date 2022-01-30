@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +8,13 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPlaceSubListComponent implements OnInit {
-    _isActive: boolean = true;
+    isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     constructor() {}
 
     ngOnInit(): void {}
 
-    toggleIsActive() {
-        this._isActive = !this._isActive;
+    toggleIsClosed() {
+        this.isClosed$.next(!this.isClosed$.getValue());
     }
 }
