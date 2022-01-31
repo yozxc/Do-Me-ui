@@ -39,10 +39,6 @@
 
     &:hover {
         background-color: #ececec;
-
-        & app-mp-tick {
-            display: block;
-        }
     }
 }
 
@@ -108,8 +104,6 @@ app-mp-tick {
     position: absolute;
     top: -3px;
     left: -4px;
-
-    display: none;
 }
 
 app-mp-task-late {
