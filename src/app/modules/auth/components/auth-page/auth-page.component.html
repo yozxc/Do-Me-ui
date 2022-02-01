@@ -1,15 +1,53 @@
 <div class="page__wrapper">
-    <div class="auth__standalone">
+    <form class="auth__standalone">
         <div class="standalone__title">Sign in</div>
 
+        <div class="oAuth__button">
+            <img src="https://d3ptyyxy2at9ui.cloudfront.net/google-32ae27.svg" alt="" class="oAuth__img" />
+            <div class="oAuth__text">Sign in with Google</div>
+        </div>
+        <div class="oAuth__button">
+            <img src="https://d3ptyyxy2at9ui.cloudfront.net/facebook-fadd25.svg" alt="" class="oAuth__img" />
+            <div class="oAuth__text">Sign in with Facebook</div>
+        </div>
+
+        <div class="auth__or">
+            <div class="auth__or__bar"></div>
+            <div class="auth__or__text">OR</div>
+            <div class="auth__or__bar"></div>
+        </div>
+
         <div class="field">
-            <div class="field__title">Email</div>
-            <input class="field__input" type="text" name="" id="" />
+            <label for="authEmailID">
+                <div class="field__title">Email</div>
+                <input class="field__input" type="text" name="" id="authEmailID" />
+            </label>
         </div>
         <div class="field">
-            <div class="field__title">Password</div>
-            <input class="field__input" type="password" name="" id="" />
+            <label for="authPasswordID">
+                <div class="field__title">Password</div>
+                <input class="field__input" type="password" name="" id="authPasswordID" />
+            </label>
         </div>
-        <button class="button__sign">Sign in</button>
-    </div>
+        <input class="button__sign" type="submit" value="Sign in" />
+
+        <div class="field">
+            <label class="label__checkbox" for="keepSignInID">
+                <input type="checkbox" name="" id="keepSignInID" />
+                <div class="check__text">Keep in system</div>
+            </label>
+        </div>
+
+        <div class="field">
+            <a href="javascript:void(0);" class="forgotPassLink">Forgot password?</a>
+        </div>
+
+        <div class="bar"></div>
+
+        <div class="field__flex">
+            <div class="noAcc__text">
+                You`ve no acount?&nbsp; <a href="javascript:void(0);" class="noAcc__link">Registration</a>
+            </div>
+        </div>
+    </form>
 </div>
