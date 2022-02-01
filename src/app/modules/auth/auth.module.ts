@@ -5,7 +5,7 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 
 @NgModule({
     declarations: [AuthPageComponent, RegisterPageComponent],
-    exports: [AuthPageComponent],
+    exports: [AuthPageComponent, RegisterPageComponent],
     imports: [CommonModule],
 })
 export class AuthModule {}
