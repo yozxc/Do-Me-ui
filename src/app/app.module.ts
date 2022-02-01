@@ -1,3 +1,4 @@
+import { AuthModule } from './modules/auth/auth.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +8,7 @@ import { MainModule } from './modules/main/main.module';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, MainModule],
+    imports: [BrowserModule, AppRoutingModule, MainModule, AuthModule],
     providers: [],
     bootstrap: [AppComponent],
 })
