@@ -3,11 +3,11 @@
         <div class="standalone__title">Register</div>
 
         <div class="oAuth__button">
-            <img src="https://d3ptyyxy2at9ui.cloudfront.net/google-32ae27.svg" alt="" class="oAuth__img" />
+            <app-google-icon class="oAuth__img"></app-google-icon>
             <div class="oAuth__text">Register in with Google</div>
         </div>
         <div class="oAuth__button">
-            <img src="https://d3ptyyxy2at9ui.cloudfront.net/facebook-fadd25.svg" alt="" class="oAuth__img" />
+            <app-facebook-icon class="oAuth__img"></app-facebook-icon>
             <div class="oAuth__text">Register in with Facebook</div>
         </div>
 
@@ -18,9 +18,27 @@
         </div>
 
         <div class="field">
-            <label for="authEmailID">
+            <label for="regNameID">
+                <div class="field__title">Username</div>
+                <input class="field__input" type="text" name="" id="regNameID" />
+            </label>
+        </div>
+        <div class="field">
+            <label for="regEmailID">
                 <div class="field__title">Email</div>
-                <input class="field__input" type="text" name="" id="authEmailID" />
+                <input class="field__input" type="text" name="" id="regEmailID" />
+            </label>
+        </div>
+        <div class="field">
+            <label for="regPassID">
+                <div class="field__title">Password</div>
+                <input class="field__input" type="password" name="" id="regPassID" />
+            </label>
+        </div>
+        <div class="field">
+            <label for="regConfPassID">
+                <div class="field__title">Confirm Password</div>
+                <input class="field__input" type="password" name="" id="regConfPassID" />
             </label>
         </div>
         <input class="button__sign" type="submit" value="Register" />
@@ -29,7 +47,7 @@
 
         <div class="field__flex">
             <div class="signReg__text">
-                You are registered?&nbsp; <a href="javascript:void(0);" class="signReg__link">Sign in</a>
+                You are registered?&nbsp; <a [routerLink]="['/auth/signin']" class="signReg__link">Sign in</a>
             </div>
         </div>
     </form>

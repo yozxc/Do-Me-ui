@@ -3,11 +3,11 @@
         <div class="standalone__title">Sign in</div>
 
         <div class="oAuth__button">
-            <img src="https://d3ptyyxy2at9ui.cloudfront.net/google-32ae27.svg" alt="" class="oAuth__img" />
+            <app-google-icon class="oAuth__img"></app-google-icon>
             <div class="oAuth__text">Sign in with Google</div>
         </div>
         <div class="oAuth__button">
-            <img src="https://d3ptyyxy2at9ui.cloudfront.net/facebook-fadd25.svg" alt="" class="oAuth__img" />
+            <app-facebook-icon class="oAuth__img"></app-facebook-icon>
             <div class="oAuth__text">Sign in with Facebook</div>
         </div>
 
@@ -46,7 +46,7 @@
 
         <div class="field__flex">
             <div class="signReg__text">
-                You`ve no acount?&nbsp; <a href="javascript:void(0);" class="signReg__link">Registration</a>
+                You`ve no acount?&nbsp; <a [routerLink]="['/auth/register']" class="signReg__link">Registration</a>
             </div>
         </div>
     </form>

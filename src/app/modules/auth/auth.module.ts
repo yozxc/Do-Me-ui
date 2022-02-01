@@ -1,11 +1,15 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-import { AuthPageComponent } from './components/auth-page/auth-page.component';
+import { SignPageComponent } from './components/sign-page/sign-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { FacebookIconComponent } from './components/svg/facebook-icon.component';
+import { GoogleIconComponent } from './components/svg/google-icon.component';
 
 @NgModule({
-    declarations: [AuthPageComponent, RegisterPageComponent],
-    exports: [AuthPageComponent, RegisterPageComponent],
-    imports: [CommonModule],
+    declarations: [SignPageComponent, RegisterPageComponent, FacebookIconComponent, GoogleIconComponent],
+    exports: [SignPageComponent, RegisterPageComponent],
+    imports: [CommonModule, RouterModule],
 })
 export class AuthModule {}
