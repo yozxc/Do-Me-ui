@@ -30,15 +30,45 @@
             </label>
         </div>
         <div class="field">
-            <label for="regPassID">
+            <label for="authPasswordID">
                 <div class="field__title">Password</div>
-                <input class="field__input" type="password" name="" id="regPassID" />
+                <input
+                    class="field__input"
+                    [attr.type]="passIsVisible ? 'text' : 'password'"
+                    name=""
+                    id="authPasswordID"
+                />
+                <app-close-eye
+                    *ngIf="!passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye close"
+                ></app-close-eye>
+                <app-open-eye
+                    *ngIf="passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye open"
+                ></app-open-eye>
             </label>
         </div>
         <div class="field">
             <label for="regConfPassID">
                 <div class="field__title">Confirm Password</div>
-                <input class="field__input" type="password" name="" id="regConfPassID" />
+                <input
+                    class="field__input"
+                    [attr.type]="passIsVisible ? 'text' : 'password'"
+                    name=""
+                    id="regConfPassID"
+                />
+                <app-close-eye
+                    *ngIf="!passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye close"
+                ></app-close-eye>
+                <app-open-eye
+                    *ngIf="passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye open"
+                ></app-open-eye>
             </label>
         </div>
         <input class="button__sign" type="submit" value="Register" />

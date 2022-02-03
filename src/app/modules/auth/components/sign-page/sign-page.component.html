@@ -26,7 +26,22 @@
         <div class="field">
             <label for="authPasswordID">
                 <div class="field__title">Password</div>
-                <input class="field__input" type="password" name="" id="authPasswordID" />
+                <input
+                    class="field__input"
+                    [attr.type]="passIsVisible ? 'text' : 'password'"
+                    name=""
+                    id="authPasswordID"
+                />
+                <app-close-eye
+                    *ngIf="!passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye close"
+                ></app-close-eye>
+                <app-open-eye
+                    *ngIf="passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye open"
+                ></app-open-eye>
             </label>
         </div>
         <input class="button__sign" type="submit" value="Sign in" />
