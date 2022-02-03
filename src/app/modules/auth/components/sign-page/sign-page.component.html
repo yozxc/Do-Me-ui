@@ -44,7 +44,7 @@
                 ></app-open-eye>
             </label>
         </div>
-        <input class="button__sign" type="submit" value="Sign in" />
+        <input class="button__submit" type="submit" value="Sign in" />
 
         <div class="field">
             <label class="label__checkbox" for="keepSignInID">
@@ -54,14 +54,14 @@
         </div>
 
         <div class="field">
-            <a href="javascript:void(0);" class="forgotPassLink">Forgot password?</a>
+            <a [routerLink]="['/auth/forgotPassword']" class="forgotPassLink">Forgot password?</a>
         </div>
 
         <div class="bar"></div>
 
         <div class="field__flex">
-            <div class="signReg__text">
-                You`ve no acount?&nbsp; <a [routerLink]="['/auth/register']" class="signReg__link">Registration</a>
+            <div class="bottom__text">
+                You`ve no acount?&nbsp; <a [routerLink]="['/auth/register']" class="bottom__link">Registration</a>
             </div>
         </div>
     </form>
