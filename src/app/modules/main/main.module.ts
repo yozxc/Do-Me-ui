@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SvgStoreModule } from '@shared/modules/svg-store/svg-store.module';
-import { UiComponentsModule } from '@shared/modules/ui-components/ui-components.module';
+import { SvgStoreModule } from '@shared/svg-store/svg-store.module';
+import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
 
 import { HeaderComponent } from './components/header/header.component';
 import { TodoMainComponent } from './components/todo-main.component';
@@ -15,6 +15,8 @@ import { MainPlaceSubListComponent } from './components/main-place-sub-list/main
 import { LmStateService } from './components/left-menu/lm-state.service';
 
 @NgModule({
+    imports: [CommonModule, SvgStoreModule, UiComponentsModule],
+    providers: [LmStateService],
     declarations: [
         HeaderComponent,
         TodoMainComponent,
@@ -25,8 +27,6 @@ import { LmStateService } from './components/left-menu/lm-state.service';
         ListAddTaskComponent,
         MainPlaceSubListComponent,
     ],
-    providers: [LmStateService],
     exports: [TodoMainComponent],
-    imports: [CommonModule, SvgStoreModule, UiComponentsModule],
 })
 export class MainModule {}
