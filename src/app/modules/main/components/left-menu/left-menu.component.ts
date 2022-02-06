@@ -1,7 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { projects, labels, filters, favorites } from '@assets/mock/lm-projects';
 import { Subscription } from 'rxjs';
+
+import { projects, labels, filters, favorites } from '@assets/mock/lm-projects';
+
 import { LmStateService } from './lm-state.service';
+import { ModalsControlerService } from '@app/modules/modals/modals-controler.service';
 
 @Component({
     selector: 'app-left-menu',
@@ -25,7 +28,11 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
         filters: true,
     };
 
-    constructor(private lmStateService: LmStateService, private cdr: ChangeDetectorRef) {}
+    constructor(
+        private lmStateService: LmStateService,
+        private cdr: ChangeDetectorRef,
+        private modalsControlerService: ModalsControlerService
+    ) {}
 
     ngOnInit(): void {
         // todo : change this :\
@@ -53,8 +60,9 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
 
     projPlusEvent(e: MouseEvent) {
         e.stopPropagation();
+        this.modalsControlerService.addProj();
     }
-    favPlusEvent(e: MouseEvent) {
+    labPlusEvent(e: MouseEvent) {
         e.stopPropagation();
     }
     filtPlusEvent(e: MouseEvent) {

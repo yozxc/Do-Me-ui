@@ -14,6 +14,10 @@ button {
         background-color: #3d3d3d;
         color: white;
         border: 1px solid #3d3d3d;
+
+        &:hover {
+            background-color: #2b2b2b;
+        }
     }
 
     &.white {
@@ -27,9 +31,14 @@ button {
     }
 
     &.disabled {
-        & {
-            cursor: not-allowed;
-            opacity: 0.5;
+        cursor: not-allowed;
+        opacity: 0.5;
+
+        &.white:hover {
+            background-color: #fff;
+        }
+        &.black:hover {
+            background-color: #3d3d3d;
         }
     }
 

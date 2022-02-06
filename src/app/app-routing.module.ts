@@ -27,7 +27,7 @@ const routes: Routes = [
     { path: `${ROUTE.AUTH}/${ROUTE.RESETPASSWORD}`, component: PasswordResetPageComponent },
 
     // todo : dev temp
-    { path: `**`, redirectTo: `${ROUTE.MAIN}`, pathMatch: 'full' },
+    // { path: `**`, redirectTo: `${ROUTE.MAIN}`, pathMatch: 'full' },
 ];
 
 @NgModule({

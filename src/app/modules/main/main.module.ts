@@ -1,7 +1,10 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { SvgStoreModule } from '@shared/svg-store/svg-store.module';
 import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
+import { ModalsModule } from '../modals/modals.module';
 
 import { HeaderComponent } from './components/header/header.component';
 import { TodoMainComponent } from './components/todo-main.component';
@@ -15,7 +18,7 @@ import { MainPlaceSubListComponent } from './components/main-place-sub-list/main
 import { LmStateService } from './components/left-menu/lm-state.service';
 
 @NgModule({
-    imports: [CommonModule, SvgStoreModule, UiComponentsModule],
+    imports: [CommonModule, SvgStoreModule, UiComponentsModule, ModalsModule, RouterModule],
     providers: [LmStateService],
     declarations: [
         HeaderComponent,
