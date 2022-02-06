@@ -1,0 +1,182 @@
+@import "vars";
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+
+    z-index: 1000;
+}
+
+.header {
+    width: 100%;
+    padding: 15px 24px;
+    border-radius: 10px 10px 0 0;
+    background-color: #fafafa;
+
+    position: relative;
+
+    font-family: $gFont;
+    font-weight: 700;
+    color: black;
+}
+
+.bottom__bar {
+    width: 100%;
+    height: 1px;
+
+    background-color: #f0f0f0;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.footer {
+    width: 100%;
+    padding: 10px 24px;
+
+    border-radius: 0 0 10px 10px;
+
+    background-color: #fafafa;
+}
+
+.footer__butt__wrapp {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content {
+    padding: 20px 24px 5px 20px;
+    background-color: #fff;
+
+    position: relative;
+}
+
+.field {
+    margin-bottom: 15px;
+
+    position: relative;
+}
+
+.label {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    font-family: $gFont;
+    font-size: 0.9em;
+}
+
+.input__text {
+    height: 30px;
+    width: 100%;
+    padding: 5px;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    font-family: $gFont;
+    font-size: 0.8em;
+
+    outline: none;
+
+    transition: 0.2s;
+    &:focus {
+        border: 1px solid gray;
+    }
+}
+
+.selected__color {
+    height: 30px;
+    width: 100%;
+    padding: 5px 5px 5px 30px;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    font-family: $gFont;
+    font-size: 0.8em;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+
+.color {
+    height: 30px;
+    width: 100%;
+    padding: 5px 5px 5px 30px;
+
+    font-family: $gFont;
+    font-size: 0.8em;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    background-color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ececec;
+    }
+}
+
+.color__list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    height: 300px;
+    width: 100%;
+    overflow: auto;
+
+    position: absolute;
+    z-index: 1001;
+}
+
+.check__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.fav__checkbox {
+    width: 17px;
+    height: 17px;
+}
+
+.fav__label {
+    font-size: 0.9em;
+    font-family: $gFont;
+
+    cursor: pointer;
+
+    margin-left: 10px;
+}

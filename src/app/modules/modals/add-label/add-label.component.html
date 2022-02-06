@@ -1,0 +1,47 @@
+<div class="modal" (click)="outsideClick($event)">
+    <div class="main">
+        <div class="header">
+            <span>Add Label</span>
+            <div class="bottom__bar"></div>
+        </div>
+
+        <div class="content">
+            <div class="field">
+                <div class="label">Label Name</div>
+                <input class="input__text" type="text" />
+            </div>
+
+            <div class="field">
+                <div class="label">Label color</div>
+
+                <div class="selected__color" (click)="toggleIsColorListActive()">
+                    <div [class]="'dot ' + colors[currentColorID].styleCls"></div>
+                    <span class="color__text">{{ colors[currentColorID].name }}</span>
+                </div>
+
+                <div *ngIf="isColorListActive" class="color__list">
+                    <div *ngFor="let color of colors; let i = index" class="color" (click)="setCurrentColorID(i)">
+                        <div [class]="'dot ' + color.styleCls"></div>
+                        <span class="color__text">{{ color.name }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="check__wrapper">
+                    <input class="fav__checkbox" id="addFavModalID" type="checkbox" />
+                    <label class="fav__label" for="addFavModalID">Add to favorites</label>
+                </div>
+            </div>
+
+            <div class="bottom__bar"></div>
+        </div>
+
+        <div class="footer">
+            <div class="footer__butt__wrapp">
+                <app-button [styleCls]="'black mr10'">Save</app-button>
+                <app-button [styleCls]="'white'">Cancel</app-button>
+            </div>
+        </div>
+    </div>
+</div>
