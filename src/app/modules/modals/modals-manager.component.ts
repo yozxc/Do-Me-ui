@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ModalsControlerService } from './modals-controler.service';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-modals-manager',
@@ -7,7 +9,11 @@ import { ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalsManagerComponent implements OnInit {
-    constructor() {}
+    controler!: Observable<string>;
 
-    ngOnInit(): void {}
+    constructor(private modalsControlerService: ModalsControlerService) {}
+
+    ngOnInit(): void {
+        this.controler = this.modalsControlerService.getControler();
+    }
 }

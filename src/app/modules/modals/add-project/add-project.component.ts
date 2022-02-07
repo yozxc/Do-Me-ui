@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ModalsControlerService } from '@app/modules/modals/modals-controler.service';
 
 @Component({
     selector: 'app-add-project',
@@ -33,7 +34,7 @@ export class AddProjectComponent implements OnInit {
 
     isColorListActive: boolean = false;
 
-    constructor() {}
+    constructor(private modalsControlerService: ModalsControlerService) {}
 
     ngOnInit(): void {}
 
@@ -46,7 +47,8 @@ export class AddProjectComponent implements OnInit {
         this.isColorListActive = false;
     }
 
-    outsideClick(e: MouseEvent) {
-        e.preventDefault();
+    closeModal(e: MouseEvent) {
+        e.stopPropagation();
+        this.modalsControlerService.closeModal();
     }
 }

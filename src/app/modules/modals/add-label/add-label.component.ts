@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalsControlerService } from '@app/modules/modals/modals-controler.service';
 
 @Component({
     selector: 'app-add-label',
@@ -32,7 +33,7 @@ export class AddLabelComponent implements OnInit {
 
     isColorListActive: boolean = false;
 
-    constructor() {}
+    constructor(private modalsControlerService: ModalsControlerService) {}
 
     ngOnInit(): void {}
 
@@ -45,7 +46,8 @@ export class AddLabelComponent implements OnInit {
         this.isColorListActive = false;
     }
 
-    outsideClick(e: MouseEvent) {
-        e.preventDefault();
+    closeModal(e: MouseEvent) {
+        e.stopPropagation();
+        this.modalsControlerService.closeModal();
     }
 }

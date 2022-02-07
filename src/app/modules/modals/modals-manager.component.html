@@ -1,1 +1,7 @@
-<router-outlet name="MODALS"></router-outlet>
+<ng-container *ngIf="controler | async as type">
+    <app-add-project *ngIf="type === 'addProject'"></app-add-project>
+
+    <app-add-label *ngIf="type === 'addLabel'"></app-add-label>
+
+    <app-add-filter *ngIf="type === 'addFilter'"></app-add-filter>
+</ng-container>

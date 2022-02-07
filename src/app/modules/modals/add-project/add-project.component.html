@@ -1,5 +1,5 @@
-<div class="modal" (click)="outsideClick($event)">
-    <div class="main">
+<div class="modal" (click)="closeModal($event)">
+    <div class="main" (click)="$event.stopPropagation()">
         <div class="header">
             <span>Add Project</span>
             <div class="bottom__bar"></div>
@@ -63,7 +63,7 @@
         <div class="footer">
             <div class="footer__butt__wrapp">
                 <app-button [styleCls]="'black mr10'">Save</app-button>
-                <app-button [styleCls]="'white'">Cancel</app-button>
+                <app-button [styleCls]="'white'" (click)="closeModal($event)">Cancel</app-button>
             </div>
         </div>
     </div>

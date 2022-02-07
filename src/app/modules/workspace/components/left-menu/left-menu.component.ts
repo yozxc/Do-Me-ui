@@ -58,14 +58,16 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
         if (cat === 'filters') this.activeLabels[cat] = !this.activeLabels[cat];
     }
 
-    projPlusEvent(e: MouseEvent) {
+    projectPlusEvent(e: MouseEvent) {
         e.stopPropagation();
-        this.modalsControlerService.addProj();
+        this.modalsControlerService.openAddProject();
     }
-    labPlusEvent(e: MouseEvent) {
+    labelPlusEvent(e: MouseEvent) {
         e.stopPropagation();
+        this.modalsControlerService.openAddLabel();
     }
-    filtPlusEvent(e: MouseEvent) {
+    filterPlusEvent(e: MouseEvent) {
         e.stopPropagation();
+        this.modalsControlerService.openAddFilter();
     }
 }

@@ -1,13 +1,31 @@
-import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ModalsControlerService {
-    constructor(private router: Router) {}
+    controler$ = new Subject<string>();
 
-    addProj() {
-        this.router.navigate([{ outlets: { MODALS: 'addProject' } }], { skipLocationChange: false });
+    constructor() {}
+
+    openAddProject() {
+        this.controler$.next('addProject');
+    }
+
+    openAddLabel() {
+        this.controler$.next('addLabel');
+    }
+
+    openAddFilter() {
+        this.controler$.next('addFilter');
+    }
+
+    closeModal() {
+        this.controler$.next('');
+    }
+
+    getControler() {
+        return this.controler$.asObservable();
     }
 }
