@@ -1,0 +1,30 @@
+<div class="tasks__list__header">
+    <div class="tl__title">Overdue</div>
+
+    <app-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></app-wp-header-arrow>
+
+    <div class="tl__icons__container">
+        <div class="tli__wrapper">
+            <app-wp-header-more></app-wp-header-more>
+        </div>
+    </div>
+
+    <!-- todo : set functional + refactor css + buttons margins -->
+    <!-- <div class="pltlas__main">
+        <input class="pltlasm__input" type="text" placeholder="Name this section" />
+
+        <div class="te__buttons__wrapper">
+            <app-button styleCls="black mr10">Save</app-button>
+            <app-button styleCls="white">Cancel</app-button>
+        </div>
+    </div> -->
+    <!-- change title -->
+
+    <div class="bottom__bar"></div>
+</div>
+
+<div *ngIf="!(isClosed$ | async)" class="task__list">
+    <app-list-task></app-list-task>
+
+    <app-list-add-task></app-list-add-task>
+</div>

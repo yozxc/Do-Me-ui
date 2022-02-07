@@ -19,21 +19,21 @@ import { LmDragComponent } from './left-menu/lm-drag.component';
 import { LmLabelComponent } from './left-menu/lm-label.component';
 import { LmFilterComponent } from './left-menu/lm-filter.component';
 
-import { MpViewComponent } from './main-place/mp-view.component';
-import { MpMoreComponent } from './main-place/mp-more.component';
-import { MpTickComponent } from './main-place/mp-tick.component';
-import { MpTaskLateComponent } from './main-place/mp-task-late.component';
-import { MpTaskEditComponent } from './main-place/mp-task-edit.component';
-import { MpTaskScheduleComponent } from './main-place/mp-task-schedule.component';
-import { MpTaskMoreComponent } from './main-place/mp-task-more.component';
-import { MpTaskDragComponent } from './main-place/mp-task-drag.component';
-import { MpTaskAddComponent } from './main-place/mp-task-add.component';
-import { MpScheduleComponent } from './main-place/mp-schedule.component';
-import { MpInboxComponent } from './main-place/mp-inbox.component';
-import { MpLabelComponent } from './main-place/mp-label.component';
-import { MpPriorityComponent } from './main-place/mp-priority.component';
-import { MpHeaderMoreComponent } from './main-place/mp-header-more.component';
-import { MpHeaderArrowComponent } from './main-place/mp-header-arrow.component';
+import { WpViewComponent } from './workspace-place/wp-view.component';
+import { WpMoreComponent } from './workspace-place/wp-more.component';
+import { WpTickComponent } from './workspace-place/wp-tick.component';
+import { WpTaskLateComponent } from './workspace-place/wp-task-late.component';
+import { WpTaskEditComponent } from './workspace-place/wp-task-edit.component';
+import { WpTaskScheduleComponent } from './workspace-place/wp-task-schedule.component';
+import { WpTaskMoreComponent } from './workspace-place/wp-task-more.component';
+import { WpTaskDragComponent } from './workspace-place/wp-task-drag.component';
+import { WpTaskAddComponent } from './workspace-place/wp-task-add.component';
+import { WpScheduleComponent } from './workspace-place/wp-schedule.component';
+import { WpInboxComponent } from './workspace-place/wp-inbox.component';
+import { WpLabelComponent } from './workspace-place/wp-label.component';
+import { WpPriorityComponent } from './workspace-place/wp-priority.component';
+import { WpHeaderMoreComponent } from './workspace-place/wp-header-more.component';
+import { WpHeaderArrowComponent } from './workspace-place/wp-header-arrow.component';
 
 @NgModule({
     declarations: [
@@ -54,22 +54,22 @@ import { MpHeaderArrowComponent } from './main-place/mp-header-arrow.component';
             LmDragComponent,
             LmLabelComponent,
             LmFilterComponent,
-            MpViewComponent,
-            MpMoreComponent,
-            MpTickComponent,
-            MpTaskLateComponent,
-            MpTaskEditComponent,
-            MpTaskScheduleComponent,
-            MpTaskMoreComponent,
-            MpTaskDragComponent,
-            MpTaskAddComponent,
-            MpScheduleComponent,
-            MpInboxComponent,
-            MpLabelComponent,
-            MpPriorityComponent,
+            WpViewComponent,
+            WpMoreComponent,
+            WpTickComponent,
+            WpTaskLateComponent,
+            WpTaskEditComponent,
+            WpTaskScheduleComponent,
+            WpTaskMoreComponent,
+            WpTaskDragComponent,
+            WpTaskAddComponent,
+            WpScheduleComponent,
+            WpInboxComponent,
+            WpLabelComponent,
+            WpPriorityComponent,
         ],
-        MpHeaderMoreComponent,
-        MpHeaderArrowComponent,
+        WpHeaderMoreComponent,
+        WpHeaderArrowComponent,
     ],
     exports: [
         ...[
@@ -89,22 +89,22 @@ import { MpHeaderArrowComponent } from './main-place/mp-header-arrow.component';
             LmDragComponent,
             LmLabelComponent,
             LmFilterComponent,
-            MpViewComponent,
-            MpMoreComponent,
-            MpTickComponent,
-            MpTaskLateComponent,
-            MpTaskEditComponent,
-            MpTaskScheduleComponent,
-            MpTaskMoreComponent,
-            MpTaskDragComponent,
-            MpTaskAddComponent,
-            MpScheduleComponent,
-            MpInboxComponent,
-            MpLabelComponent,
-            MpPriorityComponent,
+            WpViewComponent,
+            WpMoreComponent,
+            WpTickComponent,
+            WpTaskLateComponent,
+            WpTaskEditComponent,
+            WpTaskScheduleComponent,
+            WpTaskMoreComponent,
+            WpTaskDragComponent,
+            WpTaskAddComponent,
+            WpScheduleComponent,
+            WpInboxComponent,
+            WpLabelComponent,
+            WpPriorityComponent,
         ],
-        MpHeaderMoreComponent,
-        MpHeaderArrowComponent,
+        WpHeaderMoreComponent,
+        WpHeaderArrowComponent,
     ],
     imports: [CommonModule],
 })

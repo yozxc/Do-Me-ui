@@ -1,0 +1,39 @@
+<ng-container *ngIf="!addInProgress">
+    <div class="add" (click)="toggleAddInProgress(true)">
+        <div class="bg__wrapper">
+            <app-wp-task-add></app-wp-task-add>
+        </div>
+
+        <div class="text">Add Task</div>
+    </div>
+</ng-container>
+
+<div *ngIf="addInProgress" class="task__editor__wrapper">
+    <div class="editor__container">
+        <div class="te__title" contenteditable="true">Task name</div>
+        <div class="te__description" contenteditable="true">Description</div>
+
+        <div class="editor__bottom">
+            <div class="flex__container">
+                <div class="bottom__butt">
+                    <app-wp-schedule styleCls="charcoal"></app-wp-schedule>
+                    <div class="bot_but__text">Scheduled</div>
+                </div>
+                <div class="bottom__butt">
+                    <app-wp-inbox styleCls="blue"></app-wp-inbox>
+                    <div class="bot_but__text">Inbox</div>
+                </div>
+            </div>
+
+            <div class="flex__container">
+                <app-wp-label></app-wp-label>
+                <app-wp-priority></app-wp-priority>
+            </div>
+        </div>
+    </div>
+
+    <div class="bot_butt__wrapper">
+        <app-button styleCls="black mr10" [disabled]="true">Add Task</app-button>
+        <app-button styleCls="white" (click)="toggleAddInProgress(false)">Cancel</app-button>
+    </div>
+</div>

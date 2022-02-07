@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TodoMainComponent } from './modules/main/components/todo-main.component';
+import { WorkspaceComponent } from './modules/workspace/components/workspace.component';
 import { SignPageComponent } from './modules/auth/components/sign-page/sign-page.component';
 import { RegisterPageComponent } from './modules/auth/components/register-page/register-page.component';
 import { ForgotPasswordPageComponent } from './modules/auth/components/forgotPass-page/forgot-password-page.component';
@@ -14,11 +14,11 @@ enum ROUTE {
     FORGOTPASSWORD = 'forgotPassword',
     RESETPASSWORD = 'resetPassword',
 
-    MAIN = 'main',
+    WORKSPACE = 'workspace',
 }
 
 const routes: Routes = [
-    { path: `${ROUTE.MAIN}`, component: TodoMainComponent },
+    { path: `${ROUTE.WORKSPACE}`, component: WorkspaceComponent },
 
     { path: ``, redirectTo: `${ROUTE.AUTH}/${ROUTE.SIGNIN}`, pathMatch: 'full' },
     { path: `${ROUTE.AUTH}/${ROUTE.SIGNIN}`, component: SignPageComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
     { path: `${ROUTE.AUTH}/${ROUTE.RESETPASSWORD}`, component: PasswordResetPageComponent },
 
     // todo : dev temp
-    // { path: `**`, redirectTo: `${ROUTE.MAIN}`, pathMatch: 'full' },
+    { path: `**`, redirectTo: `${ROUTE.WORKSPACE}`, pathMatch: 'full' },
 ];
 
 @NgModule({
