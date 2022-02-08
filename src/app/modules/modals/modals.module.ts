@@ -10,6 +10,8 @@ import { AddFilterComponent } from './add-filter/add-filter.component';
 import { AddLabelComponent } from './add-label/add-label.component';
 import { ModalsControlerService } from './modals-controler.service';
 import { SettingsComponent } from './settings/settings.component';
+import { AccountSettingsComponent } from './settings/route-components/account-settings/account-settings.component';
+import { GeneralSettingsComponent } from './settings/route-components/general-settings/general-settings.component';
 
 @NgModule({
     imports: [CommonModule, UiComponentsModule, SvgStoreModule],
@@ -19,6 +21,8 @@ import { SettingsComponent } from './settings/settings.component';
         AddFilterComponent,
         AddLabelComponent,
         SettingsComponent,
+        AccountSettingsComponent,
+        GeneralSettingsComponent,
     ],
     providers: [ModalsControlerService],
     exports: [ModalsManagerComponent],
