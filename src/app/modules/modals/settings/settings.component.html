@@ -1,0 +1,54 @@
+<div class="modal" (click)="closeModal($event)">
+    <div class="main" (click)="$event.stopPropagation()">
+        <div class="left__part">
+            <div class="lp__header">Settings</div>
+
+            <div class="left__menu">
+                <div class="lm__item">
+                    <app-mo-lm-account class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-account>
+                    <div class="lmi__text">Account</div>
+                </div>
+                <div class="lm__item">
+                    <app-mo-lm-general class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-general>
+                    <div class="lmi__text">General</div>
+                </div>
+                <div class="lm__item">
+                    <app-mo-lm-advanced class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-advanced>
+                    <div class="lmi__text">Advanced</div>
+                </div>
+                <div class="lm__item">
+                    <app-mo-lm-theme class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-theme>
+                    <div class="lmi__text">Theme</div>
+                </div>
+                <div class="lm__item">
+                    <app-mo-lm-productivity class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-productivity>
+                    <div class="lmi__text">Productivity</div>
+                </div>
+                <div class="lm__item">
+                    <app-mo-lm-notifications class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-notifications>
+                    <div class="lmi__text">Notifications</div>
+                </div>
+                <div class="lm__item">
+                    <app-mo-lm-backups class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-backups>
+                    <div class="lmi__text">Backups</div>
+                </div>
+                <div class="lm__item">
+                    <app-mo-lm-notifications class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-notifications>
+                    <div class="lmi__text">Notifications</div>
+                </div>
+            </div>
+
+            <div class="right__bar"></div>
+        </div>
+        <div class="settings__space">
+            <div class="ss__header">
+                <div class="ssh__text">Account</div>
+                <div class="modal__close__wrapper" (click)="closeModal($event)">
+                    <app-mo-close class="svg_24__co"></app-mo-close>
+                </div>
+
+                <div class="bottom__bar"></div>
+            </div>
+        </div>
+    </div>
+</div>

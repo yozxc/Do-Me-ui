@@ -7,18 +7,29 @@ import { Subject } from 'rxjs';
 export class ModalsControlerService {
     controler$ = new Subject<string>();
 
+    CONSTS = {
+        ADDPROJECT: 'addProject',
+        ADDLABEL: 'addLabel',
+        ADDFILTER: 'addFilter',
+        SETTINGS: 'settings',
+    };
+
     constructor() {}
 
     openAddProject() {
-        this.controler$.next('addProject');
+        this.controler$.next(this.CONSTS.ADDPROJECT);
     }
 
     openAddLabel() {
-        this.controler$.next('addLabel');
+        this.controler$.next(this.CONSTS.ADDLABEL);
     }
 
     openAddFilter() {
-        this.controler$.next('addFilter');
+        this.controler$.next(this.CONSTS.ADDFILTER);
+    }
+
+    openSettings() {
+        this.controler$.next(this.CONSTS.SETTINGS);
     }
 
     closeModal() {

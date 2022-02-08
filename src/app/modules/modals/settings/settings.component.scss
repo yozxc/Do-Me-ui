@@ -1,0 +1,138 @@
+@import "vars";
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+
+    background-color: #fff;
+    border-radius: 10px;
+
+    z-index: 1000;
+
+    //
+
+    display: flex;
+    width: 1060px;
+    height: 690px;
+}
+
+.left__part {
+    position: relative;
+
+    width: 20%;
+    height: 100%;
+
+    background-color: #fafafa;
+    border-radius: 10px 0 0 10px;
+}
+
+.lp__header {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    padding: 12px;
+
+    font-family: $gFont;
+    font-weight: 700;
+}
+
+.left__menu {
+    width: 100%;
+    padding: 12px;
+}
+.lm__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    padding: 5px;
+    border-radius: 5px;
+
+    cursor: pointer;
+    &:hover {
+        background-color: #f2f2f2;
+    }
+}
+.lmi__text {
+    font-size: 0.8em;
+    font-family: $gFont;
+    flood-color: #202020;
+    margin-left: 6px;
+}
+
+.right__bar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #e6e6e6;
+}
+
+.settings__space {
+    width: 80%;
+    height: 100%;
+
+    background-color: #fff;
+    border-radius: 0 10px 10px 0;
+}
+
+.ss__header {
+    position: relative;
+
+    height: 50px;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ssh__text {
+    font-family: $gFont;
+    font-weight: 700;
+}
+.modal__close__wrapper {
+    display: flex;
+    align-items: center;
+
+    padding: 3px;
+    border-radius: 5px;
+
+    cursor: pointer;
+    &:hover {
+        background-color: #e6e6e6;
+
+        & ::ng-deep svg {
+            fill: black;
+        }
+    }
+}
+.bottom__bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e6e6e6;
+}
+
+// svg components sizes
+
+.svg_24__co {
+    height: 24px;
+    width: 24px;
+}

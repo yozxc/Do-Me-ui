@@ -1,7 +1,9 @@
 <ng-container *ngIf="controler | async as type">
-    <app-add-project *ngIf="type === 'addProject'"></app-add-project>
+    <app-add-project *ngIf="type === MCS.CONSTS.ADDPROJECT"></app-add-project>
 
-    <app-add-label *ngIf="type === 'addLabel'"></app-add-label>
+    <app-add-label *ngIf="type === MCS.CONSTS.ADDLABEL"></app-add-label>
 
-    <app-add-filter *ngIf="type === 'addFilter'"></app-add-filter>
+    <app-add-filter *ngIf="type === MCS.CONSTS.ADDFILTER"></app-add-filter>
+
+    <app-settings *ngIf="type === MCS.CONSTS.SETTINGS"></app-settings>
 </ng-container>

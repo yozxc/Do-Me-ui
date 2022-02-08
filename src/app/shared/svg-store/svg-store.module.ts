@@ -35,6 +35,16 @@ import { WpPriorityComponent } from './workspace-place/wp-priority.component';
 import { WpHeaderMoreComponent } from './workspace-place/wp-header-more.component';
 import { WpHeaderArrowComponent } from './workspace-place/wp-header-arrow.component';
 
+import { MoCloseComponent } from './modals/mo-close.component';
+import { MoLmAccountComponent } from './modals/mo-lm-account.component';
+import { MoLmGeneralComponent } from './modals/mo-lm-general.component';
+import { MoLmAdvancedComponent } from './modals/mo-lm-advanced.component';
+import { MoLmThemeComponent } from './modals/mo-lm-theme.component';
+import { MoLmProductivityComponent } from './modals/mo-lm-productivity.component';
+import { MoLmRemindersComponent } from './modals/mo-lm-reminders.component';
+import { MoLmNotificationsComponent } from './modals/mo-lm-notifications.component';
+import { MoLmBackupsComponent } from './modals/mo-lm-backups.component';
+
 @NgModule({
     declarations: [
         ...[
@@ -45,6 +55,8 @@ import { WpHeaderArrowComponent } from './workspace-place/wp-header-arrow.compon
             HeaderAddComponent,
             HeaderHelpComponent,
             HeaderBellComponent,
+        ],
+        ...[
             LmInboxComponent,
             LmTodayComponent,
             LmUpcomingComponent,
@@ -54,6 +66,8 @@ import { WpHeaderArrowComponent } from './workspace-place/wp-header-arrow.compon
             LmDragComponent,
             LmLabelComponent,
             LmFilterComponent,
+        ],
+        ...[
             WpViewComponent,
             WpMoreComponent,
             WpTickComponent,
@@ -67,9 +81,20 @@ import { WpHeaderArrowComponent } from './workspace-place/wp-header-arrow.compon
             WpInboxComponent,
             WpLabelComponent,
             WpPriorityComponent,
+            WpHeaderMoreComponent,
+            WpHeaderArrowComponent,
         ],
-        WpHeaderMoreComponent,
-        WpHeaderArrowComponent,
+        ...[
+            MoCloseComponent,
+            MoLmAccountComponent,
+            MoLmGeneralComponent,
+            MoLmAdvancedComponent,
+            MoLmThemeComponent,
+            MoLmProductivityComponent,
+            MoLmRemindersComponent,
+            MoLmNotificationsComponent,
+            MoLmBackupsComponent,
+        ],
     ],
     exports: [
         ...[
@@ -80,6 +105,8 @@ import { WpHeaderArrowComponent } from './workspace-place/wp-header-arrow.compon
             HeaderAddComponent,
             HeaderHelpComponent,
             HeaderBellComponent,
+        ],
+        ...[
             LmInboxComponent,
             LmTodayComponent,
             LmUpcomingComponent,
@@ -89,6 +116,8 @@ import { WpHeaderArrowComponent } from './workspace-place/wp-header-arrow.compon
             LmDragComponent,
             LmLabelComponent,
             LmFilterComponent,
+        ],
+        ...[
             WpViewComponent,
             WpMoreComponent,
             WpTickComponent,
@@ -102,9 +131,20 @@ import { WpHeaderArrowComponent } from './workspace-place/wp-header-arrow.compon
             WpInboxComponent,
             WpLabelComponent,
             WpPriorityComponent,
+            WpHeaderMoreComponent,
+            WpHeaderArrowComponent,
         ],
-        WpHeaderMoreComponent,
-        WpHeaderArrowComponent,
+        ...[
+            MoCloseComponent,
+            MoLmAccountComponent,
+            MoLmGeneralComponent,
+            MoLmAdvancedComponent,
+            MoLmThemeComponent,
+            MoLmProductivityComponent,
+            MoLmRemindersComponent,
+            MoLmNotificationsComponent,
+            MoLmBackupsComponent,
+        ],
     ],
     imports: [CommonModule],
 })
