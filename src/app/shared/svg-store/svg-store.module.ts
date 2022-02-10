@@ -44,6 +44,13 @@ import { MoLmProductivityComponent } from './modals/mo-lm-productivity.component
 import { MoLmRemindersComponent } from './modals/mo-lm-reminders.component';
 import { MoLmNotificationsComponent } from './modals/mo-lm-notifications.component';
 import { MoLmBackupsComponent } from './modals/mo-lm-backups.component';
+import { MoSettSelectComponent } from './modals/mo-sett-select.component';
+
+import { StDefaultComponent } from './settings-theme/st-default.component';
+import { StNoirComponent } from './settings-theme/st-noir.component';
+import { StDarkComponent } from './settings-theme/st-dark.component';
+import { StNeutralComponent } from './settings-theme/st-neutral.component';
+import { StTangerineComponent } from './settings-theme/st-tangerine.component';
 
 @NgModule({
     declarations: [
@@ -94,6 +101,13 @@ import { MoLmBackupsComponent } from './modals/mo-lm-backups.component';
             MoLmRemindersComponent,
             MoLmNotificationsComponent,
             MoLmBackupsComponent,
+            MoSettSelectComponent,
+            //
+            StDefaultComponent,
+            StNoirComponent,
+            StDarkComponent,
+            StNeutralComponent,
+            StTangerineComponent,
         ],
     ],
     exports: [
@@ -144,6 +158,13 @@ import { MoLmBackupsComponent } from './modals/mo-lm-backups.component';
             MoLmRemindersComponent,
             MoLmNotificationsComponent,
             MoLmBackupsComponent,
+            MoSettSelectComponent,
+            //
+            StDefaultComponent,
+            StNoirComponent,
+            StDarkComponent,
+            StNeutralComponent,
+            StTangerineComponent,
         ],
     ],
     imports: [CommonModule],

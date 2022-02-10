@@ -8,19 +8,12 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit } from '@angu
     styleUrls: ['./modals-manager.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ModalsManagerComponent implements OnInit, AfterViewInit {
+export class ModalsManagerComponent implements OnInit {
     controler!: Observable<string>;
 
     constructor(public MCS: ModalsControlerService) {}
 
     ngOnInit(): void {
         this.controler = this.MCS.getControler();
-    }
-
-    // todo : dev temp
-    ngAfterViewInit(): void {
-        setTimeout(() => {
-            this.MCS.openSettings();
-        }, 0);
     }
 }

@@ -5,36 +5,36 @@
 
             <div class="left__menu">
                 <div class="lm__item">
-                    <app-mo-lm-account class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-account>
+                    <app-mo-lm-account class="svg_24__co"></app-mo-lm-account>
                     <div class="lmi__text">Account</div>
                 </div>
                 <div class="lm__item">
-                    <app-mo-lm-general class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-general>
+                    <app-mo-lm-general class="svg_24__co"></app-mo-lm-general>
                     <div class="lmi__text">General</div>
                 </div>
                 <div class="lm__item">
-                    <app-mo-lm-advanced class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-advanced>
+                    <app-mo-lm-advanced class="svg_24__co"></app-mo-lm-advanced>
                     <div class="lmi__text">Advanced</div>
                 </div>
                 <div class="lm__item">
-                    <app-mo-lm-theme class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-theme>
+                    <app-mo-lm-theme class="svg_24__co"></app-mo-lm-theme>
                     <div class="lmi__text">Theme</div>
                 </div>
-                <div class="lm__item">
-                    <app-mo-lm-productivity class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-productivity>
+                <div class="lm__item unavailable">
+                    <app-mo-lm-productivity class="svg_24__co"></app-mo-lm-productivity>
                     <div class="lmi__text">Productivity</div>
                 </div>
-                <div class="lm__item">
-                    <app-mo-lm-notifications class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-notifications>
+                <div class="lm__item unavailable">
+                    <app-mo-lm-reminders class="svg_24__co"></app-mo-lm-reminders>
+                    <div class="lmi__text">Reminders</div>
+                </div>
+                <div class="lm__item unavailable">
+                    <app-mo-lm-notifications class="svg_24__co"></app-mo-lm-notifications>
                     <div class="lmi__text">Notifications</div>
                 </div>
-                <div class="lm__item">
-                    <app-mo-lm-backups class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-backups>
+                <div class="lm__item unavailable">
+                    <app-mo-lm-backups class="svg_24__co"></app-mo-lm-backups>
                     <div class="lmi__text">Backups</div>
-                </div>
-                <div class="lm__item">
-                    <app-mo-lm-notifications class="svg_24__co" styleCls="mo_lm__icon"></app-mo-lm-notifications>
-                    <div class="lmi__text">Notifications</div>
                 </div>
             </div>
 
@@ -50,7 +50,12 @@
                 <div class="bottom__bar"></div>
             </div>
 
-            <div class="settings__workspace"></div>
+            <div class="settings__workspace">
+                <!-- <app-account-settings></app-account-settings> -->
+                <!-- <app-general-settings></app-general-settings> -->
+                <!-- <app-advanced-settings></app-advanced-settings> -->
+                <app-theme-settings></app-theme-settings>
+            </div>
 
             <div class="ss__footer">
                 <app-button styleCls="white mr10" (click)="closeModal($event)">Cancel</app-button>

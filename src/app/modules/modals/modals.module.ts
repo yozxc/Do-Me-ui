@@ -12,6 +12,8 @@ import { ModalsControlerService } from './modals-controler.service';
 import { SettingsComponent } from './settings/settings.component';
 import { AccountSettingsComponent } from './settings/route-components/account-settings/account-settings.component';
 import { GeneralSettingsComponent } from './settings/route-components/general-settings/general-settings.component';
+import { AdvancedSettingsComponent } from './settings/route-components/advanced-settings/advanced-settings.component';
+import { ThemeSettingsComponent } from './settings/route-components/theme-settings/theme-settings.component';
 
 @NgModule({
     imports: [CommonModule, UiComponentsModule, SvgStoreModule],
@@ -23,6 +25,8 @@ import { GeneralSettingsComponent } from './settings/route-components/general-se
         SettingsComponent,
         AccountSettingsComponent,
         GeneralSettingsComponent,
+        AdvancedSettingsComponent,
+        ThemeSettingsComponent,
     ],
     providers: [ModalsControlerService],
     exports: [ModalsManagerComponent],

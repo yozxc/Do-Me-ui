@@ -1,1 +1,59 @@
-<p>account-settings works!</p>
+<div class="main">
+    <div class="field">
+        <div class="title">Photo</div>
+
+        <div class="content">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/56691133?v=4" alt="" />
+
+            <div class="photo__settings">
+                <div class="h17px"></div>
+                <div class="buttons__wrapper">
+                    <app-button styleCls="mr10 white">Change photo</app-button>
+                    <app-button styleCls="red">Remove photo</app-button>
+                </div>
+                <div class="photo__size">Pick a photo up to 4MB.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">Name</div>
+
+        <div class="content">
+            <input class="input__text" type="text" />
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">Email</div>
+
+        <div class="content column">
+            <div class="text">ionutmitu68@gmail.com</div>
+
+            <app-button styleCls="white">Change Email</app-button>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">Password</div>
+
+        <div class="content column">
+            <app-button styleCls="white">Add Password</app-button>
+        </div>
+    </div>
+
+    <div class="bar__w100"></div>
+
+    <div class="field">
+        <div class="title">Permanently delete account</div>
+
+        <div class="content column">
+            <div class="text">
+                This will immediately delete all of your data including tasks, projects, comments, and more. This can’t
+                be undone.
+            </div>
+
+            <app-button styleCls="red">Permanently delete account</app-button>
+        </div>
+    </div>
+</div>

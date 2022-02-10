@@ -7,16 +7,14 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
         `
             svg {
                 fill: #6e6e6e;
-            }
 
-            .mo_lm__icon {
-                height: 24px;
-                width: 24px;
+                height: 100%;
+                width: 100%;
             }
         `,
     ],
     template: `
-        <svg [class]="styleCls" aria-hidden="true">
+        <svg aria-hidden="true">
             <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -26,8 +24,6 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
     `,
 })
 export class MoLmRemindersComponent implements OnInit {
-    @Input() styleCls = '';
-
     constructor() {}
 
     ngOnInit(): void {}
