@@ -3,14 +3,17 @@ import { TestBed } from '@angular/core/testing';
 import { LmStateService } from './lm-state.service';
 
 describe('LmStateService', () => {
-  let service: LmStateService;
+    let service: LmStateService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(LmStateService);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            // todo : check for provider
+            providers: [LmStateService],
+        });
+        service = TestBed.inject(LmStateService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(service).toBeTruthy();
+    });
 });
