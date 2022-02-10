@@ -12,6 +12,7 @@ export class ModalsControlerService {
         ADDLABEL: 'addLabel',
         ADDFILTER: 'addFilter',
         SETTINGS: 'settings',
+        REMOVEPHOTO: 'removePhoto'
     };
 
     constructor() {}
@@ -30,6 +31,10 @@ export class ModalsControlerService {
 
     openSettings() {
         this.controler$.next(this.CONSTS.SETTINGS);
+    }
+
+    openRemovePhoto() {
+        this.controler$.next(this.CONSTS.REMOVEPHOTO);
     }
 
     closeModal() {

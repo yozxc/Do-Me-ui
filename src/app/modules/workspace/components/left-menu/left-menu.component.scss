@@ -44,6 +44,16 @@
     &.active {
         background-color: #ececec;
     }
+
+    &.unavailable{
+        cursor: not-allowed;
+        opacity: 0.5;
+        user-select: none;
+
+        &:hover {
+            background-color: #fafafa;
+        }
+    }
 }
 
 .tab__title {

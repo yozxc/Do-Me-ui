@@ -1,0 +1,14 @@
+<div class="modal" (click)="onClose($event)">
+    <div class="main" (click)="$event.stopPropagation()">
+        <div class="modal__close__wrapper" (click)="onClose($event)">
+            <app-mo-close></app-mo-close>
+        </div>
+
+        <div class="confirm__text">Are you sure you want to remove your current photo?</div>
+
+        <div class="buttons__wrapper">
+            <app-button styleCls="white mr10" (click)="onClose($event)">Cancel</app-button>
+            <app-button styleCls="black">Ok</app-button>
+        </div>
+    </div>
+</div>
