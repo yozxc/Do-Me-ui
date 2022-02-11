@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-google-icon',
+    selector: 'svg-google-icon',
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
         <svg

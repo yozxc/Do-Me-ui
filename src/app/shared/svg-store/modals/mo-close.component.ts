@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'app-mo-close',
+    selector: 'svg-mo-close',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

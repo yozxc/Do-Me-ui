@@ -3,7 +3,7 @@
         <input class="hidden__checkbox" type="checkbox" name="" [id]="checkboxID" (change)="toggleIsChecked()" />
 
         <div class="custom__check">
-            <app-wp-tick *ngIf="isChecked"></app-wp-tick>
+            <svg-wp-tick *ngIf="isChecked"></svg-wp-tick>
         </div>
     </label>
     <!-- checkbox label -->
@@ -12,21 +12,21 @@
         <div class="task__text">qwe</div>
 
         <div class="task__late">
-            <app-wp-task-late></app-wp-task-late>
+            <svg-wp-task-late></svg-wp-task-late>
 
             <div class="task_late__text">15 Oct</div>
         </div>
     </div>
 
     <div class="icons__container">
-        <app-wp-task-edit></app-wp-task-edit>
+        <svg-wp-task-edit></svg-wp-task-edit>
 
-        <app-wp-task-schedule></app-wp-task-schedule>
+        <svg-wp-task-schedule></svg-wp-task-schedule>
 
-        <app-wp-task-more></app-wp-task-more>
+        <svg-wp-task-more></svg-wp-task-more>
     </div>
 
-    <app-wp-task-drag></app-wp-task-drag>
+    <svg-wp-task-drag></svg-wp-task-drag>
 
     <div class="bottom__bar"></div>
 </div>

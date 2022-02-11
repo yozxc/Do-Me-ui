@@ -126,7 +126,7 @@
     &:hover {
         background-color: #ececec;
 
-        & ::ng-deep app-wp-header-more svg.more {
+        & ::ng-deep svg-wp-header-more svg.more {
             stroke: black;
         }
     }
@@ -179,14 +179,14 @@
 
 // svg positions | sizes
 
-app-wp-view,
-app-wp-more,
-app-wp-header-more {
+svg-wp-view,
+svg-wp-more,
+svg-wp-header-more {
     width: 24px;
     height: 24px;
 }
 
-app-wp-header-arrow {
+svg-wp-header-arrow {
     width: 24px;
     height: 24px;
 

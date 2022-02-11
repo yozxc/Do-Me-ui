@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-wp-more',
+    selector: 'svg-wp-more',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

@@ -1,11 +1,11 @@
 <div class="tasks__list__header">
     <div class="tl__title">Overdue</div>
 
-    <app-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></app-wp-header-arrow>
+    <svg-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
     <div class="tl__icons__container">
         <div class="tli__wrapper">
-            <app-wp-header-more></app-wp-header-more>
+            <svg-wp-header-more></svg-wp-header-more>
         </div>
     </div>
 

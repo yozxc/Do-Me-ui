@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'app-wp-header-more',
+    selector: 'svg-wp-header-more',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

@@ -19,8 +19,8 @@ export class ModalsManagerComponent implements OnInit, AfterViewInit {
 
     // todo : dev temp
     ngAfterViewInit(): void {
-        setTimeout(() => {
-            this.MCS.openSettings();
-        }, 0);
+        // setTimeout(() => {
+        //     this.MCS.openSettings();
+        // }, 0);
     }
 }

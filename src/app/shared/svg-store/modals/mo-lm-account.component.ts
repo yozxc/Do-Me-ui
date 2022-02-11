@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'app-mo-lm-account',
+    selector: 'svg-mo-lm-account',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

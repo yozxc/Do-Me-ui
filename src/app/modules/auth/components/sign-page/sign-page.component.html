@@ -3,11 +3,11 @@
         <div class="standalone__title">Sign in</div>
 
         <div class="oAuth__button">
-            <app-google-icon class="oAuth__img"></app-google-icon>
+            <svg-google-icon class="oAuth__img"></svg-google-icon>
             <div class="oAuth__text">Sign in with Google</div>
         </div>
         <div class="oAuth__button">
-            <app-facebook-icon class="oAuth__img"></app-facebook-icon>
+            <svg-facebook-icon class="oAuth__img"></svg-facebook-icon>
             <div class="oAuth__text">Sign in with Facebook</div>
         </div>
 
@@ -32,16 +32,16 @@
                     name=""
                     id="authPasswordID"
                 />
-                <app-close-eye
+                <svg-close-eye
                     *ngIf="!passIsVisible"
                     (click)="togglePassIsVisible()"
                     class="pass__eye close"
-                ></app-close-eye>
-                <app-open-eye
+                ></svg-close-eye>
+                <svg-open-eye
                     *ngIf="passIsVisible"
                     (click)="togglePassIsVisible()"
                     class="pass__eye open"
-                ></app-open-eye>
+                ></svg-open-eye>
             </label>
         </div>
         <input class="button__submit" type="submit" value="Sign in" />

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-lm-inbox',
+    selector: 'svg-lm-inbox',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

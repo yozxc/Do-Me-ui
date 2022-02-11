@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'app-wp-header-arrow',
+    selector: 'svg-wp-header-arrow',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

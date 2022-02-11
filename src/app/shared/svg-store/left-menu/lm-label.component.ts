@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-lm-label',
+    selector: 'svg-lm-label',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

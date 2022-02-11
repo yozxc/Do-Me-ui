@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-st-neutral',
+    selector: 'svg-st-neutral',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

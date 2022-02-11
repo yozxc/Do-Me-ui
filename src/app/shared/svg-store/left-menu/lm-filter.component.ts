@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-lm-filter',
+    selector: 'svg-lm-filter',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

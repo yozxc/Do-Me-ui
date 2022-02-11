@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-wp-task-late',
+    selector: 'svg-wp-task-late',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

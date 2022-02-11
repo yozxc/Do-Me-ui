@@ -45,7 +45,7 @@
         background-color: #ececec;
     }
 
-    &.unavailable{
+    &.unavailable {
         cursor: not-allowed;
         opacity: 0.5;
         user-select: none;
@@ -99,7 +99,7 @@
     }
 
     &:hover {
-        & app-lm-plus ::ng-deep svg {
+        & svg-lm-plus ::ng-deep svg {
             opacity: 1;
         }
     }
@@ -170,10 +170,10 @@
             display: none;
         }
 
-        & app-lm-more ::ng-deep svg {
+        & svg-lm-more ::ng-deep svg {
             display: block;
         }
-        & app-lm-drag ::ng-deep svg {
+        & svg-lm-drag ::ng-deep svg {
             opacity: 1;
         }
     }
@@ -230,9 +230,9 @@
 
 // svg positions | sizes
 
-app-lm-dot,
-app-lm-label,
-app-lm-filter {
+svg-lm-dot,
+svg-lm-label,
+svg-lm-filter {
     position: absolute;
     top: 50%;
     left: 6px;
@@ -242,7 +242,7 @@ app-lm-filter {
     height: 24px;
 }
 
-app-lm-drag {
+svg-lm-drag {
     position: absolute;
     top: 42%;
     left: -24px;
@@ -252,7 +252,7 @@ app-lm-drag {
     width: 20px;
 }
 
-app-lm-more {
+svg-lm-more {
     position: absolute;
     top: 50%;
     right: 6px;
@@ -262,7 +262,7 @@ app-lm-more {
     width: calc(15px + 4px * 2);
 }
 
-app-lm-plus {
+svg-lm-plus {
     position: absolute;
     top: 50%;
     right: 10px;

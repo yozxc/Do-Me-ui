@@ -1,18 +1,18 @@
 <div class="left__menu" [ngClass]="{ closed: isClosed }">
     <div class="main__tab">
-        <app-lm-inbox styleCls="blue"></app-lm-inbox>
+        <svg-lm-inbox styleCls="blue"></svg-lm-inbox>
         <div class="tab__title">Inbox</div>
         <div class="tab__num gray">10</div>
     </div>
 
     <div class="main__tab active">
-        <app-lm-today></app-lm-today>
+        <svg-lm-today></svg-lm-today>
         <div class="tab__title">Today</div>
         <div class="tab__num red">7</div>
     </div>
 
     <div class="main__tab unavailable">
-        <app-lm-upcoming></app-lm-upcoming>
+        <svg-lm-upcoming></svg-lm-upcoming>
         <div class="tab__title">Upcoming</div>
     </div>
 
@@ -24,16 +24,16 @@
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let item of favorites" class="menu__proj">
-                <app-lm-dot *ngIf="item.type === 'project'" [styleCls]="item.colorCls"></app-lm-dot>
-                <app-lm-label *ngIf="item.type === 'label'" [styleCls]="item.colorCls"></app-lm-label>
-                <app-lm-filter *ngIf="item.type === 'filter'" [styleCls]="item.colorCls"></app-lm-filter>
+                <svg-lm-dot *ngIf="item.type === 'project'" [styleCls]="item.colorCls"></svg-lm-dot>
+                <svg-lm-label *ngIf="item.type === 'label'" [styleCls]="item.colorCls"></svg-lm-label>
+                <svg-lm-filter *ngIf="item.type === 'filter'" [styleCls]="item.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ item.name }}</div>
                 <div class="menu__proj__num gray">{{ item._todoTasks }}</div>
 
-                <app-lm-more></app-lm-more>
+                <svg-lm-more></svg-lm-more>
 
-                <app-lm-drag></app-lm-drag>
+                <svg-lm-drag></svg-lm-drag>
             </div>
         </div>
         <!-- favorites ngFor -->
@@ -45,19 +45,19 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Projects</div>
 
-            <app-lm-plus (click)="projectPlusEvent($event)"></app-lm-plus>
+            <svg-lm-plus (click)="projectPlusEvent($event)"></svg-lm-plus>
         </div>
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let proj of projects" class="menu__proj">
-                <app-lm-dot [styleCls]="proj.colorCls"></app-lm-dot>
+                <svg-lm-dot [styleCls]="proj.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ proj.name }}</div>
                 <div class="menu__proj__num gray">{{ proj._todoTasks }}</div>
 
-                <app-lm-more></app-lm-more>
+                <svg-lm-more></svg-lm-more>
 
-                <app-lm-drag></app-lm-drag>
+                <svg-lm-drag></svg-lm-drag>
             </div>
         </div>
         <!-- projects ngFor -->
@@ -69,19 +69,19 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Labels</div>
 
-            <app-lm-plus (click)="labelPlusEvent($event)"></app-lm-plus>
+            <svg-lm-plus (click)="labelPlusEvent($event)"></svg-lm-plus>
         </div>
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let label of labels" class="menu__proj">
-                <app-lm-label [styleCls]="label.colorCls"></app-lm-label>
+                <svg-lm-label [styleCls]="label.colorCls"></svg-lm-label>
 
                 <div class="menu__proj__title">{{ label.name }}</div>
                 <div class="menu__proj__num gray">{{ label._todoTasks }}</div>
 
-                <app-lm-more></app-lm-more>
+                <svg-lm-more></svg-lm-more>
 
-                <app-lm-drag></app-lm-drag>
+                <svg-lm-drag></svg-lm-drag>
             </div>
         </div>
         <!-- labels ngFor -->
@@ -93,19 +93,19 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Filters</div>
 
-            <app-lm-plus (click)="filterPlusEvent($event)"></app-lm-plus>
+            <svg-lm-plus (click)="filterPlusEvent($event)"></svg-lm-plus>
         </div>
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let filter of filters" class="menu__proj">
-                <app-lm-filter [styleCls]="filter.colorCls"></app-lm-filter>
+                <svg-lm-filter [styleCls]="filter.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ filter.name }}</div>
                 <div class="menu__proj__num gray">{{ filter._todoTasks }}</div>
 
-                <app-lm-more></app-lm-more>
+                <svg-lm-more></svg-lm-more>
 
-                <app-lm-drag></app-lm-drag>
+                <svg-lm-drag></svg-lm-drag>
             </div>
         </div>
         <!-- filters ngFor -->

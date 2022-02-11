@@ -1,7 +1,7 @@
 <ng-container *ngIf="!addInProgress">
     <div class="add" (click)="toggleAddInProgress(true)">
         <div class="bg__wrapper">
-            <app-wp-task-add></app-wp-task-add>
+            <svg-wp-task-add></svg-wp-task-add>
         </div>
 
         <div class="text">Add Task</div>
@@ -16,18 +16,18 @@
         <div class="editor__bottom">
             <div class="flex__container">
                 <div class="bottom__butt">
-                    <app-wp-schedule styleCls="charcoal"></app-wp-schedule>
+                    <svg-wp-schedule styleCls="charcoal"></svg-wp-schedule>
                     <div class="bot_but__text">Scheduled</div>
                 </div>
                 <div class="bottom__butt">
-                    <app-wp-inbox styleCls="blue"></app-wp-inbox>
+                    <svg-wp-inbox styleCls="blue"></svg-wp-inbox>
                     <div class="bot_but__text">Inbox</div>
                 </div>
             </div>
 
             <div class="flex__container">
-                <app-wp-label></app-wp-label>
-                <app-wp-priority></app-wp-priority>
+                <svg-wp-label></svg-wp-label>
+                <svg-wp-priority></svg-wp-priority>
             </div>
         </div>
     </div>

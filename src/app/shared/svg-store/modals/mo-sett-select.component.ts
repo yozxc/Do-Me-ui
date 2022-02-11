@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'app-mo-sett-select',
+    selector: 'svg-mo-sett-select',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

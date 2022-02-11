@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'app-wp-priority',
+    selector: 'svg-wp-priority',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

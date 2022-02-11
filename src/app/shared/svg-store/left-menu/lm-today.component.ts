@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-lm-today',
+    selector: 'svg-lm-today',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

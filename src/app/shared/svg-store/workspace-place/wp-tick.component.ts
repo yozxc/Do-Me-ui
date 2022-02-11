@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-wp-tick',
+    selector: 'svg-wp-tick',
     changeDetection: ChangeDetectionStrategy.OnPush,
     styles: [
         `

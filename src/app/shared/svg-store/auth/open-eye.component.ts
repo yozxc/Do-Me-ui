@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-open-eye',
+    selector: 'svg-open-eye',
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
         <svg width="24" height="24">

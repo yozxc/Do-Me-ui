@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-facebook-icon',
+    selector: 'svg-facebook-icon',
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
         <svg
