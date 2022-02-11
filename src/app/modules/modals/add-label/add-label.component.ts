@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ModalsControlerService } from '@app/modules/modals/modals-controler.service';
 
 @Component({
     selector: 'app-add-label',
     templateUrl: './add-label.component.html',
     styleUrls: ['./add-label.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddLabelComponent implements OnInit {
     colors = [

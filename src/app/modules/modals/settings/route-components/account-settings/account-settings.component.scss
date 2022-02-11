@@ -19,6 +19,10 @@
     font-weight: 700;
 
     margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
 }
 
 .content {
@@ -55,7 +59,7 @@
 
 .input__text {
     width: 400px;
-    height: 30px;
+    height: 34px;
     padding: 6px 10px;
     border: 1px solid #dde2e3;
     border-radius: 5px;
@@ -68,7 +72,7 @@
 .text {
     color: rgba(0, 0, 0, 0.88);
     font-family: $gFont;
-    font-size: 0.8em;
+    font-size: 0.875em;
 
     margin: 10px 0;
 }

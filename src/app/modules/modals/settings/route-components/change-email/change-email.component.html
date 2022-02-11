@@ -7,4 +7,41 @@
             </div>
         </div>
     </div>
+
+    <div class="field">
+        <div class="title">New email</div>
+
+        <div class="content">
+            <input class="input__text" type="text" />
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">Confirm new email</div>
+
+        <div class="content">
+            <input class="input__text" type="text" />
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">TodoNoist password <a class="link red" href="#">Forgot password?</a></div>
+
+        <div class="content">
+            <div class="input__pass__wrapper">
+                <input class="input__password" [attr.type]="passIsVisible ? 'text' : 'password'" />
+
+                <app-close-eye
+                    *ngIf="!passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye close"
+                ></app-close-eye>
+                <app-open-eye
+                    *ngIf="passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye open"
+                ></app-open-eye>
+            </div>
+        </div>
+    </div>
 </div>

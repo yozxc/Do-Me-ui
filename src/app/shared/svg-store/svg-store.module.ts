@@ -46,6 +46,11 @@ import { MoLmNotificationsComponent } from './modals/mo-lm-notifications.compone
 import { MoLmBackupsComponent } from './modals/mo-lm-backups.component';
 import { MoSettSelectComponent } from './modals/mo-sett-select.component';
 
+import { CloseEyeComponent } from './auth/close-eye.component';
+import { OpenEyeComponent } from './auth/open-eye.component';
+import { GoogleIconComponent } from './auth/google-icon.component';
+import { FacebookIconComponent } from './auth/facebook-icon.component';
+
 import { StDefaultComponent } from './settings-theme/st-default.component';
 import { StNoirComponent } from './settings-theme/st-noir.component';
 import { StDarkComponent } from './settings-theme/st-dark.component';
@@ -91,6 +96,7 @@ import { StTangerineComponent } from './settings-theme/st-tangerine.component';
             WpHeaderMoreComponent,
             WpHeaderArrowComponent,
         ],
+        ...[CloseEyeComponent, FacebookIconComponent, GoogleIconComponent, OpenEyeComponent],
         ...[
             MoCloseComponent,
             MoLmAccountComponent,
@@ -148,6 +154,7 @@ import { StTangerineComponent } from './settings-theme/st-tangerine.component';
             WpHeaderMoreComponent,
             WpHeaderArrowComponent,
         ],
+        ...[CloseEyeComponent, FacebookIconComponent, GoogleIconComponent, OpenEyeComponent],
         ...[
             MoCloseComponent,
             MoLmAccountComponent,

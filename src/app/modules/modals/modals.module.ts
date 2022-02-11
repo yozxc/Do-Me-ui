@@ -16,6 +16,7 @@ import { AdvancedSettingsComponent } from './settings/route-components/advanced-
 import { ThemeSettingsComponent } from './settings/route-components/theme-settings/theme-settings.component';
 import { RemovePhotoComponent } from './remove-photo/remove-photo.component';
 import { ChangeEmailComponent } from './settings/route-components/change-email/change-email.component';
+import { ChangePasswordComponent } from './settings/route-components/change-password/change-password.component';
 
 @NgModule({
     imports: [CommonModule, UiComponentsModule, SvgStoreModule],
@@ -31,6 +32,7 @@ import { ChangeEmailComponent } from './settings/route-components/change-email/c
         ThemeSettingsComponent,
         RemovePhotoComponent,
         ChangeEmailComponent,
+        ChangePasswordComponent,
     ],
     providers: [ModalsControlerService],
     exports: [ModalsManagerComponent],

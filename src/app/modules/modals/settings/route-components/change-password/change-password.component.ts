@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-change-email',
-    templateUrl: './change-email.component.html',
-    styleUrls: ['./change-email.component.scss'],
+    selector: 'app-change-password',
+    templateUrl: './change-password.component.html',
+    styleUrls: ['./change-password.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChangeEmailComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
     passIsVisible: boolean = false;
 
     constructor() {}

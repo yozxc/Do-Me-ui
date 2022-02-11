@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-general-settings',
-  templateUrl: './general-settings.component.html',
-  styleUrls: ['./general-settings.component.scss']
+    selector: 'app-general-settings',
+    templateUrl: './general-settings.component.html',
+    styleUrls: ['./general-settings.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GeneralSettingsComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {}
 }
