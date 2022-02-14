@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { SvgStoreModule } from '@shared/svg-store/svg-store.module';
 import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
+import { SvgModalsModule } from '@app/shared/svg-store/modals/svg-modals.module';
+import { SvgSettingsThemeModule } from '@app/shared/svg-store/settings-theme/svg-settings-theme.module';
 
 import { AddProjectComponent } from './add-project/add-project.component';
 import { ModalsManagerComponent } from './modals-manager.component';
@@ -21,7 +22,7 @@ import { ChangePasswordComponent } from './settings/route-components/change-pass
 import { DeleteAccountComponent } from './settings/route-components/delete-account/delete-account.component';
 
 @NgModule({
-    imports: [CommonModule, RouterModule, UiComponentsModule, SvgStoreModule],
+    imports: [CommonModule, RouterModule, SvgModalsModule, SvgSettingsThemeModule, UiComponentsModule],
     declarations: [
         ModalsManagerComponent,
         AddProjectComponent,
