@@ -5,12 +5,13 @@ import { RouterModule } from '@angular/router';
 import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
 import { SvgModalsModule } from '@app/shared/svg-store/modals/svg-modals.module';
 import { SvgSettingsThemeModule } from '@app/shared/svg-store/settings-theme/svg-settings-theme.module';
-import { SvgWorkspacePlaceModule } from '@shared/svg-store/workspace-place/svg-workspace-place.module';
 
 import { AddProjectComponent } from './add-project/add-project.component';
 import { ModalsManagerComponent } from './modals-manager.component';
 import { AddFilterComponent } from './add-filter/add-filter.component';
 import { AddLabelComponent } from './add-label/add-label.component';
+import { SvgWorkspacePlaceModule } from '@app/shared/svg-store/workspace-place/svg-workspace-place.module';
+import { SvgAuthModule } from '@shared/svg-store/auth/svg-auth.module';
 
 import { SettingsComponent } from './settings/settings.component';
 import { AccountSettingsComponent } from './settings/route-components/account-settings/account-settings.component';
@@ -30,6 +31,7 @@ import { QuickAddComponent } from './quick-add/quick-add.component';
         SvgModalsModule,
         SvgSettingsThemeModule,
         SvgWorkspacePlaceModule,
+        SvgAuthModule,
         UiComponentsModule,
     ],
     declarations: [

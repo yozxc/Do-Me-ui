@@ -11,8 +11,6 @@ import { MoLmProductivityComponent } from './mo-lm-productivity.component';
 import { MoLmRemindersComponent } from './mo-lm-reminders.component';
 import { MoLmThemeComponent } from './mo-lm-theme.component';
 import { MoSettSelectComponent } from './mo-sett-select.component';
-import { CloseEyeComponent } from './close-eye.component';
-import { OpenEyeComponent } from './open-eye.component';
 
 @NgModule({
     imports: [CommonModule],
@@ -27,8 +25,6 @@ import { OpenEyeComponent } from './open-eye.component';
         MoLmNotificationsComponent,
         MoLmBackupsComponent,
         MoSettSelectComponent,
-        CloseEyeComponent,
-        OpenEyeComponent,
     ],
     exports: [
         MoCloseComponent,
@@ -41,8 +37,6 @@ import { OpenEyeComponent } from './open-eye.component';
         MoLmNotificationsComponent,
         MoLmBackupsComponent,
         MoSettSelectComponent,
-        CloseEyeComponent,
-        OpenEyeComponent,
     ],
 })
 export class SvgModalsModule {}
