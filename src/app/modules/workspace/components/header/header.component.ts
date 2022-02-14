@@ -1,5 +1,5 @@
 import { LmStateService } from './../left-menu/lm-state.service';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-header',

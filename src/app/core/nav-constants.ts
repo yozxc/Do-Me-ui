@@ -1,4 +1,9 @@
-export enum ROUTE {
+export enum OUTLETS {
+    MODALS = 'modals',
+    SETTINGS_SPACE = 'settingsSpace',
+}
+
+export enum PAGES_ROUTE {
     AUTH = 'auth',
     SIGNIN = 'signIn',
     REGISTER = 'register',

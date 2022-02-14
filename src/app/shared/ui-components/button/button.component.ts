@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-button',
     template: `
-        <button [class]="styleCls" [ngClass]="{ disabled }">
+        <button (click)="clickEvent.emit()" [class]="styleCls" [ngClass]="{ disabled }">
             <ng-content></ng-content>
         </button>
 
@@ -15,6 +15,8 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 export class ButtonComponent implements OnInit {
     @Input() styleCls = 'black';
     @Input() disabled = false;
+
+    @Output() clickEvent: EventEmitter<any> = new EventEmitter();
 
     constructor() {}
 

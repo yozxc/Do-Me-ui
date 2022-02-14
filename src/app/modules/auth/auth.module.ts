@@ -1,8 +1,9 @@
-import { SvgStoreModule } from './../../shared/svg-store/svg-store.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { SvgStoreModule } from '@shared/svg-store/svg-store.module';
+
 import { SignPageComponent } from './components/sign-page/sign-page.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { ForgotPasswordPageComponent } from './components/forgot-pass-page/forgot-password-page.component';
