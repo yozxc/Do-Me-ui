@@ -7,11 +7,15 @@
         <app-search></app-search>
     </div>
     <div class="container">
-        <svg-header-add class="icon__wrapper"></svg-header-add>
-
-        <svg-header-help class="icon__wrapper"></svg-header-help>
-
-        <svg-header-bell class="icon__wrapper"></svg-header-bell>
+        <a class="container__link" [routerLink]="[{ outlets: { modals: 'quickAdd' } }]" [skipLocationChange]="true">
+            <svg-header-add class="icon__wrapper"></svg-header-add>
+        </a>
+        <a class="container__link">
+            <svg-header-help class="icon__wrapper"></svg-header-help>
+        </a>
+        <a class="container__link">
+            <svg-header-bell class="icon__wrapper"></svg-header-bell>
+        </a>
 
         <!-- todo : check -->
         <a class="ava__wrapper" [routerLink]="[{ outlets: { modals: 'settings' } }]" [skipLocationChange]="true">

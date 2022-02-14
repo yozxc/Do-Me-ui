@@ -20,6 +20,7 @@ export enum MODALS_ROUTE {
     ADD_LABEL = 'addLabel',
     ADD_FILTER = 'addFilter',
     SETTINGS = 'settings',
+    QUICK_ADD = 'quickAdd',
 }
 
 export enum SETTINGS_ROUTE {

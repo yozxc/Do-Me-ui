@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
 import { SvgModalsModule } from '@app/shared/svg-store/modals/svg-modals.module';
 import { SvgSettingsThemeModule } from '@app/shared/svg-store/settings-theme/svg-settings-theme.module';
+import { SvgWorkspacePlaceModule } from '@shared/svg-store/workspace-place/svg-workspace-place.module';
 
 import { AddProjectComponent } from './add-project/add-project.component';
 import { ModalsManagerComponent } from './modals-manager.component';
@@ -20,9 +21,17 @@ import { RemovePhotoComponent } from './remove-photo/remove-photo.component';
 import { ChangeEmailComponent } from './settings/route-components/change-email/change-email.component';
 import { ChangePasswordComponent } from './settings/route-components/change-password/change-password.component';
 import { DeleteAccountComponent } from './settings/route-components/delete-account/delete-account.component';
+import { QuickAddComponent } from './quick-add/quick-add.component';
 
 @NgModule({
-    imports: [CommonModule, RouterModule, SvgModalsModule, SvgSettingsThemeModule, UiComponentsModule],
+    imports: [
+        CommonModule,
+        RouterModule,
+        SvgModalsModule,
+        SvgSettingsThemeModule,
+        SvgWorkspacePlaceModule,
+        UiComponentsModule,
+    ],
     declarations: [
         ModalsManagerComponent,
         AddProjectComponent,
@@ -37,6 +46,7 @@ import { DeleteAccountComponent } from './settings/route-components/delete-accou
         ChangeEmailComponent,
         ChangePasswordComponent,
         DeleteAccountComponent,
+        QuickAddComponent,
     ],
     exports: [
         ModalsManagerComponent,

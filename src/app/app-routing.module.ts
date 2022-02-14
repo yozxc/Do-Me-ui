@@ -13,6 +13,7 @@ import { AddProjectComponent } from './modules/modals/add-project/add-project.co
 import { AddLabelComponent } from './modules/modals/add-label/add-label.component';
 import { AddFilterComponent } from './modules/modals/add-filter/add-filter.component';
 import { SettingsComponent } from './modules/modals/settings/settings.component';
+import { QuickAddComponent } from './modules/modals/quick-add/quick-add.component';
 
 import { AccountSettingsComponent } from './modules/modals/settings/route-components/account-settings/account-settings.component';
 import { GeneralSettingsComponent } from './modules/modals/settings/route-components/general-settings/general-settings.component';
@@ -44,6 +45,7 @@ const outletRoutes: Routes = [
         outlet: OUTLETS.MODALS,
         children: [...settingsRoutes],
     },
+    { path: `${MODALS_ROUTE.QUICK_ADD}`, component: QuickAddComponent, outlet: OUTLETS.MODALS },
 ];
 
 const routes: Routes = [

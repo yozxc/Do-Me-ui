@@ -1,0 +1,32 @@
+<div class="modal" (click)="onClose()">
+    <div class="main" (click)="$event.stopPropagation()">
+        <div class="title__text__editor">
+            <input type="text" class="task__title" placeholder="Task name ??" />
+
+            <textarea class="task__descrption" placeholder="Description"></textarea>
+        </div>
+
+        <div class="editor__bottom">
+            <div class="flex__container">
+                <div class="bottom__butt">
+                    <svg-wp-schedule styleCls="charcoal"></svg-wp-schedule>
+                    <div class="bot_but__text">Scheduled</div>
+                </div>
+                <div class="bottom__butt">
+                    <svg-wp-inbox styleCls="blue"></svg-wp-inbox>
+                    <div class="bot_but__text">Inbox</div>
+                </div>
+            </div>
+
+            <div class="flex__container">
+                <svg-wp-label></svg-wp-label>
+                <svg-wp-priority></svg-wp-priority>
+            </div>
+        </div>
+
+        <div class="buttons__wrapper">
+            <app-button styleCls="black mr10" [disabled]="true">Add task</app-button>
+            <app-button styleCls="white" (clickEvent)="onClose()">Cancel</app-button>
+        </div>
+    </div>
+</div>
