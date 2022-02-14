@@ -1,5 +1,5 @@
+import { Router } from '@angular/router';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ModalsControlerService } from '@app/modules/modals/modals-controler.service';
 
 @Component({
     selector: 'app-settings',
@@ -8,12 +8,17 @@ import { ModalsControlerService } from '@app/modules/modals/modals-controler.ser
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SettingsComponent implements OnInit {
-    constructor(private modalsControlerService: ModalsControlerService) {}
+    title: string = 'Account';
+
+    constructor(private router: Router) {}
 
     ngOnInit(): void {}
 
-    closeModal(e: MouseEvent) {
-        e.stopPropagation();
-        this.modalsControlerService.closeModal();
+    onClose() {
+        this.router.navigate([this.router.url]);
+    }
+
+    changeTitle(title: string) {
+        this.title = title;
     }
 }

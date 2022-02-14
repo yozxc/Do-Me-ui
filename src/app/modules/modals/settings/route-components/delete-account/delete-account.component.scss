@@ -1,0 +1,102 @@
+@import "vars";
+
+.main {
+    width: 100%;
+    height: 100%;
+    max-height: 584px;
+    padding: 16px;
+
+    overflow-y: auto;
+}
+
+.field {
+    margin-bottom: 20px;
+
+    &.noBotMarg {
+        margin-bottom: 0;
+    }
+}
+
+.title {
+    font-family: $gFont;
+    font-size: 0.85em;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.content {
+    display: flex;
+
+    &.column {
+        flex-direction: column;
+    }
+}
+
+.text {
+    color: rgba(0, 0, 0, 0.88);
+    font-family: $gFont;
+    font-size: 0.875em;
+
+    margin: 10px 0;
+
+    &.gray {
+        color: rgba(0, 0, 0, 0.56);
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.input__pass__wrapper {
+    position: relative;
+}
+
+.input__password {
+    width: 400px;
+    height: 34px;
+    padding: 6px 40px 6px 10px;
+    border: 1px solid #dde2e3;
+    border-radius: 5px;
+
+    font-family: $gFont;
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 0.8em;
+}
+
+.pass__eye {
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    cursor: pointer;
+
+    &.close ::ng-deep {
+        fill: gray;
+    }
+    &.close:hover {
+        background-color: #eee;
+        & ::ng-deep {
+            fill: #2b2b2b;
+        }
+    }
+
+    &.open ::ng-deep {
+        stroke: gray;
+    }
+    &.open:hover {
+        background-color: #eee;
+        & ::ng-deep {
+            stroke: #2b2b2b;
+        }
+    }
+}

@@ -1,6 +1,5 @@
 import { LmStateService } from './../left-menu/lm-state.service';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { ModalsControlerService } from '@app/modules/modals/modals-controler.service';
 
 @Component({
     selector: 'app-header',
@@ -9,16 +8,11 @@ import { ModalsControlerService } from '@app/modules/modals/modals-controler.ser
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-    constructor(public lmStateService: LmStateService, private modalsControlerService: ModalsControlerService) {}
+    constructor(public lmStateService: LmStateService) {}
 
     ngOnInit(): void {}
 
     headerMenuCLick() {
         this.lmStateService.toggleIsClosed();
-    }
-
-    onAvatarClick(e: MouseEvent) {
-        e.stopPropagation();
-        this.modalsControlerService.openSettings();
     }
 }

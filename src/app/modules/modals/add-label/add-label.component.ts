@@ -1,5 +1,5 @@
+import { Router } from '@angular/router';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ModalsControlerService } from '@app/modules/modals/modals-controler.service';
 
 @Component({
     selector: 'app-add-label',
@@ -34,7 +34,7 @@ export class AddLabelComponent implements OnInit {
 
     isColorListActive: boolean = false;
 
-    constructor(private modalsControlerService: ModalsControlerService) {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {}
 
@@ -47,8 +47,7 @@ export class AddLabelComponent implements OnInit {
         this.isColorListActive = false;
     }
 
-    closeModal(e: MouseEvent) {
-        e.stopPropagation();
-        this.modalsControlerService.closeModal();
+    onCancel() {
+        this.router.navigate([this.router.url]);
     }
 }

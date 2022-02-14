@@ -30,7 +30,7 @@
         <div class="content column">
             <div class="text">ionutmitu68@gmail.com</div>
 
-            <app-button styleCls="white">Change Email</app-button>
+            <app-button styleCls="white" (click)="changeEmail()">Change Email</app-button>
         </div>
     </div>
 
@@ -38,7 +38,7 @@
         <div class="title">Password</div>
 
         <div class="content column">
-            <app-button styleCls="white">Add Password</app-button>
+            <app-button styleCls="white" (click)="changePassword()">Change Password</app-button>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
                 be undone.
             </div>
 
-            <app-button styleCls="red">Permanently delete account</app-button>
+            <app-button styleCls="red" (click)="deleteAccount()">Permanently delete account</app-button>
         </div>
     </div>
 </div>

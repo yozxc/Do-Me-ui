@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ModalsControlerService } from '@app/modules/modals/modals-controler.service';
 import { LmStateService } from '../left-menu/lm-state.service';
 
 import { HeaderComponent } from './header.component';
@@ -12,7 +11,7 @@ describe('HeaderComponent', () => {
         await TestBed.configureTestingModule({
             declarations: [HeaderComponent],
             // todo : mock services
-            providers: [LmStateService, ModalsControlerService],
+            providers: [LmStateService],
         }).compileComponents();
     });
 

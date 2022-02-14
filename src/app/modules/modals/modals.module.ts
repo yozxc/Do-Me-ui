@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { SvgStoreModule } from '@shared/svg-store/svg-store.module';
 import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
@@ -8,7 +9,7 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { ModalsManagerComponent } from './modals-manager.component';
 import { AddFilterComponent } from './add-filter/add-filter.component';
 import { AddLabelComponent } from './add-label/add-label.component';
-import { ModalsControlerService } from './modals-controler.service';
+
 import { SettingsComponent } from './settings/settings.component';
 import { AccountSettingsComponent } from './settings/route-components/account-settings/account-settings.component';
 import { GeneralSettingsComponent } from './settings/route-components/general-settings/general-settings.component';
@@ -17,9 +18,10 @@ import { ThemeSettingsComponent } from './settings/route-components/theme-settin
 import { RemovePhotoComponent } from './remove-photo/remove-photo.component';
 import { ChangeEmailComponent } from './settings/route-components/change-email/change-email.component';
 import { ChangePasswordComponent } from './settings/route-components/change-password/change-password.component';
+import { DeleteAccountComponent } from './settings/route-components/delete-account/delete-account.component';
 
 @NgModule({
-    imports: [CommonModule, UiComponentsModule, SvgStoreModule],
+    imports: [CommonModule, RouterModule, UiComponentsModule, SvgStoreModule],
     declarations: [
         ModalsManagerComponent,
         AddProjectComponent,
@@ -33,8 +35,21 @@ import { ChangePasswordComponent } from './settings/route-components/change-pass
         RemovePhotoComponent,
         ChangeEmailComponent,
         ChangePasswordComponent,
+        DeleteAccountComponent,
     ],
-    providers: [ModalsControlerService],
-    exports: [ModalsManagerComponent],
+    exports: [
+        ModalsManagerComponent,
+        AddProjectComponent,
+        AddFilterComponent,
+        AddLabelComponent,
+        SettingsComponent,
+        AccountSettingsComponent,
+        GeneralSettingsComponent,
+        AdvancedSettingsComponent,
+        ThemeSettingsComponent,
+        RemovePhotoComponent,
+        ChangeEmailComponent,
+        ChangePasswordComponent,
+    ],
 })
 export class ModalsModule {}

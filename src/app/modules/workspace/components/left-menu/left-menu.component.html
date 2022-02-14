@@ -45,7 +45,12 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Projects</div>
 
-            <svg-lm-plus (click)="projectPlusEvent($event)"></svg-lm-plus>
+            <a
+                [routerLink]="[{ outlets: { modals: 'addProject' } }]"
+                [skipLocationChange]="true"
+                (click)="$event.stopPropagation()"
+                ><svg-lm-plus></svg-lm-plus
+            ></a>
         </div>
 
         <div class="menu__proj__wrapper">
@@ -69,7 +74,12 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Labels</div>
 
-            <svg-lm-plus (click)="labelPlusEvent($event)"></svg-lm-plus>
+            <a
+                [routerLink]="[{ outlets: { modals: 'addLabel' } }]"
+                [skipLocationChange]="true"
+                (click)="$event.stopPropagation()"
+                ><svg-lm-plus></svg-lm-plus
+            ></a>
         </div>
 
         <div class="menu__proj__wrapper">
@@ -93,7 +103,12 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Filters</div>
 
-            <svg-lm-plus (click)="filterPlusEvent($event)"></svg-lm-plus>
+            <a
+                [routerLink]="[{ outlets: { modals: 'addFilter' } }]"
+                [skipLocationChange]="true"
+                (click)="$event.stopPropagation()"
+                ><svg-lm-plus></svg-lm-plus
+            ></a>
         </div>
 
         <div class="menu__proj__wrapper">

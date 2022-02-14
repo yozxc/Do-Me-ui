@@ -1,0 +1,45 @@
+<div class="main">
+    <div class="content">
+        <div class="text">We'll be sorry to see you go, but thanks for trying Todoist!</div>
+    </div>
+
+    <div class="field">
+        <div class="content">
+            <div class="text">
+                Deleting your account is permanent.
+                <span class="bold">All your data will be wiped out immediately</span> and you won't be able to get it
+                back.
+            </div>
+        </div>
+    </div>
+
+    <div class="field noBotMarg">
+        <div class="title">TodoNoist password</div>
+
+        <div class="content">
+            <div class="input__pass__wrapper">
+                <input class="input__password" [attr.type]="passIsVisible ? 'text' : 'password'" />
+
+                <svg-close-eye
+                    *ngIf="!passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye close"
+                ></svg-close-eye>
+                <svg-open-eye
+                    *ngIf="passIsVisible"
+                    (click)="togglePassIsVisible()"
+                    class="pass__eye open"
+                ></svg-open-eye>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="content">
+            <div class="text gray">
+                Deleting your account requires your current password as confirmation. If you signed up via Google,
+                Facebook, or Apple, you can set a password in Account settings.
+            </div>
+        </div>
+    </div>
+</div>

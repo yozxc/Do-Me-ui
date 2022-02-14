@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,20 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountSettingsComponent implements OnInit {
-    constructor() {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {}
+
+    changeEmail() {
+        this.router.navigateByUrl('/workspace/(modals:settings/(settingsSpace:changeEmail))');
+    }
+
+    changePassword() {
+        this.router.navigateByUrl('/workspace/(modals:settings/(settingsSpace:changePassword))');
+    }
+
+    deleteAccount() {
+        console.log(this.router.url);
+        this.router.navigateByUrl('/workspace/(modals:settings/(settingsSpace:deleteAccount))');
+    }
 }

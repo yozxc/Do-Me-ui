@@ -1,4 +1,4 @@
-<div class="modal" (click)="closeModal($event)">
+<div class="modal" (click)="onCancel()">
     <div class="main" (click)="$event.stopPropagation()">
         <div class="header">
             <span>Add Label</span>
@@ -40,7 +40,7 @@
         <div class="footer">
             <div class="footer__butt__wrapp">
                 <app-button [styleCls]="'black mr10'">Save</app-button>
-                <app-button [styleCls]="'white'" (click)="closeModal($event)">Cancel</app-button>
+                <app-button [styleCls]="'white'" (click)="onCancel()">Cancel</app-button>
             </div>
         </div>
     </div>

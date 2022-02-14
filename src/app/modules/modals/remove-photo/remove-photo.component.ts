@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ModalsControlerService } from '../modals-controler.service';
 
 @Component({
     selector: 'app-remove-photo',
@@ -8,12 +7,7 @@ import { ModalsControlerService } from '../modals-controler.service';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RemovePhotoComponent implements OnInit {
-    constructor(private MCS: ModalsControlerService) {}
+    constructor() {}
 
     ngOnInit(): void {}
-
-    onClose(e: MouseEvent) {
-        e.stopPropagation();
-        this.MCS.closeModal();
-    }
 }
