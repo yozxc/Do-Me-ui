@@ -1,33 +1,35 @@
-<div class="tasks__list__header">
-    <ng-container *ngIf="!isChangingTitle; else taskEditor">
-        <div class="tl__title" (click)="isChangingTitle = true">{{ title }}</div>
+<div class="main__wrapper">
+    <div class="tasks__list__header">
+        <ng-container *ngIf="!isChangingTitle; else taskEditor">
+            <div class="tl__title" (click)="isChangingTitle = true">{{ title }}</div>
 
-        <svg-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
+            <svg-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
-        <div class="tl__icons__container">
-            <div class="tli__wrapper">
-                <svg-wp-header-more></svg-wp-header-more>
+            <div class="tl__icons__container">
+                <div class="tli__wrapper">
+                    <svg-wp-header-more></svg-wp-header-more>
+                </div>
             </div>
-        </div>
-    </ng-container>
+        </ng-container>
 
-    <ng-template #taskEditor>
-        <div class="pltlas__main">
-            <input class="pltlasm__input" type="text" #titleInput [value]="title" placeholder="Name this section" />
+        <ng-template #taskEditor>
+            <div class="pltlas__main">
+                <input class="pltlasm__input" type="text" #titleInput [value]="title" placeholder="Name this section" />
 
-            <div class="te__btns__wrapper">
-                <ui-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</ui-button>
-                <ui-button styleCls="white" (clickEvent)="isChangingTitle = false">Cancel</ui-button>
+                <div class="te__btns__wrapper">
+                    <ui-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</ui-button>
+                    <ui-button styleCls="white" (clickEvent)="isChangingTitle = false">Cancel</ui-button>
+                </div>
             </div>
-        </div>
-    </ng-template>
-    <!-- change title -->
+        </ng-template>
+        <!-- change title -->
 
-    <div class="bottom__bar"></div>
-</div>
+        <div class="bottom__bar"></div>
+    </div>
 
-<div *ngIf="!(isClosed$ | async)" class="task__list">
-    <app-list-task></app-list-task>
+    <div *ngIf="!(isClosed$ | async)" class="task__list">
+        <app-list-task></app-list-task>
 
-    <app-list-add-task></app-list-add-task>
+        <app-list-add-task></app-list-add-task>
+    </div>
 </div>

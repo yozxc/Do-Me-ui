@@ -1,11 +1,13 @@
 @import "vars";
 
-// __temp
+.main__wrapper {
+    margin-bottom: 12px;
+}
+
 .tasks__list__header {
     position: relative;
 
     padding: 5px 0;
-    margin-top: 12px;
 
     display: flex;
     justify-content: space-between;
@@ -76,8 +78,6 @@
 
     margin-top: 10px;
 }
-
-// __temp : end
 
 .bottom__bar {
     width: 100%;
