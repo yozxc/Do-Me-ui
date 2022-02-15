@@ -1,5 +1,5 @@
-<ng-container *ngIf="!addInProgress">
-    <div class="add" (click)="toggleAddInProgress(true)">
+<ng-container *ngIf="!addTaskEditor">
+    <div class="add" (click)="toggleAddTaskEditor(true)">
         <div class="bg__wrapper">
             <svg-wp-task-add></svg-wp-task-add>
         </div>
@@ -8,10 +8,21 @@
     </div>
 </ng-container>
 
-<div *ngIf="addInProgress" class="task__editor__wrapper">
-    <div class="editor__container">
-        <div class="te__title" contenteditable="true">Task name</div>
-        <div class="te__description" contenteditable="true">Description</div>
+<div *ngIf="addTaskEditor" class="task__editor__wrapper">
+    <div class="editor__container" [ngClass]="{ active: isFocused }">
+        <input
+            class="task__title"
+            type="text"
+            placeholder="Task name"
+            (focus)="isFocused = true"
+            (blur)="isFocused = false"
+        />
+        <textarea
+            class="task__description"
+            placeholder="Description"
+            (focus)="isFocused = true"
+            (blur)="isFocused = false"
+        ></textarea>
 
         <div class="editor__bottom">
             <div class="flex__container">
@@ -34,6 +45,6 @@
 
     <div class="bot_butt__wrapper">
         <app-button styleCls="black mr10" [disabled]="true">Add Task</app-button>
-        <app-button styleCls="white" (clickEvent)="toggleAddInProgress(false)">Cancel</app-button>
+        <app-button styleCls="white" (clickEvent)="toggleAddTaskEditor(false)">Cancel</app-button>
     </div>
 </div>

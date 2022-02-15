@@ -87,7 +87,7 @@
     &.active {
         & .menu__group_tab__arrow {
             transform: rotate(135deg);
-            top: 26%;
+            top: 36%;
             left: 14px;
         }
 
@@ -131,7 +131,7 @@
     border-left: none;
 
     position: absolute;
-    top: 36%;
+    top: 42%;
     left: 12px;
     transform: translate(0, -50%);
     transform: rotate(45deg);

@@ -4,16 +4,17 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     selector: 'app-list-add-task',
     templateUrl: './list-add-task.component.html',
     styleUrls: ['./list-add-task.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListAddTaskComponent implements OnInit {
-    addInProgress: boolean = false;
+    addTaskEditor: boolean = false;
+    isFocused: boolean = false;
 
     constructor() {}
 
     ngOnInit(): void {}
 
-    toggleAddInProgress(toggleTo: boolean) {
-        this.addInProgress = toggleTo;
+    toggleAddTaskEditor(toggleTo: boolean) {
+        this.addTaskEditor = toggleTo;
     }
 }

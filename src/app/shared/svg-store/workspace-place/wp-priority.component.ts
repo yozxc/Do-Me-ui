@@ -8,6 +8,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
             svg {
                 width: 100%;
                 height: 100%;
+                border-radius: 3px;
 
                 fill: #808080;
 

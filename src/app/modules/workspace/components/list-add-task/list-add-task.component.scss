@@ -37,8 +37,7 @@
 // task editor
 
 .editor__container {
-    width: 800px;
-    height: 130px;
+    width: 100%;
     border-radius: 10px;
     border: 1px solid #ddd;
 
@@ -46,51 +45,37 @@
     padding: 10px;
 
     position: relative;
-}
 
-.te__title {
-    width: 100%;
-    padding: 5px 0 5px 5px;
-
-    font-family: $gFont;
-    font-size: 0.85em;
-    font-weight: 600;
-    color: #202020;
-
-    border: none;
-    overflow: auto;
-    outline: none;
-    resize: none;
-    &::-webkit-scrollbar {
-        display: none;
+    &.active {
+        border-color: rgba(0, 0, 0, 0.4);
     }
 }
 
-.te__description {
+.task__title {
+    height: 21px;
     width: 100%;
-    padding: 5px 0 5px 5px;
-
-    font-family: $gFont;
-    font-size: 0.8em;
-    color: #202020;
-
     border: none;
-    overflow: auto;
+    outline: none;
+    font-family: $gFont;
+    font-size: 0.875em;
+    margin-bottom: 10px;
+}
+
+.task__description {
+    height: 34px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    border: none;
     outline: none;
     resize: none;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    font-family: $gFont;
+    font-size: 0.825em;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 
 .editor__bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    width: calc(100% - 10px * 2);
-    margin: 10px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
