@@ -2,12 +2,12 @@ import { BehaviorSubject } from 'rxjs';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-workspace-place-sub-list',
-    templateUrl: './workspace-place-sub-list.component.html',
-    styleUrls: ['./workspace-place-sub-list.component.scss'],
+    selector: 'app-wp-sub-list',
+    templateUrl: './wp-sub-list.component.html',
+    styleUrls: ['./wp-sub-list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WorkspacePlaceSubListComponent implements OnInit {
+export class WpSubListComponent implements OnInit {
     title: string = 'Overdue';
 
     isChangingTitle: boolean = false;
@@ -19,13 +19,10 @@ export class WorkspacePlaceSubListComponent implements OnInit {
 
     saveTitle(title: string) {
         this.title = title;
-        this.toggleIsChangingTitle(false);
+        this.isChangingTitle = false;
     }
 
     toggleIsClosed() {
         this.isClosed$.next(!this.isClosed$.getValue());
-    }
-    toggleIsChangingTitle(toggleTo: boolean) {
-        this.isChangingTitle = toggleTo;
     }
 }

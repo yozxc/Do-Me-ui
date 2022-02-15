@@ -15,14 +15,10 @@ export class ListAddTaskComponent implements OnInit {
     ngOnInit(): void {}
 
     onCancel() {
-        this.toggleAddTaskEditor(false);
+        this.addTaskEditor = false;
     }
     onSave() {
-        this.toggleAddTaskEditor(false);
+        this.addTaskEditor = false;
         //
-    }
-
-    toggleAddTaskEditor(toggleTo: boolean) {
-        this.addTaskEditor = toggleTo;
     }
 }

@@ -11,8 +11,4 @@ export class DeleteAccountComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {}
-
-    togglePassIsVisible() {
-        this.passIsVisible = !this.passIsVisible;
-    }
 }

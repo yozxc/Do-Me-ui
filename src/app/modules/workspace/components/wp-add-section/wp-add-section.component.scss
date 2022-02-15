@@ -1,0 +1,60 @@
+@import "vars";
+
+.hover__add {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 15px 0 0 0;
+    opacity: 0;
+
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: #3d3d3d;
+}
+
+.hover__text {
+    margin: 0 5px;
+    font-family: $gFont;
+    font-weight: 700;
+    font-size: 0.825em;
+    white-space: nowrap;
+}
+
+.editor {
+    margin: 15px 0;
+
+    width: 100%;
+}
+
+.edit__input {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+
+    font-size: 0.85em;
+    font-family: $gFont;
+    font-weight: 700;
+
+    outline: none;
+
+    &:focus {
+        border-color: grey;
+    }
+}
+
+.btns__wrapper {
+    display: flex;
+    align-items: center;
+
+    margin-top: 10px;
+}

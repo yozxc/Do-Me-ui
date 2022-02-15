@@ -40,12 +40,12 @@
                 />
                 <svg-close-eye
                     *ngIf="!passIsVisible"
-                    (click)="togglePassIsVisible()"
+                    (click)="passIsVisible = !passIsVisible"
                     class="pass__eye close"
                 ></svg-close-eye>
                 <svg-open-eye
                     *ngIf="passIsVisible"
-                    (click)="togglePassIsVisible()"
+                    (click)="passIsVisible = !passIsVisible"
                     class="pass__eye open"
                 ></svg-open-eye>
             </label>
@@ -61,12 +61,12 @@
                 />
                 <svg-close-eye
                     *ngIf="!passIsVisible"
-                    (click)="togglePassIsVisible()"
+                    (click)="passIsVisible = !passIsVisible"
                     class="pass__eye close"
                 ></svg-close-eye>
                 <svg-open-eye
                     *ngIf="passIsVisible"
-                    (click)="togglePassIsVisible()"
+                    (click)="passIsVisible = !passIsVisible"
                     class="pass__eye open"
                 ></svg-open-eye>
             </label>

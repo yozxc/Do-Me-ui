@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'app-button',
+    selector: 'ui-button',
     template: `
         <button (click)="clickEvent.emit()" [class]="styleCls" [ngClass]="{ disabled }">
             <ng-content></ng-content>

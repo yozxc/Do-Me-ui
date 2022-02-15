@@ -39,7 +39,7 @@
 }
 
 .task__descrption {
-    height: 36px;
+    height: 46px;
     width: 100%;
     min-width: 100%;
     max-width: 100%;
@@ -52,8 +52,6 @@
     font-size: 0.825em;
 
     overflow: hidden;
-
-    margin-bottom: 10px;
 }
 
 .editor__bottom {
@@ -96,14 +94,7 @@
     color: #555;
 }
 
-.bot_butt__wrapper {
-    display: flex;
-    align-items: center;
-
-    margin-top: 10px;
-}
-
-.buttons__wrapper {
+.btns__wrapper {
     display: flex;
     align-items: center;
 

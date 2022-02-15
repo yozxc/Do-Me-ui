@@ -14,8 +14,4 @@ export class ListTaskComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {}
-
-    toggleIsChecked() {
-        this.isChecked = !this.isChecked;
-    }
 }

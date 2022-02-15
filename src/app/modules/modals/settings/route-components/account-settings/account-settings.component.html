@@ -7,9 +7,9 @@
 
             <div class="photo__settings">
                 <div class="h17px"></div>
-                <div class="buttons__wrapper">
-                    <app-button styleCls="mr10 white">Change photo</app-button>
-                    <app-button styleCls="red">Remove photo</app-button>
+                <div class="btns__wrapper">
+                    <ui-button styleCls="mr10 white">Change photo</ui-button>
+                    <ui-button styleCls="red">Remove photo</ui-button>
                 </div>
                 <div class="photo__size">Pick a photo up to 4MB.</div>
             </div>
@@ -30,7 +30,7 @@
         <div class="content column">
             <div class="text">ionutmitu68@gmail.com</div>
 
-            <app-button styleCls="white" (clickEvent)="changeEmail()">Change Email</app-button>
+            <ui-button styleCls="white" (clickEvent)="changeEmail()">Change Email</ui-button>
         </div>
     </div>
 
@@ -38,7 +38,7 @@
         <div class="title">Password</div>
 
         <div class="content column">
-            <app-button styleCls="white" (clickEvent)="changePassword()">Change Password</app-button>
+            <ui-button styleCls="white" (clickEvent)="changePassword()">Change Password</ui-button>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
                 be undone.
             </div>
 
-            <app-button styleCls="red" (clickEvent)="deleteAccount()">Permanently delete account</app-button>
+            <ui-button styleCls="red" (clickEvent)="deleteAccount()">Permanently delete account</ui-button>
         </div>
     </div>
 </div>

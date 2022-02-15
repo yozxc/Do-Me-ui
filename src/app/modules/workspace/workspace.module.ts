@@ -15,7 +15,8 @@ import { LeftMenuComponent } from './components/left-menu/left-menu.component';
 import { WorkspacePlaceComponent } from './components/workspace-place/workspace-place.component';
 import { ListTaskComponent } from './components/list-task/list-task.component';
 import { ListAddTaskComponent } from './components/list-add-task/list-add-task.component';
-import { WorkspacePlaceSubListComponent } from './components/workspace-place-sub-list/workspace-place-sub-list.component';
+import { WpSubListComponent } from './components/wp-sub-list/wp-sub-list.component';
+import { WpAddSectionComponent } from './components/wp-add-section/wp-add-section.component';
 
 import { LmStateService } from './components/left-menu/lm-state.service';
 
@@ -38,7 +39,8 @@ import { LmStateService } from './components/left-menu/lm-state.service';
         WorkspacePlaceComponent,
         ListTaskComponent,
         ListAddTaskComponent,
-        WorkspacePlaceSubListComponent,
+        WpSubListComponent,
+        WpAddSectionComponent,
     ],
     exports: [WorkspaceComponent],
 })

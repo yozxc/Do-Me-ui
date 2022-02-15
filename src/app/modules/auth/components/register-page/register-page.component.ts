@@ -12,8 +12,4 @@ export class RegisterPageComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {}
-
-    togglePassIsVisible() {
-        this.passIsVisible = !this.passIsVisible;
-    }
 }

@@ -38,10 +38,6 @@ export class AddProjectComponent implements OnInit {
 
     ngOnInit(): void {}
 
-    toggleIsColorListActive() {
-        this.isColorListActive = !this.isColorListActive;
-    }
-
     setCurrentColorID(id: number) {
         this.currentColorID = id;
         this.isColorListActive = false;

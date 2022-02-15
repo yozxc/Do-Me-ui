@@ -12,8 +12,4 @@ export class ChangePasswordComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {}
-
-    togglePassIsVisible() {
-        this.passIsVisible = !this.passIsVisible;
-    }
 }

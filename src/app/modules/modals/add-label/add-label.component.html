@@ -14,7 +14,7 @@
             <div class="field">
                 <div class="label">Label color</div>
 
-                <div class="selected__color" (click)="toggleIsColorListActive()">
+                <div class="selected__color" (click)="isColorListActive = !isColorListActive">
                     <div [class]="'dot ' + colors[currentColorID].styleCls"></div>
                     <span class="color__text">{{ colors[currentColorID].name }}</span>
                 </div>
@@ -39,8 +39,8 @@
 
         <div class="footer">
             <div class="footer__butt__wrapp">
-                <app-button styleCls="white mr10" (clickEvent)="onCancel()">Cancel</app-button>
-                <app-button styleCls="black">Save</app-button>
+                <ui-button styleCls="white mr10" (clickEvent)="onCancel()">Cancel</ui-button>
+                <ui-button styleCls="black">Save</ui-button>
             </div>
         </div>
     </div>

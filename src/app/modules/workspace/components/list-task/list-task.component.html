@@ -1,6 +1,6 @@
 <div class="task">
     <label class="check__label" [for]="checkboxID">
-        <input class="hidden__checkbox" type="checkbox" name="" [id]="checkboxID" (change)="toggleIsChecked()" />
+        <input class="hidden__checkbox" type="checkbox" name="" [id]="checkboxID" (change)="isChecked = !isChecked" />
 
         <div class="custom__check">
             <svg-wp-tick *ngIf="isChecked"></svg-wp-tick>

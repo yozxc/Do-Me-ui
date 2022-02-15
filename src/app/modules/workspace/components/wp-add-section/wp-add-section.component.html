@@ -1,0 +1,16 @@
+<div *ngIf="!isOnAdd; else addEditor" class="hover__add" (click)="isOnAdd = true">
+    <div class="line"></div>
+    <div class="hover__text">Add section</div>
+    <div class="line"></div>
+</div>
+
+<ng-template #addEditor>
+    <div class="editor">
+        <input class="edit__input" type="text" placeholder="Name this section" />
+
+        <div class="btns__wrapper">
+            <ui-button styleCls="black mr10" [disabled]="true">Save</ui-button>
+            <ui-button styleCls="white" (clickEvent)="isOnAdd = false">Cancel</ui-button>
+        </div>
+    </div>
+</ng-template>

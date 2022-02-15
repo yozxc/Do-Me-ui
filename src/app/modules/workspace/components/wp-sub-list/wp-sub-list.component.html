@@ -1,6 +1,6 @@
 <div class="tasks__list__header">
     <ng-container *ngIf="!isChangingTitle; else taskEditor">
-        <div class="tl__title" (click)="toggleIsChangingTitle(true)">{{ title }}</div>
+        <div class="tl__title" (click)="isChangingTitle = true">{{ title }}</div>
 
         <svg-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
@@ -15,9 +15,9 @@
         <div class="pltlas__main">
             <input class="pltlasm__input" type="text" #titleInput [value]="title" placeholder="Name this section" />
 
-            <div class="te__buttons__wrapper">
-                <app-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</app-button>
-                <app-button styleCls="white" (clickEvent)="toggleIsChangingTitle(false)">Cancel</app-button>
+            <div class="te__btns__wrapper">
+                <ui-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</ui-button>
+                <ui-button styleCls="white" (clickEvent)="isChangingTitle = false">Cancel</ui-button>
             </div>
         </div>
     </ng-template>
