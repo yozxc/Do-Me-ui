@@ -1,23 +1,26 @@
 <div class="tasks__list__header">
-    <div class="tl__title">Overdue</div>
+    <ng-container *ngIf="!isChangingTitle; else taskEditor">
+        <div class="tl__title" (click)="toggleIsChangingTitle(true)">{{ title }}</div>
 
-    <svg-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
+        <svg-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
-    <div class="tl__icons__container">
-        <div class="tli__wrapper">
-            <svg-wp-header-more></svg-wp-header-more>
+        <div class="tl__icons__container">
+            <div class="tli__wrapper">
+                <svg-wp-header-more></svg-wp-header-more>
+            </div>
         </div>
-    </div>
+    </ng-container>
 
-    <!-- todo : set functional + refactor css + buttons margins -->
-    <!-- <div class="pltlas__main">
-        <input class="pltlasm__input" type="text" placeholder="Name this section" />
+    <ng-template #taskEditor>
+        <div class="pltlas__main">
+            <input class="pltlasm__input" type="text" #titleInput [value]="title" placeholder="Name this section" />
 
-        <div class="te__buttons__wrapper">
-            <app-button styleCls="black mr10">Save</app-button>
-            <app-button styleCls="white">Cancel</app-button>
+            <div class="te__buttons__wrapper">
+                <app-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</app-button>
+                <app-button styleCls="white" (clickEvent)="toggleIsChangingTitle(false)">Cancel</app-button>
+            </div>
         </div>
-    </div> -->
+    </ng-template>
     <!-- change title -->
 
     <div class="bottom__bar"></div>

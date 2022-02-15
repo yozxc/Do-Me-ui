@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     selector: 'app-list-add-task',
     templateUrl: './list-add-task.component.html',
     styleUrls: ['./list-add-task.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.Default,
 })
 export class ListAddTaskComponent implements OnInit {
     addTaskEditor: boolean = false;
@@ -13,6 +13,14 @@ export class ListAddTaskComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {}
+
+    onCancel() {
+        this.toggleAddTaskEditor(false);
+    }
+    onSave() {
+        this.toggleAddTaskEditor(false);
+        //
+    }
 
     toggleAddTaskEditor(toggleTo: boolean) {
         this.addTaskEditor = toggleTo;

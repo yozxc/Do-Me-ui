@@ -14,6 +14,7 @@
             class="task__title"
             type="text"
             placeholder="Task name"
+            #addTaskNameInput
             (focus)="isFocused = true"
             (blur)="isFocused = false"
         />
@@ -44,7 +45,7 @@
     </div>
 
     <div class="bot_butt__wrapper">
-        <app-button styleCls="black mr10" [disabled]="true">Add Task</app-button>
-        <app-button styleCls="white" (clickEvent)="toggleAddTaskEditor(false)">Cancel</app-button>
+        <app-button styleCls="black mr10" [disabled]="true" (clickEvent)="onSave()">Add Task</app-button>
+        <app-button styleCls="white" (clickEvent)="onCancel()">Cancel</app-button>
     </div>
 </div>
