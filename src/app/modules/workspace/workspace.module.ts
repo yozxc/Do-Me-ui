@@ -12,7 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { WorkspaceComponent } from './workspace.component';
 import { SearchComponent } from './search/search.component';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
-import { WorkspacePlaceComponent } from './workspace-place/workspace-place.component';
+import { WpListComponent } from './wp-list/wp-list.component';
 import { ListTaskComponent } from './list-task/list-task.component';
 import { ListAddTaskComponent } from './list-add-task/list-add-task.component';
 import { WpSubListComponent } from './wp-sub-list/wp-sub-list.component';
@@ -36,7 +36,7 @@ import { LmStateService } from './left-menu/lm-state.service';
         WorkspaceComponent,
         SearchComponent,
         LeftMenuComponent,
-        WorkspacePlaceComponent,
+        WpListComponent,
         ListTaskComponent,
         ListAddTaskComponent,
         WpSubListComponent,
