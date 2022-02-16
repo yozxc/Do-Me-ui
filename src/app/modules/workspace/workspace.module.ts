@@ -8,17 +8,17 @@ import { SvgWorkspacePlaceModule } from '@app/shared/svg-store/workspace-place/s
 import { SvgHeaderModule } from '@app/shared/svg-store/header/svg-header.module';
 import { SvgLeftMenuModule } from '@app/shared/svg-store/left-menu/svg-left-menu.module';
 
-import { HeaderComponent } from './components/header/header.component';
-import { WorkspaceComponent } from './components/workspace.component';
-import { SearchComponent } from './components/search/search.component';
-import { LeftMenuComponent } from './components/left-menu/left-menu.component';
-import { WorkspacePlaceComponent } from './components/workspace-place/workspace-place.component';
-import { ListTaskComponent } from './components/list-task/list-task.component';
-import { ListAddTaskComponent } from './components/list-add-task/list-add-task.component';
-import { WpSubListComponent } from './components/wp-sub-list/wp-sub-list.component';
-import { WpAddSectionComponent } from './components/wp-add-section/wp-add-section.component';
+import { HeaderComponent } from './header/header.component';
+import { WorkspaceComponent } from './workspace.component';
+import { SearchComponent } from './search/search.component';
+import { LeftMenuComponent } from './left-menu/left-menu.component';
+import { WorkspacePlaceComponent } from './workspace-place/workspace-place.component';
+import { ListTaskComponent } from './list-task/list-task.component';
+import { ListAddTaskComponent } from './list-add-task/list-add-task.component';
+import { WpSubListComponent } from './wp-sub-list/wp-sub-list.component';
+import { WpAddSectionComponent } from './wp-add-section/wp-add-section.component';
 
-import { LmStateService } from './components/left-menu/lm-state.service';
+import { LmStateService } from './left-menu/lm-state.service';
 
 @NgModule({
     imports: [

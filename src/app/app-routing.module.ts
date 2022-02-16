@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PAGES_ROUTE, MODALS_ROUTE, SETTINGS_ROUTE, OUTLETS } from './core/nav-constants';
 
-import { WorkspaceComponent } from './modules/workspace/components/workspace.component';
-import { SignPageComponent } from './modules/auth/components/sign-page/sign-page.component';
-import { RegisterPageComponent } from './modules/auth/components/register-page/register-page.component';
-import { ForgotPasswordPageComponent } from './modules/auth/components/forgot-pass-page/forgot-password-page.component';
-import { ResetPassPageComponent } from './modules/auth/components/reset-pass-page/reset-pass-page.component';
+import { WorkspaceComponent } from './modules/workspace/workspace.component';
+import { SignPageComponent } from './modules/auth/sign-page/sign-page.component';
+import { RegisterPageComponent } from './modules/auth/register-page/register-page.component';
+import { ForgotPasswordPageComponent } from './modules/auth/forgot-pass-page/forgot-password-page.component';
+import { ResetPassPageComponent } from './modules/auth/reset-pass-page/reset-pass-page.component';
 
 import { AddProjectComponent } from './modules/modals/add-project/add-project.component';
 import { AddLabelComponent } from './modules/modals/add-label/add-label.component';
