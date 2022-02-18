@@ -1,6 +1,7 @@
 export enum OUTLETS {
     MODALS = 'modals',
     SETTINGS_SPACE = 'settingsSpace',
+    MAIN_PLACE = 'mainPlace',
 }
 
 //
@@ -32,4 +33,9 @@ export enum SETTINGS_ROUTE {
     CHANGE_EMAIL = 'changeEmail',
     CHANGE_PASSWORD = 'changePassword',
     DELETE_ACCOUNT = 'deleteAccount',
+}
+
+export enum MAIN_PLACE_ROUTE {
+    TODAY = 'today',
+    INBOX = 'inbox',
 }

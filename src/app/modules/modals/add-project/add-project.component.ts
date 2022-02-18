@@ -44,6 +44,6 @@ export class AddProjectComponent implements OnInit {
     }
 
     onCancel() {
-        this.router.navigate([this.router.url]);
+        console.log(this.router.url);
     }
 }

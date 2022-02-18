@@ -1,15 +1,15 @@
 <div class="left__menu" [ngClass]="{ closed: isClosed }">
-    <div class="main__tab">
+    <a class="main__tab" [routerLink]="[{ outlets: { mainPlace: 'inbox' } }]" [skipLocationChange]="true">
         <svg-lm-inbox styleCls="blue"></svg-lm-inbox>
         <div class="tab__title">Inbox</div>
         <div class="tab__num gray">10</div>
-    </div>
+    </a>
 
-    <div class="main__tab active">
+    <a class="main__tab" [routerLink]="[{ outlets: { mainPlace: 'today' } }]" [skipLocationChange]="true">
         <svg-lm-today></svg-lm-today>
         <div class="tab__title">Today</div>
         <div class="tab__num red">7</div>
-    </div>
+    </a>
 
     <div class="main__tab unavailable">
         <svg-lm-upcoming></svg-lm-upcoming>

@@ -12,13 +12,14 @@ import { HeaderComponent } from './header/header.component';
 import { WorkspaceComponent } from './workspace.component';
 import { SearchComponent } from './search/search.component';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
-import { WpListComponent } from './wp-list/wp-list.component';
-import { ListTaskComponent } from './list-task/list-task.component';
-import { ListAddTaskComponent } from './list-add-task/list-add-task.component';
-import { WpSubListComponent } from './wp-sub-list/wp-sub-list.component';
-import { WpAddSectionComponent } from './wp-add-section/wp-add-section.component';
+import { ListTaskComponent } from './_type-list/list-task/list-task.component';
+import { ListAddTaskComponent } from './_type-list/list-add-task/list-add-task.component';
+import { ListSubListComponent } from './_type-list/list-sub-list/list-sub-list.component';
+import { ListAddSectionComponent } from './_type-list/list-add-section/list-add-section.component';
 
 import { LmStateService } from './left-menu/lm-state.service';
+import { TodayComponent } from './main-place/today/today.component';
+import { InboxComponent } from './main-place/inbox/inbox.component';
 
 @NgModule({
     imports: [
@@ -36,11 +37,12 @@ import { LmStateService } from './left-menu/lm-state.service';
         WorkspaceComponent,
         SearchComponent,
         LeftMenuComponent,
-        WpListComponent,
         ListTaskComponent,
         ListAddTaskComponent,
-        WpSubListComponent,
-        WpAddSectionComponent,
+        ListSubListComponent,
+        ListAddSectionComponent,
+        TodayComponent,
+        InboxComponent,
     ],
     exports: [WorkspaceComponent],
 })

@@ -1,7 +1,9 @@
+import { InboxComponent } from './modules/workspace/main-place/inbox/inbox.component';
+import { TodayComponent } from './modules/workspace/main-place/today/today.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PAGES_ROUTE, MODALS_ROUTE, SETTINGS_ROUTE, OUTLETS } from './core/nav-constants';
+import { PAGES_ROUTE, MODALS_ROUTE, SETTINGS_ROUTE, MAIN_PLACE_ROUTE, OUTLETS } from './core/nav-constants';
 
 import { WorkspaceComponent } from './modules/workspace/workspace.component';
 import { SignPageComponent } from './modules/auth/sign-page/sign-page.component';
@@ -35,7 +37,7 @@ const settingsRoutes: Routes = [
     { path: `${SETTINGS_ROUTE.DELETE_ACCOUNT}`, component: DeleteAccountComponent, outlet: OUTLETS.SETTINGS_SPACE },
 ];
 
-const outletRoutes: Routes = [
+const modalsRoutes: Routes = [
     { path: `${MODALS_ROUTE.ADD_PROJECT}`, component: AddProjectComponent, outlet: OUTLETS.MODALS },
     { path: `${MODALS_ROUTE.ADD_LABEL}`, component: AddLabelComponent, outlet: OUTLETS.MODALS },
     { path: `${MODALS_ROUTE.ADD_FILTER}`, component: AddFilterComponent, outlet: OUTLETS.MODALS },
@@ -48,8 +50,18 @@ const outletRoutes: Routes = [
     { path: `${MODALS_ROUTE.QUICK_ADD}`, component: QuickAddComponent, outlet: OUTLETS.MODALS },
 ];
 
-const routes: Routes = [
-    { path: `${PAGES_ROUTE.WORKSPACE}`, component: WorkspaceComponent, children: [...outletRoutes] },
+const mainPlaceRoutes: Routes = [
+    { path: ``, component: TodayComponent, outlet: OUTLETS.MAIN_PLACE },
+    { path: `${MAIN_PLACE_ROUTE.TODAY}`, component: TodayComponent, outlet: OUTLETS.MAIN_PLACE },
+    { path: `${MAIN_PLACE_ROUTE.INBOX}`, component: InboxComponent, outlet: OUTLETS.MAIN_PLACE },
+];
+
+const pagesRoutes: Routes = [
+    {
+        path: `${PAGES_ROUTE.WORKSPACE}`,
+        component: WorkspaceComponent,
+        children: [...mainPlaceRoutes, ...modalsRoutes],
+    },
 
     { path: ``, redirectTo: `${PAGES_ROUTE.AUTH}/${PAGES_ROUTE.SIGNIN}`, pathMatch: 'full' },
     { path: `${PAGES_ROUTE.AUTH}/${PAGES_ROUTE.SIGNIN}`, component: SignPageComponent },
@@ -62,7 +74,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(pagesRoutes)],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WpAddSectionComponent } from './wp-add-section.component';
+import { InboxComponent } from './inbox.component';
 
-describe('WpAddSectionComponent', () => {
-  let component: WpAddSectionComponent;
-  let fixture: ComponentFixture<WpAddSectionComponent>;
+describe('InboxComponent', () => {
+  let component: InboxComponent;
+  let fixture: ComponentFixture<InboxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WpAddSectionComponent ]
+      declarations: [ InboxComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WpAddSectionComponent);
+    fixture = TestBed.createComponent(InboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

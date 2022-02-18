@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WpListComponent } from './wp-list.component';
+import { ListAddSectionComponent } from './list-add-section.component';
 
-describe('WpListComponent', () => {
-    let component: WpListComponent;
-    let fixture: ComponentFixture<WpListComponent>;
+describe('ListAddSectionComponent', () => {
+    let component: ListAddSectionComponent;
+    let fixture: ComponentFixture<ListAddSectionComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [WpListComponent],
+            declarations: [ListAddSectionComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(WpListComponent);
+        fixture = TestBed.createComponent(ListAddSectionComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

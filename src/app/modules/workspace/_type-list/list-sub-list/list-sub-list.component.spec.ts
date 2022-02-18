@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WpSubListComponent } from './wp-sub-list.component';
+import { ListSubListComponent } from './list-sub-list.component';
 
 describe('WorkspacePlaceSubListComponent', () => {
-    let component: WpSubListComponent;
-    let fixture: ComponentFixture<WpSubListComponent>;
+    let component: ListSubListComponent;
+    let fixture: ComponentFixture<ListSubListComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [WpSubListComponent],
+            declarations: [ListSubListComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(WpSubListComponent);
+        fixture = TestBed.createComponent(ListSubListComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

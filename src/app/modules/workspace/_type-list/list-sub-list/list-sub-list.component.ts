@@ -2,12 +2,12 @@ import { BehaviorSubject } from 'rxjs';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-wp-sub-list',
-    templateUrl: './wp-sub-list.component.html',
-    styleUrls: ['./wp-sub-list.component.scss'],
+    selector: 'app-list-sub-list',
+    templateUrl: './list-sub-list.component.html',
+    styleUrls: ['./list-sub-list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WpSubListComponent implements OnInit {
+export class ListSubListComponent implements OnInit {
     title: string = 'Overdue';
 
     isChangingTitle: boolean = false;
