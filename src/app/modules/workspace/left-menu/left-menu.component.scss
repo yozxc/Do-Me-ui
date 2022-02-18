@@ -34,7 +34,6 @@
 
     border-radius: 5px;
 
-    text-decoration: none;
     color: black;
     cursor: pointer;
     transition: 0.15s;
@@ -185,6 +184,7 @@
     font-family: $gFont;
     font-size: 0.8em;
     user-select: none;
+    color: black;
 }
 
 .menu__proj__num {

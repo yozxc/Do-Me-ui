@@ -55,6 +55,7 @@ const mainPlaceRoutes: Routes = [
     { path: ``, redirectTo: `${MAIN_PLACE_ROUTE.TODAY}`, pathMatch: 'full' },
     { path: `${MAIN_PLACE_ROUTE.TODAY}`, component: TodayComponent },
     { path: `${MAIN_PLACE_ROUTE.INBOX}`, component: InboxComponent },
+    { path: `${MAIN_PLACE_ROUTE.PROJECT}/:${MAIN_PLACE_ROUTE.ID}`, component: InboxComponent },
 ];
 
 const pagesRoutes: Routes = [
