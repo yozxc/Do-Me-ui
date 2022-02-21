@@ -20,6 +20,7 @@ import { ListAddSectionComponent } from './_type-list/list-add-section/list-add-
 import { LmStateService } from './left-menu/lm-state.service';
 import { TodayComponent } from './main-place/today/today.component';
 import { InboxComponent } from './main-place/inbox/inbox.component';
+import { ListHeaderComponent } from './_type-list/list-header/list-header.component';
 
 @NgModule({
     imports: [
@@ -43,6 +44,7 @@ import { InboxComponent } from './main-place/inbox/inbox.component';
         ListAddSectionComponent,
         TodayComponent,
         InboxComponent,
+        ListHeaderComponent,
     ],
     exports: [WorkspaceComponent],
 })

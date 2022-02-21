@@ -1,0 +1,32 @@
+<div class="header">
+    <div class="container _end">
+        <ng-container *ngIf="!isOnEdit; else addEditor">
+            <div class="title" (click)="editableTitle && (isOnEdit = true)">{{ title }}</div>
+            <div *ngIf="dateDisplay" class="date">
+                {{ date | date: "EEEEEE" }} {{ date | date: "d" }} {{ date | date: "LLL" }}
+            </div>
+        </ng-container>
+
+        <ng-template #addEditor>
+            <div class="title__edit">
+                <input class="edit__input" type="text" [value]="title" />
+
+                <div class="buttons__wrapper">
+                    <ui-button styleCls="black mr10">Save</ui-button>
+                    <ui-button styleCls="white" (clickEvent)="isOnEdit = false">Cancel</ui-button>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+    <div class="container">
+        <div class="icon__wrapper">
+            <svg-wp-view></svg-wp-view>
+
+            <div class="icon__text">View</div>
+        </div>
+        <div class="icon__wrapper">
+            <svg-wp-more></svg-wp-more>
+        </div>
+    </div>
+</div>

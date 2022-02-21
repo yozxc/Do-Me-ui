@@ -1,0 +1,98 @@
+@import "vars";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    position: sticky;
+
+    padding-bottom: 15px;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+
+    &._end {
+        align-items: flex-end;
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-family: $gFont;
+    font-size: 1.2em;
+}
+
+.icon__wrapper {
+    display: flex;
+    align-items: center;
+
+    margin-left: 10px;
+
+    padding: 3px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ececec;
+
+        & ::ng-deep svg {
+            fill: black;
+        }
+        & ::ng-deep svg.more {
+            stroke: black;
+        }
+        & .lhi__text {
+            color: black;
+        }
+    }
+}
+
+.icon__text {
+    font-family: $gFont;
+    font-size: 0.75em;
+
+    margin-left: 3px;
+
+    color: #808080;
+}
+
+.edit__input {
+    width: 220px;
+    height: 38px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+
+    font-size: 1.2em;
+    font-family: $gFont;
+    font-weight: 700;
+
+    outline: none;
+
+    &:focus {
+        border-color: grey;
+    }
+}
+
+.buttons__wrapper {
+    display: flex;
+}
+
+.date {
+    font-family: $gFont;
+    font-size: 0.7em;
+    color: #808080;
+
+    margin-left: 5px;
+}
+
+// svg components sizes
+
+svg-wp-view,
+svg-wp-more {
+    width: 24px;
+    height: 24px;
+}

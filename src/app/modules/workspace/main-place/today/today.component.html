@@ -1,23 +1,6 @@
 <div class="main__place">
     <div class="type__list">
-        <div class="list__header">
-            <div class="lh__container">
-                <div class="lh__title">Today</div>
-                <div class="lh__date">{{ date | date: "EEEEEE" }} {{ date | date: "d" }} {{ date | date: "LLL" }}</div>
-            </div>
-
-            <div class="lh__container">
-                <div class="lhi__wrapper">
-                    <svg-wp-view></svg-wp-view>
-
-                    <div class="lhi__text">View</div>
-                </div>
-                <div class="lhi__wrapper">
-                    <svg-wp-more></svg-wp-more>
-                </div>
-            </div>
-        </div>
-        <!-- list header -->
+        <app-list-header title="Today" [dateDisplay]="true" [editableTitle]="false"></app-list-header>
 
         <app-list-task></app-list-task>
         <app-list-task></app-list-task>
