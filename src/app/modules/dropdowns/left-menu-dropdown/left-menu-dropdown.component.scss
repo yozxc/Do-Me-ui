@@ -70,11 +70,24 @@
     }
 }
 
+svg-drop-sec-priority {
+    border: 1px solid #fff;
+
+    &._active {
+        border: 1px solid #ddd;
+    }
+}
+
 // svg components sizes
 
 .wh-24 {
     width: 24px;
     height: 24px;
+}
+
+.wh-26 {
+    width: 26px;
+    height: 26px;
 }
 
 .wh-28 {
