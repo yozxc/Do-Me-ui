@@ -21,6 +21,9 @@ import { LmStateService } from './left-menu/lm-state.service';
 import { TodayComponent } from './main-place/today/today.component';
 import { InboxComponent } from './main-place/inbox/inbox.component';
 import { ListHeaderComponent } from './_type-list/list-header/list-header.component';
+import { ProjectComponent } from './main-place/project/project.component';
+import { LabelComponent } from './main-place/label/label.component';
+import { FilterComponent } from './main-place/filter/filter.component';
 
 @NgModule({
     imports: [
@@ -45,6 +48,9 @@ import { ListHeaderComponent } from './_type-list/list-header/list-header.compon
         TodayComponent,
         InboxComponent,
         ListHeaderComponent,
+        ProjectComponent,
+        LabelComponent,
+        FilterComponent,
     ],
     exports: [WorkspaceComponent],
 })

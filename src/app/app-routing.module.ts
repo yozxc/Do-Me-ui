@@ -25,6 +25,9 @@ import { DeleteAccountComponent } from './modules/modals/settings/route-componen
 
 import { InboxComponent } from './modules/workspace/main-place/inbox/inbox.component';
 import { TodayComponent } from './modules/workspace/main-place/today/today.component';
+import { ProjectComponent } from './modules/workspace/main-place/project/project.component';
+import { LabelComponent } from './modules/workspace/main-place/label/label.component';
+import { FilterComponent } from './modules/workspace/main-place/filter/filter.component';
 
 const settingsRoutes: Routes = [
     { path: ``, component: AccountSettingsComponent, outlet: OUTLETS.SETTINGS_SPACE },
@@ -55,7 +58,9 @@ const mainPlaceRoutes: Routes = [
     { path: ``, redirectTo: `${MAIN_PLACE_ROUTE.TODAY}`, pathMatch: 'full' },
     { path: `${MAIN_PLACE_ROUTE.TODAY}`, component: TodayComponent },
     { path: `${MAIN_PLACE_ROUTE.INBOX}`, component: InboxComponent },
-    { path: `${MAIN_PLACE_ROUTE.PROJECT}/:${MAIN_PLACE_ROUTE.ID}`, component: InboxComponent },
+    { path: `${MAIN_PLACE_ROUTE.PROJECT}/:${MAIN_PLACE_ROUTE.ID}`, component: ProjectComponent },
+    { path: `${MAIN_PLACE_ROUTE.LABEL}/:${MAIN_PLACE_ROUTE.ID}`, component: LabelComponent },
+    { path: `${MAIN_PLACE_ROUTE.FILTER}/:${MAIN_PLACE_ROUTE.ID}`, component: FilterComponent },
 ];
 
 const pagesRoutes: Routes = [

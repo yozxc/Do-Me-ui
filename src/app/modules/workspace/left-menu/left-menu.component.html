@@ -54,7 +54,7 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <a *ngFor="let proj of projects" routerLink="project/1" class="menu__proj">
+            <a *ngFor="let proj of projects; let i = index" [routerLink]="'project/' + i" class="menu__proj">
                 <svg-lm-dot [styleCls]="proj.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ proj.name }}</div>
@@ -83,7 +83,7 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <div *ngFor="let label of labels" class="menu__proj">
+            <a *ngFor="let label of labels; let i = index" [routerLink]="'label/' + i" class="menu__proj">
                 <svg-lm-label [styleCls]="label.colorCls"></svg-lm-label>
 
                 <div class="menu__proj__title">{{ label.name }}</div>
@@ -92,7 +92,7 @@
                 <svg-lm-more></svg-lm-more>
 
                 <svg-lm-drag></svg-lm-drag>
-            </div>
+            </a>
         </div>
         <!-- labels ngFor -->
     </div>
@@ -112,7 +112,7 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <div *ngFor="let filter of filters" class="menu__proj">
+            <a *ngFor="let filter of filters; let i = index" [routerLink]="'filter/' + i" class="menu__proj">
                 <svg-lm-filter [styleCls]="filter.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ filter.name }}</div>
@@ -121,7 +121,7 @@
                 <svg-lm-more></svg-lm-more>
 
                 <svg-lm-drag></svg-lm-drag>
-            </div>
+            </a>
         </div>
         <!-- filters ngFor -->
     </div>
