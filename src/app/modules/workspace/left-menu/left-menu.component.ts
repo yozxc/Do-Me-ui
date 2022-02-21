@@ -21,7 +21,7 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
     isClosedSub!: Subscription;
 
     activeLabels = {
-        favorites: true,
+        favorites: false,
         projects: true,
         labels: true,
         filters: true,
