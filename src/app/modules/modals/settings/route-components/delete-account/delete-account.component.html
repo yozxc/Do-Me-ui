@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class="field noBotMarg">
+    <div class="field _noBotMarg">
         <div class="title">TodoNoist password</div>
 
         <div class="content">
@@ -23,12 +23,12 @@
                 <svg-close-eye
                     *ngIf="!passIsVisible"
                     (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye close"
+                    class="pass__eye _close"
                 ></svg-close-eye>
                 <svg-open-eye
                     *ngIf="passIsVisible"
                     (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye open"
+                    class="pass__eye _open"
                 ></svg-open-eye>
             </div>
         </div>
@@ -36,7 +36,7 @@
 
     <div class="field">
         <div class="content">
-            <div class="text gray">
+            <div class="text _gray">
                 Deleting your account requires your current password as confirmation. If you signed up via Google,
                 Facebook, or Apple, you can set a password in Account settings.
             </div>

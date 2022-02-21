@@ -162,20 +162,20 @@
 
     cursor: pointer;
 
-    &.close ::ng-deep {
+    &._close ::ng-deep {
         fill: gray;
     }
-    &.close:hover {
+    &._close:hover {
         background-color: #eee;
         & ::ng-deep {
             fill: #2b2b2b;
         }
     }
 
-    &.open ::ng-deep {
+    &._open ::ng-deep {
         stroke: gray;
     }
-    &.open:hover {
+    &._open:hover {
         background-color: #eee;
         & ::ng-deep {
             stroke: #2b2b2b;

@@ -9,7 +9,7 @@
 </ng-container>
 
 <div *ngIf="addTaskEditor" class="task__editor__wrapper">
-    <div class="editor__container" [ngClass]="{ active: isFocused }">
+    <div class="editor__container" [ngClass]="{ _active: isFocused }">
         <input
             class="task__title"
             type="text"

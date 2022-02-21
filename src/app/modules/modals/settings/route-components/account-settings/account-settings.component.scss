@@ -28,7 +28,7 @@
 .content {
     display: flex;
 
-    &.column {
+    &._column {
         flex-direction: column;
         align-items: flex-start;
     }

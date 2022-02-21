@@ -25,7 +25,7 @@
     </div>
 
     <div class="field">
-        <div class="title">TodoNoist password <a class="link red" href="#">Forgot password?</a></div>
+        <div class="title">TodoNoist password <a class="link _red" href="#">Forgot password?</a></div>
 
         <div class="content">
             <div class="input__pass__wrapper">
@@ -34,12 +34,12 @@
                 <svg-close-eye
                     *ngIf="!passIsVisible"
                     (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye close"
+                    class="pass__eye _close"
                 ></svg-close-eye>
                 <svg-open-eye
                     *ngIf="passIsVisible"
                     (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye open"
+                    class="pass__eye _open"
                 ></svg-open-eye>
             </div>
         </div>

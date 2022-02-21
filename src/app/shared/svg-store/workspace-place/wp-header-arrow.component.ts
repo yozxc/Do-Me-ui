@@ -17,7 +17,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter
 
                 transform: rotate(-90deg) translate(50%, 0);
 
-                &.active {
+                &._active {
                     transform: translate(0, -50%);
                 }
                 &:hover {
@@ -27,7 +27,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter
         `,
     ],
     template: `
-        <svg [ngClass]="{ active: !isClosed }" (click)="onClickEvent.emit()">
+        <svg [ngClass]="{ _active: !isClosed }" (click)="onClickEvent.emit()">
             <path fill="none" stroke="currentColor" d="M16 10l-4 4-4-4"></path>
         </svg>
     `,

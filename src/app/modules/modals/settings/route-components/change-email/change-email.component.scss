@@ -28,7 +28,7 @@
 .content {
     display: flex;
 
-    &.column {
+    &._column {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -41,7 +41,7 @@
 
     margin: 10px 0;
 
-    &.gray {
+    &._gray {
         color: rgba(0, 0, 0, 0.56);
     }
 }
@@ -89,20 +89,20 @@
 
     cursor: pointer;
 
-    &.close ::ng-deep {
+    &._close ::ng-deep {
         fill: gray;
     }
-    &.close:hover {
+    &._close:hover {
         background-color: #eee;
         & ::ng-deep {
             fill: #2b2b2b;
         }
     }
 
-    &.open ::ng-deep {
+    &._open ::ng-deep {
         stroke: gray;
     }
-    &.open:hover {
+    &._open:hover {
         background-color: #eee;
         & ::ng-deep {
             stroke: #2b2b2b;
@@ -114,7 +114,7 @@
     text-decoration: none;
     cursor: pointer;
 
-    &.red {
+    &._red {
         font-weight: 400;
         color: #d1453b;
     }

@@ -1,14 +1,14 @@
-<div class="left__menu" [ngClass]="{ closed: isClosed }">
+<div class="left__menu" [ngClass]="{ _closed: isClosed }">
     <a class="main__tab" routerLink="inbox">
         <svg-lm-inbox styleCls="blue"></svg-lm-inbox>
         <div class="tab__title">Inbox</div>
-        <div class="tab__num gray">10</div>
+        <div class="tab__num _gray">10</div>
     </a>
 
     <a class="main__tab" routerLink="today">
         <svg-lm-today></svg-lm-today>
         <div class="tab__title">Today</div>
-        <div class="tab__num red">7</div>
+        <div class="tab__num _red">7</div>
     </a>
 
     <div class="main__tab unavailable">
@@ -16,7 +16,7 @@
         <div class="tab__title">Upcoming</div>
     </div>
 
-    <div class="group__wrapper" [ngClass]="activeLabels['favorites'] ? 'active' : ''">
+    <div class="group__wrapper" [ngClass]="activeLabels['favorites'] ? '_active' : ''">
         <div class="menu__group_tab" (click)="classActive('favorites')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Favorites</div>
@@ -29,7 +29,7 @@
                 <svg-lm-filter *ngIf="item.type === 'filter'" [styleCls]="item.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ item.name }}</div>
-                <div class="menu__proj__num gray">{{ item._todoTasks }}</div>
+                <div class="menu__proj__num _gray">{{ item._todoTasks }}</div>
 
                 <svg-lm-more></svg-lm-more>
 
@@ -40,7 +40,7 @@
     </div>
     <!-- Favorits | group wrapper -->
 
-    <div class="group__wrapper" [ngClass]="activeLabels['projects'] ? 'active' : ''">
+    <div class="group__wrapper" [ngClass]="activeLabels['projects'] ? '_active' : ''">
         <div class="menu__group_tab" (click)="classActive('projects')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Projects</div>
@@ -58,7 +58,7 @@
                 <svg-lm-dot [styleCls]="proj.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ proj.name }}</div>
-                <div class="menu__proj__num gray">{{ proj._todoTasks }}</div>
+                <div class="menu__proj__num _gray">{{ proj._todoTasks }}</div>
 
                 <svg-lm-more></svg-lm-more>
 
@@ -69,7 +69,7 @@
     </div>
     <!-- Projects | group wrapper -->
 
-    <div class="group__wrapper" [ngClass]="activeLabels['labels'] ? 'active' : ''">
+    <div class="group__wrapper" [ngClass]="activeLabels['labels'] ? '_active' : ''">
         <div class="menu__group_tab" (click)="classActive('labels')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Labels</div>
@@ -87,7 +87,7 @@
                 <svg-lm-label [styleCls]="label.colorCls"></svg-lm-label>
 
                 <div class="menu__proj__title">{{ label.name }}</div>
-                <div class="menu__proj__num gray">{{ label._todoTasks }}</div>
+                <div class="menu__proj__num _gray">{{ label._todoTasks }}</div>
 
                 <svg-lm-more></svg-lm-more>
 
@@ -98,7 +98,7 @@
     </div>
     <!-- Labels | group wrapper -->
 
-    <div class="group__wrapper" [ngClass]="activeLabels['filters'] ? 'active' : ''">
+    <div class="group__wrapper" [ngClass]="activeLabels['filters'] ? '_active' : ''">
         <div class="menu__group_tab" (click)="classActive('filters')">
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Filters</div>
@@ -116,7 +116,7 @@
                 <svg-lm-filter [styleCls]="filter.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ filter.name }}</div>
-                <div class="menu__proj__num gray">{{ filter._todoTasks }}</div>
+                <div class="menu__proj__num _gray">{{ filter._todoTasks }}</div>
 
                 <svg-lm-more></svg-lm-more>
 
@@ -127,5 +127,5 @@
     </div>
     <!-- Filters | group wrapper -->
 
-    <div class="resize__bar unavailable"></div>
+    <div class="resize__bar _unavailable"></div>
 </div>

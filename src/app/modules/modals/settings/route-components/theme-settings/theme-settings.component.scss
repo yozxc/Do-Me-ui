@@ -28,11 +28,11 @@
 .content {
     display: flex;
 
-    &.column {
+    &._column {
         flex-direction: column;
         align-items: flex-start;
     }
-    &.themes {
+    &._themes {
         flex-wrap: wrap;
         width: 580px;
     }
@@ -45,7 +45,7 @@
 
     margin: 10px 0;
 
-    &.gray {
+    &._gray {
         color: rgba(0, 0, 0, 0.56);
     }
 }
