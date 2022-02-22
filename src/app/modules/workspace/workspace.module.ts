@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
 import { ModalsModule } from '../modals/modals.module';
-import { DropdownsModule } from '../dropdowns/dropdowns.module';
 import { SvgWorkspacePlaceModule } from '@app/shared/svg-store/workspace-place/svg-workspace-place.module';
 import { SvgHeaderModule } from '@app/shared/svg-store/header/svg-header.module';
 import { SvgLeftMenuModule } from '@app/shared/svg-store/left-menu/svg-left-menu.module';
@@ -35,7 +34,6 @@ import { FilterComponent } from './main-place/filter/filter.component';
         SvgLeftMenuModule,
         UiComponentsModule,
         ModalsModule,
-        DropdownsModule,
     ],
     providers: [LmStateService],
     declarations: [

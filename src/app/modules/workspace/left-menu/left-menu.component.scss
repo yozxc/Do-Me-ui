@@ -10,7 +10,8 @@
     background-color: #fafafa;
     position: relative;
 
-    overflow-y: auto;
+    // todo : check for modals & scroll :\
+    // overflow-y: auto;
 
     &::-webkit-scrollbar {
         display: none;
@@ -232,6 +233,14 @@
     &._unavailable {
         display: none;
     }
+}
+
+.lm__dropdown {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+
+    transform: translate(50%, 100%);
 }
 
 // svg positions | sizes

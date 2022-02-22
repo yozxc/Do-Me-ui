@@ -60,7 +60,18 @@
                 <div class="menu__proj__title">{{ proj.name }}</div>
                 <div class="menu__proj__num _gray">{{ proj._todoTasks }}</div>
 
-                <svg-lm-more></svg-lm-more>
+                <svg-lm-more (click)="dropMenu.toggleIsVisible()"></svg-lm-more>
+                <app-menu-dropdown
+                    #dropMenu
+                    class="lm__dropdown"
+                    [addAbove]="true"
+                    [addBelow]="true"
+                    [edit]="true"
+                    [archive]="true"
+                    [del]="true"
+                    [schedule]="true"
+                    [priority]="true"
+                ></app-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
             </a>

@@ -1,28 +1,28 @@
-<div class="menu">
-    <div class="item">
+<div *ngIf="isVisible" class="menu">
+    <div *ngIf="addAbove" class="item">
         <svg-drop-add-above class="wh-24"></svg-drop-add-above>
         <div class="item__text">Add project above</div>
     </div>
-    <div class="item">
+    <div *ngIf="addBelow" class="item">
         <svg-drop-add-below class="wh-24"></svg-drop-add-below>
-        <div class="item__text">Add project above</div>
+        <div class="item__text">Add project below</div>
     </div>
 
-    <div class="bar"></div>
+    <!-- <div *ngIf="addBelow" class="bar"></div> -->
 
-    <div class="item">
+    <div *ngIf="edit" class="item">
         <svg-drop-edit class="wh-24"></svg-drop-edit>
         <div class="item__text">Edit project</div>
     </div>
-    <div class="item">
+    <div *ngIf="favorites" class="item">
         <svg-drop-favorites class="wh-24"></svg-drop-favorites>
         <div class="item__text">Add to favorites</div>
     </div>
 
-    <div class="bar"></div>
+    <div *ngIf="schedule || priority" class="bar"></div>
     <!--  -->
 
-    <div class="section">
+    <div *ngIf="schedule" class="section">
         <div class="sec__title">Schedule</div>
 
         <div class="icon__list">
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div *ngIf="priority" class="section">
         <div class="sec__title">Priority</div>
 
         <div class="icon__list">
@@ -47,32 +47,32 @@
     </div>
 
     <!--  -->
-    <div class="bar"></div>
+    <div *ngIf="schedule || priority" class="bar"></div>
 
-    <div class="item">
+    <div *ngIf="addSection" class="item">
         <svg-drop-add-section class="wh-24"></svg-drop-add-section>
         <div class="item__text">Add section</div>
     </div>
-    <div class="item">
+    <div *ngIf="showHideTasks" class="item">
         <svg-drop-show-tasks class="wh-24"></svg-drop-show-tasks>
         <div class="item__text">Show completed tasks</div>
     </div>
-    <div class="item">
+    <div *ngIf="showHideTasks" class="item">
         <svg-drop-hide-tasks class="wh-24"></svg-drop-hide-tasks>
         <div class="item__text">Hide completed tasks</div>
     </div>
-    <div class="item">
+    <div *ngIf="moveTo" class="item">
         <svg-drop-move-to class="wh-24"></svg-drop-move-to>
         <div class="item__text">Move to project</div>
     </div>
 
-    <div class="bar"></div>
+    <!-- <div *ngIf="addSection || moveTo" class="bar"></div> -->
 
-    <div class="item">
+    <div *ngIf="archive" class="item">
         <svg-drop-archive class="wh-24"></svg-drop-archive>
         <div class="item__text">Archive project</div>
     </div>
-    <div class="item">
+    <div *ngIf="del" class="item">
         <svg-drop-delete class="wh-24"></svg-drop-delete>
         <div class="item__text">Delete project</div>
     </div>
