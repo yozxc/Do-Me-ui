@@ -19,8 +19,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
             }
             .description {
                 position: absolute;
-                bottom: -30px;
+                bottom: -35px;
                 left: 50%;
+                z-index: 99;
                 transform: translate(-50%);
 
                 padding: 4px 6px;
