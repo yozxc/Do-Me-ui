@@ -4,8 +4,6 @@
     display: flex;
     justify-content: space-between;
 
-    position: sticky;
-
     padding-bottom: 15px;
 }
 
@@ -25,6 +23,8 @@
 }
 
 .icon__wrapper {
+    position: relative;
+
     display: flex;
     align-items: center;
 
@@ -37,13 +37,13 @@
     &:hover {
         background-color: #ececec;
 
-        & ::ng-deep svg {
-            fill: black;
-        }
-        & ::ng-deep svg.more {
+        & ::ng-deep svg.stroke_black {
             stroke: black;
         }
-        & .lhi__text {
+        & ::ng-deep svg.fill_black {
+            fill: black;
+        }
+        & .icon__text {
             color: black;
         }
     }
@@ -52,6 +52,7 @@
 .icon__text {
     font-family: $gFont;
     font-size: 0.75em;
+    user-select: none;
 
     margin-left: 3px;
 
@@ -87,6 +88,11 @@
     color: #808080;
 
     margin-left: 5px;
+}
+
+.more__dropdown {
+    bottom: -5px;
+    right: 50px;
 }
 
 // svg components sizes

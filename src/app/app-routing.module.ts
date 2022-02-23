@@ -81,6 +81,7 @@ const pagesRoutes: Routes = [
 ];
 
 @NgModule({
+    // todo : fix routes (.forChild(Routes)...)
     imports: [RouterModule.forRoot(pagesRoutes)],
     exports: [RouterModule],
 })

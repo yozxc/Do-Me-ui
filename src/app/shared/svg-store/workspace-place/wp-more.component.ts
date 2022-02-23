@@ -14,7 +14,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
         `,
     ],
     template: `
-        <svg class="more" stroke="#808080">
+        <svg class="stroke_black" stroke="#808080">
             <g fill="none" stroke-linecap="round" transform="translate(3 10)">
                 <circle cx="2" cy="2" r="2"></circle>
                 <circle cx="9" cy="2" r="2"></circle>

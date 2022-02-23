@@ -1,13 +1,18 @@
 @import "vars";
 
 :host {
+    position: absolute;
+    transform: translate(50%, 50%);
+
+    bottom: 0;
+    right: 0;
+
     z-index: 1000;
 }
 
-.dropdown__wrapper{
+.dropdown__wrapper {
     position: relative;
 
-    transform: translate(50%, 50%);
     width: 200vw;
     height: 200vh;
 

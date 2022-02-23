@@ -74,7 +74,6 @@
 }
 
 .icons__container {
-    display: flex;
     align-items: center;
 
     position: absolute;
@@ -82,6 +81,18 @@
     right: 0;
 
     display: none;
+}
+
+.icon__wrapper {
+    display: flex;
+    margin: 0 4px;
+
+    position: relative;
+}
+
+.more__dropdown {
+    bottom: 0;
+    right: 50px;
 }
 
 .bottom__bar {
@@ -116,8 +127,6 @@ svg-wp-task-schedule,
 svg-wp-task-more {
     width: 24px;
     height: 24px;
-
-    margin: 0 4px;
 }
 
 svg-wp-task-drag {

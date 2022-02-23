@@ -1,5 +1,5 @@
 <div *ngIf="isVisible" class="dropdown__wrapper" (click)="isVisible = !isVisible; $event.stopPropagation()">
-    <div #menuView class="menu">
+    <div #menuView class="menu" (click)="$event.stopPropagation()">
         <div *ngIf="addAbove" class="item">
             <svg-drop-add-above class="wh-24"></svg-drop-add-above>
             <div class="item__text">Add project above</div>
@@ -78,5 +78,4 @@
             <div class="item__text">Delete project</div>
         </div>
     </div>
-
 </div>

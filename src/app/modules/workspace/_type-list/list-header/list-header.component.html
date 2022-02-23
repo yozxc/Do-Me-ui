@@ -25,8 +25,19 @@
 
             <div class="icon__text">View</div>
         </div>
-        <div class="icon__wrapper">
+        <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible()">
             <svg-wp-more></svg-wp-more>
+            <app-menu-dropdown
+                #dropMenu
+                class="more__dropdown"
+                [addAbove]="true"
+                [addBelow]="true"
+                [edit]="true"
+                [archive]="true"
+                [del]="true"
+                [schedule]="true"
+                [priority]="true"
+            ></app-menu-dropdown>
         </div>
     </div>
 </div>
