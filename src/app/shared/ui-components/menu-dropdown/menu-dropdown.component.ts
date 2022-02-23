@@ -1,11 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+    AfterViewChecked,
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnInit,
+    ViewChild,
+    ChangeDetectorRef,
+} from '@angular/core';
 
 @Component({
     selector: 'app-menu-dropdown',
     templateUrl: './menu-dropdown.component.html',
     styleUrls: ['./menu-dropdown.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MenuDropdownComponent implements OnInit {
+export class MenuDropdownComponent implements OnInit, AfterViewChecked {
     isVisible: boolean = false;
 
     @Input() addAbove: boolean = false;
@@ -20,11 +29,34 @@ export class MenuDropdownComponent implements OnInit {
     @Input() archive: boolean = false;
     @Input() del: boolean = false;
 
-    constructor() {}
+    // todo : set normal type instead of 'any'
+    @ViewChild('menuView') menuView: any;
+
+    constructor(private cdr: ChangeDetectorRef) {}
 
     ngOnInit(): void {}
 
+    // this is setting menu to be visible in viewport
+    ngAfterViewChecked(): void {
+        if (!this.menuView) return;
+
+        const coordinates = this.menuView.nativeElement.getBoundingClientRect();
+        if (coordinates.bottom > window.innerHeight) {
+            this.menuView.nativeElement.style.top = `calc(50% - ${coordinates.bottom - window.innerHeight + 5}px)`;
+        }
+        if (coordinates.top < 0) {
+            this.menuView.nativeElement.style.top = `calc(50% + ${coordinates.top * -1 + 5}px)`;
+        }
+        if (coordinates.left < 0) {
+            this.menuView.nativeElement.style.left = `calc(50% + ${coordinates.left * -1 + 5}px)`;
+        }
+        if (coordinates.right > window.innerWidth) {
+            this.menuView.nativeElement.style.left = `calc(50% - ${coordinates.right - window.innerWidth + 5}px)`;
+        }
+    }
+
     toggleIsVisible() {
         this.isVisible = !this.isVisible;
+        this.cdr.detectChanges();
     }
 }

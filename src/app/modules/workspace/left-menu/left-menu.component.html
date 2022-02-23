@@ -31,7 +31,18 @@
                 <div class="menu__proj__title">{{ item.name }}</div>
                 <div class="menu__proj__num _gray">{{ item._todoTasks }}</div>
 
-                <svg-lm-more></svg-lm-more>
+                <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
+                <app-menu-dropdown
+                    #dropMenu
+                    class="lm__dropdown"
+                    [addAbove]="true"
+                    [addBelow]="true"
+                    [edit]="true"
+                    [archive]="true"
+                    [del]="true"
+                    [schedule]="true"
+                    [priority]="true"
+                ></app-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
             </div>
@@ -54,13 +65,13 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <a *ngFor="let proj of projects; let i = index" [routerLink]="'project/' + i" class="menu__proj">
+            <div *ngFor="let proj of projects; let i = index" (click)="navToUrl('project/' + i)" class="menu__proj">
                 <svg-lm-dot [styleCls]="proj.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ proj.name }}</div>
                 <div class="menu__proj__num _gray">{{ proj._todoTasks }}</div>
 
-                <svg-lm-more (click)="dropMenu.toggleIsVisible()"></svg-lm-more>
+                <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
                 <app-menu-dropdown
                     #dropMenu
                     class="lm__dropdown"
@@ -74,7 +85,7 @@
                 ></app-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
-            </a>
+            </div>
         </div>
         <!-- projects ngFor -->
     </div>
@@ -94,16 +105,27 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <a *ngFor="let label of labels; let i = index" [routerLink]="'label/' + i" class="menu__proj">
+            <div *ngFor="let label of labels; let i = index" (click)="navToUrl('label/' + i)" class="menu__proj">
                 <svg-lm-label [styleCls]="label.colorCls"></svg-lm-label>
 
                 <div class="menu__proj__title">{{ label.name }}</div>
                 <div class="menu__proj__num _gray">{{ label._todoTasks }}</div>
 
-                <svg-lm-more></svg-lm-more>
+                <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
+                <app-menu-dropdown
+                    #dropMenu
+                    class="lm__dropdown"
+                    [addAbove]="true"
+                    [addBelow]="true"
+                    [edit]="true"
+                    [archive]="true"
+                    [del]="true"
+                    [schedule]="true"
+                    [priority]="true"
+                ></app-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
-            </a>
+            </div>
         </div>
         <!-- labels ngFor -->
     </div>
@@ -123,16 +145,27 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <a *ngFor="let filter of filters; let i = index" [routerLink]="'filter/' + i" class="menu__proj">
+            <div *ngFor="let filter of filters; let i = index" (click)="navToUrl('filter/' + i)" class="menu__proj">
                 <svg-lm-filter [styleCls]="filter.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ filter.name }}</div>
                 <div class="menu__proj__num _gray">{{ filter._todoTasks }}</div>
 
-                <svg-lm-more></svg-lm-more>
+                <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
+                <app-menu-dropdown
+                    #dropMenu
+                    class="lm__dropdown"
+                    [addAbove]="true"
+                    [addBelow]="true"
+                    [edit]="true"
+                    [archive]="true"
+                    [del]="true"
+                    [schedule]="true"
+                    [priority]="true"
+                ></app-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
-            </a>
+            </div>
         </div>
         <!-- filters ngFor -->
     </div>

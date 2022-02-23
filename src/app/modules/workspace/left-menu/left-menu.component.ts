@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { projects, labels, filters, favorites } from '@assets/mock/lm-projects';
 
 import { LmStateService } from './lm-state.service';
+import { Router } from '@angular/router';
+import { PAGES_ROUTE } from '@app/core/nav-constants';
 
 @Component({
     selector: 'app-left-menu',
@@ -27,7 +29,7 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
         filters: true,
     };
 
-    constructor(private lmStateService: LmStateService, private cdr: ChangeDetectorRef) {}
+    constructor(private lmStateService: LmStateService, private cdr: ChangeDetectorRef, private router: Router) {}
 
     ngOnInit(): void {
         // todo : change this :\
@@ -51,5 +53,9 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
         if (cat === 'projects') this.activeLabels[cat] = !this.activeLabels[cat];
         if (cat === 'labels') this.activeLabels[cat] = !this.activeLabels[cat];
         if (cat === 'filters') this.activeLabels[cat] = !this.activeLabels[cat];
+    }
+
+    navToUrl(url: string){
+        this.router.navigate([`${PAGES_ROUTE.WORKSPACE}/${url}`], {skipLocationChange: false})
     }
 }
