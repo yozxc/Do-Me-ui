@@ -19,6 +19,11 @@ import { SvgDropSecNextWeekComponent } from './drop-sec-next-week.component';
 import { SvgDropSecNoDateComponent } from './drop-sec-no-date.component';
 import { SvgDropSecPriorityComponent } from './drop-sec-priority.component';
 
+import { SvgDropViewAsComponent } from './drop-view-as.component';
+import { SvgDropArrowComponent } from './drop-arrow.component';
+import { SvgDropGroupByComponent } from './drop-group-by.component';
+import { SvgDropSortByComponent } from './drop-sort-by.component';
+
 @NgModule({
     imports: [CommonModule],
     declarations: [
@@ -39,6 +44,11 @@ import { SvgDropSecPriorityComponent } from './drop-sec-priority.component';
         SvgDropSecNextWeekComponent,
         SvgDropSecNoDateComponent,
         SvgDropSecPriorityComponent,
+        //
+        SvgDropArrowComponent,
+        SvgDropViewAsComponent,
+        SvgDropGroupByComponent,
+        SvgDropSortByComponent,
     ],
     exports: [
         SvgDropEditComponent,
@@ -58,6 +68,11 @@ import { SvgDropSecPriorityComponent } from './drop-sec-priority.component';
         SvgDropSecNextWeekComponent,
         SvgDropSecNoDateComponent,
         SvgDropSecPriorityComponent,
+        //
+        SvgDropArrowComponent,
+        SvgDropViewAsComponent,
+        SvgDropGroupByComponent,
+        SvgDropSortByComponent,
     ],
 })
 export class SvgDropdownsModule {}

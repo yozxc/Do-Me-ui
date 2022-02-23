@@ -30,7 +30,7 @@
         <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible(); areControlsVisible = true">
             <svg-wp-task-more></svg-wp-task-more>
 
-            <app-menu-dropdown
+            <ui-menu-dropdown
                 #dropMenu
                 class="more__dropdown"
                 [addAbove]="true"
@@ -41,7 +41,7 @@
                 [schedule]="true"
                 [priority]="true"
                 (onClose)="areControlsVisible = false"
-            ></app-menu-dropdown>
+            ></ui-menu-dropdown>
         </div>
     </div>
 

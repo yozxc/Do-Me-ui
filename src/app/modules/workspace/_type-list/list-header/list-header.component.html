@@ -20,14 +20,15 @@
     </div>
 
     <div class="container">
-        <div class="icon__wrapper">
+        <div class="icon__wrapper" (click)="viewMenu.toggleIsVisible()">
             <svg-wp-view></svg-wp-view>
-
             <div class="icon__text">View</div>
+
+            <ui-view-menu-dropdown #viewMenu class="view__dropdown"></ui-view-menu-dropdown>
         </div>
         <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible()">
             <svg-wp-more></svg-wp-more>
-            <app-menu-dropdown
+            <ui-menu-dropdown
                 #dropMenu
                 class="more__dropdown"
                 [addAbove]="true"
@@ -37,7 +38,7 @@
                 [del]="true"
                 [schedule]="true"
                 [priority]="true"
-            ></app-menu-dropdown>
+            ></ui-menu-dropdown>
         </div>
     </div>
 </div>

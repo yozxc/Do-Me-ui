@@ -1,0 +1,44 @@
+<div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
+    <div #menuView class="menu" (click)="$event.stopPropagation()">
+        <div class="header">View</div>
+
+        <div class="item">
+            <div class="container">
+                <svg-drop-view-as class="wh-24"></svg-drop-view-as>
+                <div class="item__text">View as</div>
+            </div>
+
+            <div class="container">
+                <div class="selected__value">List</div>
+                <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
+            </div>
+        </div>
+
+        <div class="bar"></div>
+
+        <div class="header">Sort</div>
+
+        <div class="item">
+            <div class="container">
+                <svg-drop-group-by class="wh-24"></svg-drop-group-by>
+                <div class="item__text">Group by</div>
+            </div>
+
+            <div class="container">
+                <div class="selected__value">Default</div>
+                <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
+            </div>
+        </div>
+        <div class="item">
+            <div class="container">
+                <svg-drop-sort-by class="wh-24"></svg-drop-sort-by>
+                <div class="item__text">Sort by</div>
+            </div>
+
+            <div class="container">
+                <div class="selected__value">Default</div>
+                <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
+            </div>
+        </div>
+    </div>
+</div>

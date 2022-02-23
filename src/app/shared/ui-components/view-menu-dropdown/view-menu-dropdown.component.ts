@@ -1,35 +1,22 @@
 import {
     AfterViewChecked,
     ChangeDetectionStrategy,
-    Component,
-    Input,
-    OnInit,
-    ViewChild,
     ChangeDetectorRef,
-    Output,
+    Component,
     EventEmitter,
+    OnInit,
+    Output,
+    ViewChild,
 } from '@angular/core';
 
 @Component({
-    selector: 'ui-menu-dropdown',
-    templateUrl: './menu-dropdown.component.html',
-    styleUrls: ['./menu-dropdown.component.scss'],
+    selector: 'ui-view-menu-dropdown',
+    templateUrl: './view-menu-dropdown.component.html',
+    styleUrls: ['./view-menu-dropdown.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MenuDropdownComponent implements OnInit, AfterViewChecked {
+export class ViewMenuDropdownComponent implements OnInit, AfterViewChecked {
     isVisible: boolean = false;
-
-    @Input() addAbove: boolean = false;
-    @Input() addBelow: boolean = false;
-    @Input() edit: boolean = false;
-    @Input() favorites: boolean = false;
-    @Input() schedule: boolean = false;
-    @Input() priority: boolean = false;
-    @Input() addSection: boolean = false;
-    @Input() showHideTasks: boolean = false;
-    @Input() moveTo: boolean = false;
-    @Input() archive: boolean = false;
-    @Input() del: boolean = false;
 
     @Output() onClose: EventEmitter<any> = new EventEmitter();
 
