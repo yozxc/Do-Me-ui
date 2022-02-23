@@ -5,9 +5,21 @@
 
             <svg-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
-            <div class="tl__icons__container">
+            <div class="tl__icons__container" (click)="dropMenu.toggleIsVisible()">
                 <div class="tli__wrapper">
                     <svg-wp-header-more></svg-wp-header-more>
+
+                    <app-menu-dropdown
+                        #dropMenu
+                        class="more__dropdown"
+                        [addAbove]="true"
+                        [addBelow]="true"
+                        [edit]="true"
+                        [archive]="true"
+                        [del]="true"
+                        [schedule]="true"
+                        [priority]="true"
+                    ></app-menu-dropdown>
                 </div>
             </div>
         </ng-container>

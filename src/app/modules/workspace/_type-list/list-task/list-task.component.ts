@@ -9,6 +9,7 @@ import { v4 as uuidv4, v4 } from 'uuid';
 })
 export class ListTaskComponent implements OnInit {
     isChecked!: boolean;
+    areControlsVisible: boolean = false;
     checkboxID = v4();
 
     constructor() {}

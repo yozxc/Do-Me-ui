@@ -81,6 +81,10 @@
     right: 0;
 
     display: none;
+
+    &._visible {
+        display: flex;
+    }
 }
 
 .icon__wrapper {

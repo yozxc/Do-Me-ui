@@ -29,6 +29,8 @@
     opacity: 0;
 }
 .tli__wrapper {
+    position: relative;
+
     display: flex;
     align-items: center;
 
@@ -45,6 +47,10 @@
             stroke: black;
         }
     }
+}
+.more__dropdown {
+    bottom: 5px;
+    right: 50px;
 }
 
 .pltlas__main {

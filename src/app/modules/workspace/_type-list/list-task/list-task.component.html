@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="icons__container">
+    <div class="icons__container" [ngClass]="{ _visible: areControlsVisible }">
         <div class="icon__wrapper">
             <svg-wp-task-edit></svg-wp-task-edit>
         </div>
@@ -27,7 +27,7 @@
             <svg-wp-task-schedule></svg-wp-task-schedule>
         </div>
 
-        <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible()">
+        <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible(); areControlsVisible = true">
             <svg-wp-task-more></svg-wp-task-more>
 
             <app-menu-dropdown
@@ -40,6 +40,7 @@
                 [del]="true"
                 [schedule]="true"
                 [priority]="true"
+                (onClose)="areControlsVisible = false"
             ></app-menu-dropdown>
         </div>
     </div>

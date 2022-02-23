@@ -6,6 +6,8 @@ import {
     OnInit,
     ViewChild,
     ChangeDetectorRef,
+    Output,
+    EventEmitter,
 } from '@angular/core';
 
 @Component({
@@ -28,6 +30,8 @@ export class MenuDropdownComponent implements OnInit, AfterViewChecked {
     @Input() moveTo: boolean = false;
     @Input() archive: boolean = false;
     @Input() del: boolean = false;
+
+    @Output() onClose: EventEmitter<any> = new EventEmitter();
 
     // todo : set normal type instead of 'any'
     @ViewChild('menuView') menuView: any;
@@ -58,5 +62,10 @@ export class MenuDropdownComponent implements OnInit, AfterViewChecked {
     toggleIsVisible() {
         this.isVisible = !this.isVisible;
         this.cdr.detectChanges();
+    }
+
+    close() {
+        this.isVisible = false;
+        this.onClose.emit();
     }
 }
