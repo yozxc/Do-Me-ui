@@ -2,7 +2,7 @@
     <div #menuView class="menu" (click)="$event.stopPropagation()">
         <div class="header">View</div>
 
-        <div class="item">
+        <div class="item" (click)="viewAsVisible = true">
             <div class="container">
                 <svg-drop-view-as class="wh-24"></svg-drop-view-as>
                 <div class="item__text">View as</div>
@@ -12,13 +12,29 @@
                 <div class="selected__value">List</div>
                 <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
             </div>
+
+            <div
+                class="submenu__wrapper"
+                *ngIf="viewAsVisible"
+                (click)="viewAsVisible = false; $event.stopPropagation()"
+            >
+                <div class="submenu">
+                    <div class="submenu__item">
+                        <div class="sub_item__text">List</div>
+                        <svg-drop-sub-tick class="wh-12 m7"></svg-drop-sub-tick>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Table</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="bar"></div>
 
         <div class="header">Sort</div>
 
-        <div class="item">
+        <div class="item" (click)="viewGroupBy = true">
             <div class="container">
                 <svg-drop-group-by class="wh-24"></svg-drop-group-by>
                 <div class="item__text">Group by</div>
@@ -28,8 +44,29 @@
                 <div class="selected__value">Default</div>
                 <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
             </div>
+
+            <div class="submenu__wrapper" *ngIf="viewGroupBy" (click)="viewGroupBy = false; $event.stopPropagation()">
+                <div class="submenu">
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Default</div>
+                        <svg-drop-sub-tick class="wh-12 m7"></svg-drop-sub-tick>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Due date</div>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Date added</div>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Priority</div>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Label</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="item">
+        <div class="item" (click)="viewSortBy = true">
             <div class="container">
                 <svg-drop-sort-by class="wh-24"></svg-drop-sort-by>
                 <div class="item__text">Sort by</div>
@@ -38,6 +75,27 @@
             <div class="container">
                 <div class="selected__value">Default</div>
                 <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
+            </div>
+
+            <div class="submenu__wrapper" *ngIf="viewSortBy" (click)="viewSortBy = false; $event.stopPropagation()">
+                <div class="submenu">
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Default</div>
+                        <svg-drop-sub-tick class="wh-12 m7"></svg-drop-sub-tick>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Alphabetically</div>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Due date</div>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Date added</div>
+                    </div>
+                    <div class="submenu__item">
+                        <div class="sub_item__text">Priority</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

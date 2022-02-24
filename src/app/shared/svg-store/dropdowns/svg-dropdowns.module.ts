@@ -24,6 +24,8 @@ import { SvgDropArrowComponent } from './drop-arrow.component';
 import { SvgDropGroupByComponent } from './drop-group-by.component';
 import { SvgDropSortByComponent } from './drop-sort-by.component';
 
+import { SvgDropSubTickComponent } from './drop-sub-tick.component';
+
 @NgModule({
     imports: [CommonModule],
     declarations: [
@@ -49,6 +51,8 @@ import { SvgDropSortByComponent } from './drop-sort-by.component';
         SvgDropViewAsComponent,
         SvgDropGroupByComponent,
         SvgDropSortByComponent,
+        //
+        SvgDropSubTickComponent,
     ],
     exports: [
         SvgDropEditComponent,
@@ -73,6 +77,8 @@ import { SvgDropSortByComponent } from './drop-sort-by.component';
         SvgDropViewAsComponent,
         SvgDropGroupByComponent,
         SvgDropSortByComponent,
+        //
+        SvgDropSubTickComponent,
     ],
 })
 export class SvgDropdownsModule {}

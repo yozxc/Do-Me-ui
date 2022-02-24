@@ -18,6 +18,10 @@ import {
 export class ViewMenuDropdownComponent implements OnInit, AfterViewChecked {
     isVisible: boolean = false;
 
+    viewAsVisible: boolean = false;
+    viewGroupBy: boolean = false;
+    viewSortBy: boolean = false;
+
     @Output() onClose: EventEmitter<any> = new EventEmitter();
 
     // todo : set normal type instead of 'any'
@@ -42,7 +46,7 @@ export class ViewMenuDropdownComponent implements OnInit, AfterViewChecked {
             this.menuView.nativeElement.style.left = `calc(50% + ${coordinates.left * -1 + 5}px)`;
         }
         if (coordinates.right > window.innerWidth) {
-            this.menuView.nativeElement.style.left = `calc(50% - ${coordinates.right - window.innerWidth + 5}px)`;
+            this.menuView.nativeElement.style.left = `calc(50% - ${coordinates.right - window.innerWidth + 25}px)`;
         }
     }
 
