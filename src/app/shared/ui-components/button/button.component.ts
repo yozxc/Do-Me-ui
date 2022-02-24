@@ -6,8 +6,6 @@ import { ChangeDetectionStrategy, Component, Input, OnInit, Output, EventEmitter
         <button (click)="clickEvent.emit()" [class]="styleCls" [ngClass]="{ disabled }">
             <ng-content></ng-content>
         </button>
-
-        <!-- todo :  change [disabled]="true" -->
     `,
     styleUrls: ['./button.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,

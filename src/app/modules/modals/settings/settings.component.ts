@@ -14,8 +14,11 @@ export class SettingsComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    // todo : take care of this
     onClose() {
-        this.router.navigate([this.router.url]);
+        console.log(this.router.url);
+        console.log(this.router.url.split('//')[0]);
+        this.router.navigateByUrl(this.router.url.split('//')[0]);
     }
 
     changeTitle(title: string) {

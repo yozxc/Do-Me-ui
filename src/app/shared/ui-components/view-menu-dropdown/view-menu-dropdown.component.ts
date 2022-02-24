@@ -3,6 +3,7 @@ import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
+    ElementRef,
     EventEmitter,
     OnInit,
     Output,
@@ -24,8 +25,7 @@ export class ViewMenuDropdownComponent implements OnInit, AfterViewChecked {
 
     @Output() onClose: EventEmitter<any> = new EventEmitter();
 
-    // todo : set normal type instead of 'any'
-    @ViewChild('menuView') menuView: any;
+    @ViewChild('menuView') menuView?: ElementRef;
 
     constructor(private cdr: ChangeDetectorRef) {}
 
