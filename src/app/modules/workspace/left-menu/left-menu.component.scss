@@ -1,5 +1,5 @@
-@import "vars";
-@import "colors";
+@import 'vars';
+@import 'colors';
 
 .left__menu {
     width: 300px;
@@ -194,7 +194,7 @@
     right: 10px;
     transform: translate(0, -50%);
     font-size: 0.8em;
-    font-family: "Noto Sans", sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     user-select: none;
 
     &._gray {

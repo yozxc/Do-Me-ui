@@ -2,7 +2,7 @@ export enum OUTLETS {
     MODALS = 'modals',
     ADDITIONAL_MODALS = 'additionalModals',
     SETTINGS_SPACE = 'settingsSpace',
-    MAIN_PLACE = 'mainPlace',
+    MAIN_PLACE = 'mainPlace'
 }
 
 //
@@ -14,7 +14,7 @@ export enum PAGES_ROUTE {
     FORGOT_PASSWORD = 'forgotPassword',
     RESET_PASSWORD = 'resetPassword',
 
-    WORKSPACE = 'workspace',
+    WORKSPACE = 'workspace'
 }
 
 export enum MODALS_ROUTE {
@@ -22,11 +22,11 @@ export enum MODALS_ROUTE {
     ADD_LABEL = 'addLabel',
     ADD_FILTER = 'addFilter',
     QUICK_ADD = 'quickAdd',
-    SETTINGS = 'settings',
+    SETTINGS = 'settings'
 }
 
 export enum ADDITIONAL_MODALS_ROUTE {
-    REMOVE_PHOTO = 'removePhoto',
+    REMOVE_PHOTO = 'removePhoto'
 }
 
 export enum SETTINGS_ROUTE {
@@ -37,7 +37,7 @@ export enum SETTINGS_ROUTE {
 
     CHANGE_EMAIL = 'changeEmail',
     CHANGE_PASSWORD = 'changePassword',
-    DELETE_ACCOUNT = 'deleteAccount',
+    DELETE_ACCOUNT = 'deleteAccount'
 }
 
 export enum MAIN_PLACE_ROUTE {
@@ -48,5 +48,5 @@ export enum MAIN_PLACE_ROUTE {
     LABEL = 'label',
     FILTER = 'filter',
 
-    ID = 'id',
+    ID = 'id'
 }

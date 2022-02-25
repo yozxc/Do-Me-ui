@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-st-neutral',
@@ -30,7 +30,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                 font-family: $gFont;
                 user-select: none;
             }
-        `,
+        `
     ],
     template: `
         <svg width="166" height="77" viewBox="0 0 166 77" fill="#f7f7f7">
@@ -56,12 +56,10 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                 ></path>
             </g>
         </svg>
-    `,
+    `
 })
-export class StNeutralComponent implements OnInit {
+export class StNeutralComponent {
     @Input() isActive: boolean = false;
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

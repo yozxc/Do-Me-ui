@@ -43,8 +43,8 @@
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
+                                    "maximumWarning": "25kb",
+                                    "maximumError": "40kb"
                                 }
                             ],
                             "fileReplacements": [
@@ -94,15 +94,23 @@
                         "inlineStyleLanguage": "scss",
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": ["src/styles.scss"],
-
                         "stylePreprocessorOptions": {
                             "includePaths": ["src/scss/partial/"]
                         },
                         "scripts": []
                     }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+                    }
                 }
             }
         }
     },
-    "defaultProject": "todo-angular"
+    "defaultProject": "todo-angular",
+    "cli": {
+        "defaultCollection": "@angular-eslint/schematics"
+    }
 }

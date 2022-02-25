@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-label',
     templateUrl: './label.component.html',
     styleUrls: ['./label.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LabelComponent implements OnInit {
+export class LabelComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

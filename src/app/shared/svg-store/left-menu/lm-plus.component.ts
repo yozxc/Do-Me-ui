@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-lm-plus',
@@ -26,7 +26,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                     opacity: 1;
                 }
             }
-        `,
+        `
     ],
     template: `
         <svg>
@@ -35,10 +35,8 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                 fill-rule="evenodd"
             ></path>
         </svg>
-    `,
+    `
 })
-export class LmPlusComponent implements OnInit {
+export class LmPlusComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-inbox',
     templateUrl: './inbox.component.html',
     styleUrls: ['./inbox.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class InboxComponent implements OnInit {
+export class InboxComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

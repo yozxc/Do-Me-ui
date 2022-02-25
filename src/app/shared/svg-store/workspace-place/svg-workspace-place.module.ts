@@ -34,7 +34,7 @@ import { WpViewComponent } from './wp-view.component';
         WpLabelComponent,
         WpPriorityComponent,
         WpHeaderMoreComponent,
-        WpHeaderArrowComponent,
+        WpHeaderArrowComponent
     ],
     exports: [
         WpViewComponent,
@@ -51,7 +51,7 @@ import { WpViewComponent } from './wp-view.component';
         WpLabelComponent,
         WpPriorityComponent,
         WpHeaderMoreComponent,
-        WpHeaderArrowComponent,
-    ],
+        WpHeaderArrowComponent
+    ]
 })
 export class SvgWorkspacePlaceModule {}

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-lm-drag',
@@ -18,7 +18,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                     fill: #202020;
                 }
             }
-        `,
+        `
     ],
     template: `
         <svg class="menu__proj__drag">
@@ -27,10 +27,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                 d="M9.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5-5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
             ></path>
         </svg>
-    `,
+    `
 })
-export class LmDragComponent implements OnInit {
+export class LmDragComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

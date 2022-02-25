@@ -11,6 +11,6 @@ import { ModalsModule } from './modules/modals/modals.module';
 @NgModule({
     declarations: [AppComponent],
     imports: [BrowserModule, AppRoutingModule, WorkspaceModule, AuthModule, ModalsModule],
-    bootstrap: [AppComponent],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

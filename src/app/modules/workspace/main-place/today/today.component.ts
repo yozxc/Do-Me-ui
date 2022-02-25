@@ -1,15 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-today',
     templateUrl: './today.component.html',
     styleUrls: ['./today.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TodayComponent implements OnInit {
+export class TodayComponent {
     date: number = Date.now();
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

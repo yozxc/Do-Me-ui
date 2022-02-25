@@ -32,7 +32,7 @@ import { QuickAddComponent } from './quick-add/quick-add.component';
         SvgSettingsThemeModule,
         SvgWorkspacePlaceModule,
         SvgAuthModule,
-        UiComponentsModule,
+        UiComponentsModule
     ],
     declarations: [
         ModalsManagerComponent,
@@ -48,7 +48,7 @@ import { QuickAddComponent } from './quick-add/quick-add.component';
         ChangeEmailComponent,
         ChangePasswordComponent,
         DeleteAccountComponent,
-        QuickAddComponent,
+        QuickAddComponent
     ],
     exports: [
         ModalsManagerComponent,
@@ -62,7 +62,7 @@ import { QuickAddComponent } from './quick-add/quick-add.component';
         ThemeSettingsComponent,
         RemovePhotoComponent,
         ChangeEmailComponent,
-        ChangePasswordComponent,
-    ],
+        ChangePasswordComponent
+    ]
 })
 export class ModalsModule {}

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PAGES_ROUTE, MODALS_ROUTE, SETTINGS_ROUTE, MAIN_PLACE_ROUTE, OUTLETS } from './core/nav-constants';
+import { MAIN_PLACE_ROUTE, MODALS_ROUTE, OUTLETS, PAGES_ROUTE, SETTINGS_ROUTE } from './core/nav-constants';
 
 import { WorkspaceComponent } from './modules/workspace/workspace.component';
 import { SignPageComponent } from './modules/auth/sign-page/sign-page.component';
@@ -38,7 +38,7 @@ const settingsRoutes: Routes = [
 
     { path: `${SETTINGS_ROUTE.CHANGE_EMAIL}`, component: ChangeEmailComponent, outlet: OUTLETS.SETTINGS_SPACE },
     { path: `${SETTINGS_ROUTE.CHANGE_PASSWORD}`, component: ChangePasswordComponent, outlet: OUTLETS.SETTINGS_SPACE },
-    { path: `${SETTINGS_ROUTE.DELETE_ACCOUNT}`, component: DeleteAccountComponent, outlet: OUTLETS.SETTINGS_SPACE },
+    { path: `${SETTINGS_ROUTE.DELETE_ACCOUNT}`, component: DeleteAccountComponent, outlet: OUTLETS.SETTINGS_SPACE }
 ];
 
 const modalsRoutes: Routes = [
@@ -50,8 +50,8 @@ const modalsRoutes: Routes = [
         path: `${MODALS_ROUTE.SETTINGS}`,
         component: SettingsComponent,
         outlet: OUTLETS.MODALS,
-        children: [...settingsRoutes],
-    },
+        children: [...settingsRoutes]
+    }
 ];
 
 const mainPlaceRoutes: Routes = [
@@ -60,14 +60,14 @@ const mainPlaceRoutes: Routes = [
     { path: `${MAIN_PLACE_ROUTE.INBOX}`, component: InboxComponent },
     { path: `${MAIN_PLACE_ROUTE.PROJECT}/:${MAIN_PLACE_ROUTE.ID}`, component: ProjectComponent },
     { path: `${MAIN_PLACE_ROUTE.LABEL}/:${MAIN_PLACE_ROUTE.ID}`, component: LabelComponent },
-    { path: `${MAIN_PLACE_ROUTE.FILTER}/:${MAIN_PLACE_ROUTE.ID}`, component: FilterComponent },
+    { path: `${MAIN_PLACE_ROUTE.FILTER}/:${MAIN_PLACE_ROUTE.ID}`, component: FilterComponent }
 ];
 
 const pagesRoutes: Routes = [
     {
         path: `${PAGES_ROUTE.WORKSPACE}`,
         component: WorkspaceComponent,
-        children: [...modalsRoutes, ...mainPlaceRoutes],
+        children: [...modalsRoutes, ...mainPlaceRoutes]
     },
 
     { path: ``, redirectTo: `${PAGES_ROUTE.AUTH}/${PAGES_ROUTE.SIGNIN}`, pathMatch: 'full' },
@@ -77,12 +77,12 @@ const pagesRoutes: Routes = [
     { path: `${PAGES_ROUTE.AUTH}/${PAGES_ROUTE.RESET_PASSWORD}`, component: ResetPassPageComponent },
 
     // todo : dev temp
-    { path: `**`, redirectTo: `${PAGES_ROUTE.WORKSPACE}`, pathMatch: 'full' },
+    { path: `**`, redirectTo: `${PAGES_ROUTE.WORKSPACE}`, pathMatch: 'full' }
 ];
 
 @NgModule({
     // todo : fix routes (.forChild(Routes)...)
     imports: [RouterModule.forRoot(pagesRoutes)],
-    exports: [RouterModule],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {}

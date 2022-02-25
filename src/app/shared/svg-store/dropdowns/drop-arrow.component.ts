@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-drop-arrow',
@@ -11,7 +11,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
                 fill: #808080;
             }
-        `,
+        `
     ],
     template: `
         <svg>
@@ -19,10 +19,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
                 <path stroke="#808080" stroke-linecap="round" stroke-linejoin="round" d="M16 10l-4 4-4-4"></path>
             </g>
         </svg>
-    `,
+    `
 })
-export class SvgDropArrowComponent implements OnInit {
+export class SvgDropArrowComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-facebook-icon',
@@ -23,10 +23,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 	h62.025v64.622h-44.382c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z"
             />
         </svg>
-    `,
+    `
 })
-export class FacebookIconComponent implements OnInit {
+export class FacebookIconComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

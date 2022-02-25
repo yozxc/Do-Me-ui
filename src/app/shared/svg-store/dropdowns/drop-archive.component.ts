@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-drop-archive',
@@ -9,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
                 width: 100%;
                 height: 100%;
             }
-        `,
+        `
     ],
     template: `
         <svg>
@@ -21,10 +21,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
                 <rect width="6" height="1" x="9" y="12" fill="#888" rx=".5"></rect>
             </g>
         </svg>
-    `,
+    `
 })
-export class SvgDropArchiveComponent implements OnInit {
+export class SvgDropArchiveComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

@@ -10,6 +10,6 @@ import { StTangerineComponent } from './st-tangerine.component';
 @NgModule({
     imports: [CommonModule],
     declarations: [StDefaultComponent, StNoirComponent, StDarkComponent, StNeutralComponent, StTangerineComponent],
-    exports: [StDefaultComponent, StNoirComponent, StDarkComponent, StNeutralComponent, StTangerineComponent],
+    exports: [StDefaultComponent, StNoirComponent, StDarkComponent, StNeutralComponent, StTangerineComponent]
 })
 export class SvgSettingsThemeModule {}

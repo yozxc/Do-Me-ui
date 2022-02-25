@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-wp-inbox',
@@ -9,7 +9,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
                 width: 100%;
                 height: 100%;
             }
-        `,
+        `
     ],
     template: `
         <svg [class]="styleCls" viewBox="0 0 16 16">
@@ -23,12 +23,10 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
                 ></path>
             </g>
         </svg>
-    `,
+    `
 })
-export class WpInboxComponent implements OnInit {
+export class WpInboxComponent {
     @Input() styleCls = '';
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

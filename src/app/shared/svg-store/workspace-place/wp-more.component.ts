@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-wp-more',
@@ -11,7 +11,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
                 fill: #808080;
             }
-        `,
+        `
     ],
     template: `
         <svg class="stroke_black" stroke="#808080">
@@ -21,10 +21,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                 <circle cx="16" cy="2" r="2"></circle>
             </g>
         </svg>
-    `,
+    `
 })
-export class WpMoreComponent implements OnInit {
+export class WpMoreComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

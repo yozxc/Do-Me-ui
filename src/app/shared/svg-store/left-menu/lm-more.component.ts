@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-lm-more',
@@ -19,7 +19,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                     fill: #202020;
                 }
             }
-        `,
+        `
     ],
     template: `
         <svg>
@@ -28,10 +28,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                 d="M1.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
             ></path>
         </svg>
-    `,
+    `
 })
-export class LmMoreComponent implements OnInit {
+export class LmMoreComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

@@ -22,7 +22,7 @@ import { LmUpcomingComponent } from './lm-upcoming.component';
         LmMoreComponent,
         LmDragComponent,
         LmLabelComponent,
-        LmFilterComponent,
+        LmFilterComponent
     ],
     exports: [
         LmInboxComponent,
@@ -33,7 +33,7 @@ import { LmUpcomingComponent } from './lm-upcoming.component';
         LmMoreComponent,
         LmDragComponent,
         LmLabelComponent,
-        LmFilterComponent,
-    ],
+        LmFilterComponent
+    ]
 })
 export class SvgLeftMenuModule {}

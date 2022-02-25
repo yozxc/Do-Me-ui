@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-wp-task-more',
@@ -21,7 +21,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
             .pltmi__more {
                 transform: translate(18%, 45%);
             }
-        `,
+        `
     ],
     template: `
         <svg>
@@ -31,10 +31,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                 fill-rule="evenodd"
             ></path>
         </svg>
-    `,
+    `
 })
-export class WpTaskMoreComponent implements OnInit {
+export class WpTaskMoreComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

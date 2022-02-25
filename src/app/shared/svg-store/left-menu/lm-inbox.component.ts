@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-lm-inbox',
@@ -13,7 +13,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 
                 fill: #246fe0;
             }
-        `,
+        `
     ],
     template: `
         <svg>
@@ -27,10 +27,8 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                 ></path>
             </g>
         </svg>
-    `,
+    `
 })
-export class LmInboxComponent implements OnInit {
+export class LmInboxComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

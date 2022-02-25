@@ -1,15 +1,13 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-register-page',
     templateUrl: './register-page.component.html',
     styleUrls: ['./register-page.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterPageComponent {
     passIsVisible: boolean = false;
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

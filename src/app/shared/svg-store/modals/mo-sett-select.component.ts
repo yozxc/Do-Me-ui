@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-mo-sett-select',
@@ -11,7 +11,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
                 height: 16px;
                 width: 16px;
             }
-        `,
+        `
     ],
     template: `
         <svg fill="none" aria-hidden="true">
@@ -19,10 +19,8 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
                 d="M11.646 5.646a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 1 1 .708-.708L8 9.293l3.646-3.647z"
             ></path>
         </svg>
-    `,
+    `
 })
-export class MoSettSelectComponent implements OnInit {
+export class MoSettSelectComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

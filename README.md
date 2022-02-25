@@ -3,7 +3,7 @@ TODO app to emulate enterprise development
 
 TODO | Environment :
 
-Angular UI     : 32/100%
+Angular UI     : 36/100%
 React UI       : 0/100%
 Node/Nest Back : 0/100%
 Go(lang) Back  : 0/100%
@@ -16,7 +16,7 @@ TODO | Angular :
 
 v1.0
 (-) | rewrite on pure BEM
-(-) | config prettier + esLint (files)
+(+) | config prettier + esLint (files)
 (-) | check for ngrx | ngxs
 (-) | custom ui lib + storybook
 (-) | cover 99% tests

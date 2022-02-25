@@ -11,7 +11,7 @@ describe('HeaderComponent', () => {
         await TestBed.configureTestingModule({
             declarations: [HeaderComponent],
             // todo : mock services
-            providers: [LmStateService],
+            providers: [LmStateService]
         }).compileComponents();
     });
 

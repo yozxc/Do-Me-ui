@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-close-eye',
@@ -17,10 +17,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                 <rect width="21" height="1" x="-.722" y="7.778" rx=".5" transform="rotate(-45 9.778 8.278)"></rect>
             </g>
         </svg>
-    `,
+    `
 })
-export class CloseEyeComponent implements OnInit {
+export class CloseEyeComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

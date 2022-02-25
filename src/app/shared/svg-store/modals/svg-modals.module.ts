@@ -24,7 +24,7 @@ import { MoSettSelectComponent } from './mo-sett-select.component';
         MoLmRemindersComponent,
         MoLmNotificationsComponent,
         MoLmBackupsComponent,
-        MoSettSelectComponent,
+        MoSettSelectComponent
     ],
     exports: [
         MoCloseComponent,
@@ -36,7 +36,7 @@ import { MoSettSelectComponent } from './mo-sett-select.component';
         MoLmRemindersComponent,
         MoLmNotificationsComponent,
         MoLmBackupsComponent,
-        MoSettSelectComponent,
-    ],
+        MoSettSelectComponent
+    ]
 })
 export class SvgModalsModule {}

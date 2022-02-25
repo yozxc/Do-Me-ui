@@ -9,6 +9,6 @@ import { OpenEyeComponent } from './open-eye.component';
 @NgModule({
     imports: [CommonModule],
     declarations: [CloseEyeComponent, FacebookIconComponent, GoogleIconComponent, OpenEyeComponent],
-    exports: [CloseEyeComponent, FacebookIconComponent, GoogleIconComponent, OpenEyeComponent],
+    exports: [CloseEyeComponent, FacebookIconComponent, GoogleIconComponent, OpenEyeComponent]
 })
 export class SvgAuthModule {}

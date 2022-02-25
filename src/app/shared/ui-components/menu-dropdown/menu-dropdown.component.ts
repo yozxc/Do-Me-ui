@@ -1,23 +1,22 @@
 import {
     AfterViewChecked,
     ChangeDetectionStrategy,
-    Component,
-    Input,
-    OnInit,
-    ViewChild,
     ChangeDetectorRef,
-    Output,
-    EventEmitter,
+    Component,
     ElementRef,
+    EventEmitter,
+    Input,
+    Output,
+    ViewChild
 } from '@angular/core';
 
 @Component({
     selector: 'ui-menu-dropdown',
     templateUrl: './menu-dropdown.component.html',
     styleUrls: ['./menu-dropdown.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MenuDropdownComponent implements OnInit, AfterViewChecked {
+export class MenuDropdownComponent implements AfterViewChecked {
     isVisible: boolean = false;
 
     @Input() addAbove: boolean = false;
@@ -32,13 +31,11 @@ export class MenuDropdownComponent implements OnInit, AfterViewChecked {
     @Input() archive: boolean = false;
     @Input() del: boolean = false;
 
-    @Output() onClose: EventEmitter<any> = new EventEmitter();
+    @Output() closeEvent: EventEmitter<any> = new EventEmitter();
 
     @ViewChild('menuView') menuView?: ElementRef;
 
     constructor(private cdr: ChangeDetectorRef) {}
-
-    ngOnInit(): void {}
 
     // this is setting menu to be visible in viewport
     ngAfterViewChecked(): void {
@@ -66,6 +63,6 @@ export class MenuDropdownComponent implements OnInit, AfterViewChecked {
 
     close() {
         this.isVisible = false;
-        this.onClose.emit();
+        this.closeEvent.emit();
     }
 }

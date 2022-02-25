@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-lm-upcoming',
@@ -13,7 +13,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 
                 fill: #692fc2;
             }
-        `,
+        `
     ],
     template: `
         <svg viewBox="0 0 24 24">
@@ -24,10 +24,8 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                 ></path>
             </g>
         </svg>
-    `,
+    `
 })
-export class LmUpcomingComponent implements OnInit {
+export class LmUpcomingComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

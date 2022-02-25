@@ -52,7 +52,7 @@ import { SvgDropSubTickComponent } from './drop-sub-tick.component';
         SvgDropGroupByComponent,
         SvgDropSortByComponent,
         //
-        SvgDropSubTickComponent,
+        SvgDropSubTickComponent
     ],
     exports: [
         SvgDropEditComponent,
@@ -78,7 +78,7 @@ import { SvgDropSubTickComponent } from './drop-sub-tick.component';
         SvgDropGroupByComponent,
         SvgDropSortByComponent,
         //
-        SvgDropSubTickComponent,
-    ],
+        SvgDropSubTickComponent
+    ]
 })
 export class SvgDropdownsModule {}

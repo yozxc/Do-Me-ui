@@ -1,13 +1,13 @@
 import { Router } from '@angular/router';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-add-label',
     templateUrl: './add-label.component.html',
     styleUrls: ['./add-label.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AddLabelComponent implements OnInit {
+export class AddLabelComponent {
     colors = [
         { name: 'Berry Red', styleCls: 'bg-berryRed' },
         { name: 'Red', styleCls: 'bg-red' },
@@ -28,15 +28,13 @@ export class AddLabelComponent implements OnInit {
         { name: 'Salmon', styleCls: 'bg-salmon' },
         { name: 'Charcoal', styleCls: 'bg-charcoal' },
         { name: 'Grey', styleCls: 'bg-grey' },
-        { name: 'Taupe', styleCls: 'bg-taupe' },
+        { name: 'Taupe', styleCls: 'bg-taupe' }
     ];
     currentColorID: number = 0;
 
     isColorListActive: boolean = false;
 
     constructor(private router: Router) {}
-
-    ngOnInit(): void {}
 
     setCurrentColorID(id: number) {
         this.currentColorID = id;

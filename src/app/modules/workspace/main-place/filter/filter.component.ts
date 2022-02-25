@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-filter',
     templateUrl: './filter.component.html',
     styleUrls: ['./filter.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FilterComponent implements OnInit {
+export class FilterComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

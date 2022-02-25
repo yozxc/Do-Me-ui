@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-lm-dot',
@@ -9,18 +9,16 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                 width: 100%;
                 height: 100%;
             }
-        `,
+        `
     ],
     template: `
         <svg [class]="styleCls" viewBox="0 0 24 24">
             <path d="M12 7a5 5 0 110 10 5 5 0 010-10z"></path>
         </svg>
-    `,
+    `
 })
-export class LmDotComponent implements OnInit {
+export class LmDotComponent {
     @Input() styleCls: string = 'gray';
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

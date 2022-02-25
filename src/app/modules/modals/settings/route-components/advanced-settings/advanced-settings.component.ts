@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-advanced-settings',
     templateUrl: './advanced-settings.component.html',
     styleUrls: ['./advanced-settings.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdvancedSettingsComponent implements OnInit {
+export class AdvancedSettingsComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

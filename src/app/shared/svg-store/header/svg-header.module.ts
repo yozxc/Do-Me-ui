@@ -18,7 +18,7 @@ import { SearchLoupeComponent } from './search-loupe.component';
         HeaderHomeComponent,
         HeaderAddComponent,
         HeaderHelpComponent,
-        HeaderBellComponent,
+        HeaderBellComponent
     ],
     exports: [
         SearchLoupeComponent,
@@ -27,7 +27,7 @@ import { SearchLoupeComponent } from './search-loupe.component';
         HeaderHomeComponent,
         HeaderAddComponent,
         HeaderHelpComponent,
-        HeaderBellComponent,
-    ],
+        HeaderBellComponent
+    ]
 })
 export class SvgHeaderModule {}

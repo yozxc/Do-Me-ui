@@ -1,15 +1,13 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-list-add-section',
     templateUrl: './list-add-section.component.html',
     styleUrls: ['./list-add-section.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListAddSectionComponent implements OnInit {
+export class ListAddSectionComponent {
     isOnAdd: boolean = false;
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

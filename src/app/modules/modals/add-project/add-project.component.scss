@@ -1,4 +1,4 @@
-@import "vars";
+@import 'vars';
 
 .modal {
     position: absolute;
@@ -210,12 +210,12 @@
 
     padding-top: 9px;
 
-    background-image: url("../../../../assets/svg/proj-type/list-type.svg");
+    background-image: url('../../../../assets/svg/proj-type/list-type.svg');
     background-repeat: no-repeat;
     background-position: 0 10px;
 
     &:hover {
-        background-image: url("../../../../assets/svg/proj-type/list-type-hover.svg");
+        background-image: url('../../../../assets/svg/proj-type/list-type-hover.svg');
     }
 }
 
@@ -230,12 +230,12 @@
     padding: 5px 0 0 5px;
     overflow: hidden;
 
-    background-image: url("../../../../assets/svg/proj-type/table-type.svg");
+    background-image: url('../../../../assets/svg/proj-type/table-type.svg');
     background-repeat: no-repeat;
     background-position: 5px 5px;
 
     &:hover {
-        background-image: url("../../../../assets/svg/proj-type/table-type-hover.svg");
+        background-image: url('../../../../assets/svg/proj-type/table-type-hover.svg');
     }
 }
 

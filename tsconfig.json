@@ -27,7 +27,11 @@
 
             "@core/*": ["src/app/core/*"],
             "@modules/*": ["src/app/modules/*"],
-            "@shared/*": ["src/app/shared/*"]
+            "@shared/*": ["src/app/shared/*"],
+
+            //
+
+            "tslib": ["node_modules/tslib/tslib.d.ts"]
         }
     },
     "angularCompilerOptions": {

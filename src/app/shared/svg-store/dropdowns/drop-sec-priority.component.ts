@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 type OneToFour = 1 | 2 | 3 | 4;
 
@@ -38,7 +38,7 @@ type OneToFour = 1 | 2 | 3 | 4;
 
                 visibility: hidden;
             }
-        `,
+        `
     ],
     template: `
         <svg width="24" height="24">
@@ -55,12 +55,10 @@ type OneToFour = 1 | 2 | 3 | 4;
         </svg>
 
         <div class="description">Priority {{ prior }}</div>
-    `,
+    `
 })
-export class SvgDropSecPriorityComponent implements OnInit {
+export class SvgDropSecPriorityComponent {
     @Input() prior!: OneToFour;
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

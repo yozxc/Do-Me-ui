@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { projects, labels, filters, favorites } from '@assets/mock/lm-projects';
+import { favorites, filters, labels, projects } from '@assets/mock/lm-projects';
 
 import { LmStateService } from './lm-state.service';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { PAGES_ROUTE } from '@app/core/nav-constants';
     selector: 'app-left-menu',
     templateUrl: './left-menu.component.html',
     styleUrls: ['./left-menu.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LeftMenuComponent implements OnInit, OnDestroy {
     projects: any;
@@ -26,7 +26,7 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
         favorites: false,
         projects: true,
         labels: true,
-        filters: true,
+        filters: true
     };
 
     constructor(private lmStateService: LmStateService, private cdr: ChangeDetectorRef, private router: Router) {}
@@ -55,7 +55,7 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
         if (cat === 'filters') this.activeLabels[cat] = !this.activeLabels[cat];
     }
 
-    navToUrl(url: string){
-        this.router.navigate([`${PAGES_ROUTE.WORKSPACE}/${url}`], {skipLocationChange: false})
+    navToUrl(url: string) {
+        this.router.navigate([`${PAGES_ROUTE.WORKSPACE}/${url}`], { skipLocationChange: false });
     }
 }

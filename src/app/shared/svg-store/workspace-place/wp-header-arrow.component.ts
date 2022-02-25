@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'svg-wp-header-arrow',
@@ -24,20 +24,18 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter
                     background-color: #ececec;
                 }
             }
-        `,
+        `
     ],
     template: `
-        <svg [ngClass]="{ _active: !isClosed }" (click)="onClickEvent.emit()">
+        <svg [ngClass]="{ _active: !isClosed }" (click)="clickEvent.emit()">
             <path fill="none" stroke="currentColor" d="M16 10l-4 4-4-4"></path>
         </svg>
-    `,
+    `
 })
-export class WpHeaderArrowComponent implements OnInit {
+export class WpHeaderArrowComponent {
     @Input() isClosed!: boolean | null;
 
-    @Output() onClickEvent: EventEmitter<any> = new EventEmitter();
+    @Output() clickEvent: EventEmitter<any> = new EventEmitter();
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

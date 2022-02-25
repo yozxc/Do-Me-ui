@@ -10,6 +10,6 @@ import { ViewMenuDropdownComponent } from './view-menu-dropdown/view-menu-dropdo
 @NgModule({
     imports: [CommonModule, SvgDropdownsModule],
     declarations: [ButtonComponent, MenuDropdownComponent, ViewMenuDropdownComponent],
-    exports: [ButtonComponent, MenuDropdownComponent, ViewMenuDropdownComponent],
+    exports: [ButtonComponent, MenuDropdownComponent, ViewMenuDropdownComponent]
 })
 export class UiComponentsModule {}

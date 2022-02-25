@@ -8,7 +8,7 @@ describe('ModalsManagerComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ModalsManagerComponent],
+            declarations: [ModalsManagerComponent]
         }).compileComponents();
     });
 

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-wp-view',
@@ -11,7 +11,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
                 fill: #808080;
             }
-        `,
+        `
     ],
     template: `
         <svg viewBox="0 0 24 24" class="fill_black">
@@ -20,10 +20,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                 fill-rule="nonzero"
             ></path>
         </svg>
-    `,
+    `
 })
-export class WpViewComponent implements OnInit {
+export class WpViewComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

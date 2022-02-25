@@ -1,0 +1,15 @@
+# Folders
+/.angular
+/.vscode
+/.husky
+/dist
+/node_modules
+
+# Files
+.lintstagedrc.js
+package.json
+package-lock.json
+dist
+e2e/**
+karma.conf.js
+commitlint.config.js

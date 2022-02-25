@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-drop-sec-today',
@@ -36,7 +36,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
                 visibility: hidden;
             }
-        `,
+        `
     ],
     template: `
         <svg viewBox="0 0 28 28">
@@ -57,12 +57,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
         </svg>
 
         <div class="description">Today</div>
-    `,
+    `
 })
-export class SvgDropSecTodayComponent implements OnInit {
+export class SvgDropSecTodayComponent {
     date = Date.now();
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

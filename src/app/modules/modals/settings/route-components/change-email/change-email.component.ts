@@ -1,15 +1,13 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-change-email',
     templateUrl: './change-email.component.html',
     styleUrls: ['./change-email.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChangeEmailComponent implements OnInit {
+export class ChangeEmailComponent {
     passIsVisible: boolean = false;
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

@@ -33,7 +33,7 @@ import { FilterComponent } from './main-place/filter/filter.component';
         SvgHeaderModule,
         SvgLeftMenuModule,
         UiComponentsModule,
-        ModalsModule,
+        ModalsModule
     ],
     providers: [LmStateService],
     declarations: [
@@ -50,8 +50,8 @@ import { FilterComponent } from './main-place/filter/filter.component';
         ListHeaderComponent,
         ProjectComponent,
         LabelComponent,
-        FilterComponent,
+        FilterComponent
     ],
-    exports: [WorkspaceComponent],
+    exports: [WorkspaceComponent]
 })
 export class WorkspaceModule {}

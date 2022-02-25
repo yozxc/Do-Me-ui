@@ -1,24 +1,22 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { PAGES_ROUTE, SETTINGS_ROUTE, MODALS_ROUTE, OUTLETS } from '@core/nav-constants';
+import { MODALS_ROUTE, OUTLETS, PAGES_ROUTE, SETTINGS_ROUTE } from '@core/nav-constants';
 
 @Component({
     selector: 'app-account-settings',
     templateUrl: './account-settings.component.html',
     styleUrls: ['./account-settings.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AccountSettingsComponent implements OnInit {
+export class AccountSettingsComponent {
     constructor(private router: Router) {}
-
-    ngOnInit(): void {}
 
     changeEmail() {
         this.router.navigateByUrl(
             `/${PAGES_ROUTE.WORKSPACE}/(${OUTLETS.MODALS}:${MODALS_ROUTE.SETTINGS}/(${OUTLETS.SETTINGS_SPACE}:${SETTINGS_ROUTE.CHANGE_EMAIL}))`,
             {
-                skipLocationChange: true,
+                skipLocationChange: true
             }
         );
     }
@@ -27,7 +25,7 @@ export class AccountSettingsComponent implements OnInit {
         this.router.navigateByUrl(
             `/${PAGES_ROUTE.WORKSPACE}/(${OUTLETS.MODALS}:${MODALS_ROUTE.SETTINGS}/(${OUTLETS.SETTINGS_SPACE}:${SETTINGS_ROUTE.CHANGE_PASSWORD}))`,
             {
-                skipLocationChange: true,
+                skipLocationChange: true
             }
         );
     }
@@ -37,7 +35,7 @@ export class AccountSettingsComponent implements OnInit {
         this.router.navigateByUrl(
             `/${PAGES_ROUTE.WORKSPACE}/(${OUTLETS.MODALS}:${MODALS_ROUTE.SETTINGS}/(${OUTLETS.SETTINGS_SPACE}:${SETTINGS_ROUTE.DELETE_ACCOUNT}))`,
             {
-                skipLocationChange: true,
+                skipLocationChange: true
             }
         );
     }

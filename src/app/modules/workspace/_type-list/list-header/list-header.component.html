@@ -3,7 +3,7 @@
         <ng-container *ngIf="!isOnEdit; else addEditor">
             <div class="title" (click)="editableTitle && (isOnEdit = true)">{{ title }}</div>
             <div *ngIf="dateDisplay" class="date">
-                {{ date | date: "EEEEEE" }} {{ date | date: "d" }} {{ date | date: "LLL" }}
+                {{ date | date: 'EEEEEE' }} {{ date | date: 'd' }} {{ date | date: 'LLL' }}
             </div>
         </ng-container>
 

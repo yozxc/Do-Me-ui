@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-drop-sec-this-weekend',
@@ -36,7 +36,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
                 visibility: hidden;
             }
-        `,
+        `
     ],
     template: `
         <svg viewBox="0 0 28 28">
@@ -47,10 +47,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
         </svg>
 
         <div class="description">This weekend</div>
-    `,
+    `
 })
-export class SvgDropSecThisWeekendComponent implements OnInit {
+export class SvgDropSecThisWeekendComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

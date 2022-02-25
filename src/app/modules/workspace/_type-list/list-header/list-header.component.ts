@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-list-header',
     templateUrl: './list-header.component.html',
     styleUrls: ['./list-header.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListHeaderComponent implements OnInit {
+export class ListHeaderComponent {
     isOnEdit: boolean = false;
     date: number = Date.now();
 
@@ -15,6 +15,4 @@ export class ListHeaderComponent implements OnInit {
     @Input() editableTitle: boolean = true;
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

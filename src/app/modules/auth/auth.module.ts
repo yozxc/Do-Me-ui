@@ -12,6 +12,6 @@ import { ResetPassPageComponent } from './reset-pass-page/reset-pass-page.compon
 @NgModule({
     imports: [CommonModule, RouterModule, SvgAuthModule],
     declarations: [SignPageComponent, RegisterPageComponent, ForgotPasswordPageComponent, ResetPassPageComponent],
-    exports: [SignPageComponent, RegisterPageComponent, ForgotPasswordPageComponent, ResetPassPageComponent],
+    exports: [SignPageComponent, RegisterPageComponent, ForgotPasswordPageComponent, ResetPassPageComponent]
 })
 export class AuthModule {}

@@ -1,15 +1,13 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-change-password',
     templateUrl: './change-password.component.html',
     styleUrls: ['./change-password.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChangePasswordComponent implements OnInit {
+export class ChangePasswordComponent {
     passIsVisible: boolean = false;
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

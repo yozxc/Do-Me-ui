@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-lm-today',
@@ -13,7 +13,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
                 fill: #058527;
             }
-        `,
+        `
     ],
     template: `
         <svg viewBox="0 0 24 24">
@@ -39,13 +39,11 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                 </text>
             </g>
         </svg>
-    `,
+    `
 })
-export class LmTodayComponent implements OnInit {
+export class LmTodayComponent {
     date: Date;
     constructor() {
         this.date = new Date();
     }
-
-    ngOnInit(): void {}
 }

@@ -1,18 +1,16 @@
 import { Router } from '@angular/router';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'app-settings',
     templateUrl: './settings.component.html',
     styleUrls: ['./settings.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent {
     title: string = 'Account';
 
     constructor(private router: Router) {}
-
-    ngOnInit(): void {}
 
     // todo : take care of this
     onClose() {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'svg-st-default',
@@ -30,7 +30,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                 font-family: $gFont;
                 user-select: none;
             }
-        `,
+        `
     ],
     template: `
         <svg width="166" height="77" fill="#db4c3f" class="border_container">
@@ -56,12 +56,10 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
                 ></path>
             </g>
         </svg>
-    `,
+    `
 })
-export class StDefaultComponent implements OnInit {
+export class StDefaultComponent {
     @Input() isActive: boolean = false;
 
     constructor() {}
-
-    ngOnInit(): void {}
 }

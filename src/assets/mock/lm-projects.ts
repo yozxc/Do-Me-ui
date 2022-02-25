@@ -3,20 +3,20 @@ export const favorites: any[] = [
         type: 'project',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'berryRed',
+        colorCls: 'berryRed'
     },
     {
         type: 'label',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'green',
+        colorCls: 'green'
     },
     {
         type: 'filter',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'blue',
-    },
+        colorCls: 'blue'
+    }
 ];
 
 export const projects: any[] = [
@@ -24,20 +24,20 @@ export const projects: any[] = [
         type: 'project',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'berryRed',
+        colorCls: 'berryRed'
     },
     {
         type: 'project',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'green',
+        colorCls: 'green'
     },
     {
         type: 'project',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'blue',
-    },
+        colorCls: 'blue'
+    }
 ];
 
 export const labels: any[] = [
@@ -45,20 +45,20 @@ export const labels: any[] = [
         type: 'label',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'berryRed',
+        colorCls: 'berryRed'
     },
     {
         type: 'label',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'green',
+        colorCls: 'green'
     },
     {
         type: 'label',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'blue',
-    },
+        colorCls: 'blue'
+    }
 ];
 
 export const filters: any[] = [
@@ -66,18 +66,18 @@ export const filters: any[] = [
         type: 'filter',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'berryRed',
+        colorCls: 'berryRed'
     },
     {
         type: 'filter',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'green',
+        colorCls: 'green'
     },
     {
         type: 'filter',
         name: 'qwe',
         _todoTasks: 1,
-        colorCls: 'blue',
-    },
+        colorCls: 'blue'
+    }
 ];

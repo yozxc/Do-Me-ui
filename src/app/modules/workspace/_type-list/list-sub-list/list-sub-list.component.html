@@ -3,7 +3,7 @@
         <ng-container *ngIf="!isChangingTitle; else taskEditor">
             <div class="tl__title" (click)="isChangingTitle = true">{{ title }}</div>
 
-            <svg-wp-header-arrow [isClosed]="isClosed$ | async" (onClickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
+            <svg-wp-header-arrow [isClosed]="isClosed$ | async" (clickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
             <div class="tl__icons__container" (click)="dropMenu.toggleIsVisible()">
                 <div class="tli__wrapper">
@@ -39,7 +39,7 @@
         <div class="bottom__bar"></div>
     </div>
 
-    <div *ngIf="!(isClosed$ | async)" class="task__list">
+    <div *ngIf="(isClosed$ | async) === false" class="task__list">
         <app-list-task></app-list-task>
 
         <app-list-add-task></app-list-add-task>

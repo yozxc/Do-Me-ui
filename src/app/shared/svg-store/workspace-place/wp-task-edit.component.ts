@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-wp-task-edit',
@@ -26,7 +26,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                     }
                 }
             }
-        `,
+        `
     ],
     template: `
         <svg>
@@ -39,10 +39,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                 ></path>
             </g>
         </svg>
-    `,
+    `
 })
-export class WpTaskEditComponent implements OnInit {
+export class WpTaskEditComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

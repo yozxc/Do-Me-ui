@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-drop-delete',
@@ -9,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
                 width: 100%;
                 height: 100%;
             }
-        `,
+        `
     ],
     template: `
         <svg>
@@ -23,10 +23,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
                 ></path>
             </g>
         </svg>
-    `,
+    `
 })
-export class SvgDropDeleteComponent implements OnInit {
+export class SvgDropDeleteComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
     selector: 'svg-drop-sort-by',
@@ -11,7 +11,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
                 fill: #808080;
             }
-        `,
+        `
     ],
     template: `
         <svg viewBox="0 0 24 24">
@@ -19,10 +19,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
                 d="M16.854 5.146l3 3a.502.502 0 01-.708.708L17 6.707V18.5a.5.5 0 01-1 0V6.707l-2.146 2.147a.502.502 0 01-.708-.708l3-3a.502.502 0 01.708 0zM7.5 5a.5.5 0 01.5.5v11.791l2.146-2.145a.502.502 0 01.708.708l-3 3a.502.502 0 01-.708 0l-3-3a.502.502 0 01.708-.708L7 17.293V5.5a.5.5 0 01.5-.5z"
             ></path>
         </svg>
-    `,
+    `
 })
-export class SvgDropSortByComponent implements OnInit {
+export class SvgDropSortByComponent {
     constructor() {}
-
-    ngOnInit(): void {}
 }

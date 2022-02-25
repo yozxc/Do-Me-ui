@@ -8,7 +8,7 @@ describe('ListAddSectionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ListAddSectionComponent],
+            declarations: [ListAddSectionComponent]
         }).compileComponents();
     });
 
