@@ -31,7 +31,7 @@
 
             //
 
-            "tslib": ["node_modules/tslib/tslib.d.ts"]
+            "tslib": ["path/to/node_modules/tslib/tslib.d.ts"]
         }
     },
     "angularCompilerOptions": {
