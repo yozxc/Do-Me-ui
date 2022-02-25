@@ -23,6 +23,10 @@ export class ViewMenuDropdownComponent implements OnInit, AfterViewChecked {
     viewGroupBy: boolean = false;
     viewSortBy: boolean = false;
 
+    viewAsValue: string = 'List';
+    groupByValue: string = 'Default';
+    sortByValue: string = 'Default';
+
     @Output() onClose: EventEmitter<any> = new EventEmitter();
 
     @ViewChild('menuView') menuView?: ElementRef;

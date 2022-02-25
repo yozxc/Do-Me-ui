@@ -9,7 +9,7 @@
             </div>
 
             <div class="container">
-                <div class="selected__value">List</div>
+                <div class="selected__value">{{ viewAsValue }}</div>
                 <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
             </div>
 
@@ -19,12 +19,13 @@
                 (click)="viewAsVisible = false; $event.stopPropagation()"
             >
                 <div class="submenu">
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="viewAsValue = 'List'">
                         <div class="sub_item__text">List</div>
-                        <svg-drop-sub-tick class="wh-12 m7"></svg-drop-sub-tick>
+                        <svg-drop-sub-tick *ngIf="viewAsValue === 'List'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="viewAsValue = 'Table'">
                         <div class="sub_item__text">Table</div>
+                        <svg-drop-sub-tick *ngIf="viewAsValue === 'Table'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
                 </div>
             </div>
@@ -41,27 +42,31 @@
             </div>
 
             <div class="container">
-                <div class="selected__value">Default</div>
+                <div class="selected__value">{{ groupByValue }}</div>
                 <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
             </div>
 
             <div class="submenu__wrapper" *ngIf="viewGroupBy" (click)="viewGroupBy = false; $event.stopPropagation()">
                 <div class="submenu">
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="groupByValue = 'Default'">
                         <div class="sub_item__text">Default</div>
-                        <svg-drop-sub-tick class="wh-12 m7"></svg-drop-sub-tick>
+                        <svg-drop-sub-tick *ngIf="groupByValue === 'Default'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="groupByValue = 'Due date'">
                         <div class="sub_item__text">Due date</div>
+                        <svg-drop-sub-tick *ngIf="groupByValue === 'Due date'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="groupByValue = 'Date added'">
                         <div class="sub_item__text">Date added</div>
+                        <svg-drop-sub-tick *ngIf="groupByValue === 'Date added'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="groupByValue = 'Priority'">
                         <div class="sub_item__text">Priority</div>
+                        <svg-drop-sub-tick *ngIf="groupByValue === 'Priority'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="groupByValue = 'Label'">
                         <div class="sub_item__text">Label</div>
+                        <svg-drop-sub-tick *ngIf="groupByValue === 'Label'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
                 </div>
             </div>
@@ -73,27 +78,34 @@
             </div>
 
             <div class="container">
-                <div class="selected__value">Default</div>
+                <div class="selected__value">{{ sortByValue }}</div>
                 <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
             </div>
 
             <div class="submenu__wrapper" *ngIf="viewSortBy" (click)="viewSortBy = false; $event.stopPropagation()">
                 <div class="submenu">
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="sortByValue = 'Default'">
                         <div class="sub_item__text">Default</div>
-                        <svg-drop-sub-tick class="wh-12 m7"></svg-drop-sub-tick>
+                        <svg-drop-sub-tick *ngIf="sortByValue === 'Default'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="sortByValue = 'Alphabetically'">
                         <div class="sub_item__text">Alphabetically</div>
+                        <svg-drop-sub-tick
+                            *ngIf="sortByValue === 'Alphabetically'"
+                            class="wh-12 m7"
+                        ></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="sortByValue = 'Due date'">
                         <div class="sub_item__text">Due date</div>
+                        <svg-drop-sub-tick *ngIf="sortByValue === 'Due date'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="sortByValue = 'Date added'">
                         <div class="sub_item__text">Date added</div>
+                        <svg-drop-sub-tick *ngIf="sortByValue === 'Date added'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item">
+                    <div class="submenu__item" (click)="sortByValue = 'Priority'">
                         <div class="sub_item__text">Priority</div>
+                        <svg-drop-sub-tick *ngIf="sortByValue === 'Priority'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
                 </div>
             </div>
