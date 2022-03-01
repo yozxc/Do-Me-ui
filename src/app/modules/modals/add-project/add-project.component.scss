@@ -177,12 +177,18 @@
 }
 
 .view__type:hover {
+    cursor: pointer;
     & .type__table {
         border-color: #808080;
     }
-
     & .type__list {
         border-color: #808080;
+    }
+    &._list .type__list {
+        background-image: url('../../../../assets/svg/proj-type/list-type-hover.svg');
+    }
+    &._table .type__table {
+        background-image: url('../../../../assets/svg/proj-type/table-type-hover.svg');
     }
 }
 

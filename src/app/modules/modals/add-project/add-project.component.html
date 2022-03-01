@@ -37,7 +37,7 @@
                 <div class="label">View</div>
 
                 <div class="view__type__wrapper">
-                    <div class="view__type" (click)="changeType('List')">
+                    <div class="view__type _list" (click)="changeType('List')">
                         <div class="type__list" [ngClass]="{ _active: projectType === 'List' }"></div>
 
                         <div class="type__check__wrapper">
@@ -48,7 +48,7 @@
                             ></ui-checkbox>
                         </div>
                     </div>
-                    <div class="view__type" (click)="changeType('Table')">
+                    <div class="view__type _table" (click)="changeType('Table')">
                         <div class="type__table" [ngClass]="{ _active: projectType === 'Table' }"></div>
 
                         <div class="type__check__wrapper">
