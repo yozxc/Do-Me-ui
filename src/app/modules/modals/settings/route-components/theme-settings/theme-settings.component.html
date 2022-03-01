@@ -2,14 +2,12 @@
     <div class="field">
         <div class="content _column">
             <div class="text">Personalize your Todoist with colors to match your style, mood, and personality.</div>
-            <label class="check__label" for="">
-                <input class="input__check" type="checkbox" id="" />
-                <div class="check__text">Sync theme</div>
-            </label>
-            <label class="check__label" for="">
-                <input class="input__check" type="checkbox" id="" />
-                <div class="check__text">Auto Dark Mode</div>
-            </label>
+            <div class="check__label">
+                <ui-checkbox [id]="'syncThemeID'" [label]="'Sync theme'"></ui-checkbox>
+            </div>
+            <div class="check__label">
+                <ui-checkbox [id]="'autoDarkModeID'" [label]="'Auto Dark Mode'"></ui-checkbox>
+            </div>
             <div class="text _gray">Automatically switch between light and dark themes when your system does.</div>
         </div>
     </div>

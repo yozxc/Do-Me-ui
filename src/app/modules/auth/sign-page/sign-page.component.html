@@ -47,10 +47,9 @@
         <input class="button__submit" type="submit" value="Sign in" />
 
         <div class="field">
-            <label class="label__checkbox" for="keepSignInID">
-                <input type="checkbox" name="" id="keepSignInID" />
-                <div class="check__text">Keep in system</div>
-            </label>
+            <div class="label__checkbox">
+                <ui-checkbox [id]="'keepSignInID'" [label]="'Keep in system'"></ui-checkbox>
+            </div>
         </div>
 
         <div class="field">

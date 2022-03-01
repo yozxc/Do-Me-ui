@@ -1,3 +1,4 @@
+import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -10,7 +11,7 @@ import { ForgotPasswordPageComponent } from './forgot-pass-page/forgot-password-
 import { ResetPassPageComponent } from './reset-pass-page/reset-pass-page.component';
 
 @NgModule({
-    imports: [CommonModule, RouterModule, SvgAuthModule],
+    imports: [CommonModule, RouterModule, SvgAuthModule, UiComponentsModule],
     declarations: [SignPageComponent, RegisterPageComponent, ForgotPasswordPageComponent, ResetPassPageComponent],
     exports: [SignPageComponent, RegisterPageComponent, ForgotPasswordPageComponent, ResetPassPageComponent]
 })

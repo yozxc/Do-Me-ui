@@ -131,10 +131,9 @@
         <div class="title">Smart date recognition</div>
 
         <div class="content _column">
-            <label class="check__label" for="qwe">
-                <input class="input__check" type="checkbox" id="qwe" />
-                <div class="check__text">On</div>
-            </label>
+            <div class="check__label">
+                <ui-checkbox [id]="'smartDataID'" [label]="'On'"></ui-checkbox>
+            </div>
 
             <div class="text gray">Automatically recognize due dates when typing a task.</div>
         </div>
@@ -148,15 +147,13 @@
         <div class="title">Smart date recognition</div>
 
         <div class="content _column">
-            <label class="check__label" for="">
-                <input class="input__check" type="checkbox" id="" />
-                <div class="check__text">Desktop and web</div>
-            </label>
+            <div class="check__label">
+                <ui-checkbox [id]="'desktopWebID'" [label]="'Desktop and web'"></ui-checkbox>
+            </div>
 
-            <label class="check__label" for="">
-                <input class="input__check" type="checkbox" id="" />
-                <div class="check__text">Mobile</div>
-            </label>
+            <div class="check__label">
+                <ui-checkbox [id]="'mobileID'" [label]="'Mobile'"></ui-checkbox>
+            </div>
 
             <div class="text gray">Play a sound when tasks are completed.</div>
         </div>

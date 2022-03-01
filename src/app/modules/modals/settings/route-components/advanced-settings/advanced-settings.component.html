@@ -3,10 +3,9 @@
         <div class="title">Auto accept invites</div>
 
         <div class="content _column">
-            <label class="check__label" for="">
-                <input class="input__check" type="checkbox" id="" />
-                <div class="check__text">On</div>
-            </label>
+            <div class="check__label">
+                <ui-checkbox [id]="'acceptInvitesOnID'" [label]="'On'"></ui-checkbox>
+            </div>
 
             <div class="text _gray">Automatically accept invites from known collaborators.</div>
         </div>
@@ -16,10 +15,9 @@
         <div class="title">Experimental features</div>
 
         <div class="content _column">
-            <label class="check__label" for="">
-                <input class="input__check" type="checkbox" id="" />
-                <div class="check__text">Off</div>
-            </label>
+            <div class="check__label">
+                <ui-checkbox [id]="'acceptInvitesOffID'" [label]="'Off'"></ui-checkbox>
+            </div>
 
             <div class="text _gray">Preview early versions of new features before anyone else.</div>
         </div>

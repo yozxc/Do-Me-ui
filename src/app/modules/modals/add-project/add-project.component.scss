@@ -171,20 +171,6 @@
     margin-bottom: 30px;
 }
 
-.fav__checkbox {
-    width: 17px;
-    height: 17px;
-}
-
-.fav__label {
-    font-size: 0.9em;
-    font-family: $gFont;
-
-    cursor: pointer;
-
-    margin-left: 10px;
-}
-
 .view__type__wrapper {
     display: flex;
     justify-content: space-between;
@@ -192,11 +178,11 @@
 
 .view__type:hover {
     & .type__table {
-        border-color: #dd4b39;
+        border-color: #808080;
     }
 
     & .type__list {
-        border-color: #dd4b39;
+        border-color: #808080;
     }
 }
 
@@ -216,6 +202,10 @@
 
     &:hover {
         background-image: url('../../../../assets/svg/proj-type/list-type-hover.svg');
+    }
+    &._active {
+        background-image: url('../../../../assets/svg/proj-type/list-type-hover.svg');
+        border-color: #dd4b39 !important;
     }
 }
 
@@ -237,24 +227,14 @@
     &:hover {
         background-image: url('../../../../assets/svg/proj-type/table-type-hover.svg');
     }
+    &._active {
+        background-image: url('../../../../assets/svg/proj-type/table-type-hover.svg');
+        border-color: #dd4b39 !important;
+    }
 }
 
 .type__check__wrapper {
     display: flex;
     align-items: center;
-    margin-top: 5px;
-}
-
-.type__checkbox {
-    width: 15px;
-    height: 15px;
-
-    margin-left: 4px;
-}
-
-.type__text {
-    font-family: $gFont;
-    font-size: 0.9em;
-
-    margin-left: 15px;
+    margin-top: 8px;
 }

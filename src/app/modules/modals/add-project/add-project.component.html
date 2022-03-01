@@ -29,8 +29,7 @@
 
             <div class="field">
                 <div class="check__wrapper">
-                    <input class="fav__checkbox" id="addFavModalID" type="checkbox" />
-                    <label class="fav__label" for="addFavModalID">Add to favorites</label>
+                    <ui-checkbox [id]="'addFavModalID'" [label]="'Add to favorites'"></ui-checkbox>
                 </div>
             </div>
 
@@ -38,20 +37,26 @@
                 <div class="label">View</div>
 
                 <div class="view__type__wrapper">
-                    <div class="view__type">
-                        <div class="type__list"></div>
+                    <div class="view__type" (click)="changeType('List')">
+                        <div class="type__list" [ngClass]="{ _active: projectType === 'List' }"></div>
 
                         <div class="type__check__wrapper">
-                            <input class="type__checkbox" type="checkbox" id="listTypeID" />
-                            <label class="type__text" for="listTypeID">List</label>
+                            <ui-checkbox
+                                [id]="'viewTypeList'"
+                                [label]="'List'"
+                                [checked]="projectType === 'List'"
+                            ></ui-checkbox>
                         </div>
                     </div>
-                    <div class="view__type">
-                        <div class="type__table"></div>
+                    <div class="view__type" (click)="changeType('Table')">
+                        <div class="type__table" [ngClass]="{ _active: projectType === 'Table' }"></div>
 
                         <div class="type__check__wrapper">
-                            <input class="type__checkbox" type="checkbox" id="tableTypeID" />
-                            <label class="type__text" for="tableTypeID">Table</label>
+                            <ui-checkbox
+                                [id]="'viewTypeTable'"
+                                [label]="'Table'"
+                                [checked]="projectType === 'Table'"
+                            ></ui-checkbox>
                         </div>
                     </div>
                 </div>

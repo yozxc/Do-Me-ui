@@ -3,7 +3,7 @@ TODO app to emulate enterprise development
 
 TODO | Environment :
 
-Angular UI     : 36/100%
+Angular UI     : 37/100%
 React UI       : 0/100%
 Node/Nest Back : 0/100%
 Go(lang) Back  : 0/100%

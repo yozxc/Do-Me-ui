@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+type projectType = 'List' | 'Table' | undefined;
+
 @Component({
     selector: 'app-add-project',
     templateUrl: './add-project.component.html',
@@ -31,14 +33,19 @@ export class AddProjectComponent {
         { name: 'Taupe', styleCls: 'bg-taupe' }
     ];
     currentColorID: number = 0;
-
     isColorListActive: boolean = false;
+
+    projectType: projectType;
 
     constructor(private router: Router) {}
 
     setCurrentColorID(id: number) {
         this.currentColorID = id;
         this.isColorListActive = false;
+    }
+
+    changeType(type: projectType) {
+        type === this.projectType ? (this.projectType = undefined) : (this.projectType = type);
     }
 
     onCancel() {
