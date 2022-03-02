@@ -1,12 +1,12 @@
 <div class="main__wrapper">
-    <div class="tasks__list__header">
-        <ng-container *ngIf="!isChangingTitle; else taskEditor">
-            <div class="tl__title" (click)="isChangingTitle = true">{{ title }}</div>
+    <div class="header">
+        <ng-container *ngIf="!isChangingTitle; else titleEditor">
+            <div class="title" (click)="isChangingTitle = true">{{ title }}</div>
 
             <svg-wp-header-arrow [isClosed]="isClosed$ | async" (clickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
-            <div class="tl__icons__container" (click)="dropMenu.toggleIsVisible()">
-                <div class="tli__wrapper">
+            <div class="icons__container" (click)="dropMenu.toggleIsVisible()">
+                <div class="icon__wrapper">
                     <svg-wp-header-more></svg-wp-header-more>
 
                     <ui-menu-dropdown
@@ -24,11 +24,11 @@
             </div>
         </ng-container>
 
-        <ng-template #taskEditor>
-            <div class="pltlas__main">
-                <input class="pltlasm__input" type="text" #titleInput [value]="title" placeholder="Name this section" />
+        <ng-template #titleEditor>
+            <div class="title__editor">
+                <input class="editor__input" type="text" #titleInput [value]="title" placeholder="Name this section" />
 
-                <div class="te__btns__wrapper">
+                <div class="btns__wrapper">
                     <ui-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</ui-button>
                     <ui-button styleCls="white" (clickEvent)="isChangingTitle = false">Cancel</ui-button>
                 </div>

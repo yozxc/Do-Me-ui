@@ -4,7 +4,7 @@
     margin-bottom: 12px;
 }
 
-.tasks__list__header {
+.header {
     position: relative;
 
     padding: 5px 0;
@@ -14,21 +14,21 @@
     align-items: center;
 
     &:hover {
-        & .tl__icons__container {
+        & .icons__container {
             opacity: 1;
         }
     }
 }
-.tl__title {
+.title {
     font-family: $gFont;
     font-weight: 700;
     font-size: 0.9em;
 }
 
-.tl__icons__container {
+.icons__container {
     opacity: 0;
 }
-.tli__wrapper {
+.icon__wrapper {
     position: relative;
 
     display: flex;
@@ -53,14 +53,14 @@
     right: 50px;
 }
 
-.pltlas__main {
+.title__editor {
     // margin-top: 5px;
     margin-bottom: 10px;
 
     width: 100%;
 }
 
-.pltlasm__input {
+.editor__input {
     width: 100%;
     height: 38px;
     border: 1px solid #ddd;
@@ -78,7 +78,7 @@
     }
 }
 
-.te__btns__wrapper {
+.btns__wrapper {
     display: flex;
     align-items: center;
 

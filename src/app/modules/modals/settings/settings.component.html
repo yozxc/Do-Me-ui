@@ -1,70 +1,70 @@
 <div class="modal" (click)="onClose()">
     <div class="main" (click)="$event.stopPropagation()">
         <div class="left__part">
-            <div class="lp__header">Settings</div>
+            <div class="left__header">Settings</div>
 
             <div class="left__menu">
                 <a
-                    class="lm__item"
+                    class="menu__item"
                     (click)="changeTitle('Account')"
                     [routerLink]="[{ outlets: { settingsSpace: 'account' } }]"
                     [skipLocationChange]="true"
                 >
-                    <svg-mo-lm-account class="svg_24__co"></svg-mo-lm-account>
-                    <div class="lmi__text">Account</div>
+                    <svg-mo-lm-account class="wh-24"></svg-mo-lm-account>
+                    <div class="menu__item_text">Account</div>
                 </a>
                 <a
-                    class="lm__item"
+                    class="menu__item"
                     (click)="changeTitle('General')"
                     [routerLink]="[{ outlets: { settingsSpace: 'general' } }]"
                     [skipLocationChange]="true"
                 >
-                    <svg-mo-lm-general class="svg_24__co"></svg-mo-lm-general>
-                    <div class="lmi__text">General</div>
+                    <svg-mo-lm-general class="wh-24"></svg-mo-lm-general>
+                    <div class="menu__item_text">General</div>
                 </a>
                 <a
-                    class="lm__item"
+                    class="menu__item"
                     (click)="changeTitle('Advanced')"
                     [routerLink]="[{ outlets: { settingsSpace: 'advanced' } }]"
                     [skipLocationChange]="true"
                 >
-                    <svg-mo-lm-advanced class="svg_24__co"></svg-mo-lm-advanced>
-                    <div class="lmi__text">Advanced</div>
+                    <svg-mo-lm-advanced class="wh-24"></svg-mo-lm-advanced>
+                    <div class="menu__item_text">Advanced</div>
                 </a>
                 <a
-                    class="lm__item"
+                    class="menu__item"
                     (click)="changeTitle('Theme')"
                     [routerLink]="[{ outlets: { settingsSpace: 'theme' } }]"
                     [skipLocationChange]="true"
                 >
-                    <svg-mo-lm-theme class="svg_24__co"></svg-mo-lm-theme>
-                    <div class="lmi__text">Theme</div>
+                    <svg-mo-lm-theme class="wh-24"></svg-mo-lm-theme>
+                    <div class="menu__item_text">Theme</div>
                 </a>
-                <a class="lm__item _unavailable">
-                    <svg-mo-lm-productivity class="svg_24__co"></svg-mo-lm-productivity>
-                    <div class="lmi__text">Productivity</div>
+                <a class="menu__item _unavailable">
+                    <svg-mo-lm-productivity class="wh-24"></svg-mo-lm-productivity>
+                    <div class="menu__item_text">Productivity</div>
                 </a>
-                <a class="lm__item _unavailable">
-                    <svg-mo-lm-reminders class="svg_24__co"></svg-mo-lm-reminders>
-                    <div class="lmi__text">Reminders</div>
+                <a class="menu__item _unavailable">
+                    <svg-mo-lm-reminders class="wh-24"></svg-mo-lm-reminders>
+                    <div class="menu__item_text">Reminders</div>
                 </a>
-                <a class="lm__item _unavailable">
-                    <svg-mo-lm-notifications class="svg_24__co"></svg-mo-lm-notifications>
-                    <div class="lmi__text">Notifications</div>
+                <a class="menu__item _unavailable">
+                    <svg-mo-lm-notifications class="wh-24"></svg-mo-lm-notifications>
+                    <div class="menu__item_text">Notifications</div>
                 </a>
-                <a class="lm__item _unavailable">
-                    <svg-mo-lm-backups class="svg_24__co"></svg-mo-lm-backups>
-                    <div class="lmi__text">Backups</div>
+                <a class="menu__item _unavailable">
+                    <svg-mo-lm-backups class="wh-24"></svg-mo-lm-backups>
+                    <div class="menu__item_text">Backups</div>
                 </a>
             </div>
 
             <div class="right__bar"></div>
         </div>
         <div class="settings__space">
-            <div class="ss__header">
-                <div class="ssh__text">{{ title }}</div>
+            <div class="sett_space__header">
+                <div class="sett_header__text">{{ title }}</div>
                 <div class="modal__close__wrapper">
-                    <svg-mo-close class="svg_24__co" (click)="onClose()"></svg-mo-close>
+                    <svg-mo-close class="wh-24" (click)="onClose()"></svg-mo-close>
                 </div>
 
                 <div class="bottom__bar"></div>
@@ -74,7 +74,7 @@
                 <router-outlet name="settingsSpace"></router-outlet>
             </div>
 
-            <div class="ss__footer">
+            <div class="sett__footer">
                 <ui-button styleCls="white mr10">Cancel</ui-button>
                 <ui-button styleCls="black">Save</ui-button>
                 <div class="top__bar"></div>
