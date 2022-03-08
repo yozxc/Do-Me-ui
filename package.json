@@ -8,7 +8,9 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "format": "npx prettier --write .",
+        "F": "npx prettier --write .",
         "lint": "npx eslint .",
+        "L": "npx eslint .",
         "FL": "npm run format && npm run lint",
         "check-types": "tsc --pretty --noEmit",
         "prepare": "husky install"

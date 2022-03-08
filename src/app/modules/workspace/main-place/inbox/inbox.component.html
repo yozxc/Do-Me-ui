@@ -1,5 +1,5 @@
 <div class="main__place">
-    <div class="type__list">
+    <div *ngIf="type === 'list'" class="type__list">
         <app-list-header [title]="'Inbox'" [editableTitle]="false"></app-list-header>
         <!-- list header -->
 
@@ -17,4 +17,16 @@
         <app-list-add-section></app-list-add-section>
     </div>
     <!-- list -->
+
+    <div *ngIf="type === 'table'" class="type__table">
+        <app-table-header [title]="'Inbox'" [editableTitle]="true"></app-table-header>
+
+        <div class="columns__wrapper">
+            <app-table-column></app-table-column>
+            <app-table-add-section [type]="'bar'"></app-table-add-section>
+            <app-table-column></app-table-column>
+            <app-table-add-section [type]="'panel'"></app-table-add-section>
+        </div>
+    </div>
+    <!-- table -->
 </div>

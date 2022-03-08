@@ -1,0 +1,131 @@
+@import 'vars';
+
+.task {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 4%);
+
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+        border-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 8px 0 rgb(0 0 0 / 10%);
+
+        & .more__wrapper {
+            display: flex;
+        }
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.check__label {
+    margin: 10px 8px 10px 0;
+}
+
+.hidden__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.custom__check {
+    height: 18px;
+    width: 18px;
+
+    position: relative;
+
+    border: 1px solid #808080;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ececec;
+    }
+}
+
+.flex__betwen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 35px;
+}
+
+.task__title {
+    font-size: 0.875em;
+    font-family: $gFont;
+    color: #202020;
+}
+
+.more__wrapper {
+    position: relative;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 3px;
+
+    display: none;
+
+    cursor: pointer;
+    &:hover {
+        background-color: #ececec;
+        & ::ng-deep svg.stroke_black {
+            stroke: black;
+        }
+    }
+}
+
+.more__dropdown {
+    bottom: -5px;
+    right: 50px;
+}
+
+.task__late {
+    display: flex;
+    align-items: center;
+}
+
+.task_late__text {
+    font-family: $gFont;
+    font-size: 0.75em;
+    margin-left: 2px;
+
+    color: #d1453b;
+}
+
+// svg components sizes
+
+.wh-12 {
+    width: 12px;
+    height: 12px;
+}
+
+.wh-18 {
+    width: 18px;
+    height: 18px;
+}
+
+.wp-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.w-26 {
+    width: 26px;
+}
+
+svg-wp-tick {
+    position: absolute;
+    top: -3px;
+    left: -4px;
+}

@@ -1,0 +1,51 @@
+<ng-container *ngIf="!addTaskEditor">
+    <div class="add" (click)="addTaskEditor = true">
+        <div class="bg__wrapper">
+            <svg-wp-task-add></svg-wp-task-add>
+        </div>
+
+        <div class="text">Add Task</div>
+    </div>
+</ng-container>
+
+<div *ngIf="addTaskEditor" class="task__editor__wrapper">
+    <div class="editor__container" [ngClass]="{ _active: isFocused }">
+        <input
+            class="task__title"
+            type="text"
+            placeholder="Task name"
+            #addTaskNameInput
+            (focus)="isFocused = true"
+            (blur)="isFocused = false"
+        />
+        <textarea
+            class="task__description"
+            placeholder="Description"
+            (focus)="isFocused = true"
+            (blur)="isFocused = false"
+        ></textarea>
+
+        <div class="editor__bottom">
+            <div class="flex__container">
+                <div class="bottom__butt">
+                    <svg-wp-schedule class="wh-16" styleCls="charcoal"></svg-wp-schedule>
+                    <div class="bot_but__text">Scheduled</div>
+                </div>
+                <div class="bottom__butt">
+                    <svg-wp-inbox class="wh-16" styleCls="blue"></svg-wp-inbox>
+                    <div class="bot_but__text">Inbox</div>
+                </div>
+            </div>
+
+            <div class="flex__container">
+                <svg-wp-label></svg-wp-label>
+                <svg-wp-priority></svg-wp-priority>
+            </div>
+        </div>
+    </div>
+
+    <div class="btns__wrapper">
+        <ui-button styleCls="black mr10" [disabled]="true" (clickEvent)="onSave()">Add Task</ui-button>
+        <ui-button styleCls="white" (clickEvent)="onCancel()">Cancel</ui-button>
+    </div>
+</div>

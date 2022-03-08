@@ -1,0 +1,25 @@
+<ng-container *ngIf="!isOnAdd; else addSection">
+    <div *ngIf="type === 'bar'" class="add__section__trigger" (click)="isOnAdd = true">
+        <div class="trigger__bar"></div>
+        <div class="trigger__text">Add Section</div>
+        <div class="trigger__bar"></div>
+    </div>
+
+    <div *ngIf="type === 'panel'" class="add__section__panel" (click)="isOnAdd = true">
+        <div class="add__section__button">
+            <svg-drop-add-section class="wh-24"></svg-drop-add-section>
+            <div class="add__section__text">Add section</div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #addSection>
+    <div class="title__editor">
+        <input class="editor__input" type="text" #titleInput placeholder="Name this section" />
+
+        <div class="btns__wrapper">
+            <ui-button styleCls="black mr10" (clickEvent)="isOnAdd = true">Save</ui-button>
+            <ui-button styleCls="white" (clickEvent)="isOnAdd = false">Cancel</ui-button>
+        </div>
+    </div>
+</ng-template>

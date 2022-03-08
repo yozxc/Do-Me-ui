@@ -1,0 +1,45 @@
+<div class="header">
+    <div class="container _end">
+        <ng-container *ngIf="!isOnEdit; else addEditor">
+            <div class="title" (click)="editableTitle && (isOnEdit = true)">{{ title }}</div>
+            <div *ngIf="dateDisplay" class="date">
+                {{ date | date: 'EEEEEE' }} {{ date | date: 'd' }} {{ date | date: 'LLL' }}
+            </div>
+        </ng-container>
+
+        <ng-template #addEditor>
+            <div class="title__edit">
+                <input class="edit__input" type="text" [value]="title" />
+
+                <div class="buttons__wrapper">
+                    <ui-button styleCls="black mr10">Save</ui-button>
+                    <ui-button styleCls="white" (clickEvent)="isOnEdit = false">Cancel</ui-button>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+    <div class="container">
+        <div class="icon__wrapper" (click)="viewMenu.toggleIsVisible()">
+            <svg-wp-view></svg-wp-view>
+            <div class="icon__text">View</div>
+
+            <ui-view-menu-dropdown #viewMenu class="view__dropdown"></ui-view-menu-dropdown>
+        </div>
+        <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible()">
+            <svg-wp-more></svg-wp-more>
+            <ui-menu-dropdown
+                #dropMenu
+                class="more__dropdown"
+                [addSection]="true"
+                [addAbove]="true"
+                [addBelow]="true"
+                [edit]="true"
+                [archive]="true"
+                [del]="true"
+                [schedule]="true"
+                [priority]="true"
+            ></ui-menu-dropdown>
+        </div>
+    </div>
+</div>

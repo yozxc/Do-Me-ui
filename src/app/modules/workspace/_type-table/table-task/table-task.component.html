@@ -1,0 +1,50 @@
+<div class="task">
+    <div class="flex">
+        <label class="check__label" [for]="checkboxID">
+            <input
+                class="hidden__checkbox"
+                type="checkbox"
+                name=""
+                [id]="checkboxID"
+                (change)="isChecked = !isChecked"
+            />
+
+            <div class="custom__check">
+                <svg-wp-tick *ngIf="isChecked" class="wh-18"></svg-wp-tick>
+            </div>
+        </label>
+        <!-- checkbox label -->
+
+        <div class="flex__betwen">
+            <div class="task__title">{{ title }}</div>
+
+            <div class="more__wrapper" (click)="dropMenu.toggleIsVisible()">
+                <svg-wp-more class="wp-24"></svg-wp-more>
+
+                <ui-menu-dropdown
+                    #dropMenu
+                    class="more__dropdown"
+                    [addAbove]="true"
+                    [addBelow]="true"
+                    [edit]="true"
+                    [archive]="true"
+                    [del]="true"
+                    [schedule]="true"
+                    [priority]="true"
+                ></ui-menu-dropdown>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="w-26"></div>
+
+        <div class="additional">
+            <div class="task__late">
+                <svg-wp-task-late class="wh-12"></svg-wp-task-late>
+
+                <div class="task_late__text">15 Oct</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,5 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InboxComponent {
+    type: 'list' | 'table' = 'table';
+
     constructor() {}
 }
