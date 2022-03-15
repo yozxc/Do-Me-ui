@@ -22,12 +22,12 @@ import { TableColumnComponent } from './_type-table/table-column/table-column.co
 import { TableColumnHeaderComponent } from './_type-table/table-column-header/table-column-header.component';
 
 import { LmStateService } from './left-menu/lm-state.service';
-import { TodayComponent } from './main-place/today/today.component';
-import { InboxComponent } from './main-place/inbox/inbox.component';
+import { TodayComponent } from './views/today/today.component';
+import { InboxComponent } from './views/inbox/inbox.component';
 import { ListHeaderComponent } from './_type-list/list-header/list-header.component';
-import { ProjectComponent } from './main-place/project/project.component';
-import { LabelComponent } from './main-place/label/label.component';
-import { FilterComponent } from './main-place/filter/filter.component';
+import { ProjectComponent } from './views/project/project.component';
+import { LabelComponent } from './views/label/label.component';
+import { FilterComponent } from './views/filter/filter.component';
 import { TableTaskComponent } from './_type-table/table-task/table-task.component';
 import { TableAddTaskComponent } from './_type-table/table-add-task/table-add-task.component';
 import { TableAddSectionComponent } from './_type-table/table-add-section/table-add-section.component';

@@ -5,7 +5,7 @@ import { favorites, filters, labels, projects } from '@assets/mock/lm-projects';
 
 import { LmStateService } from './lm-state.service';
 import { Router } from '@angular/router';
-import { PAGES_ROUTE } from '@app/core/nav-constants';
+import { PAGES_ROUTE } from '@app/core/router/nav-constants';
 
 @Component({
     selector: 'app-left-menu',

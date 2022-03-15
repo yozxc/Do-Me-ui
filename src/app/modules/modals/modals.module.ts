@@ -50,19 +50,6 @@ import { QuickAddComponent } from './quick-add/quick-add.component';
         DeleteAccountComponent,
         QuickAddComponent
     ],
-    exports: [
-        ModalsManagerComponent,
-        AddProjectComponent,
-        AddFilterComponent,
-        AddLabelComponent,
-        SettingsComponent,
-        AccountSettingsComponent,
-        GeneralSettingsComponent,
-        AdvancedSettingsComponent,
-        ThemeSettingsComponent,
-        RemovePhotoComponent,
-        ChangeEmailComponent,
-        ChangePasswordComponent
-    ]
+    exports: [ModalsManagerComponent]
 })
 export class ModalsModule {}

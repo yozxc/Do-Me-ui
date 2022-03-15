@@ -12,11 +12,9 @@ export class SettingsComponent {
 
     constructor(private router: Router) {}
 
-    // todo : take care of this
     onClose() {
+        this.router.navigate([this.router.url]);
         console.log(this.router.url);
-        console.log(this.router.url.split('//')[0]);
-        this.router.navigateByUrl(this.router.url.split('//')[0]);
     }
 
     changeTitle(title: string) {

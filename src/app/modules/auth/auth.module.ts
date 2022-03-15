@@ -1,7 +1,7 @@
+import { AuthRoutingModule } from './auth-routing.module';
 import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 import { SvgAuthModule } from '@app/shared/svg-store/auth/svg-auth.module';
 
@@ -11,8 +11,8 @@ import { ForgotPasswordPageComponent } from './forgot-pass-page/forgot-password-
 import { ResetPassPageComponent } from './reset-pass-page/reset-pass-page.component';
 
 @NgModule({
-    imports: [CommonModule, RouterModule, SvgAuthModule, UiComponentsModule],
+    imports: [CommonModule, AuthRoutingModule, SvgAuthModule, UiComponentsModule],
     declarations: [SignPageComponent, RegisterPageComponent, ForgotPasswordPageComponent, ResetPassPageComponent],
-    exports: [SignPageComponent, RegisterPageComponent, ForgotPasswordPageComponent, ResetPassPageComponent]
+    exports: []
 })
 export class AuthModule {}

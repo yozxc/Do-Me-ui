@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MODALS_ROUTE, OUTLETS, PAGES_ROUTE, SETTINGS_ROUTE } from '@core/nav-constants';
+import { MODALS_ROUTE, OUTLETS, PAGES_ROUTE, SETTINGS_ROUTE } from '@app/core/router/nav-constants';
 
 @Component({
     selector: 'app-account-settings',
