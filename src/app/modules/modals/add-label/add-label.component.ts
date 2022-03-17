@@ -42,6 +42,6 @@ export class AddLabelComponent {
     }
 
     onCancel() {
-        this.router.navigate([this.router.url]);
+        this.router.navigateByUrl(this.router.url.replace('(', '').split('//')[0]);
     }
 }

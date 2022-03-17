@@ -13,8 +13,7 @@ export class SettingsComponent {
     constructor(private router: Router) {}
 
     onClose() {
-        this.router.navigate([this.router.url]);
-        console.log(this.router.url);
+        this.router.navigateByUrl(this.router.url.replace('(', '').split('//')[0]);
     }
 
     changeTitle(title: string) {

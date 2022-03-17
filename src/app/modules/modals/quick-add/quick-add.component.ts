@@ -11,6 +11,6 @@ export class QuickAddComponent {
     constructor(private router: Router) {}
 
     onClose() {
-        this.router.navigate([this.router.url]);
+        this.router.navigateByUrl(this.router.url.replace('(', '').split('//')[0]);
     }
 }

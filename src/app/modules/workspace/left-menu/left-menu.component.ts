@@ -55,7 +55,7 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
         if (cat === 'filters') this.activeLabels[cat] = !this.activeLabels[cat];
     }
 
-    navToUrl(url: string) {
-        this.router.navigate([`${PAGES_ROUTE.WORKSPACE}/${url}`], { skipLocationChange: false });
+    navTo(url: string) {
+        this.router.navigateByUrl(url);
     }
 }

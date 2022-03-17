@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
@@ -34,7 +34,7 @@ export class AddFilterComponent {
 
     isColorListActive: boolean = false;
 
-    constructor(private router: Router) {}
+    constructor(private router: Router, private route: ActivatedRoute) {}
 
     setCurrentColorID(id: number) {
         this.currentColorID = id;
@@ -42,6 +42,6 @@ export class AddFilterComponent {
     }
 
     onCancel() {
-        this.router.navigate([this.router.url]);
+        this.router.navigateByUrl(this.router.url.replace('(', '').split('//')[0]);
     }
 }

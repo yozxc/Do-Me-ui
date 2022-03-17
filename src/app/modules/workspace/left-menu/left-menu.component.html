@@ -1,11 +1,11 @@
 <div class="left__menu" [ngClass]="{ _closed: isClosed }">
-    <a class="main__tab" routerLink="inbox">
+    <a class="main__tab" routerLink="/workspace/inbox">
         <svg-lm-inbox styleCls="blue"></svg-lm-inbox>
         <div class="tab__title">Inbox</div>
         <div class="tab__num _gray">10</div>
     </a>
 
-    <a class="main__tab" routerLink="today">
+    <a class="main__tab" routerLink="/workspace/today">
         <svg-lm-today></svg-lm-today>
         <div class="tab__title">Today</div>
         <div class="tab__num _red">7</div>
@@ -65,7 +65,11 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <div *ngFor="let proj of projects; let i = index" (click)="navToUrl('project/' + i)" class="menu__proj">
+            <div
+                *ngFor="let proj of projects; let i = index"
+                (click)="navTo('/workspace/project/' + i)"
+                class="menu__proj"
+            >
                 <svg-lm-dot [styleCls]="proj.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ proj.name }}</div>
@@ -105,7 +109,11 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <div *ngFor="let label of labels; let i = index" (click)="navToUrl('label/' + i)" class="menu__proj">
+            <div
+                *ngFor="let label of labels; let i = index"
+                (click)="navTo('/workspace/label/' + i)"
+                class="menu__proj"
+            >
                 <svg-lm-label [styleCls]="label.colorCls"></svg-lm-label>
 
                 <div class="menu__proj__title">{{ label.name }}</div>
@@ -145,7 +153,11 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <div *ngFor="let filter of filters; let i = index" (click)="navToUrl('filter/' + i)" class="menu__proj">
+            <div
+                *ngFor="let filter of filters; let i = index"
+                (click)="navTo('/workspace/filter/' + i)"
+                class="menu__proj"
+            >
                 <svg-lm-filter [styleCls]="filter.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ filter.name }}</div>
