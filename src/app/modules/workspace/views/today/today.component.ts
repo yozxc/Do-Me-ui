@@ -23,6 +23,7 @@ export class TodayComponent {
         this.tasksList.push({
             taskID: v4(),
             taskName: event.taskName,
+            taskDescription: event.taskDescription,
             isChecked: false
         });
     }

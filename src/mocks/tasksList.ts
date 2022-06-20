@@ -7,6 +7,7 @@ export const tasksList = [
     {
         taskID: 'id2',
         taskName: 'todo-2',
+        taskDescription: 'task description 2',
         isChecked: true
     },
     {
