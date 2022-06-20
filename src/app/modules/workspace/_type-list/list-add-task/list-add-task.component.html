@@ -1,5 +1,5 @@
-<ng-container *ngIf="!addTaskEditor">
-    <div class="add" (click)="addTaskEditor = true">
+<ng-container *ngIf="!taskEditorActiveState">
+    <div class="add" (click)="taskEditorActiveState = true">
         <div class="bg__wrapper">
             <svg-wp-task-add></svg-wp-task-add>
         </div>
@@ -8,8 +8,8 @@
     </div>
 </ng-container>
 
-<div *ngIf="addTaskEditor" class="task__editor__wrapper">
-    <div class="editor__container" [ngClass]="{ _active: isFocused }">
+<div *ngIf="taskEditorActiveState" class="task__editor__wrapper">
+    <form class="editor__container" [formGroup]="addTaskForm" [ngClass]="{ _active: isFocused }">
         <input
             class="task__title"
             type="text"
@@ -17,12 +17,14 @@
             #addTaskNameInput
             (focus)="isFocused = true"
             (blur)="isFocused = false"
+            formControlName="taskName"
         />
         <textarea
             class="task__description"
             placeholder="Description"
             (focus)="isFocused = true"
             (blur)="isFocused = false"
+            formControlName="taskDescription"
         ></textarea>
 
         <div class="editor__bottom">
@@ -42,10 +44,10 @@
                 <svg-wp-priority></svg-wp-priority>
             </div>
         </div>
-    </div>
+    </form>
 
     <div class="btns__wrapper">
-        <ui-button styleCls="black mr10" [disabled]="true" (clickEvent)="onSave()">Add Task</ui-button>
+        <ui-button styleCls="black mr10" [disabled]="addButtonDisabled" (clickEvent)="onSave()">Add Task</ui-button>
         <ui-button styleCls="white" (clickEvent)="onCancel()">Cancel</ui-button>
     </div>
 </div>

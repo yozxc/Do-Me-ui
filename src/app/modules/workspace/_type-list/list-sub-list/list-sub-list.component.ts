@@ -1,5 +1,8 @@
 import { BehaviorSubject } from 'rxjs';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { TaskData } from '@app/core/types/taskData';
+import { AddTaskData } from '@app/core/types/addTaskData';
+import { v4 } from 'uuid';
 
 @Component({
     selector: 'app-list-sub-list',
@@ -8,19 +11,28 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListSubListComponent {
-    title: string = 'Overdue';
-
     isChangingTitle: boolean = false;
     isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+    @Input() listTitle: string = 'Overdue';
+    @Input() tasksList?: TaskData[];
+
     constructor() {}
 
-    saveTitle(title: string) {
-        this.title = title;
+    saveTitle(listTitle: string) {
+        this.listTitle = listTitle;
         this.isChangingTitle = false;
     }
 
     toggleIsClosed() {
         this.isClosed$.next(!this.isClosed$.getValue());
+    }
+
+    addTask(event: AddTaskData) {
+        this.tasksList?.push({
+            taskID: v4(),
+            taskName: event.taskName,
+            isChecked: false
+        });
     }
 }

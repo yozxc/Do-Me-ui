@@ -21,6 +21,7 @@
         "lib": ["es2020", "dom"],
         "paths": {
             "@app/*": ["src/app/*"],
+            "@mocks/*": ["src/mocks/*"],
             "@scss/*": ["src/scss/*"],
             "@assets/*": ["src/assets/*"],
             "@environments/*": ["src/environments/*"],

@@ -1,7 +1,7 @@
 <div class="main__wrapper">
     <div class="header">
         <ng-container *ngIf="!isChangingTitle; else titleEditor">
-            <div class="title" (click)="isChangingTitle = true">{{ title }}</div>
+            <div class="title" (click)="isChangingTitle = true">{{ listTitle }}</div>
 
             <svg-wp-header-arrow [isClosed]="isClosed$ | async" (clickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
@@ -26,7 +26,13 @@
 
         <ng-template #titleEditor>
             <div class="title__editor">
-                <input class="editor__input" type="text" #titleInput [value]="title" placeholder="Name this section" />
+                <input
+                    class="editor__input"
+                    type="text"
+                    #titleInput
+                    [value]="listTitle"
+                    placeholder="Name this section"
+                />
 
                 <div class="btns__wrapper">
                     <ui-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</ui-button>
@@ -40,8 +46,8 @@
     </div>
 
     <div *ngIf="(isClosed$ | async) === false" class="task__list">
-        <app-list-task></app-list-task>
+        <app-list-task *ngFor="let task of tasksList" [taskData]="task"></app-list-task>
 
-        <app-list-add-task></app-list-add-task>
+        <app-list-add-task (addTaskEvent)="addTask($event)"></app-list-add-task>
     </div>
 </div>

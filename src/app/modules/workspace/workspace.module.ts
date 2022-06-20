@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UiComponentsModule } from '@shared/ui-components/ui-components.module';
 import { ModalsModule } from '../modals/modals.module';
@@ -21,7 +22,6 @@ import { TableHeaderComponent } from './_type-table/table-header/table-header.co
 import { TableColumnComponent } from './_type-table/table-column/table-column.component';
 import { TableColumnHeaderComponent } from './_type-table/table-column-header/table-column-header.component';
 
-import { LmStateService } from './left-menu/lm-state.service';
 import { TodayComponent } from './views/today/today.component';
 import { InboxComponent } from './views/inbox/inbox.component';
 import { ListHeaderComponent } from './_type-list/list-header/list-header.component';
@@ -31,11 +31,14 @@ import { FilterComponent } from './views/filter/filter.component';
 import { TableTaskComponent } from './_type-table/table-task/table-task.component';
 import { TableAddTaskComponent } from './_type-table/table-add-task/table-add-task.component';
 import { TableAddSectionComponent } from './_type-table/table-add-section/table-add-section.component';
+import { LmStateService } from './left-menu/lm-state.service';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
         SvgWorkspacePlaceModule,
         SvgHeaderModule,
         SvgLeftMenuModule,

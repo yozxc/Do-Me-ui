@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { v4 as uuidv4, v4 } from 'uuid';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { TaskData } from '@app/core/types/taskData';
+import { v4 } from 'uuid';
 
 @Component({
     selector: 'app-list-task',
@@ -8,9 +9,10 @@ import { v4 as uuidv4, v4 } from 'uuid';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListTaskComponent {
-    isChecked!: boolean;
     areControlsVisible: boolean = false;
     checkboxID = v4();
+
+    @Input() taskData!: TaskData;
 
     constructor() {}
 }

@@ -2,18 +2,12 @@
     <div class="type__list">
         <app-list-header [title]="'Today'" [dateDisplay]="true" [editableTitle]="false"></app-list-header>
 
-        <app-list-task></app-list-task>
-        <app-list-task></app-list-task>
-        <app-list-task></app-list-task>
-        <app-list-task></app-list-task>
-        <app-list-add-task></app-list-add-task>
+        <app-list-task *ngFor="let task of tasksList" [taskData]="task"></app-list-task>
+        <app-list-add-task (addTaskEvent)="addTask($event)"></app-list-add-task>
 
-        <app-list-sub-list></app-list-sub-list>
-        <app-list-add-section></app-list-add-section>
+        <app-list-sub-list [listTitle]="'Overdue'" [tasksList]="overdueTasksList"></app-list-sub-list>
 
-        <app-list-sub-list></app-list-sub-list>
-
-        <app-list-add-section></app-list-add-section>
+        <!-- <app-list-add-section></app-list-add-section> -->
     </div>
     <!-- list -->
 </div>
