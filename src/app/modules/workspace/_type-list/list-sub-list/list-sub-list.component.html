@@ -1,7 +1,31 @@
 <div class="main__wrapper">
     <div class="header">
-        <ng-container *ngIf="!isChangingTitle; else titleEditor">
-            <div class="title" (click)="isChangingTitle = true">{{ listTitle }}</div>
+        <ng-container *ngIf="isChangingTitle && editableTitle; else titleContainer">
+            <div class="title__editor">
+                <input
+                    class="editor__input"
+                    type="text"
+                    placeholder="Name this section"
+                    [formControl]="titleFormControl"
+                />
+
+                <div class="btns__wrapper">
+                    <ui-button styleCls="black mr10" [disabled]="changeButtonDisabled" (clickEvent)="onSave()"
+                        >Save</ui-button
+                    >
+                    <ui-button
+                        styleCls="white"
+                        (clickEvent)="isChangingTitle = false; titleFormControl.setValue(listTitle)"
+                        >Cancel</ui-button
+                    >
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-template #titleContainer>
+            <div class="title" (click)="isChangingTitle = true; listTitle = titleFormControl.value">
+                {{ titleFormControl.value }}
+            </div>
 
             <svg-wp-header-arrow [isClosed]="isClosed$ | async" (clickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
@@ -20,23 +44,6 @@
                         [schedule]="true"
                         [priority]="true"
                     ></ui-menu-dropdown>
-                </div>
-            </div>
-        </ng-container>
-
-        <ng-template #titleEditor>
-            <div class="title__editor">
-                <input
-                    class="editor__input"
-                    type="text"
-                    #titleInput
-                    [value]="listTitle"
-                    placeholder="Name this section"
-                />
-
-                <div class="btns__wrapper">
-                    <ui-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</ui-button>
-                    <ui-button styleCls="white" (clickEvent)="isChangingTitle = false">Cancel</ui-button>
                 </div>
             </div>
         </ng-template>
