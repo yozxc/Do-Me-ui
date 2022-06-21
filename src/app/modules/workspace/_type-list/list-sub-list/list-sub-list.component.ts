@@ -16,7 +16,7 @@ export class ListSubListComponent implements OnInit {
     changeButtonDisabled: boolean = false;
     isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-    @Input() editableTitle: boolean = true;
+    @Input() _editableTitle: boolean = true;
 
     @Input() listTitle!: string;
     @Input() tasksList?: TaskData[];

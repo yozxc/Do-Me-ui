@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-list-header',
@@ -6,13 +7,33 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     styleUrls: ['./list-header.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListHeaderComponent {
+export class ListHeaderComponent implements OnInit {
     isOnEdit: boolean = false;
+    disabledSave: boolean = true;
     date: number = Date.now();
 
+    titleControl!: FormControl;
+
     @Input() title!: string;
-    @Input() dateDisplay: boolean = false;
-    @Input() editableTitle: boolean = true;
+    @Input() _dateDisplay: boolean = false;
+    @Input() _editableTitle: boolean = true;
 
     constructor() {}
+
+    ngOnInit(): void {
+        this.titleControl = new FormControl(this.title);
+        this.titleControl.valueChanges.subscribe((value) => (this.disabledSave = value.length));
+    }
+
+    onCancel() {
+        this.isOnEdit = false;
+        this.titleControl.setValue(this.title);
+    }
+
+    onSave() {
+        if (this.titleControl.value.length) {
+            this.isOnEdit = false;
+            this.title = this.titleControl.value;
+        }
+    }
 }

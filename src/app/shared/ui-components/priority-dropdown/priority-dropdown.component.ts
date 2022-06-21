@@ -1,41 +1,54 @@
 import {
-    AfterViewChecked,
+    Component,
+    OnInit,
     ChangeDetectionStrategy,
     ChangeDetectorRef,
-    Component,
-    ElementRef,
     EventEmitter,
-    Input,
     Output,
-    ViewChild
+    AfterViewChecked,
+    ElementRef,
+    ViewChild,
+    Input
 } from '@angular/core';
+import { PriorityType } from '@app/core/types/priorityType';
 
 @Component({
-    selector: 'ui-menu-dropdown',
-    templateUrl: './menu-dropdown.component.html',
-    styleUrls: ['./menu-dropdown.component.scss'],
+    selector: 'ui-priority-dropdown',
+    templateUrl: './priority-dropdown.component.html',
+    styleUrls: ['./priority-dropdown.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MenuDropdownComponent implements AfterViewChecked {
+export class PriorityDropdownComponent implements AfterViewChecked {
     isVisible: boolean = false;
 
-    @Input() addAbove: boolean = false;
-    @Input() addBelow: boolean = false;
-    @Input() edit: boolean = false;
-    @Input() favorites: boolean = false;
-    @Input() schedule: boolean = false;
-    @Input() priority: boolean = false;
-    @Input() addSection: boolean = false;
-    @Input() showHideTasks: boolean = false;
-    @Input() moveTo: boolean = false;
-    @Input() archive: boolean = false;
-    @Input() del: boolean = false;
+    priorityList: PriorityType[] = [1, 2, 3, 4];
+
+    @Input() priority: number = 4;
 
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
+    @Output() changePriorityEvent: EventEmitter<any> = new EventEmitter();
 
     @ViewChild('menuView') menuView?: ElementRef;
 
     constructor(private cdr: ChangeDetectorRef) {}
+
+    toggleIsVisible() {
+        this.isVisible = !this.isVisible;
+        this.cdr.detectChanges();
+    }
+
+    changePriority(p: number) {
+        this.priority = p;
+        this.changePriorityEvent.emit(p);
+        this.close();
+    }
+
+    close() {
+        this.isVisible = false;
+        this.closeEvent.emit();
+    }
+
+    //
 
     // this is setting menu to be visible in viewport
     // todo : change to RENDER
@@ -55,15 +68,5 @@ export class MenuDropdownComponent implements AfterViewChecked {
         if (coordinates.right > window.innerWidth) {
             this.menuView.nativeElement.style.left = `calc(50% - ${coordinates.right - window.innerWidth + 5}px)`;
         }
-    }
-
-    toggleIsVisible() {
-        this.isVisible = !this.isVisible;
-        this.cdr.detectChanges();
-    }
-
-    close() {
-        this.isVisible = false;
-        this.closeEvent.emit();
     }
 }

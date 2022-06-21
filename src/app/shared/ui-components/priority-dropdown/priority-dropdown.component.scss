@@ -1,0 +1,77 @@
+@import 'vars';
+
+:host {
+    position: absolute;
+    transform: translate(50%, 50%);
+
+    bottom: 0;
+    right: 0;
+
+    z-index: 1000;
+}
+
+.dropdown__wrapper {
+    position: relative;
+
+    width: 200vw;
+    height: 200vh;
+
+    cursor: default;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 275px;
+
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 8px 0 rgb(0 0 0 / 8%);
+
+    background-color: #fff;
+}
+
+.item {
+    width: 100%;
+    height: 32px;
+    padding: 4px 10px;
+
+    display: flex;
+    justify-content: space-between;
+
+    cursor: pointer;
+    &:hover {
+        background-color: #f3f3f3;
+    }
+}
+
+.flex__container {
+    display: flex;
+    align-items: center;
+}
+
+.item__text {
+    font-size: 0.8125em;
+    font-family: $gFont;
+    color: #333;
+
+    margin-left: 10px;
+
+    display: flex;
+    align-items: center;
+}
+
+// svg components sizes
+
+.wh-16 {
+    width: 14px;
+    height: 14px;
+}
+
+.wh-24 {
+    width: 24px;
+    height: 24px;
+}

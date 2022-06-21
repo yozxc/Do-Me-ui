@@ -7,10 +7,23 @@ import { ButtonComponent } from './button/button.component';
 import { MenuDropdownComponent } from './menu-dropdown/menu-dropdown.component';
 import { ViewMenuDropdownComponent } from './view-menu-dropdown/view-menu-dropdown.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { PriorityDropdownComponent } from './priority-dropdown/priority-dropdown.component';
 
 @NgModule({
     imports: [CommonModule, SvgDropdownsModule],
-    declarations: [ButtonComponent, MenuDropdownComponent, ViewMenuDropdownComponent, CheckboxComponent],
-    exports: [ButtonComponent, MenuDropdownComponent, ViewMenuDropdownComponent, CheckboxComponent]
+    declarations: [
+        ButtonComponent,
+        MenuDropdownComponent,
+        ViewMenuDropdownComponent,
+        CheckboxComponent,
+        PriorityDropdownComponent
+    ],
+    exports: [
+        ButtonComponent,
+        MenuDropdownComponent,
+        ViewMenuDropdownComponent,
+        CheckboxComponent,
+        PriorityDropdownComponent
+    ]
 })
 export class UiComponentsModule {}

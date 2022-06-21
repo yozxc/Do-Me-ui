@@ -119,6 +119,13 @@
     margin-top: 10px;
 }
 
+.icon__wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
 // svg positions | sizes
 
 .wh-16 {

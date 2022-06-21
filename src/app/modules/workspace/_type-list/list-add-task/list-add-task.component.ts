@@ -7,7 +7,7 @@ import { AddTaskData } from '@core/types/addTaskData';
     selector: 'app-list-add-task',
     templateUrl: './list-add-task.component.html',
     styleUrls: ['./list-add-task.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListAddTaskComponent implements OnInit {
     taskEditorActiveState: boolean = false;
@@ -20,6 +20,9 @@ export class ListAddTaskComponent implements OnInit {
         taskName: '',
         taskDescription: ''
     });
+
+    // todo : add in form
+    priority: number = 4;
 
     constructor(private fb: FormBuilder) {}
 
@@ -35,6 +38,10 @@ export class ListAddTaskComponent implements OnInit {
                 taskDescription: ''
             });
         }
+    }
+
+    changePriority(priority: number) {
+        this.priority = priority;
     }
 
     onCancel() {

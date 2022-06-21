@@ -14,8 +14,8 @@ import { overdueTasksList } from '@mocks/overdueTasks';
 export class TodayComponent {
     date: number = Date.now();
 
-    tasksList: TaskData[] = tasksList as TaskData[];
-    overdueTasksList: TaskData[] = overdueTasksList as TaskData[];
+    tasksList: TaskData[] = tasksList;
+    overdueTasksList: TaskData[] = overdueTasksList;
 
     constructor() {}
 

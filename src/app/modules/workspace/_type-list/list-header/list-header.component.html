@@ -1,20 +1,20 @@
 <div class="header">
     <div class="container _end">
-        <ng-container *ngIf="!isOnEdit; else addEditor">
-            <div class="title" (click)="editableTitle && (isOnEdit = true)">{{ title }}</div>
-            <div *ngIf="dateDisplay" class="date">
-                {{ date | date: 'EEEEEE' }} {{ date | date: 'd' }} {{ date | date: 'LLL' }}
+        <ng-container *ngIf="isOnEdit && _editableTitle; else titleContainer">
+            <div class="title__edit">
+                <input class="edit__input" type="text" [formControl]="titleControl" />
+
+                <div class="buttons__wrapper">
+                    <ui-button styleCls="black mr10" [disabled]="!disabledSave" (clickEvent)="onSave()">Save</ui-button>
+                    <ui-button styleCls="white" (clickEvent)="onCancel()">Cancel</ui-button>
+                </div>
             </div>
         </ng-container>
 
-        <ng-template #addEditor>
-            <div class="title__edit">
-                <input class="edit__input" type="text" [value]="title" />
-
-                <div class="buttons__wrapper">
-                    <ui-button styleCls="black mr10">Save</ui-button>
-                    <ui-button styleCls="white" (clickEvent)="isOnEdit = false">Cancel</ui-button>
-                </div>
+        <ng-template #titleContainer>
+            <div class="title" (click)="_editableTitle && (isOnEdit = true)">{{ title }}</div>
+            <div *ngIf="_dateDisplay" class="date">
+                {{ date | date: 'EEEEEE' }} {{ date | date: 'd' }} {{ date | date: 'LLL' }}
             </div>
         </ng-template>
     </div>

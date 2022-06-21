@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-
-type OneToFour = 1 | 2 | 3 | 4;
+import { PriorityType } from '@app/core/types/priorityType';
 
 @Component({
     selector: 'svg-drop-sec-priority',
@@ -54,11 +53,12 @@ type OneToFour = 1 | 2 | 3 | 4;
             </g>
         </svg>
 
-        <div class="description">Priority {{ prior }}</div>
+        <div *ngIf="_description" class="description">Priority {{ prior }}</div>
     `
 })
 export class SvgDropSecPriorityComponent {
-    @Input() prior!: OneToFour;
+    @Input() prior!: PriorityType;
+    @Input() _description: boolean = true;
 
     constructor() {}
 }
