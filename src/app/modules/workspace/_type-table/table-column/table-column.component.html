@@ -4,4 +4,16 @@
 <app-table-task></app-table-task>
 <app-table-task></app-table-task>
 
-<app-table-add-task></app-table-add-task>
+<ng-container *ngIf="!taskEditorState">
+    <div class="add" (click)="taskEditorState = true">
+        <div class="bg__wrapper">
+            <svg-wp-task-add></svg-wp-task-add>
+        </div>
+
+        <div class="text">Add Task</div>
+    </div>
+</ng-container>
+
+<app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false"></app-add-task>
+
+<!-- <app-table-add-task></app-table-add-task> -->

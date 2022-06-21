@@ -57,8 +57,8 @@
 
         <!-- todo : check for divide into component -->
         <!-- add task --- -->
-        <ng-container *ngIf="!taskEditorActiveState">
-            <div class="add" (click)="taskEditorActiveState = true">
+        <ng-container *ngIf="!taskEditorState">
+            <div class="add" (click)="taskEditorState = true">
                 <div class="bg__wrapper">
                     <svg-wp-task-add></svg-wp-task-add>
                 </div>
@@ -68,9 +68,9 @@
         </ng-container>
 
         <app-add-task
-            *ngIf="taskEditorActiveState"
+            *ngIf="taskEditorState"
             (addTaskEvent)="addTask($event)"
-            (closeEvent)="taskEditorActiveState = false"
+            (closeEvent)="taskEditorState = false"
         ></app-add-task>
         <!-- --- add task -->
     </div>

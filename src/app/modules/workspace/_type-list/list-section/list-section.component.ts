@@ -12,7 +12,7 @@ import { FormControl } from '@angular/forms';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListSectionComponent implements OnInit {
-    taskEditorActiveState: boolean = false;
+    taskEditorState: boolean = false;
     isChangingTitle: boolean = false;
     changeButtonDisabled: boolean = false;
     isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);

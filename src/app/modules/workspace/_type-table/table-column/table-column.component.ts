@@ -7,5 +7,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TableColumnComponent {
+    taskEditorState: boolean = false;
+
     constructor() {}
 }
