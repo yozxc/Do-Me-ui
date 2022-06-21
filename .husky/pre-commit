@@ -17,6 +17,13 @@ npm run lint ||
         false;
 )
 
+# Add all formated files
+git add . ||
+(
+        echo 'git add all formated files'
+        false;
+)
+
 # Check tsconfig standards
 npm run check-types ||
 (

@@ -14,9 +14,9 @@ import { HeaderComponent } from './header/header.component';
 import { WorkspaceComponent } from './workspace.component';
 import { SearchComponent } from './search/search.component';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 import { ListTaskComponent } from './_type-list/list-task/list-task.component';
-import { ListAddTaskComponent } from './_type-list/list-add-task/list-add-task.component';
-import { ListSubListComponent } from './_type-list/list-sub-list/list-sub-list.component';
+import { ListSectionComponent } from './_type-list/list-section/list-section.component';
 import { ListAddSectionComponent } from './_type-list/list-add-section/list-add-section.component';
 import { TableHeaderComponent } from './_type-table/table-header/table-header.component';
 import { TableColumnComponent } from './_type-table/table-column/table-column.component';
@@ -53,8 +53,7 @@ import { LmStateService } from './left-menu/lm-state.service';
         SearchComponent,
         LeftMenuComponent,
         ListTaskComponent,
-        ListAddTaskComponent,
-        ListSubListComponent,
+        ListSectionComponent,
         ListAddSectionComponent,
         TableHeaderComponent,
         TableColumnComponent,
@@ -68,7 +67,8 @@ import { LmStateService } from './left-menu/lm-state.service';
         FilterComponent,
         TableTaskComponent,
         TableAddTaskComponent,
-        TableAddSectionComponent
+        TableAddSectionComponent,
+        AddTaskComponent
     ],
     exports: [WorkspaceComponent]
 })

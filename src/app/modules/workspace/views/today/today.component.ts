@@ -12,6 +12,7 @@ import { overdueTasksList } from '@mocks/overdueTasks';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodayComponent {
+    taskEditorActiveState: boolean = false;
     date: number = Date.now();
 
     tasksList: TaskData[] = tasksList;

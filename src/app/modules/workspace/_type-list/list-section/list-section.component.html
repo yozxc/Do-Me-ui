@@ -55,6 +55,23 @@
     <div *ngIf="(isClosed$ | async) === false" class="task__list">
         <app-list-task *ngFor="let task of tasksList" [taskData]="task"></app-list-task>
 
-        <app-list-add-task (addTaskEvent)="addTask($event)"></app-list-add-task>
+        <!-- todo : check for divide into component -->
+        <!-- add task --- -->
+        <ng-container *ngIf="!taskEditorActiveState">
+            <div class="add" (click)="taskEditorActiveState = true">
+                <div class="bg__wrapper">
+                    <svg-wp-task-add></svg-wp-task-add>
+                </div>
+
+                <div class="text">Add Task</div>
+            </div>
+        </ng-container>
+
+        <app-add-task
+            *ngIf="taskEditorActiveState"
+            (addTaskEvent)="addTask($event)"
+            (closeEvent)="taskEditorActiveState = false"
+        ></app-add-task>
+        <!-- --- add task -->
     </div>
 </div>

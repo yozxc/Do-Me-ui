@@ -6,12 +6,13 @@ import { v4 } from 'uuid';
 import { FormControl } from '@angular/forms';
 
 @Component({
-    selector: 'app-list-sub-list',
-    templateUrl: './list-sub-list.component.html',
-    styleUrls: ['./list-sub-list.component.scss'],
+    selector: 'app-list-section',
+    templateUrl: './list-section.component.html',
+    styleUrls: ['./list-section.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListSubListComponent implements OnInit {
+export class ListSectionComponent implements OnInit {
+    taskEditorActiveState: boolean = false;
     isChangingTitle: boolean = false;
     changeButtonDisabled: boolean = false;
     isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);

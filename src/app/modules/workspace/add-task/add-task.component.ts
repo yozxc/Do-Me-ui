@@ -1,20 +1,19 @@
-import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-
-import { AddTaskData } from '@core/types/addTaskData';
+import { AddTaskData } from '@app/core/types/addTaskData';
 
 @Component({
-    selector: 'app-list-add-task',
-    templateUrl: './list-add-task.component.html',
-    styleUrls: ['./list-add-task.component.scss'],
+    selector: 'app-add-task',
+    templateUrl: './add-task.component.html',
+    styleUrls: ['./add-task.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListAddTaskComponent implements OnInit {
-    taskEditorActiveState: boolean = false;
+export class AddTaskComponent implements OnInit {
     isFocused: boolean = false;
     addButtonDisabled: boolean = true;
 
     @Output() addTaskEvent: EventEmitter<AddTaskData> = new EventEmitter();
+    @Output() closeEvent: EventEmitter<any> = new EventEmitter();
 
     addTaskForm = this.fb.group({
         taskName: '',
@@ -32,7 +31,6 @@ export class ListAddTaskComponent implements OnInit {
 
     resetForm() {
         if (!this.addButtonDisabled) {
-            this.taskEditorActiveState = false;
             this.addTaskForm.setValue({
                 taskName: '',
                 taskDescription: ''
@@ -45,14 +43,15 @@ export class ListAddTaskComponent implements OnInit {
     }
 
     onCancel() {
-        this.taskEditorActiveState = false;
-
         this.resetForm();
+
+        this.closeEvent.emit();
     }
 
     onSave() {
         this.addTaskForm.value.taskName.length && this.addTaskEvent.emit(this.addTaskForm.value);
-
         this.resetForm();
+
+        this.closeEvent.emit();
     }
 }

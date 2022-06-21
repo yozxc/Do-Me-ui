@@ -1,14 +1,4 @@
-<ng-container *ngIf="!taskEditorActiveState">
-    <div class="add" (click)="taskEditorActiveState = true">
-        <div class="bg__wrapper">
-            <svg-wp-task-add></svg-wp-task-add>
-        </div>
-
-        <div class="text">Add Task</div>
-    </div>
-</ng-container>
-
-<div *ngIf="taskEditorActiveState" class="task__editor__wrapper">
+<div class="task__editor__wrapper">
     <form class="editor__container" [formGroup]="addTaskForm" [ngClass]="{ _active: isFocused }">
         <input
             class="task__title"
