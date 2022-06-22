@@ -21,7 +21,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
         `
     ],
     template: `
-        <svg width="24" height="24">
+        <svg>
             <g [attr.fill]="prior === 1 ? '#DE4C4A' : prior === 2 ? '#F49C18' : prior === 3 ? '#4073D6' : '#808080'">
                 <path d="M5 5.5L6 5v14.5a.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5v-14z"></path>
                 <path
