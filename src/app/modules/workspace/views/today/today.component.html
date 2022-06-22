@@ -4,17 +4,12 @@
 
         <app-list-task *ngFor="let task of tasksList" [taskData]="task"></app-list-task>
 
-        <!-- todo : check for divide into component -->
         <!-- add task --- -->
-        <ng-container *ngIf="!taskEditorState">
-            <div class="add" (click)="taskEditorState = true">
-                <div class="bg__wrapper">
-                    <svg-wp-task-add></svg-wp-task-add>
-                </div>
-
-                <div class="text">Add Task</div>
-            </div>
-        </ng-container>
+        <app-add-task-label
+            *ngIf="!taskEditorState"
+            [text]="'Add Task'"
+            (click)="taskEditorState = true"
+        ></app-add-task-label>
 
         <app-add-task
             *ngIf="taskEditorState"
@@ -30,9 +25,7 @@
             [_editableTitle]="false"
         ></app-list-section>
 
-        <!-- <app-list-add-section></app-list-add-section> -->
-
-        <!-- <app-add-task></app-add-task> -->
+        <app-list-add-section></app-list-add-section>
     </div>
     <!-- list -->
 </div>

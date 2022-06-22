@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { v4 } from 'uuid';
 
 @Component({
     selector: 'ui-checkbox',
@@ -10,8 +11,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxComponent {
-    // todo : default values
-    @Input() id?: string;
+    id: string = v4();
+
     @Input() label?: string;
     @Input() checked?: boolean = false;
 

@@ -10,7 +10,6 @@ describe('HeaderComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [HeaderComponent],
-            // todo : mock services
             providers: [LmStateService]
         }).compileComponents();
     });

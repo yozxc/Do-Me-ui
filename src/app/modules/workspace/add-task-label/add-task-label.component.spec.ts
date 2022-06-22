@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableAddTaskComponent } from './table-add-task.component';
+import { AddTaskLabelComponent } from './add-task-label.component';
 
-describe('TableAddTaskComponent', () => {
-    let component: TableAddTaskComponent;
-    let fixture: ComponentFixture<TableAddTaskComponent>;
+describe('AddTaskLabelComponent', () => {
+    let component: AddTaskLabelComponent;
+    let fixture: ComponentFixture<AddTaskLabelComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [TableAddTaskComponent]
+            declarations: [AddTaskLabelComponent]
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(TableAddTaskComponent);
+        fixture = TestBed.createComponent(AddTaskLabelComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

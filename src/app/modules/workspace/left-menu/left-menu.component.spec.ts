@@ -10,7 +10,6 @@ describe('LeftMenuComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [LeftMenuComponent],
-            // todo : mock services
             providers: [LmStateService]
         }).compileComponents();
     });

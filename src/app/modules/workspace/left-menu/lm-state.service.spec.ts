@@ -7,7 +7,6 @@ describe('LmStateService', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            // todo : check for provider
             providers: [LmStateService]
         });
         service = TestBed.inject(LmStateService);

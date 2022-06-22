@@ -1,12 +1,6 @@
 <div class="task">
     <label class="check__label" [for]="checkboxID">
-        <input
-            class="hidden__checkbox"
-            type="checkbox"
-            name=""
-            [id]="checkboxID"
-            (change)="taskData.isChecked = !taskData.isChecked"
-        />
+        <input class="hidden__checkbox" type="checkbox" name="" (change)="taskData.isChecked = !taskData.isChecked" />
 
         <div [class]="'custom__check' + ' p' + taskData.priority" [ngClass]="{ _active: taskData.isChecked }">
             <svg-wp-tick *ngIf="taskData?.isChecked" [activeWhite]="taskData.priority !== 4"></svg-wp-tick>

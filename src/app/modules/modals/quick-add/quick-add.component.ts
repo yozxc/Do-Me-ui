@@ -1,3 +1,4 @@
+import { PriorityType } from '@app/core/types/priorityType';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,13 +11,12 @@ import { Router } from '@angular/router';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuickAddComponent implements OnInit {
-    // todo : add in form
-    priority = 4;
     addButtonDisabled: boolean = true;
 
     addTaskForm = this.fb.group({
         taskName: '',
-        taskDescription: ''
+        taskDescription: '',
+        priority: 4
     });
 
     constructor(private router: Router, private fb: FormBuilder) {}
@@ -29,13 +29,16 @@ export class QuickAddComponent implements OnInit {
         if (!this.addButtonDisabled) {
             this.addTaskForm.setValue({
                 taskName: '',
-                taskDescription: ''
+                taskDescription: '',
+                priority: 4
             });
         }
     }
 
-    changePriority(priority: number) {
-        this.priority = priority;
+    changePriority(priority: PriorityType) {
+        this.addTaskForm.patchValue({
+            priority: priority
+        });
     }
 
     onClose() {

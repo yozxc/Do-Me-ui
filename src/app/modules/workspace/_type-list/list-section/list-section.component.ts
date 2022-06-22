@@ -52,7 +52,6 @@ export class ListSectionComponent implements OnInit {
 
     onSave() {
         if (this.titleFormControl.value.length) {
-            // todo : save to back
             this.listTitle = this.titleFormControl.value;
             this.isChangingTitle = false;
         }

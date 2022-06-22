@@ -29,9 +29,9 @@ import { ProjectComponent } from './views/project/project.component';
 import { LabelComponent } from './views/label/label.component';
 import { FilterComponent } from './views/filter/filter.component';
 import { TableTaskComponent } from './_type-table/table-task/table-task.component';
-import { TableAddTaskComponent } from './_type-table/table-add-task/table-add-task.component';
 import { TableAddSectionComponent } from './_type-table/table-add-section/table-add-section.component';
 import { LmStateService } from './left-menu/lm-state.service';
+import { AddTaskLabelComponent } from './add-task-label/add-task-label.component';
 
 @NgModule({
     imports: [
@@ -66,9 +66,9 @@ import { LmStateService } from './left-menu/lm-state.service';
         LabelComponent,
         FilterComponent,
         TableTaskComponent,
-        TableAddTaskComponent,
         TableAddSectionComponent,
-        AddTaskComponent
+        AddTaskComponent,
+        AddTaskLabelComponent
     ],
     exports: [WorkspaceComponent]
 })

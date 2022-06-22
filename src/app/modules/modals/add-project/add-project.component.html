@@ -29,7 +29,7 @@
 
             <div class="field">
                 <div class="check__wrapper">
-                    <ui-checkbox [id]="'addFavModalID'" [label]="'Add to favorites'"></ui-checkbox>
+                    <ui-checkbox [label]="'Add to favorites'"></ui-checkbox>
                 </div>
             </div>
 
@@ -41,22 +41,14 @@
                         <div class="type__list" [ngClass]="{ _active: projectType === 'List' }"></div>
 
                         <div class="type__check__wrapper">
-                            <ui-checkbox
-                                [id]="'viewTypeList'"
-                                [label]="'List'"
-                                [checked]="projectType === 'List'"
-                            ></ui-checkbox>
+                            <ui-checkbox [label]="'List'" [checked]="projectType === 'List'"></ui-checkbox>
                         </div>
                     </div>
                     <div class="view__type _table" (click)="changeType('Table')">
                         <div class="type__table" [ngClass]="{ _active: projectType === 'Table' }"></div>
 
                         <div class="type__check__wrapper">
-                            <ui-checkbox
-                                [id]="'viewTypeTable'"
-                                [label]="'Table'"
-                                [checked]="projectType === 'Table'"
-                            ></ui-checkbox>
+                            <ui-checkbox [label]="'Table'" [checked]="projectType === 'Table'"></ui-checkbox>
                         </div>
                     </div>
                 </div>
