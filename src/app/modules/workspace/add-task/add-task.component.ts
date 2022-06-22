@@ -17,11 +17,9 @@ export class AddTaskComponent implements OnInit {
 
     addTaskForm = this.fb.group({
         taskName: '',
-        taskDescription: ''
+        taskDescription: '',
+        priority: 4
     });
-
-    // todo : add in form
-    priority: number = 4;
 
     constructor(private fb: FormBuilder) {}
 
@@ -33,13 +31,16 @@ export class AddTaskComponent implements OnInit {
         if (!this.addButtonDisabled) {
             this.addTaskForm.setValue({
                 taskName: '',
-                taskDescription: ''
+                taskDescription: '',
+                priority: 4
             });
         }
     }
 
     changePriority(priority: number) {
-        this.priority = priority;
+        this.addTaskForm.patchValue({
+            priority: priority
+        });
     }
 
     onCancel() {

@@ -32,7 +32,7 @@
             <div class="flex__container">
                 <svg-wp-label></svg-wp-label>
                 <div class="icon__wrapper" (click)="priorityDropdown.toggleIsVisible()">
-                    <svg-wp-priority [prior]="priority"></svg-wp-priority>
+                    <svg-wp-priority [prior]="addTaskForm.value.priority"></svg-wp-priority>
                     <ui-priority-dropdown
                         #priorityDropdown
                         (changePriorityEvent)="changePriority($event)"

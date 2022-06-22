@@ -25,7 +25,8 @@ export class TodayComponent {
             taskID: v4(),
             taskName: event.taskName,
             taskDescription: event.taskDescription,
-            isChecked: false
+            isChecked: false,
+            priority: event.priority
         });
     }
 }

@@ -102,6 +102,13 @@
     padding-top: 15px;
 }
 
+.icon__wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
 // svg positions | sizes
 
 svg-wp-schedule,

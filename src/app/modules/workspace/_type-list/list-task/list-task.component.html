@@ -8,8 +8,8 @@
             (change)="taskData.isChecked = !taskData.isChecked"
         />
 
-        <div class="custom__check">
-            <svg-wp-tick *ngIf="taskData?.isChecked"></svg-wp-tick>
+        <div [class]="'custom__check' + ' p' + taskData.priority" [ngClass]="{ _active: taskData.isChecked }">
+            <svg-wp-tick *ngIf="taskData?.isChecked" [activeWhite]="taskData.priority !== 4"></svg-wp-tick>
         </div>
     </label>
     <!-- checkbox label -->

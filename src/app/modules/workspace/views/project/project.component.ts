@@ -1,5 +1,6 @@
 import { tasksList } from '@mocks/tasksList';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { TaskData } from '@app/core/types/taskData';
 
 @Component({
     selector: 'app-project',
@@ -8,7 +9,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectComponent {
-    tasksList = tasksList;
+    tasksList: TaskData[] = tasksList;
 
     @Input() projID: number = 123;
 

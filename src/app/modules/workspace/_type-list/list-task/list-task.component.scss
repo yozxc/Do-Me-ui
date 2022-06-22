@@ -37,6 +37,46 @@
 
     cursor: pointer;
 
+    &.p1 {
+        border: 2px solid #d1453b;
+        & svg-wp-tick {
+            top: -4px;
+            left: -5.5px;
+        }
+        &._active {
+            background-color: #d1453b !important;
+        }
+        &:hover {
+            background-color: #faeceb;
+        }
+    }
+    &.p2 {
+        border: 2px solid #eb8909;
+        & svg-wp-tick {
+            top: -4px;
+            left: -5.5px;
+        }
+        &._active {
+            background-color: #eb8909 !important;
+        }
+        &:hover {
+            background-color: #fdf3e6;
+        }
+    }
+    &.p3 {
+        border: 2px solid #246fe0;
+        & svg-wp-tick {
+            top: -4px;
+            left: -5.5px;
+        }
+        &._active {
+            background-color: #246fe0 !important;
+        }
+        &:hover {
+            background-color: #e9f0fc;
+        }
+    }
+
     &:hover {
         background-color: #ececec;
     }
@@ -123,8 +163,8 @@ svg-wp-tick {
     height: 18px;
 
     position: absolute;
-    top: -3px;
-    left: -4px;
+    top: -3.5px;
+    left: -4.5px;
 }
 
 svg-wp-task-late {

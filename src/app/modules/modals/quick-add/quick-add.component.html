@@ -1,9 +1,9 @@
 <div class="modal" (click)="onClose()">
-    <div class="main" (click)="$event.stopPropagation()">
+    <form class="main" [formGroup]="addTaskForm" (click)="$event.stopPropagation()">
         <div class="title__text__editor">
-            <input type="text" class="task__title" placeholder="Task name ??" />
+            <input type="text" class="task__title" placeholder="Task name" formControlName="taskName" />
 
-            <textarea class="task__descrption" placeholder="Description"></textarea>
+            <textarea class="task__descrption" placeholder="Description" formControlName="taskDescription"></textarea>
         </div>
 
         <div class="editor__bottom">
@@ -20,13 +20,21 @@
 
             <div class="flex__container">
                 <svg-wp-label></svg-wp-label>
-                <svg-wp-priority></svg-wp-priority>
+                <!-- <svg-wp-priority></svg-wp-priority> -->
+
+                <div class="icon__wrapper" (click)="priorityDropdown.toggleIsVisible()">
+                    <svg-wp-priority [prior]="priority"></svg-wp-priority>
+                    <ui-priority-dropdown
+                        #priorityDropdown
+                        (changePriorityEvent)="changePriority($event)"
+                    ></ui-priority-dropdown>
+                </div>
             </div>
         </div>
 
         <div class="btns__wrapper">
-            <ui-button styleCls="black mr10" [disabled]="true">Add task</ui-button>
+            <ui-button styleCls="black mr10" [disabled]="addButtonDisabled">Add task</ui-button>
             <ui-button styleCls="white" (clickEvent)="onClose()">Cancel</ui-button>
         </div>
-    </div>
+    </form>
 </div>
