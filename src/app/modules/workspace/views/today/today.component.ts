@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { v4 } from 'uuid';
-import { TaskData } from '@app/core/types/taskData';
 import { AddTaskData } from '@core/types/addTaskData';
+import { TaskData } from '@app/core/types/taskData';
+import { v4 } from 'uuid';
 import { tasksList } from '@mocks/tasksList';
-import { overdueTasksList } from '@mocks/overdueTasks';
+import { sectionsList } from '@mocks/sectionsTasks';
+import { SectionData } from '@app/core/types/section';
+import { AddSectionData } from '@app/core/types/addSectionData';
 
 @Component({
     selector: 'app-today',
@@ -16,7 +18,7 @@ export class TodayComponent {
     date: number = Date.now();
 
     tasksList: TaskData[] = tasksList;
-    overdueTasksList: TaskData[] = overdueTasksList;
+    sectionsList: SectionData[] = sectionsList;
 
     constructor() {}
 
@@ -27,6 +29,14 @@ export class TodayComponent {
             taskDescription: event.taskDescription,
             isChecked: false,
             priority: event.priority
+        });
+    }
+
+    addSection(event: AddSectionData) {
+        this.sectionsList.push({
+            id: v4(),
+            title: event.sectionTitle,
+            tasksList: []
         });
     }
 }

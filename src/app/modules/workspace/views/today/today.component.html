@@ -18,14 +18,15 @@
         ></app-add-task>
         <!--  --- add task -->
 
-        <!-- todo : change to ngFor -->
+        <!-- todo : look for one input object instead multi params -->
         <app-list-section
-            [listTitle]="'Overdue'"
-            [tasksList]="overdueTasksList"
-            [_editableTitle]="false"
+            *ngFor="let section of sectionsList"
+            [listTitle]="section.title"
+            [tasksList]="section.tasksList"
+            [_editableTitle]="!section.nonEditableTitle"
         ></app-list-section>
 
-        <app-list-add-section></app-list-add-section>
+        <app-list-add-section (addSectionEvent)="addSection($event)"></app-list-add-section>
     </div>
     <!-- list -->
 </div>

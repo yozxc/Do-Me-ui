@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 @Component({
     selector: 'ui-button',
     template: `
-        <button (click)="clickEvent.emit()" [class]="styleCls" [ngClass]="{ disabled }">
+        <button (click)="emitClick()" [class]="styleCls" [ngClass]="{ disabled }">
             <ng-content></ng-content>
         </button>
     `,
@@ -17,4 +17,8 @@ export class ButtonComponent {
     @Output() clickEvent: EventEmitter<any> = new EventEmitter();
 
     constructor() {}
+
+    emitClick() {
+        !this.disabled && this.clickEvent.emit();
+    }
 }
