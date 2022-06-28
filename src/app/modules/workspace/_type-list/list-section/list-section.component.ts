@@ -1,7 +1,6 @@
 import { BehaviorSubject } from 'rxjs';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { TaskData } from '@app/core/types/taskData';
-import { AddTaskData } from '@app/core/types/addTaskData';
+import { AddTaskData, TaskData } from '@app/core/types/taskData';
 import { v4 } from 'uuid';
 import { FormControl } from '@angular/forms';
 

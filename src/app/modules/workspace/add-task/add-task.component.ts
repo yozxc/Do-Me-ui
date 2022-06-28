@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AddTaskData } from '@app/core/types/addTaskData';
+import { AddTaskData } from '@app/core/types/taskData';
 
 @Component({
     selector: 'app-add-task',

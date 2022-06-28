@@ -14,7 +14,7 @@ export class ListHeaderComponent implements OnInit {
 
     titleControl!: FormControl;
 
-    @Input() title!: string;
+    @Input() title!: string | undefined;
     @Input() _dateDisplay: boolean = false;
     @Input() _editableTitle: boolean = true;
 

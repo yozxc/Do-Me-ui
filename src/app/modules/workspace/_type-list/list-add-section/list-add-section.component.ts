@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { AddSectionData } from '@app/core/types/addSectionData';
+import { AddSectionData } from '@app/core/types/section';
 
 @Component({
     selector: 'app-list-add-section',

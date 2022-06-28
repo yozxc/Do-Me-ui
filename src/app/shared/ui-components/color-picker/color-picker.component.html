@@ -1,0 +1,11 @@
+<div class="selected__color" (click)="__isColorListActive = !__isColorListActive">
+    <div [class]="'dot ' + getColorDataByType(__currentColor)?.styleCls"></div>
+    <span class="color__text">{{ getColorDataByType(__currentColor)?.name }}</span>
+</div>
+
+<div *ngIf="__isColorListActive" class="color__list">
+    <div *ngFor="let color of colors" class="color" (click)="setCurrentColor(color)">
+        <div [class]="'dot ' + color.styleCls"></div>
+        <span class="color__text">{{ color.name }}</span>
+    </div>
+</div>

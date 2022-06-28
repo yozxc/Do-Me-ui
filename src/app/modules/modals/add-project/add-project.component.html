@@ -5,31 +5,21 @@
             <div class="bottom__bar"></div>
         </div>
 
-        <div class="content">
+        <form class="content" [formGroup]="form">
             <div class="field">
                 <div class="label">Name</div>
-                <input class="input__text" type="text" />
+                <input class="input__text" type="text" formControlName="title" />
             </div>
 
             <div class="field">
                 <div class="label">Color</div>
 
-                <div class="selected__color" (click)="isColorListActive = !isColorListActive">
-                    <div [class]="'dot ' + colors[currentColorID].styleCls"></div>
-                    <span class="color__text">{{ colors[currentColorID].name }}</span>
-                </div>
-
-                <div *ngIf="isColorListActive" class="color__list">
-                    <div *ngFor="let color of colors; let i = index" class="color" (click)="setCurrentColorID(i)">
-                        <div [class]="'dot ' + color.styleCls"></div>
-                        <span class="color__text">{{ color.name }}</span>
-                    </div>
-                </div>
+                <ui-color-picker formControlName="colorCls"></ui-color-picker>
             </div>
 
             <div class="field">
                 <div class="check__wrapper">
-                    <ui-checkbox [label]="'Add to favorites'"></ui-checkbox>
+                    <ui-checkbox [label]="'Add to favorites'" formControlName="favorites"></ui-checkbox>
                 </div>
             </div>
 
@@ -38,29 +28,29 @@
 
                 <div class="view__type__wrapper">
                     <div class="view__type _list" (click)="changeType('List')">
-                        <div class="type__list" [ngClass]="{ _active: projectType === 'List' }"></div>
+                        <div class="type__list" [ngClass]="{ _active: form.value.type === 'List' }"></div>
 
                         <div class="type__check__wrapper">
-                            <ui-checkbox [label]="'List'" [checked]="projectType === 'List'"></ui-checkbox>
+                            <ui-checkbox [label]="'List'" [checked]="form.value.type === 'List'"></ui-checkbox>
                         </div>
                     </div>
-                    <div class="view__type _table" (click)="changeType('Table')">
-                        <div class="type__table" [ngClass]="{ _active: projectType === 'Table' }"></div>
+                    <div class="view__type _table" (click)="changeType('Board')">
+                        <div class="type__table" [ngClass]="{ _active: form.value.type === 'Board' }"></div>
 
                         <div class="type__check__wrapper">
-                            <ui-checkbox [label]="'Table'" [checked]="projectType === 'Table'"></ui-checkbox>
+                            <ui-checkbox [label]="'Board'" [checked]="form.value.type === 'Board'"></ui-checkbox>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="bottom__bar"></div>
-        </div>
+        </form>
 
         <div class="footer">
             <div class="footer__butt__wrapp">
                 <ui-button styleCls="white mr10" (clickEvent)="onCancel()">Cancel</ui-button>
-                <ui-button styleCls="black">Save</ui-button>
+                <ui-button styleCls="black" [disabled]="__addButtonDisabled" (clickEvent)="onSave()">Save</ui-button>
             </div>
         </div>
     </div>

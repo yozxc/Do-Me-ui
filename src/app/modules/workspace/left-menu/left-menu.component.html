@@ -66,14 +66,14 @@
 
         <div class="menu__proj__wrapper">
             <div
-                *ngFor="let proj of projects; let i = index"
-                (click)="navTo('/workspace/project/' + i)"
+                *ngFor="let project of projects; let i = index"
+                (click)="navTo('/workspace/project/' + project.id)"
                 class="menu__proj"
             >
-                <svg-lm-dot [styleCls]="proj.colorCls"></svg-lm-dot>
+                <svg-lm-dot [styleCls]="project.colorCls"></svg-lm-dot>
 
-                <div class="menu__proj__title">{{ proj.name }}</div>
-                <div class="menu__proj__num _gray">{{ proj._todoTasks }}</div>
+                <div class="menu__proj__title">{{ project.title }}</div>
+                <div class="menu__proj__num _gray">{{ project.todoTasks }}</div>
 
                 <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
                 <ui-menu-dropdown

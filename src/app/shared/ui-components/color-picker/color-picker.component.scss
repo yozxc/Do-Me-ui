@@ -1,0 +1,64 @@
+@import 'vars';
+
+.selected__color {
+    height: 30px;
+    width: 100%;
+    padding: 5px 5px 5px 30px;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    font-family: $gFont;
+    font-size: 0.8em;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+
+.color {
+    height: 30px;
+    width: 100%;
+    padding: 5px 5px 5px 30px;
+
+    font-family: $gFont;
+    font-size: 0.8em;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    background-color: #fff;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ececec;
+    }
+}
+
+.color__list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    height: 300px;
+    width: 100%;
+    overflow: auto;
+
+    position: absolute;
+    z-index: 1001;
+}

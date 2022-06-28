@@ -6,3 +6,7 @@ export interface SectionData {
     nonEditableTitle?: boolean;
     tasksList: TaskData[];
 }
+
+export interface AddSectionData {
+    sectionTitle: string;
+}

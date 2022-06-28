@@ -7,3 +7,9 @@ export interface TaskData {
     isChecked: boolean;
     priority: PriorityType;
 }
+
+export interface AddTaskData {
+    taskName: string;
+    taskDescription: string;
+    priority: PriorityType;
+}

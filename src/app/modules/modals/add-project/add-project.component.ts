@@ -1,7 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ProjectsService } from '@core/services/data/projects/projects.service';
+import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { AddProjectData } from '@app/core/types/projectType';
 
-type projectType = 'List' | 'Table' | undefined;
+type projectType = 'List' | 'Board';
 
 @Component({
     selector: 'app-add-project',
@@ -9,46 +12,34 @@ type projectType = 'List' | 'Table' | undefined;
     styleUrls: ['./add-project.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AddProjectComponent {
-    colors = [
-        { name: 'Berry Red', styleCls: 'bg-berryRed' },
-        { name: 'Red', styleCls: 'bg-red' },
-        { name: 'Orange', styleCls: 'bg-orange' },
-        { name: 'Yellow', styleCls: 'bg-yellow' },
-        { name: 'Olive Green', styleCls: 'bg-oliveGreen' },
-        { name: 'Lime Green', styleCls: 'bg-limeGreen' },
-        { name: 'Green', styleCls: 'bg-green' },
-        { name: 'Mint Green', styleCls: 'bg-mintGreen' },
-        { name: 'Teal', styleCls: 'bg-teal' },
-        { name: 'Sky Blue', styleCls: 'bg-skyBlue' },
-        { name: 'Light Blue', styleCls: 'bg-lightBlue' },
-        { name: 'Blue', styleCls: 'bg-blue' },
-        { name: 'Grape', styleCls: 'bg-grape' },
-        { name: 'Violet', styleCls: 'bg-violet' },
-        { name: 'Lavender', styleCls: 'bg-lavender' },
-        { name: 'Magenta', styleCls: 'bg-magenta' },
-        { name: 'Salmon', styleCls: 'bg-salmon' },
-        { name: 'Charcoal', styleCls: 'bg-charcoal' },
-        { name: 'Grey', styleCls: 'bg-grey' },
-        { name: 'Taupe', styleCls: 'bg-taupe' }
-    ];
-    currentColorID: number = 0;
-    isColorListActive: boolean = false;
+export class AddProjectComponent implements OnInit {
+    __addButtonDisabled: boolean = true;
 
-    projectType: projectType;
+    form = this.fb.group({
+        title: '',
+        colorCls: 'berryRed',
+        type: 'List',
+        favorites: false
+    });
 
-    constructor(private router: Router) {}
+    constructor(private router: Router, private fb: FormBuilder, private projectsService: ProjectsService) {}
 
-    setCurrentColorID(id: number) {
-        this.currentColorID = id;
-        this.isColorListActive = false;
+    ngOnInit(): void {
+        this.form.get('title')?.valueChanges.subscribe((value) => (this.__addButtonDisabled = !value.length));
     }
 
     changeType(type: projectType) {
-        type === this.projectType ? (this.projectType = undefined) : (this.projectType = type);
+        this.form.patchValue({
+            type: type
+        });
     }
 
     onCancel() {
+        this.router.navigateByUrl(this.router.url.replace('(', '').split('//')[0]);
+    }
+
+    onSave() {
+        this.projectsService.addProject(this.form.value);
         this.router.navigateByUrl(this.router.url.replace('(', '').split('//')[0]);
     }
 }
