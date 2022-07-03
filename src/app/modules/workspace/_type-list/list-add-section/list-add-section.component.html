@@ -9,9 +9,7 @@
         <input class="edit__input" type="text" placeholder="Name this section" [formControl]="sectionTitleForm" />
 
         <div class="btns__wrapper">
-            <ui-button styleCls="black mr10" [disabled]="true" [disabled]="addButtonDisabled" (clickEvent)="onSave()"
-                >Save</ui-button
-            >
+            <ui-button styleCls="black mr10" [disabled]="true" [disabled]="addButtonDisabled" (clickEvent)="onSave()">Save</ui-button>
             <ui-button styleCls="white" (clickEvent)="isOnAdd = false" (clickEvent)="onCancel()">Cancel</ui-button>
         </div>
     </div>

@@ -32,17 +32,7 @@
                 <div class="menu__proj__num _gray">{{ item._todoTasks }}</div>
 
                 <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
-                <ui-menu-dropdown
-                    #dropMenu
-                    class="lm__dropdown"
-                    [addAbove]="true"
-                    [addBelow]="true"
-                    [edit]="true"
-                    [archive]="true"
-                    [del]="true"
-                    [schedule]="true"
-                    [priority]="true"
-                ></ui-menu-dropdown>
+                <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
             </div>
@@ -56,37 +46,20 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Projects</div>
 
-            <a
-                [routerLink]="[{ outlets: { modals: 'addProject' } }]"
-                [skipLocationChange]="true"
-                (click)="$event.stopPropagation()"
+            <a [routerLink]="[{ outlets: { modals: 'addProject' } }]" [skipLocationChange]="true" (click)="$event.stopPropagation()"
                 ><svg-lm-plus></svg-lm-plus
             ></a>
         </div>
 
         <div class="menu__proj__wrapper">
-            <div
-                *ngFor="let project of projects; let i = index"
-                (click)="navTo('/workspace/project/' + project.id)"
-                class="menu__proj"
-            >
+            <div *ngFor="let project of projects; let i = index" (click)="navTo('/workspace/project/' + project.id)" class="menu__proj">
                 <svg-lm-dot [styleCls]="project.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ project.title }}</div>
                 <div class="menu__proj__num _gray">{{ project.todoTasks }}</div>
 
                 <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
-                <ui-menu-dropdown
-                    #dropMenu
-                    class="lm__dropdown"
-                    [addAbove]="true"
-                    [addBelow]="true"
-                    [edit]="true"
-                    [archive]="true"
-                    [del]="true"
-                    [schedule]="true"
-                    [priority]="true"
-                ></ui-menu-dropdown>
+                <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
             </div>
@@ -100,37 +73,20 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Labels</div>
 
-            <a
-                [routerLink]="[{ outlets: { modals: 'addLabel' } }]"
-                [skipLocationChange]="true"
-                (click)="$event.stopPropagation()"
+            <a [routerLink]="[{ outlets: { modals: 'addLabel' } }]" [skipLocationChange]="true" (click)="$event.stopPropagation()"
                 ><svg-lm-plus></svg-lm-plus
             ></a>
         </div>
 
         <div class="menu__proj__wrapper">
-            <div
-                *ngFor="let label of labels; let i = index"
-                (click)="navTo('/workspace/label/' + i)"
-                class="menu__proj"
-            >
+            <div *ngFor="let label of labels; let i = index" (click)="navTo('/workspace/label/' + i)" class="menu__proj">
                 <svg-lm-label [styleCls]="label.colorCls"></svg-lm-label>
 
                 <div class="menu__proj__title">{{ label.name }}</div>
                 <div class="menu__proj__num _gray">{{ label._todoTasks }}</div>
 
                 <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
-                <ui-menu-dropdown
-                    #dropMenu
-                    class="lm__dropdown"
-                    [addAbove]="true"
-                    [addBelow]="true"
-                    [edit]="true"
-                    [archive]="true"
-                    [del]="true"
-                    [schedule]="true"
-                    [priority]="true"
-                ></ui-menu-dropdown>
+                <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
             </div>
@@ -144,37 +100,20 @@
             <div class="menu__group_tab__arrow"></div>
             <div class="menu__group_tab__text">Filters</div>
 
-            <a
-                [routerLink]="[{ outlets: { modals: 'addFilter' } }]"
-                [skipLocationChange]="true"
-                (click)="$event.stopPropagation()"
+            <a [routerLink]="[{ outlets: { modals: 'addFilter' } }]" [skipLocationChange]="true" (click)="$event.stopPropagation()"
                 ><svg-lm-plus></svg-lm-plus
             ></a>
         </div>
 
         <div class="menu__proj__wrapper">
-            <div
-                *ngFor="let filter of filters; let i = index"
-                (click)="navTo('/workspace/filter/' + i)"
-                class="menu__proj"
-            >
+            <div *ngFor="let filter of filters; let i = index" (click)="navTo('/workspace/filter/' + i)" class="menu__proj">
                 <svg-lm-filter [styleCls]="filter.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ filter.name }}</div>
                 <div class="menu__proj__num _gray">{{ filter._todoTasks }}</div>
 
                 <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
-                <ui-menu-dropdown
-                    #dropMenu
-                    class="lm__dropdown"
-                    [addAbove]="true"
-                    [addBelow]="true"
-                    [edit]="true"
-                    [archive]="true"
-                    [del]="true"
-                    [schedule]="true"
-                    [priority]="true"
-                ></ui-menu-dropdown>
+                <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>
 
                 <svg-lm-drag></svg-lm-drag>
             </div>

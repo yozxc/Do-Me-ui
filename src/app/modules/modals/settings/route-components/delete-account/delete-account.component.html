@@ -7,8 +7,7 @@
         <div class="content">
             <div class="text">
                 Deleting your account is permanent.
-                <span class="bold">All your data will be wiped out immediately</span> and you won't be able to get it
-                back.
+                <span class="bold">All your data will be wiped out immediately</span> and you won't be able to get it back.
             </div>
         </div>
     </div>
@@ -20,16 +19,8 @@
             <div class="input__pass__wrapper">
                 <input class="input__password" [attr.type]="passIsVisible ? 'text' : 'password'" />
 
-                <svg-close-eye
-                    *ngIf="!passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _close"
-                ></svg-close-eye>
-                <svg-open-eye
-                    *ngIf="passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _open"
-                ></svg-open-eye>
+                <svg-close-eye *ngIf="!passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _close"></svg-close-eye>
+                <svg-open-eye *ngIf="passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _open"></svg-open-eye>
             </div>
         </div>
     </div>
@@ -37,8 +28,8 @@
     <div class="field">
         <div class="content">
             <div class="text _gray">
-                Deleting your account requires your current password as confirmation. If you signed up via Google,
-                Facebook, or Apple, you can set a password in Account settings.
+                Deleting your account requires your current password as confirmation. If you signed up via Google, Facebook, or Apple, you can set a
+                password in Account settings.
             </div>
         </div>
     </div>

@@ -2,22 +2,11 @@
     <div class="header">
         <ng-container *ngIf="isChangingTitle && _editableTitle; else titleContainer">
             <div class="title__editor">
-                <input
-                    class="editor__input"
-                    type="text"
-                    placeholder="Name this section"
-                    [formControl]="titleFormControl"
-                />
+                <input class="editor__input" type="text" placeholder="Name this section" [formControl]="titleFormControl" />
 
                 <div class="btns__wrapper">
-                    <ui-button styleCls="black mr10" [disabled]="changeButtonDisabled" (clickEvent)="onSave()"
-                        >Save</ui-button
-                    >
-                    <ui-button
-                        styleCls="white"
-                        (clickEvent)="isChangingTitle = false; titleFormControl.setValue(listTitle)"
-                        >Cancel</ui-button
-                    >
+                    <ui-button styleCls="black mr10" [disabled]="changeButtonDisabled" (clickEvent)="onSave()">Save</ui-button>
+                    <ui-button styleCls="white" (clickEvent)="isChangingTitle = false; titleFormControl.setValue(listTitle)">Cancel</ui-button>
                 </div>
             </div>
         </ng-container>
@@ -33,17 +22,7 @@
                 <div class="icon__wrapper">
                     <svg-wp-header-more></svg-wp-header-more>
 
-                    <ui-menu-dropdown
-                        #dropMenu
-                        class="more__dropdown"
-                        [addAbove]="true"
-                        [addBelow]="true"
-                        [edit]="true"
-                        [archive]="true"
-                        [del]="true"
-                        [schedule]="true"
-                        [priority]="true"
-                    ></ui-menu-dropdown>
+                    <ui-menu-dropdown #dropMenu class="more__dropdown"></ui-menu-dropdown>
                 </div>
             </div>
         </ng-template>
@@ -56,17 +35,9 @@
         <app-list-task *ngFor="let task of tasksList" [taskData]="task"></app-list-task>
 
         <!-- add task --- -->
-        <app-add-task-label
-            *ngIf="!taskEditorState"
-            [text]="'Add Task'"
-            (click)="taskEditorState = true"
-        ></app-add-task-label>
+        <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
 
-        <app-add-task
-            *ngIf="taskEditorState"
-            (addTaskEvent)="addTask($event)"
-            (closeEvent)="taskEditorState = false"
-        ></app-add-task>
+        <app-add-task *ngIf="taskEditorState" (addTaskEvent)="addTask($event)" (closeEvent)="taskEditorState = false"></app-add-task>
         <!-- --- add task -->
     </div>
 </div>

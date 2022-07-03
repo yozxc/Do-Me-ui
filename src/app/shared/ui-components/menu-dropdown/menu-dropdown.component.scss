@@ -88,6 +88,10 @@
     margin-right: 10px;
     border-radius: 3px;
 
+    &:last-child {
+        margin-right: 0;
+    }
+
     cursor: pointer;
     &:hover {
         background-color: #f3f3f3;

@@ -1,21 +1,13 @@
 <div class="main__place">
     <div class="type__list">
-        <app-list-header [title]="'Today'" [_dateDisplay]="true" [_editableTitle]="false"></app-list-header>
+        <app-list-header [title]="'Today'" [dropdownSchema]="headerDropdownSchema" [_dateDisplay]="true" [_editableTitle]="false"></app-list-header>
 
         <app-list-task *ngFor="let task of tasksList" [taskData]="task"></app-list-task>
 
         <!-- add task --- -->
-        <app-add-task-label
-            *ngIf="!taskEditorState"
-            [text]="'Add Task'"
-            (click)="taskEditorState = true"
-        ></app-add-task-label>
+        <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
 
-        <app-add-task
-            *ngIf="taskEditorState"
-            (closeEvent)="taskEditorState = false"
-            (addTaskEvent)="addTask($event)"
-        ></app-add-task>
+        <app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false" (addTaskEvent)="addTask($event)"></app-add-task>
         <!--  --- add task -->
 
         <!-- todo : look for one input object instead multi params -->

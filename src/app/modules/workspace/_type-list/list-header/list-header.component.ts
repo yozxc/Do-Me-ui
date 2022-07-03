@@ -1,5 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { DropdownSchema } from '@app/core/types/dropdown';
 
 @Component({
     selector: 'app-list-header',
@@ -15,6 +16,7 @@ export class ListHeaderComponent implements OnInit {
     titleControl!: FormControl;
 
     @Input() title!: string | undefined;
+    @Input() dropdownSchema!: DropdownSchema;
     @Input() _dateDisplay: boolean = false;
     @Input() _editableTitle: boolean = true;
 

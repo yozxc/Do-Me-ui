@@ -31,16 +31,8 @@
             <div class="input__pass__wrapper">
                 <input class="input__password" [attr.type]="passIsVisible ? 'text' : 'password'" />
 
-                <svg-close-eye
-                    *ngIf="!passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _close"
-                ></svg-close-eye>
-                <svg-open-eye
-                    *ngIf="passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _open"
-                ></svg-open-eye>
+                <svg-close-eye *ngIf="!passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _close"></svg-close-eye>
+                <svg-open-eye *ngIf="passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _open"></svg-open-eye>
             </div>
         </div>
     </div>

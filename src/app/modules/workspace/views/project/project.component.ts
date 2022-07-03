@@ -18,11 +18,7 @@ export class ProjectComponent implements OnInit {
     projectId!: string | null;
     projectData!: Project | null;
 
-    constructor(
-        private route: ActivatedRoute,
-        private projectsService: ProjectsService,
-        private cdr: ChangeDetectorRef
-    ) {
+    constructor(private route: ActivatedRoute, private projectsService: ProjectsService, private cdr: ChangeDetectorRef) {
         this.route.paramMap.subscribe((params) => params.get(MAIN_PLACE_ROUTE.ID) && this.ngOnInit());
     }
 

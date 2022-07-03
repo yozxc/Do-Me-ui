@@ -11,6 +11,7 @@ import { SvgDropAddSectionComponent } from './drop-add-section.component';
 import { SvgDropShowTasksComponent } from './drop-show-tasks.component';
 import { SvgDropHideTasksComponent } from './drop-hide-tasks.component';
 import { SvgDropMoveToComponent } from './drop-move-to.component';
+import { SvgDropGoToComponent } from './drop-go-to.component';
 import { SvgDropSecTodayComponent } from './drop-sec-today.component';
 import { SvgDropSecTomorrowComponent } from './drop-sec-tomorrow.component';
 import { SvgDropSecThisWeekendComponent } from './drop-sec-this-weekend.component';
@@ -40,6 +41,7 @@ import { SvgDropSubTickComponent } from './drop-sub-tick.component';
         SvgDropShowTasksComponent,
         SvgDropHideTasksComponent,
         SvgDropMoveToComponent,
+        SvgDropGoToComponent,
         SvgDropSecTodayComponent,
         SvgDropSecTomorrowComponent,
         SvgDropSecThisWeekendComponent,
@@ -67,6 +69,7 @@ import { SvgDropSubTickComponent } from './drop-sub-tick.component';
         SvgDropShowTasksComponent,
         SvgDropHideTasksComponent,
         SvgDropMoveToComponent,
+        SvgDropGoToComponent,
         SvgDropSecTodayComponent,
         SvgDropSecTomorrowComponent,
         SvgDropSecThisWeekendComponent,

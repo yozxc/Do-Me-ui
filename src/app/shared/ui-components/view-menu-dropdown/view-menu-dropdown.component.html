@@ -13,11 +13,7 @@
                 <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
             </div>
 
-            <div
-                class="submenu__wrapper"
-                *ngIf="viewAsVisible"
-                (click)="viewAsVisible = false; $event.stopPropagation()"
-            >
+            <div class="submenu__wrapper" *ngIf="viewAsVisible" (click)="viewAsVisible = false; $event.stopPropagation()">
                 <div class="submenu">
                     <div class="submenu__item" (click)="viewAsValue = 'List'">
                         <div class="sub_item__text">List</div>
@@ -90,10 +86,7 @@
                     </div>
                     <div class="submenu__item" (click)="sortByValue = 'Alphabetically'">
                         <div class="sub_item__text">Alphabetically</div>
-                        <svg-drop-sub-tick
-                            *ngIf="sortByValue === 'Alphabetically'"
-                            class="wh-12 m7"
-                        ></svg-drop-sub-tick>
+                        <svg-drop-sub-tick *ngIf="sortByValue === 'Alphabetically'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
                     <div class="submenu__item" (click)="sortByValue = 'Due date'">
                         <div class="sub_item__text">Due date</div>

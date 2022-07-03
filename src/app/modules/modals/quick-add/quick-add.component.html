@@ -24,10 +24,7 @@
 
                 <div class="icon__wrapper" (click)="priorityDropdown.toggleIsVisible()">
                     <svg-wp-priority [prior]="addTaskForm.value.priority"></svg-wp-priority>
-                    <ui-priority-dropdown
-                        #priorityDropdown
-                        (changePriorityEvent)="changePriority($event)"
-                    ></ui-priority-dropdown>
+                    <ui-priority-dropdown #priorityDropdown (changePriorityEvent)="changePriority($event)"></ui-priority-dropdown>
                 </div>
             </div>
         </div>

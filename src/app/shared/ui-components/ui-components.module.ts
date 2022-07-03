@@ -20,13 +20,6 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
         PriorityDropdownComponent,
         ColorPickerComponent
     ],
-    exports: [
-        ButtonComponent,
-        MenuDropdownComponent,
-        ViewMenuDropdownComponent,
-        CheckboxComponent,
-        PriorityDropdownComponent,
-        ColorPickerComponent
-    ]
+    exports: [ButtonComponent, MenuDropdownComponent, ViewMenuDropdownComponent, CheckboxComponent, PriorityDropdownComponent, ColorPickerComponent]
 })
 export class UiComponentsModule {}

@@ -9,6 +9,8 @@ import {
     Output,
     ViewChild
 } from '@angular/core';
+import { PriorityType } from '@app/core/types/priorityType';
+import { DropdownField, DropdownPriority, DropdownSchema, DropdownBar, DropdownSchedule, DropdownSchemaElement } from '@core/types/dropdown';
 
 @Component({
     selector: 'ui-menu-dropdown',
@@ -19,23 +21,23 @@ import {
 export class MenuDropdownComponent implements AfterViewChecked {
     isVisible: boolean = false;
 
-    @Input() addAbove: boolean = false;
-    @Input() addBelow: boolean = false;
-    @Input() edit: boolean = false;
-    @Input() favorites: boolean = false;
-    @Input() schedule: boolean = false;
-    @Input() priority: boolean = false;
-    @Input() addSection: boolean = false;
-    @Input() showHideTasks: boolean = false;
-    @Input() moveTo: boolean = false;
-    @Input() archive: boolean = false;
-    @Input() del: boolean = false;
+    priorityList: PriorityType[] = [1, 2, 3, 4];
 
+    @Input() dropdownSchema!: DropdownSchema;
+
+    @Output() changePriorityEvent: EventEmitter<PriorityType> = new EventEmitter();
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
 
     @ViewChild('menuView') menuView?: ElementRef;
 
     constructor(private cdr: ChangeDetectorRef) {}
+
+    setPriority(priority: PriorityType, schemaItem: DropdownPriority) {
+        schemaItem.priority = priority;
+        this.changePriorityEvent.emit(priority);
+
+        this.close();
+    }
 
     // this is setting menu to be visible in viewport
     // todo : change to RENDER
@@ -65,5 +67,18 @@ export class MenuDropdownComponent implements AfterViewChecked {
     close() {
         this.isVisible = false;
         this.closeEvent.emit();
+    }
+
+    checkForFieldType(dropdownField: any): dropdownField is DropdownField {
+        return 'iconType' in dropdownField;
+    }
+    checkForBarType(dropdownField: any): dropdownField is DropdownBar {
+        return 'typeBar' in dropdownField;
+    }
+    checkForPriorityType(dropdownField: any): dropdownField is DropdownPriority {
+        return 'typePriority' in dropdownField;
+    }
+    checkForScheduleType(dropdownField: any): dropdownField is DropdownSchedule {
+        return 'typeSchedule' in dropdownField;
     }
 }

@@ -26,22 +26,9 @@
         <div class="field">
             <label for="authPasswordID">
                 <div class="field__title">Password</div>
-                <input
-                    class="field__input"
-                    [attr.type]="passIsVisible ? 'text' : 'password'"
-                    name=""
-                    id="authPasswordID"
-                />
-                <svg-close-eye
-                    *ngIf="!passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _close"
-                ></svg-close-eye>
-                <svg-open-eye
-                    *ngIf="passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _open"
-                ></svg-open-eye>
+                <input class="field__input" [attr.type]="passIsVisible ? 'text' : 'password'" name="" id="authPasswordID" />
+                <svg-close-eye *ngIf="!passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _close"></svg-close-eye>
+                <svg-open-eye *ngIf="passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _open"></svg-open-eye>
             </label>
         </div>
         <input class="button__submit" type="submit" value="Sign in" />
@@ -59,9 +46,7 @@
         <div class="bar"></div>
 
         <div class="field__flex">
-            <div class="bottom__text">
-                You`ve no acount?&nbsp; <a [routerLink]="['/auth/register']" class="bottom__link">Registration</a>
-            </div>
+            <div class="bottom__text">You`ve no acount?&nbsp; <a [routerLink]="['/auth/register']" class="bottom__link">Registration</a></div>
         </div>
     </form>
 </div>

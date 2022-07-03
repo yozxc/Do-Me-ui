@@ -8,17 +8,7 @@
         <div class="more__wrapper" (click)="dropMenu.toggleIsVisible()">
             <svg-wp-more class="wp-24"></svg-wp-more>
 
-            <ui-menu-dropdown
-                #dropMenu
-                class="more__dropdown"
-                [addAbove]="true"
-                [addBelow]="true"
-                [edit]="true"
-                [archive]="true"
-                [del]="true"
-                [schedule]="true"
-                [priority]="true"
-            ></ui-menu-dropdown>
+            <ui-menu-dropdown #dropMenu class="more__dropdown"></ui-menu-dropdown>
         </div>
     </div>
 </ng-container>

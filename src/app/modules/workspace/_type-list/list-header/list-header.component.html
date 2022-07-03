@@ -13,9 +13,7 @@
 
         <ng-template #titleContainer>
             <div class="title" (click)="_editableTitle && (isOnEdit = true)">{{ title }}</div>
-            <div *ngIf="_dateDisplay" class="date">
-                {{ date | date: 'EEEEEE' }} {{ date | date: 'd' }} {{ date | date: 'LLL' }}
-            </div>
+            <div *ngIf="_dateDisplay" class="date">{{ date | date: 'EEEEEE' }} {{ date | date: 'd' }} {{ date | date: 'LLL' }}</div>
         </ng-template>
     </div>
 
@@ -28,17 +26,7 @@
         </div>
         <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible()">
             <svg-wp-more></svg-wp-more>
-            <ui-menu-dropdown
-                #dropMenu
-                class="more__dropdown"
-                [addAbove]="true"
-                [addBelow]="true"
-                [edit]="true"
-                [archive]="true"
-                [del]="true"
-                [schedule]="true"
-                [priority]="true"
-            ></ui-menu-dropdown>
+            <ui-menu-dropdown #dropMenu class="more__dropdown" [dropdownSchema]="dropdownSchema"></ui-menu-dropdown>
         </div>
     </div>
 </div>

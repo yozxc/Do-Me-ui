@@ -1,81 +1,58 @@
 <div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
     <div #menuView class="menu" (click)="$event.stopPropagation()">
-        <div *ngIf="addAbove" class="item">
-            <svg-drop-add-above class="wh-24"></svg-drop-add-above>
-            <div class="item__text">Add project above</div>
-        </div>
-        <div *ngIf="addBelow" class="item">
-            <svg-drop-add-below class="wh-24"></svg-drop-add-below>
-            <div class="item__text">Add project below</div>
-        </div>
+        <ng-container *ngFor="let dropdownItem of dropdownSchema">
+            <ng-container *ngIf="checkForFieldType(dropdownItem)">
+                <div class="item">
+                    <ng-container [ngSwitch]="dropdownItem.iconType">
+                        <svg-drop-add-above *ngSwitchCase="'ADD_ABOVE'" class="wh-24"></svg-drop-add-above>
+                        <svg-drop-add-below *ngSwitchCase="'ADD_BELOW'" class="wh-24"></svg-drop-add-below>
+                        <svg-drop-go-to *ngSwitchCase="'GO_TO'" class="wh-24"></svg-drop-go-to>
+                        <svg-drop-edit *ngSwitchCase="'EDIT'" class="wh-24"></svg-drop-edit>
+                        <svg-drop-favorites *ngSwitchCase="'FAVORITES'" class="wh-24"></svg-drop-favorites>
+                        <svg-drop-add-section *ngSwitchCase="'ADD_SECTION'" class="wh-24"></svg-drop-add-section>
+                        <svg-drop-move-to *ngSwitchCase="'MOVE_TO'" class="wh-24"></svg-drop-move-to>
+                        <svg-drop-archive *ngSwitchCase="'ARCHIVE'" class="wh-24"></svg-drop-archive>
+                        <svg-drop-delete *ngSwitchCase="'DEL'" class="wh-24"></svg-drop-delete>
+                        <svg-drop-show-tasks *ngSwitchCase="'SHOW_TASK'" class="wh-24"></svg-drop-show-tasks>
+                        <svg-drop-hide-tasks *ngSwitchCase="'HIDE_TASK'" class="wh-24"></svg-drop-hide-tasks>
+                    </ng-container>
 
-        <!-- <div *ngIf="addBelow" class="bar"></div> -->
+                    <div class="item__text">{{ dropdownItem.text }}</div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="checkForBarType(dropdownItem)">
+                <div class="bar"></div>
+            </ng-container>
+            <ng-container *ngIf="checkForScheduleType(dropdownItem)">
+                <div class="section">
+                    <div class="sec__title">Schedule</div>
 
-        <div *ngIf="edit" class="item">
-            <svg-drop-edit class="wh-24"></svg-drop-edit>
-            <div class="item__text">Edit project</div>
-        </div>
-        <div *ngIf="favorites" class="item">
-            <svg-drop-favorites class="wh-24"></svg-drop-favorites>
-            <div class="item__text">Add to favorites</div>
-        </div>
+                    <div class="icon__list">
+                        <svg-drop-sec-today class="icon__item wh-28"></svg-drop-sec-today>
+                        <svg-drop-sec-tomorrow class="icon__item wh-28"></svg-drop-sec-tomorrow>
+                        <svg-drop-sec-later-week class="icon__item wh-28"></svg-drop-sec-later-week>
+                        <svg-drop-sec-this-weekend class="icon__item wh-28"></svg-drop-sec-this-weekend>
+                        <svg-drop-sec-next-week class="icon__item wh-28"></svg-drop-sec-next-week>
+                        <svg-drop-sec-no-date class="icon__item wh-28"></svg-drop-sec-no-date>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="checkForPriorityType(dropdownItem)">
+                <div class="section">
+                    <div class="sec__title">Priority</div>
 
-        <div *ngIf="schedule || priority" class="bar"></div>
-        <!--  -->
-
-        <div *ngIf="schedule" class="section">
-            <div class="sec__title">Schedule</div>
-
-            <div class="icon__list">
-                <svg-drop-sec-today class="icon__item wh-28"></svg-drop-sec-today>
-                <svg-drop-sec-tomorrow class="icon__item wh-28"></svg-drop-sec-tomorrow>
-                <svg-drop-sec-later-week class="icon__item wh-28"></svg-drop-sec-later-week>
-                <svg-drop-sec-this-weekend class="icon__item wh-28"></svg-drop-sec-this-weekend>
-                <svg-drop-sec-next-week class="icon__item wh-28"></svg-drop-sec-next-week>
-                <svg-drop-sec-no-date class="icon__item wh-28"></svg-drop-sec-no-date>
-            </div>
-        </div>
-
-        <div *ngIf="priority" class="section">
-            <div class="sec__title">Priority</div>
-
-            <div class="icon__list">
-                <svg-drop-sec-priority class="icon__item wh-26" [prior]="1"></svg-drop-sec-priority>
-                <svg-drop-sec-priority class="icon__item wh-26" [prior]="2"></svg-drop-sec-priority>
-                <svg-drop-sec-priority class="icon__item wh-26 _active" [prior]="3"></svg-drop-sec-priority>
-                <svg-drop-sec-priority class="icon__item wh-26" [prior]="4"></svg-drop-sec-priority>
-            </div>
-        </div>
-
-        <!--  -->
-        <div *ngIf="schedule || priority" class="bar"></div>
-
-        <div *ngIf="addSection" class="item">
-            <svg-drop-add-section class="wh-24"></svg-drop-add-section>
-            <div class="item__text">Add section</div>
-        </div>
-        <div *ngIf="showHideTasks" class="item">
-            <svg-drop-show-tasks class="wh-24"></svg-drop-show-tasks>
-            <div class="item__text">Show completed tasks</div>
-        </div>
-        <div *ngIf="showHideTasks" class="item">
-            <svg-drop-hide-tasks class="wh-24"></svg-drop-hide-tasks>
-            <div class="item__text">Hide completed tasks</div>
-        </div>
-        <div *ngIf="moveTo" class="item">
-            <svg-drop-move-to class="wh-24"></svg-drop-move-to>
-            <div class="item__text">Move to project</div>
-        </div>
-
-        <!-- <div *ngIf="addSection || moveTo" class="bar"></div> -->
-
-        <div *ngIf="archive" class="item">
-            <svg-drop-archive class="wh-24"></svg-drop-archive>
-            <div class="item__text">Archive project</div>
-        </div>
-        <div *ngIf="del" class="item">
-            <svg-drop-delete class="wh-24"></svg-drop-delete>
-            <div class="item__text">Delete project</div>
-        </div>
+                    <div class="icon__list">
+                        <svg-drop-sec-priority
+                            *ngFor="let priority of priorityList"
+                            class="icon__item wh-26"
+                            [ngClass]="{ _active: priority === dropdownItem.priority }"
+                            [prior]="priority"
+                            (click)="$event.stopPropagation(); setPriority(priority, dropdownItem)"
+                        ></svg-drop-sec-priority>
+                        <!-- todo : check for stopPropagation problem :) -->
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
     </div>
 </div>

@@ -32,43 +32,17 @@
         <div class="field">
             <label for="authPasswordID">
                 <div class="field__title">Password</div>
-                <input
-                    class="field__input"
-                    [attr.type]="passIsVisible ? 'text' : 'password'"
-                    name=""
-                    id="authPasswordID"
-                />
-                <svg-close-eye
-                    *ngIf="!passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _close"
-                ></svg-close-eye>
-                <svg-open-eye
-                    *ngIf="passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _open"
-                ></svg-open-eye>
+                <input class="field__input" [attr.type]="passIsVisible ? 'text' : 'password'" name="" id="authPasswordID" />
+                <svg-close-eye *ngIf="!passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _close"></svg-close-eye>
+                <svg-open-eye *ngIf="passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _open"></svg-open-eye>
             </label>
         </div>
         <div class="field">
             <label for="regConfPassID">
                 <div class="field__title">Confirm Password</div>
-                <input
-                    class="field__input"
-                    [attr.type]="passIsVisible ? 'text' : 'password'"
-                    name=""
-                    id="regConfPassID"
-                />
-                <svg-close-eye
-                    *ngIf="!passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _close"
-                ></svg-close-eye>
-                <svg-open-eye
-                    *ngIf="passIsVisible"
-                    (click)="passIsVisible = !passIsVisible"
-                    class="pass__eye _open"
-                ></svg-open-eye>
+                <input class="field__input" [attr.type]="passIsVisible ? 'text' : 'password'" name="" id="regConfPassID" />
+                <svg-close-eye *ngIf="!passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _close"></svg-close-eye>
+                <svg-open-eye *ngIf="passIsVisible" (click)="passIsVisible = !passIsVisible" class="pass__eye _open"></svg-open-eye>
             </label>
         </div>
         <input class="button__submit" type="submit" value="Register" />
@@ -76,9 +50,7 @@
         <div class="bar"></div>
 
         <div class="field__flex">
-            <div class="bottom__text">
-                You are registered?&nbsp; <a [routerLink]="['/auth/signIn']" class="bottom__link">Sign in</a>
-            </div>
+            <div class="bottom__text">You are registered?&nbsp; <a [routerLink]="['/auth/signIn']" class="bottom__link">Sign in</a></div>
         </div>
     </form>
 </div>

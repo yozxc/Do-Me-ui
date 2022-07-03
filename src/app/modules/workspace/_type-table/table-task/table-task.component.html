@@ -1,13 +1,7 @@
 <div class="task">
     <div class="flex">
         <label class="check__label" [for]="checkboxID">
-            <input
-                class="hidden__checkbox"
-                type="checkbox"
-                name=""
-                [id]="checkboxID"
-                (change)="isChecked = !isChecked"
-            />
+            <input class="hidden__checkbox" type="checkbox" name="" [id]="checkboxID" (change)="isChecked = !isChecked" />
 
             <div class="custom__check">
                 <svg-wp-tick *ngIf="isChecked" class="wh-18"></svg-wp-tick>
@@ -21,17 +15,7 @@
             <div class="more__wrapper" (click)="dropMenu.toggleIsVisible()">
                 <svg-wp-more class="wp-24"></svg-wp-more>
 
-                <ui-menu-dropdown
-                    #dropMenu
-                    class="more__dropdown"
-                    [addAbove]="true"
-                    [addBelow]="true"
-                    [edit]="true"
-                    [archive]="true"
-                    [del]="true"
-                    [schedule]="true"
-                    [priority]="true"
-                ></ui-menu-dropdown>
+                <ui-menu-dropdown #dropMenu class="more__dropdown"></ui-menu-dropdown>
             </div>
         </div>
     </div>
