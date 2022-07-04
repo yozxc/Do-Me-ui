@@ -10,6 +10,15 @@
 
         <app-add-task *ngIf="__addNoSectionTask" (closeEvent)="__addNoSectionTask = false" (addTaskEvent)="addNoSectionTask($event)"></app-add-task>
         <!--  --- add task -->
+
+        <app-list-section
+            *ngFor="let section of projectData?.sections"
+            [listTitle]="section.title"
+            [tasksList]="section.tasksList"
+            [_editableTitle]="!section.nonEditableTitle"
+        ></app-list-section>
+
+        <app-list-add-section (addSectionEvent)="addSection($event)"></app-list-add-section>
     </div>
     <!-- list -->
 </div>

@@ -10,7 +10,7 @@ import {
     ViewChild
 } from '@angular/core';
 import { PriorityType } from '@app/core/types/priorityType';
-import { DropdownField, DropdownPriority, DropdownSchema, DropdownBar, DropdownSchedule, DropdownSchemaElement } from '@core/types/dropdown';
+import { DropdownField, DropdownPriority, DropdownSchema, DropdownBar, DropdownSchedule, DropdownIconType } from '@core/types/dropdown';
 
 @Component({
     selector: 'ui-menu-dropdown',
@@ -25,6 +25,7 @@ export class MenuDropdownComponent implements AfterViewChecked {
 
     @Input() dropdownSchema!: DropdownSchema;
 
+    @Output() itemClickEvent: EventEmitter<DropdownIconType> = new EventEmitter();
     @Output() changePriorityEvent: EventEmitter<PriorityType> = new EventEmitter();
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
 

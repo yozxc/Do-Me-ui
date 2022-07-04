@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MAIN_PLACE_ROUTE } from '@app/core/router/nav-constants';
 import { v4 } from 'uuid';
 import { AddTaskData } from '@app/core/types/taskData';
+import { AddSectionData } from '@app/core/types/section';
 
 @Component({
     selector: 'app-project',
@@ -35,6 +36,14 @@ export class ProjectComponent implements OnInit {
             taskDescription: e.taskDescription,
             isChecked: false,
             priority: e.priority
+        });
+    }
+
+    addSection(event: AddSectionData) {
+        this.projectData?.sections.push({
+            id: v4(),
+            title: event.sectionTitle,
+            tasksList: []
         });
     }
 }

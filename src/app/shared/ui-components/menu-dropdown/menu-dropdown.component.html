@@ -2,7 +2,7 @@
     <div #menuView class="menu" (click)="$event.stopPropagation()">
         <ng-container *ngFor="let dropdownItem of dropdownSchema">
             <ng-container *ngIf="checkForFieldType(dropdownItem)">
-                <div class="item">
+                <div class="item" (click)="$event.stopPropagation(); itemClickEvent.emit(dropdownItem.iconType); close()">
                     <ng-container [ngSwitch]="dropdownItem.iconType">
                         <svg-drop-add-above *ngSwitchCase="'ADD_ABOVE'" class="wh-24"></svg-drop-add-above>
                         <svg-drop-add-below *ngSwitchCase="'ADD_BELOW'" class="wh-24"></svg-drop-add-below>

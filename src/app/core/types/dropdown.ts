@@ -1,17 +1,18 @@
 import { PriorityType } from './priorityType';
 
-export type DropdownIconType =
-    | 'ADD_ABOVE'
-    | 'ADD_BELOW'
-    | 'GO_TO'
-    | 'EDIT'
-    | 'FAVORITES'
-    | 'ADD_SECTION'
-    | 'SHOW_TASK'
-    | 'HIDE_TASK'
-    | 'MOVE_TO'
-    | 'ARCHIVE'
-    | 'DEL';
+export enum DropdownIconType {
+    ADD_ABOVE = 'ADD_ABOVE',
+    ADD_BELOW = 'ADD_BELOW',
+    GO_TO = 'GO_TO',
+    EDIT = 'EDIT',
+    FAVORITES = 'FAVORITES',
+    ADD_SECTION = 'ADD_SECTION',
+    SHOW_TASK = 'SHOW_TASK',
+    HIDE_TASK = 'HIDE_TASK',
+    MOVE_TO = 'MOVE_TO',
+    ARCHIVE = 'ARCHIVE',
+    DEL = 'DEL'
+}
 
 export type DropdownAdditional = 'BAR' | 'PRIORITY' | 'SCHEDULE';
 

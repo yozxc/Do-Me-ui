@@ -4,7 +4,7 @@ import { tasksList } from '@mocks/tasksList';
 import { sectionsList } from '@mocks/sectionsTasks';
 import { AddSectionData, SectionData } from '@app/core/types/section';
 import { AddTaskData, TaskData } from '@app/core/types/taskData';
-import { DropdownSchema } from '@app/core/types/dropdown';
+import { DropdownIconType, DropdownSchema } from '@app/core/types/dropdown';
 
 @Component({
     selector: 'app-today',
@@ -44,47 +44,47 @@ export class TodayComponent {
 
 const headerDropdownSchema: DropdownSchema = [
     {
-        iconType: 'ADD_ABOVE',
+        iconType: DropdownIconType.ADD_ABOVE,
         text: ''
     },
     {
-        iconType: 'ADD_BELOW',
+        iconType: DropdownIconType.ADD_BELOW,
         text: ''
     },
     {
-        iconType: 'GO_TO',
+        iconType: DropdownIconType.GO_TO,
         text: ''
     },
     {
-        iconType: 'EDIT',
+        iconType: DropdownIconType.EDIT,
         text: ''
     },
     {
-        iconType: 'FAVORITES',
+        iconType: DropdownIconType.FAVORITES,
         text: ''
     },
     {
-        iconType: 'ADD_SECTION',
+        iconType: DropdownIconType.ADD_SECTION,
         text: ''
     },
     {
-        iconType: 'SHOW_TASK',
+        iconType: DropdownIconType.SHOW_TASK,
         text: ''
     },
     {
-        iconType: 'HIDE_TASK',
+        iconType: DropdownIconType.HIDE_TASK,
         text: ''
     },
     {
-        iconType: 'MOVE_TO',
+        iconType: DropdownIconType.MOVE_TO,
         text: ''
     },
     {
-        iconType: 'ARCHIVE',
+        iconType: DropdownIconType.ARCHIVE,
         text: ''
     },
     {
-        iconType: 'DEL',
+        iconType: DropdownIconType.DEL,
         text: ''
     }
 ];

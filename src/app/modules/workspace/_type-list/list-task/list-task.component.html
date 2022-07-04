@@ -37,6 +37,7 @@
                 #dropMenu
                 class="more__dropdown"
                 [dropdownSchema]="dropdownSchema"
+                (itemClickEvent)="dropdownEventRecivier($event)"
                 (changePriorityEvent)="setPriority($event)"
                 (closeEvent)="areControlsVisible = false"
             ></ui-menu-dropdown>

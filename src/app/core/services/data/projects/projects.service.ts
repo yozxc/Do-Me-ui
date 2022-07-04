@@ -37,4 +37,18 @@ export class ProjectsService {
             }
         ]);
     }
+
+    deleteTask(id: string) {
+        this.projectsList.forEach((project) => {
+            project.noSectionTasks = project.noSectionTasks.filter((task) => task.taskID !== id);
+
+            project.sections.forEach((section) => (section.tasksList = section.tasksList.filter((task) => task.taskID !== id)));
+        });
+
+        this.update();
+    }
+
+    update() {
+        this.projectsListSub$.next([...this.projectsList]);
+    }
 }
