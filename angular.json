@@ -111,6 +111,8 @@
         }
     },
     "cli": {
-        "schematicCollections": ["@angular-eslint/schematics"]
+        "schematicCollections": ["@angular-eslint/schematics"],
+        "defaultCollection": "@datorama/akita",
+        "analytics": false
     }
 }
