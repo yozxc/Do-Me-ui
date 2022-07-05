@@ -1,7 +1,7 @@
 import { ProjectsService } from '@core/services/data/projects/projects.service';
 import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { AddProjectData } from '@app/core/types/projectType';
 
 type projectType = 'List' | 'Board';
@@ -22,7 +22,7 @@ export class AddProjectComponent implements OnInit {
         favorites: false
     });
 
-    constructor(private router: Router, private fb: FormBuilder, private projectsService: ProjectsService) {}
+    constructor(private router: Router, private fb: UntypedFormBuilder, private projectsService: ProjectsService) {}
 
     ngOnInit(): void {
         this.form.get('title')?.valueChanges.subscribe((value) => (this.__addButtonDisabled = !value.length));

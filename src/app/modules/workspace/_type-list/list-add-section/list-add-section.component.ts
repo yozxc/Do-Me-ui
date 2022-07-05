@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { AddSectionData } from '@app/core/types/section';
 
@@ -14,7 +14,7 @@ export class ListAddSectionComponent implements OnInit {
 
     @Output() addSectionEvent: EventEmitter<AddSectionData> = new EventEmitter();
 
-    sectionTitleForm: FormControl = new FormControl();
+    sectionTitleForm: UntypedFormControl = new UntypedFormControl();
 
     constructor() {}
 

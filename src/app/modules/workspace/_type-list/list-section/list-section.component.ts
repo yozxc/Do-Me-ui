@@ -2,7 +2,7 @@ import { BehaviorSubject } from 'rxjs';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { AddTaskData, TaskData } from '@app/core/types/taskData';
 import { v4 } from 'uuid';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
     selector: 'app-list-section',
@@ -21,12 +21,12 @@ export class ListSectionComponent implements OnInit {
     @Input() listTitle!: string;
     @Input() tasksList?: TaskData[];
 
-    titleFormControl!: FormControl;
+    titleFormControl!: UntypedFormControl;
 
     constructor() {}
 
     ngOnInit(): void {
-        this.titleFormControl = new FormControl(this.listTitle);
+        this.titleFormControl = new UntypedFormControl(this.listTitle);
         this.titleFormControl.valueChanges.subscribe((value) => (this.changeButtonDisabled = !value.length));
     }
 

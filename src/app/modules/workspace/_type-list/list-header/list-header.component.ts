@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { DropdownSchema } from '@app/core/types/dropdown';
 
@@ -13,7 +13,7 @@ export class ListHeaderComponent implements OnInit {
     disabledSave: boolean = true;
     date: number = Date.now();
 
-    titleControl!: FormControl;
+    titleControl!: UntypedFormControl;
 
     @Input() title!: string | undefined;
     @Input() dropdownSchema!: DropdownSchema;
@@ -23,7 +23,7 @@ export class ListHeaderComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        this.titleControl = new FormControl(this.title);
+        this.titleControl = new UntypedFormControl(this.title);
         this.titleControl.valueChanges.subscribe((value) => (this.disabledSave = value.length));
     }
 
