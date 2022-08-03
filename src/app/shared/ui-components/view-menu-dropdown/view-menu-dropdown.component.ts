@@ -1,4 +1,14 @@
-import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import {
+    AfterViewChecked,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Output,
+    Renderer2,
+    ViewChild
+} from '@angular/core';
 
 @Component({
     selector: 'ui-view-menu-dropdown',
@@ -21,26 +31,7 @@ export class ViewMenuDropdownComponent implements AfterViewChecked {
 
     @ViewChild('menuView') menuView?: ElementRef;
 
-    constructor(private cdr: ChangeDetectorRef) {}
-
-    // this is setting menu to be visible in viewport
-    ngAfterViewChecked(): void {
-        if (!this.menuView) return;
-
-        const coordinates = this.menuView.nativeElement.getBoundingClientRect();
-        if (coordinates.bottom > window.innerHeight) {
-            this.menuView.nativeElement.style.top = `calc(50% - ${coordinates.bottom - window.innerHeight + 5}px)`;
-        }
-        if (coordinates.top < 0) {
-            this.menuView.nativeElement.style.top = `calc(50% + ${coordinates.top * -1 + 5}px)`;
-        }
-        if (coordinates.left < 0) {
-            this.menuView.nativeElement.style.left = `calc(50% + ${coordinates.left * -1 + 5}px)`;
-        }
-        if (coordinates.right > window.innerWidth) {
-            this.menuView.nativeElement.style.left = `calc(50% - ${coordinates.right - window.innerWidth + 25}px)`;
-        }
-    }
+    constructor(private cdr: ChangeDetectorRef, private render: Renderer2) {}
 
     toggleIsVisible() {
         this.isVisible = !this.isVisible;
@@ -50,5 +41,28 @@ export class ViewMenuDropdownComponent implements AfterViewChecked {
     close() {
         this.isVisible = false;
         this.closeEvent.emit();
+    }
+
+    //
+
+    // this is setting menu to be visible in viewport
+    ngAfterViewChecked(): void {
+        if (!this.menuView) return;
+
+        const element = this.menuView.nativeElement;
+        const coordinates = this.menuView.nativeElement.getBoundingClientRect();
+
+        if (coordinates.bottom > window.innerHeight) {
+            this.render.setStyle(element, 'top', `calc(50% - ${coordinates.bottom - window.innerHeight + 5}px)`);
+        }
+        if (coordinates.top < 0) {
+            this.render.setStyle(element, 'top', `calc(50% + ${coordinates.top * -1 + 5}px)`);
+        }
+        if (coordinates.left < 0) {
+            this.render.setStyle(element, 'left', `calc(50% + ${coordinates.left * -1 + 5}px)`);
+        }
+        if (coordinates.right > window.innerWidth) {
+            this.render.setStyle(element, 'left', `calc(50% - ${coordinates.right - window.innerWidth + 5}px)`);
+        }
     }
 }

@@ -42,6 +42,7 @@
     &::placeholder {
         color: #fff;
         font-family: $gFont;
+        user-select: none;
     }
 
     &:focus {

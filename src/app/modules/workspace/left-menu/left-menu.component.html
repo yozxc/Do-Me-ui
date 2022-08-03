@@ -1,4 +1,4 @@
-<div class="left__menu" [ngClass]="{ _closed: isClosed }">
+<div class="left__menu" [ngClass]="{ _closed: (leftMenuQuery.collapsed$ | async) === false }">
     <a class="main__tab" routerLink="/workspace/inbox">
         <svg-lm-inbox styleCls="blue"></svg-lm-inbox>
         <div class="tab__title">Inbox</div>

@@ -1,4 +1,4 @@
-import { LmStateService } from './../left-menu/lm-state.service';
+import { LeftMenuService } from './../left-menu/left-menu.state/left-menu.service';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
@@ -8,9 +8,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-    constructor(public lmStateService: LmStateService) {}
+    constructor(private leftMenuService: LeftMenuService) {}
 
     headerMenuCLick() {
-        this.lmStateService.toggleIsClosed();
+        this.leftMenuService.toggleColapsed();
     }
 }

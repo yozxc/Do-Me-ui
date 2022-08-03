@@ -1,11 +1,11 @@
+import { LeftMenuQuery } from './left-menu.state/left-menu.query';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { PAGES_ROUTE } from '@app/core/router/nav-constants';
 
 import { ProjectsService } from '@app/core/services/data/projects/projects.service';
-import { LmStateService } from './lm-state.service';
 
 import { Project } from '@app/core/types/projectType';
 // todo : delete
@@ -25,9 +25,6 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
 
     projectsSub$?: any;
 
-    isClosed!: boolean;
-    isClosedSub!: Subscription;
-
     activeLabels = {
         favorites: false,
         projects: true,
@@ -36,10 +33,10 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
     };
 
     constructor(
-        private lmStateService: LmStateService,
         private cdr: ChangeDetectorRef,
         private router: Router,
-        private projectsService: ProjectsService
+        private projectsService: ProjectsService,
+        public leftMenuQuery: LeftMenuQuery
     ) {}
 
     ngOnInit(): void {
@@ -55,16 +52,9 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
             // todo : delete
             console.log(val);
         });
-
-        this.isClosedSub = this.lmStateService.isClosed$.subscribe((val) => {
-            this.isClosed = val;
-            this.cdr.detectChanges();
-        });
     }
 
     ngOnDestroy(): void {
-        this.isClosedSub.unsubscribe();
-
         this.projectsSub$.unsubscribe();
     }
 

@@ -30,8 +30,11 @@ import { LabelComponent } from './views/label/label.component';
 import { FilterComponent } from './views/filter/filter.component';
 import { TableTaskComponent } from './_type-table/table-task/table-task.component';
 import { TableAddSectionComponent } from './_type-table/table-add-section/table-add-section.component';
-import { LmStateService } from './left-menu/lm-state.service';
 import { AddTaskLabelComponent } from './add-task-label/add-task-label.component';
+
+import { LeftMenuQuery } from './left-menu/left-menu.state/left-menu.query';
+import { LeftMenuService } from './left-menu/left-menu.state/left-menu.service';
+import { LeftMenuStore } from './left-menu/left-menu.state/left-menu.store';
 
 @NgModule({
     imports: [
@@ -46,7 +49,12 @@ import { AddTaskLabelComponent } from './add-task-label/add-task-label.component
         UiComponentsModule,
         ModalsModule
     ],
-    providers: [LmStateService],
+    providers: [
+        // state ↓
+        LeftMenuStore,
+        LeftMenuService,
+        LeftMenuQuery
+    ],
     declarations: [
         HeaderComponent,
         WorkspaceComponent,

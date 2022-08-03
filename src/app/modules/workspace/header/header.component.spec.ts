@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LmStateService } from '../left-menu/lm-state.service';
 
 import { HeaderComponent } from './header.component';
+import { LeftMenuService } from '../left-menu/left-menu.state/left-menu.service';
 
 describe('HeaderComponent', () => {
     let component: HeaderComponent;
@@ -10,7 +10,7 @@ describe('HeaderComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [HeaderComponent],
-            providers: [LmStateService]
+            providers: [LeftMenuService]
         }).compileComponents();
     });
 
