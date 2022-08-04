@@ -1,4 +1,3 @@
-import { PriorityType } from '@app/core/types/priorityType';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({

@@ -3,7 +3,6 @@ import { Project } from '@app/core/types/projectType';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MAIN_PLACE_ROUTE } from '@app/core/router/nav-constants';
-import { v4 } from 'uuid';
 import { AddTaskData } from '@app/core/types/taskData';
 import { AddSectionData } from '@app/core/types/section';
 import { ProjectsTodosQuery } from '@app/core/store/projects/projects.query';
