@@ -1,15 +1,14 @@
 import { LeftMenuQuery } from './left-menu.state/left-menu.query';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
+import { ProjectsService } from '@app/core/store/projects/projects.service';
 import { PAGES_ROUTE } from '@app/core/router/nav-constants';
-
-import { ProjectsService } from '@app/core/services/data/projects/projects.service';
 
 import { Project } from '@app/core/types/projectType';
 // todo : delete
 import { favorites, filters, labels, projects } from '@assets/mock/lm-projects';
+import { ProjectsTodosQuery } from '@app/core/store/projects/projects.query';
 
 @Component({
     selector: 'app-left-menu',
@@ -17,13 +16,10 @@ import { favorites, filters, labels, projects } from '@assets/mock/lm-projects';
     styleUrls: ['./left-menu.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LeftMenuComponent implements OnInit, OnDestroy {
-    projects?: Project[];
+export class LeftMenuComponent implements OnInit {
     labels: any;
     filters: any;
     favorites: any;
-
-    projectsSub$?: any;
 
     activeLabels = {
         favorites: false,
@@ -35,27 +31,20 @@ export class LeftMenuComponent implements OnInit, OnDestroy {
     constructor(
         private cdr: ChangeDetectorRef,
         private router: Router,
-        private projectsService: ProjectsService,
-        public leftMenuQuery: LeftMenuQuery
+        public leftMenuQuery: LeftMenuQuery,
+        public projectsTodosQuery: ProjectsTodosQuery,
+        public projectsService: ProjectsService
     ) {}
 
     ngOnInit(): void {
         // todo : change this :\
-        this.projects = projects;
         this.labels = labels;
         this.filters = filters;
         this.favorites = favorites;
 
-        this.projectsSub$ = this.projectsService.getProjectListSub().subscribe((val) => {
-            this.projects = val;
-            this.cdr.detectChanges();
-            // todo : delete
-            console.log(val);
-        });
-    }
+        this.projectsTodosQuery.projects$.subscribe((val) => console.log(val));
 
-    ngOnDestroy(): void {
-        this.projectsSub$.unsubscribe();
+        this.projectsService.setProjects();
     }
 
     classActive(cat: string) {

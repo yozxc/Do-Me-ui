@@ -11,7 +11,6 @@ import { ModalsModule } from './modules/modals/modals.module';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { ProjectsService } from '@core/services/data/projects/projects.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -24,7 +23,7 @@ import { ProjectsService } from '@core/services/data/projects/projects.service';
         environment.production ? [] : AkitaNgDevtools.forRoot(),
         AkitaNgRouterStoreModule
     ],
-    providers: [ProjectsService, { provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' } }],
+    providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' } }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

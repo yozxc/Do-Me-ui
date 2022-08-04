@@ -1,4 +1,3 @@
-import { ProjectsService } from '@core/services/data/projects/projects.service';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { v4 } from 'uuid';
 
@@ -20,7 +19,7 @@ export class ListTaskComponent implements OnInit {
 
     dropdownSchema: DropdownSchema = [...dropdownSchema];
 
-    constructor(private projectsService: ProjectsService) {}
+    constructor() {}
 
     ngOnInit(): void {
         this.initDDSchema();
@@ -45,9 +44,7 @@ export class ListTaskComponent implements OnInit {
         e === DropdownIconType.DEL && this._delete();
     }
 
-    private _delete() {
-        this.projectsService.deleteTask(this.taskData.taskID);
-    }
+    private _delete() {}
 }
 
 const dropdownSchema: DropdownSchema = [

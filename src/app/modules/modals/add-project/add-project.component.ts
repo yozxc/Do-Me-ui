@@ -1,8 +1,7 @@
-import { ProjectsService } from '@core/services/data/projects/projects.service';
 import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UntypedFormBuilder } from '@angular/forms';
-import { AddProjectData } from '@app/core/types/projectType';
+import { ProjectsService } from '@app/core/store/projects/projects.service';
 
 type projectType = 'List' | 'Board';
 
@@ -40,6 +39,7 @@ export class AddProjectComponent implements OnInit {
 
     onSave() {
         this.projectsService.addProject(this.form.value);
+
         this.router.navigateByUrl(this.router.url.replace('(', '').split('//')[0]);
     }
 }

@@ -52,7 +52,11 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <div *ngFor="let project of projects; let i = index" (click)="navTo('/workspace/project/' + project.id)" class="menu__proj">
+            <div
+                *ngFor="let project of projectsTodosQuery.projects$ | async; let i = index"
+                (click)="navTo('/workspace/project/' + project.id)"
+                class="menu__proj"
+            >
                 <svg-lm-dot [styleCls]="project.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ project.title }}</div>

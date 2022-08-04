@@ -1,9 +1,9 @@
-<div class="main__place">
+<div *ngIf="project$ | async as project" class="main__place">
     <div class="type__list">
-        <app-list-header [title]="projectData?.title"></app-list-header>
+        <app-list-header [title]="project.title"></app-list-header>
         <!-- list header -->
 
-        <app-list-task *ngFor="let task of projectData?.noSectionTasks" [taskData]="task"></app-list-task>
+        <app-list-task *ngFor="let task of project.noSectionTasks" [taskData]="task"></app-list-task>
 
         <!-- add task --- -->
         <app-add-task-label *ngIf="!__addNoSectionTask" [text]="'Add Task'" (click)="__addNoSectionTask = true"></app-add-task-label>
@@ -12,7 +12,7 @@
         <!--  --- add task -->
 
         <app-list-section
-            *ngFor="let section of projectData?.sections"
+            *ngFor="let section of project.sections"
             [listTitle]="section.title"
             [tasksList]="section.tasksList"
             [_editableTitle]="!section.nonEditableTitle"

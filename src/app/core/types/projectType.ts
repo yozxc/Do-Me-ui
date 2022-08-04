@@ -6,6 +6,8 @@ export interface Project {
     id: string;
     title: string;
     colorCls: ColorType;
+    type: 'BOARD' | 'LIST';
+    favorite: boolean;
     noSectionTasks: TaskData[];
     sections: SectionData[];
     todoTasks: number;
@@ -14,6 +16,6 @@ export interface Project {
 export interface AddProjectData {
     title: string;
     colorCls: ColorType;
-    type?: 'BOARD' | 'LIST';
-    favorites?: boolean;
+    type: 'BOARD' | 'LIST';
+    favorite?: boolean;
 }
