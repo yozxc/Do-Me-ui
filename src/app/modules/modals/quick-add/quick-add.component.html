@@ -1,9 +1,9 @@
 <div class="modal" (click)="onClose()">
     <form class="main" [formGroup]="addTaskForm" (click)="$event.stopPropagation()">
         <div class="title__text__editor">
-            <input type="text" class="task__title" placeholder="Task name" formControlName="taskName" />
+            <input type="text" class="task__title" placeholder="Task name" formControlName="name" />
 
-            <textarea class="task__descrption" placeholder="Description" formControlName="taskDescription"></textarea>
+            <textarea class="task__descrption" placeholder="Description" formControlName="description"></textarea>
         </div>
 
         <div class="editor__bottom">

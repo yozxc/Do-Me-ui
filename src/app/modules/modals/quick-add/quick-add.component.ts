@@ -1,4 +1,4 @@
-import { PriorityType } from '@app/core/types/priorityType';
+import { PriorityType } from '@app/core/types/domain/priority';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,22 +14,22 @@ export class QuickAddComponent implements OnInit {
     addButtonDisabled: boolean = true;
 
     addTaskForm = this.fb.group({
-        taskName: '',
-        taskDescription: '',
+        name: '',
+        description: '',
         priority: 4
     });
 
     constructor(private router: Router, private fb: UntypedFormBuilder) {}
 
     ngOnInit(): void {
-        this.addTaskForm.get('taskName')?.valueChanges.subscribe((value) => (this.addButtonDisabled = !value.length));
+        this.addTaskForm.get('name')?.valueChanges.subscribe((value) => (this.addButtonDisabled = !value.length));
     }
 
     resetForm() {
         if (!this.addButtonDisabled) {
             this.addTaskForm.setValue({
-                taskName: '',
-                taskDescription: '',
+                name: '',
+                description: '',
                 priority: 4
             });
         }

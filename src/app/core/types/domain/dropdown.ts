@@ -1,4 +1,4 @@
-import { PriorityType } from './priorityType';
+import { PriorityType } from './priority';
 
 export enum DropdownIconType {
     ADD_ABOVE = 'ADD_ABOVE',

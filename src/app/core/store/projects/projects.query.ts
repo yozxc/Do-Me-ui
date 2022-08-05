@@ -1,11 +1,11 @@
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { QueryEntity } from '@datorama/akita';
+import { Project } from '@app/core/types/domain/project';
+import { Observable } from 'rxjs';
 import { ProjectsState, ProjectsStore } from './projects.store';
-import { Project } from '@app/core/types/projectType';
 
 @Injectable({ providedIn: 'root' })
-export class ProjectsTodosQuery extends QueryEntity<ProjectsState> {
+export class ProjectsQuery extends QueryEntity<ProjectsState> {
     projects$ = this.selectAll();
 
     constructor(protected override store: ProjectsStore) {

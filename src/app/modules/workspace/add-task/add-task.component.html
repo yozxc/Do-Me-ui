@@ -4,17 +4,17 @@
             class="task__title"
             type="text"
             placeholder="Task name"
-            #addTaskNameInput
+            #addnameInput
             (focus)="isFocused = true"
             (blur)="isFocused = false"
-            formControlName="taskName"
+            formControlName="name"
         />
         <textarea
             class="task__description"
             placeholder="Description"
             (focus)="isFocused = true"
             (blur)="isFocused = false"
-            formControlName="taskDescription"
+            formControlName="description"
         ></textarea>
 
         <div class="editor__bottom">

@@ -10,7 +10,7 @@ import {
     Input,
     Renderer2
 } from '@angular/core';
-import { PriorityType } from '@app/core/types/priorityType';
+import { PriorityType } from '@app/core/types/domain/priority';
 
 @Component({
     selector: 'ui-priority-dropdown',

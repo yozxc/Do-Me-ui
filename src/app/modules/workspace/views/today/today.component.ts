@@ -1,10 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { v4 } from 'uuid';
-import { tasksList } from '@mocks/tasksList';
-import { sectionsList } from '@mocks/sectionsTasks';
-import { AddSectionData, SectionData } from '@app/core/types/section';
-import { AddTaskData, TaskData } from '@app/core/types/taskData';
-import { DropdownIconType, DropdownSchema } from '@app/core/types/dropdown';
+import { AddSectionData } from '@app/core/types/domain/section';
+import { AddTaskData } from '@app/core/types/domain/task';
+import { DropdownIconType, DropdownSchema } from '@app/core/types/domain/dropdown';
 
 @Component({
     selector: 'app-today',
@@ -16,29 +13,29 @@ export class TodayComponent {
     taskEditorState: boolean = false;
     date: number = Date.now();
 
-    tasksList: TaskData[] = tasksList;
-    sectionsList: SectionData[] = sectionsList;
+    // taskID: Task[] = taskID;
+    // sectionsList: Section[] = sectionsList;
 
     headerDropdownSchema: DropdownSchema = headerDropdownSchema;
 
     constructor() {}
 
     addTask(event: AddTaskData) {
-        this.tasksList.push({
-            taskID: v4(),
-            taskName: event.taskName,
-            taskDescription: event.taskDescription,
-            isChecked: false,
-            priority: event.priority
-        });
+        // this.taskID.push({
+        //     id: v4(),
+        //     name: event.name,
+        //     description: event.description,
+        //     isChecked: false,
+        //     priority: event.priority
+        // });
     }
 
     addSection(event: AddSectionData) {
-        this.sectionsList.push({
-            id: v4(),
-            title: event.sectionTitle,
-            tasksList: []
-        });
+        // this.sectionsList.push({
+        //     id: v4(),
+        //     title: event.title,
+        //     tasksID: []
+        // });
     }
 }
 

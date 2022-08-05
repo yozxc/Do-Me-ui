@@ -10,8 +10,8 @@ import {
     Renderer2,
     ViewChild
 } from '@angular/core';
-import { PriorityType } from '@app/core/types/priorityType';
-import { DropdownField, DropdownPriority, DropdownSchema, DropdownBar, DropdownSchedule, DropdownIconType } from '@core/types/dropdown';
+import { PriorityType } from '@app/core/types/domain/priority';
+import { DropdownField, DropdownPriority, DropdownSchema, DropdownBar, DropdownSchedule, DropdownIconType } from '@core/types/domain/dropdown';
 
 @Component({
     selector: 'ui-menu-dropdown',

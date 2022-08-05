@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, EventEmitter, Output, OnInit } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
-import { AddTaskData } from '@app/core/types/taskData';
+import { AddTaskData } from '@app/core/types/domain/task';
 
 @Component({
     selector: 'app-add-task',
@@ -16,22 +16,22 @@ export class AddTaskComponent implements OnInit {
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
 
     addTaskForm = this.fb.group({
-        taskName: '',
-        taskDescription: '',
+        name: '',
+        description: '',
         priority: 4
     });
 
     constructor(private fb: UntypedFormBuilder) {}
 
     ngOnInit(): void {
-        this.addTaskForm.get('taskName')?.valueChanges.subscribe((value) => (this.addButtonDisabled = !value.length));
+        this.addTaskForm.get('name')?.valueChanges.subscribe((value) => (this.addButtonDisabled = !value.length));
     }
 
     resetForm() {
         if (!this.addButtonDisabled) {
             this.addTaskForm.setValue({
-                taskName: '',
-                taskDescription: '',
+                name: '',
+                description: '',
                 priority: 4
             });
         }
@@ -50,7 +50,7 @@ export class AddTaskComponent implements OnInit {
     }
 
     onSave() {
-        this.addTaskForm.value.taskName.length && this.addTaskEvent.emit(this.addTaskForm.value);
+        this.addTaskForm.value.name.length && this.addTaskEvent.emit(this.addTaskForm.value);
         this.resetForm();
 
         this.closeEvent.emit();

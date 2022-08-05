@@ -1,18 +1,19 @@
-<div class="main__wrapper">
+<div *ngIf="section$ | async as section" class="main__wrapper">
     <div class="header">
-        <ng-container *ngIf="isChangingTitle && _editableTitle; else titleContainer">
+        <ng-container *ngIf="isChangingTitle; else titleContainer">
             <div class="title__editor">
                 <input class="editor__input" type="text" placeholder="Name this section" [formControl]="titleFormControl" />
 
                 <div class="btns__wrapper">
                     <ui-button styleCls="black mr10" [disabled]="changeButtonDisabled" (clickEvent)="onSave()">Save</ui-button>
-                    <ui-button styleCls="white" (clickEvent)="isChangingTitle = false; titleFormControl.setValue(listTitle)">Cancel</ui-button>
+                    <ui-button styleCls="white" (clickEvent)="onCancel()">Cancel</ui-button>
                 </div>
             </div>
         </ng-container>
 
+        <!-- todo : check for section update title -->
         <ng-template #titleContainer>
-            <div class="title" (click)="isChangingTitle = true; listTitle = titleFormControl.value">
+            <div class="title" (click)="isChangingTitle = true; section.title = titleFormControl.value">
                 {{ titleFormControl.value }}
             </div>
 
@@ -32,12 +33,12 @@
     </div>
 
     <div *ngIf="(isClosed$ | async) === false" class="task__list">
-        <app-list-task *ngFor="let task of tasksList" [taskData]="task"></app-list-task>
+        <app-list-task *ngFor="let taskID of section.tasksID" [taskID]="taskID"></app-list-task>
 
+        <!-- todo : change to get | set instead of modify vars in view -->
         <!-- add task --- -->
         <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
-
-        <app-add-task *ngIf="taskEditorState" (addTaskEvent)="addTask($event)" (closeEvent)="taskEditorState = false"></app-add-task>
+        <app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false" (addTaskEvent)="addTask($event)"></app-add-task>
         <!-- --- add task -->
     </div>
 </div>

@@ -1,8 +1,11 @@
-import { BehaviorSubject } from 'rxjs';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { AddTaskData, TaskData } from '@app/core/types/taskData';
-import { v4 } from 'uuid';
+import { TasksService } from './../../../../core/store/tasks/tasks.service';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
+import { SectionsQuery } from '@core/store/sections/sections.query';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { AddTaskData } from '@app/core/types/domain/task';
+import { Section } from '@app/core/types/domain/section';
+import { SectionsService } from '@core/store/sections/sections.service';
 
 @Component({
     selector: 'app-list-section',
@@ -10,28 +13,37 @@ import { UntypedFormControl } from '@angular/forms';
     styleUrls: ['./list-section.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListSectionComponent implements OnInit {
+export class ListSectionComponent implements OnInit, OnDestroy {
     taskEditorState: boolean = false;
     isChangingTitle: boolean = false;
     changeButtonDisabled: boolean = false;
     isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-    @Input() _editableTitle: boolean = true;
+    @Input() sectionID!: string;
 
-    @Input() listTitle!: string;
-    @Input() tasksList?: TaskData[];
+    section$!: Observable<Section>;
+    sectionSub!: Subscription;
+    sectionData!: Section;
 
     titleFormControl!: UntypedFormControl;
 
-    constructor() {}
+    constructor(private tasksService: TasksService, private sectionsService: SectionsService, private sectionsQuery: SectionsQuery) {}
 
     ngOnInit(): void {
-        this.titleFormControl = new UntypedFormControl(this.listTitle);
+        console.log(this.sectionID);
+        this.section$ = this.sectionsQuery.selectSection(this.sectionID);
+
+        this.sectionSub = this.section$.subscribe((section) => (this.sectionData = section));
+        this.titleFormControl = new UntypedFormControl(this.sectionData.title);
         this.titleFormControl.valueChanges.subscribe((value) => (this.changeButtonDisabled = !value.length));
     }
 
+    ngOnDestroy(): void {
+        this.sectionSub.unsubscribe();
+    }
+
     saveTitle(listTitle: string) {
-        this.listTitle = listTitle;
+        // this.listTitle = listTitle;
         this.isChangingTitle = false;
     }
 
@@ -39,22 +51,24 @@ export class ListSectionComponent implements OnInit {
         this.isClosed$.next(!this.isClosed$.getValue());
     }
 
-    addTask(event: AddTaskData) {
-        this.tasksList?.push({
-            taskID: v4(),
-            taskName: event.taskName,
-            taskDescription: event.taskDescription,
-            isChecked: false,
-            priority: event.priority
-        });
+    addTask(taskData: AddTaskData) {
+        this.setSectionID(taskData);
+        this.tasksService.addTask(taskData);
+    }
+
+    setSectionID(obj: any) {
+        obj.sectionID = this.sectionID;
     }
 
     onSave() {
         if (this.titleFormControl.value.length) {
-            this.listTitle = this.titleFormControl.value;
+            this.sectionsService.updateTitle(this.sectionID, this.titleFormControl.value);
             this.isChangingTitle = false;
         }
     }
 
-    onCancel() {}
+    onCancel() {
+        this.isChangingTitle = false;
+        this.titleFormControl.setValue(this.sectionData.title);
+    }
 }

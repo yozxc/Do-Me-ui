@@ -6,7 +6,7 @@ import { ProjectsService } from '@app/core/store/projects/projects.service';
 
 // todo : delete
 import { favorites, filters, labels } from '@assets/mock/lm-projects';
-import { ProjectsTodosQuery } from '@app/core/store/projects/projects.query';
+import { ProjectsQuery } from '@app/core/store/projects/projects.query';
 
 @Component({
     selector: 'app-left-menu',
@@ -29,9 +29,9 @@ export class LeftMenuComponent implements OnInit {
     constructor(
         private cdr: ChangeDetectorRef,
         private router: Router,
+        private projectsService: ProjectsService,
         public leftMenuQuery: LeftMenuQuery,
-        public projectsTodosQuery: ProjectsTodosQuery,
-        public projectsService: ProjectsService
+        public projectsQuery: ProjectsQuery
     ) {}
 
     ngOnInit(): void {
@@ -39,8 +39,6 @@ export class LeftMenuComponent implements OnInit {
         this.labels = labels;
         this.filters = filters;
         this.favorites = favorites;
-
-        this.projectsTodosQuery.projects$.subscribe((val) => console.log(val));
 
         this.projectsService.setProjects();
     }

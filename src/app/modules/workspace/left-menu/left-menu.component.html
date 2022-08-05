@@ -53,7 +53,7 @@
 
         <div class="menu__proj__wrapper">
             <div
-                *ngFor="let project of projectsTodosQuery.projects$ | async; let i = index"
+                *ngFor="let project of projectsQuery.projects$ | async; let i = index"
                 (click)="navTo('/workspace/project/' + project.id)"
                 class="menu__proj"
             >

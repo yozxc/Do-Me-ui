@@ -1,28 +1,28 @@
-import { TaskData } from '@app/core/types/taskData';
+import { Task } from '@app/core/types/domain/task';
 
-export const tasksList: TaskData[] = [
+export const taskID: Task[] = [
     {
-        taskID: 'id1',
-        taskName: 'todo-1',
+        id: 'id1',
+        name: 'todo-1',
         isChecked: false,
         priority: 1
     },
     {
-        taskID: 'id2',
-        taskName: 'todo-2',
-        taskDescription: 'task description 2',
+        id: 'id2',
+        name: 'todo-2',
+        description: 'task description 2',
         isChecked: true,
         priority: 2
     },
     {
-        taskID: 'id3',
-        taskName: 'todo-3',
+        id: 'id3',
+        name: 'todo-3',
         isChecked: false,
         priority: 3
     },
     {
-        taskID: 'id4',
-        taskName: 'todo-4',
+        id: 'id4',
+        name: 'todo-4',
         isChecked: true,
         priority: 4
     }

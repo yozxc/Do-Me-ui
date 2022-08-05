@@ -1,17 +1,17 @@
-<div class="task">
-    <label class="check__label" [for]="taskData.taskID">
-        <input class="hidden__checkbox" type="checkbox" name="" [id]="taskData.taskID" (change)="taskData.isChecked = !taskData.isChecked" />
+<div *ngIf="task$ | async as task" class="task">
+    <label class="check__label" [for]="task.id">
+        <input class="hidden__checkbox" type="checkbox" name="" [id]="task.id" (change)="task.isChecked = !task.isChecked" />
 
-        <div [class]="'custom__check' + ' p' + taskData.priority" [ngClass]="{ _active: taskData.isChecked }">
-            <svg-wp-tick *ngIf="taskData?.isChecked" [activeWhite]="taskData.priority !== 4"></svg-wp-tick>
+        <div [class]="'custom__check' + ' p' + task.priority" [ngClass]="{ _active: task.isChecked }">
+            <svg-wp-tick *ngIf="task.isChecked" [activeWhite]="task.priority !== 4"></svg-wp-tick>
         </div>
     </label>
     <!-- checkbox label -->
 
     <div class="task__main">
-        <div class="task__text">{{ taskData?.taskName }}</div>
+        <div class="task__text">{{ task.name }}</div>
 
-        <div class="task__desc">{{ taskData?.taskDescription }}</div>
+        <div class="task__desc">{{ task.description }}</div>
 
         <!-- todo : do tasklate functional -->
         <!-- <div class="task__late">

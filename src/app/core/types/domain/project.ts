@@ -1,6 +1,4 @@
 import { ColorType } from './color';
-import { SectionData } from './section';
-import { TaskData } from './taskData';
 
 export interface Project {
     id: string;
@@ -8,9 +6,10 @@ export interface Project {
     colorCls: ColorType;
     type: 'BOARD' | 'LIST';
     favorite: boolean;
-    noSectionTasks: TaskData[];
-    sections: SectionData[];
     todoTasks: number;
+    // ---
+    sectionsID: string[];
+    noSectionTasksID: string[];
 }
 
 export interface AddProjectData {

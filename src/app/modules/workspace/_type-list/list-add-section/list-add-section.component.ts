@@ -1,6 +1,6 @@
 import { UntypedFormControl } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { AddSectionData } from '@app/core/types/section';
+import { AddSectionData } from '@app/core/types/domain/section';
 
 @Component({
     selector: 'app-list-add-section',
@@ -23,7 +23,7 @@ export class ListAddSectionComponent implements OnInit {
     }
 
     onSave() {
-        this.addSectionEvent.emit({ sectionTitle: this.sectionTitleForm.value });
+        this.addSectionEvent.emit({ title: this.sectionTitleForm.value });
         this.sectionTitleForm.setValue('');
 
         this.isOnAdd = false;

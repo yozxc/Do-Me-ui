@@ -12,6 +12,7 @@ import { MODALS_ROUTE, OUTLETS, PAGES_ROUTE, SETTINGS_ROUTE } from '@app/core/ro
 export class AccountSettingsComponent {
     constructor(private router: Router) {}
 
+    // todo : fix with akita router
     changeEmail() {
         this.router.navigateByUrl(
             `/${PAGES_ROUTE.WORKSPACE}/(${OUTLETS.MODALS}:${MODALS_ROUTE.SETTINGS}/(${OUTLETS.SETTINGS_SPACE}:${SETTINGS_ROUTE.CHANGE_EMAIL}))`,
@@ -31,7 +32,6 @@ export class AccountSettingsComponent {
     }
 
     deleteAccount() {
-        console.log(this.router.url);
         this.router.navigateByUrl(
             `/${PAGES_ROUTE.WORKSPACE}/(${OUTLETS.MODALS}:${MODALS_ROUTE.SETTINGS}/(${OUTLETS.SETTINGS_SPACE}:${SETTINGS_ROUTE.DELETE_ACCOUNT}))`,
             {

@@ -1,6 +1,7 @@
 import { UntypedFormControl } from '@angular/forms';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { DropdownSchema } from '@app/core/types/dropdown';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DropdownSchema } from '@app/core/types/domain/dropdown';
+import { TitleEdit } from '@app/core/types/realization/titleEdit';
 
 @Component({
     selector: 'app-list-header',
@@ -15,10 +16,12 @@ export class ListHeaderComponent implements OnInit {
 
     titleControl!: UntypedFormControl;
 
-    @Input() title!: string | undefined;
+    @Input() title!: string;
     @Input() dropdownSchema!: DropdownSchema;
     @Input() _dateDisplay: boolean = false;
     @Input() _editableTitle: boolean = true;
+
+    @Output() titleEdit: EventEmitter<TitleEdit> = new EventEmitter();
 
     constructor() {}
 
@@ -35,7 +38,9 @@ export class ListHeaderComponent implements OnInit {
     onSave() {
         if (this.titleControl.value.length) {
             this.isOnEdit = false;
-            this.title = this.titleControl.value;
+
+            this.titleEdit.emit({ oldValue: this.title, newValue: this.titleControl.value });
+            // this.title = this.titleControl.value;
         }
     }
 }

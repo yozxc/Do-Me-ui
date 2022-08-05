@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { PriorityType } from '@app/core/types/priorityType';
+import { PriorityType } from '@app/core/types/domain/priority';
 
 @Component({
     selector: 'svg-drop-sec-priority',

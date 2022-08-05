@@ -1,11 +1,15 @@
+import { TitleEdit } from '@core/types/realization/titleEdit';
+import { ProjectsService } from '@app/core/store/projects/projects.service';
 import { Observable } from 'rxjs';
-import { Project } from '@app/core/types/projectType';
+import { Project } from '@app/core/types/domain/project';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MAIN_PLACE_ROUTE } from '@app/core/router/nav-constants';
-import { AddTaskData } from '@app/core/types/taskData';
-import { AddSectionData } from '@app/core/types/section';
-import { ProjectsTodosQuery } from '@app/core/store/projects/projects.query';
+import { AddTaskData } from '@app/core/types/domain/task';
+import { AddSectionData } from '@app/core/types/domain/section';
+import { ProjectsQuery } from '@app/core/store/projects/projects.query';
+import { SectionsService } from '@app/core/store/sections/sections.service';
+import { TasksService } from '@app/core/store/tasks/tasks.service';
 
 @Component({
     selector: 'app-project',
@@ -20,7 +24,14 @@ export class ProjectComponent implements OnInit {
 
     project$!: Observable<Project>;
 
-    constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef, public projectsTodosQuery: ProjectsTodosQuery) {}
+    constructor(
+        private route: ActivatedRoute,
+        private cdr: ChangeDetectorRef,
+        private projectsService: ProjectsService,
+        private sectionsService: SectionsService,
+        private tasksService: TasksService,
+        public projectsQuery: ProjectsQuery
+    ) {}
 
     ngOnInit(): void {
         this.route.paramMap.subscribe((params) => {
@@ -28,32 +39,28 @@ export class ProjectComponent implements OnInit {
             if (projectID !== this.projectId) {
                 projectID && (this.projectId = projectID);
 
-                this.project$ = this.projectsTodosQuery.selectProject(this.projectId);
+                this.project$ = this.projectsQuery.selectProject(this.projectId);
 
-                this.setData();
+                this.cdr.detectChanges();
             }
         });
     }
 
-    setData() {
-        this.cdr.detectChanges();
+    addNoSectionTask(taskData: AddTaskData) {
+        this.setProjectID(taskData);
+        this.tasksService.addTask(taskData);
     }
 
-    addNoSectionTask(e: AddTaskData) {
-        // this.projectData?.noSectionTasks?.push({
-        //     taskID: v4(),
-        //     taskName: e.taskName,
-        //     taskDescription: e.taskDescription,
-        //     isChecked: false,
-        //     priority: e.priority
-        // });
+    addSection(sectionData: AddSectionData) {
+        this.setProjectID(sectionData);
+        this.sectionsService.addSection(sectionData);
     }
 
-    addSection(event: AddSectionData) {
-        // this.projectData?.sections.push({
-        //     id: v4(),
-        //     title: event.sectionTitle,
-        //     tasksList: []
-        // });
+    updateTitle(titleEdit: TitleEdit) {
+        this.projectsService.updateTitle(this.projectId, titleEdit.newValue);
+    }
+
+    setProjectID(obj: any) {
+        obj.projectID = this.projectId;
     }
 }
