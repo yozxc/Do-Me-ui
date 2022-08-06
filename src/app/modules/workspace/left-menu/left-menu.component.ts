@@ -22,8 +22,8 @@ export class LeftMenuComponent implements OnInit {
     activeLabels = {
         favorites: false,
         projects: true,
-        labels: true,
-        filters: true
+        labels: false,
+        filters: false
     };
 
     constructor(

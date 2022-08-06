@@ -9,6 +9,7 @@ import {
     Renderer2,
     ViewChild
 } from '@angular/core';
+import { ProjectType } from '@app/core/types/domain/project';
 
 @Component({
     selector: 'ui-view-menu-dropdown',
@@ -28,6 +29,7 @@ export class ViewMenuDropdownComponent implements AfterViewChecked {
     sortByValue: string = 'Default';
 
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
+    @Output() viewAsEvent: EventEmitter<ProjectType> = new EventEmitter();
 
     @ViewChild('menuView') menuView?: ElementRef;
 
@@ -36,6 +38,10 @@ export class ViewMenuDropdownComponent implements AfterViewChecked {
     toggleIsVisible() {
         this.isVisible = !this.isVisible;
         this.cdr.detectChanges();
+    }
+
+    viewAs(projectType: ProjectType) {
+        this.viewAsEvent.emit(projectType);
     }
 
     close() {
@@ -53,16 +59,16 @@ export class ViewMenuDropdownComponent implements AfterViewChecked {
         const coordinates = this.menuView.nativeElement.getBoundingClientRect();
 
         if (coordinates.bottom > window.innerHeight) {
-            this.render.setStyle(element, 'top', `calc(50% - ${coordinates.bottom - window.innerHeight + 5}px)`);
+            this.render.setStyle(element, 'top', `calc(50% - ${coordinates.bottom - window.innerHeight + 20}px)`);
         }
         if (coordinates.top < 0) {
-            this.render.setStyle(element, 'top', `calc(50% + ${coordinates.top * -1 + 5}px)`);
+            this.render.setStyle(element, 'top', `calc(50% + ${coordinates.top * -1 + 20}px)`);
         }
         if (coordinates.left < 0) {
-            this.render.setStyle(element, 'left', `calc(50% + ${coordinates.left * -1 + 5}px)`);
+            this.render.setStyle(element, 'left', `calc(50% + ${coordinates.left * -1 + 20}px)`);
         }
         if (coordinates.right > window.innerWidth) {
-            this.render.setStyle(element, 'left', `calc(50% - ${coordinates.right - window.innerWidth + 5}px)`);
+            this.render.setStyle(element, 'left', `calc(50% - ${coordinates.right - window.innerWidth + 20}px)`);
         }
     }
 }

@@ -15,13 +15,13 @@
 
             <div class="submenu__wrapper" *ngIf="viewAsVisible" (click)="viewAsVisible = false; $event.stopPropagation()">
                 <div class="submenu">
-                    <div class="submenu__item" (click)="viewAsValue = 'List'">
+                    <div class="submenu__item" (click)="viewAs('LIST')">
                         <div class="sub_item__text">List</div>
                         <svg-drop-sub-tick *ngIf="viewAsValue === 'List'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
-                    <div class="submenu__item" (click)="viewAsValue = 'Table'">
-                        <div class="sub_item__text">Table</div>
-                        <svg-drop-sub-tick *ngIf="viewAsValue === 'Table'" class="wh-12 m7"></svg-drop-sub-tick>
+                    <div class="submenu__item" (click)="viewAs('BOARD')">
+                        <div class="sub_item__text">Board</div>
+                        <svg-drop-sub-tick *ngIf="viewAsValue === 'Board'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
                 </div>
             </div>

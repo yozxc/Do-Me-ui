@@ -15,10 +15,10 @@
 
 <ng-template #addSection>
     <div class="title__editor">
-        <input class="editor__input" type="text" #titleInput placeholder="Name this section" />
+        <input #titleInput class="editor__input" type="text" placeholder="Name this section" />
 
         <div class="btns__wrapper">
-            <ui-button styleCls="black mr10" (clickEvent)="isOnAdd = true">Save</ui-button>
+            <ui-button styleCls="black mr10" (clickEvent)="isOnAdd = true; onSave(titleInput.value)">Save</ui-button>
             <ui-button styleCls="white" (clickEvent)="isOnAdd = false">Cancel</ui-button>
         </div>
     </div>

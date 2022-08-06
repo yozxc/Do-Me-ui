@@ -1,10 +1,10 @@
-<ng-container *ngIf="!isChangingTitle; else titleEditor">
+<ng-container *ngIf="!isChangingTitle || !editableTitle; else titleEditor">
     <div class="container">
         <div class="title" (click)="isChangingTitle = true">{{ title }}</div>
         <div class="taks__remaining">5</div>
     </div>
 
-    <div *ngIf="!isChangingTitle" class="container">
+    <div class="container">
         <div class="more__wrapper" (click)="dropMenu.toggleIsVisible()">
             <svg-wp-more class="wp-24"></svg-wp-more>
 
@@ -15,7 +15,7 @@
 
 <ng-template #titleEditor>
     <div class="title__editor">
-        <input class="editor__input" type="text" #titleInput [value]="title" placeholder="Name this section" />
+        <input #titleInput class="editor__input" type="text" [value]="title" placeholder="Name this section" />
 
         <div class="btns__wrapper">
             <ui-button styleCls="black mr10" (clickEvent)="saveTitle(titleInput.value)">Save</ui-button>

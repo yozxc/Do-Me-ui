@@ -30,7 +30,6 @@ export class ListSectionComponent implements OnInit, OnDestroy {
     constructor(private tasksService: TasksService, private sectionsService: SectionsService, private sectionsQuery: SectionsQuery) {}
 
     ngOnInit(): void {
-        console.log(this.sectionID);
         this.section$ = this.sectionsQuery.selectSection(this.sectionID);
 
         this.sectionSub = this.section$.subscribe((section) => (this.sectionData = section));

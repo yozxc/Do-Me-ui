@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { AddSectionData } from '@app/core/types/domain/section';
 
 @Component({
     selector: 'app-table-add-section',
@@ -11,5 +12,12 @@ export class TableAddSectionComponent {
 
     @Input() type!: 'bar' | 'panel';
 
+    @Output() addSectionEvent: EventEmitter<AddSectionData> = new EventEmitter();
+
     constructor() {}
+
+    onSave(title: string) {
+        this.addSectionEvent.emit({ title });
+        this.isOnAdd = false;
+    }
 }

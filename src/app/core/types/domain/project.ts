@@ -4,7 +4,7 @@ export interface Project {
     id: string;
     title: string;
     colorCls: ColorType;
-    type: 'BOARD' | 'LIST';
+    type: ProjectType;
     favorite: boolean;
     todoTasks: number;
     // ---
@@ -18,3 +18,5 @@ export interface AddProjectData {
     type: 'BOARD' | 'LIST';
     favorite?: boolean;
 }
+
+export type ProjectType = 'BOARD' | 'LIST';

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-labels */
 import { Injectable } from '@angular/core';
-import { AddProjectData, Project } from '@app/core/types/domain/project';
+import { AddProjectData, Project, ProjectType } from '@app/core/types/domain/project';
 import { projectsList } from '@mocks/projectsList';
 import { v4 } from 'uuid';
 import { ProjectsStore } from './projects.store';
@@ -16,6 +16,10 @@ export class ProjectsService {
 
     updateTitle(projectID: string, title: string) {
         this.projectsStore.update(projectID, { title });
+    }
+
+    updateType(projectID: string, type: ProjectType) {
+        this.projectsStore.update(projectID, { type });
     }
 
     // todo : dev temp

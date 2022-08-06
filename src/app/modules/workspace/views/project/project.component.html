@@ -1,6 +1,6 @@
 <div *ngIf="project$ | async as project" class="main__place">
-    <div class="type__list">
-        <app-list-header [title]="project.title" (titleEdit)="updateTitle($event)"></app-list-header>
+    <div *ngIf="project.type === 'LIST'" class="type__list">
+        <app-view-header [title]="project.title" (titleEditEvent)="updateTitle($event)" (viewAsEvent)="updateType($event)"></app-view-header>
         <!-- list header -->
 
         <app-list-task *ngFor="let taskID of project.noSectionTasksID" [taskID]="taskID"></app-list-task>
@@ -15,4 +15,29 @@
         <app-list-add-section (addSectionEvent)="addSection($event)"></app-list-add-section>
     </div>
     <!-- list -->
+
+    <div *ngIf="project.type === 'BOARD'" class="type__table">
+        <app-view-header [title]="project.title" (titleEditEvent)="updateTitle($event)" (viewAsEvent)="updateType($event)"></app-view-header>
+
+        <div class="columns__wrapper">
+            <app-table-column
+                *ngIf="project.noSectionTasksID.length"
+                [title]="'(No Section)'"
+                [editableTitle]="false"
+                [projectID]="project.id"
+            ></app-table-column>
+
+            <ng-container *ngFor="let sectionID of project.sectionsID; let i = index">
+                <app-table-add-section
+                    *ngIf="project.noSectionTasksID.length || i !== 0"
+                    [type]="'bar'"
+                    (addSectionEvent)="addSection($event)"
+                ></app-table-add-section>
+                <app-table-column [sectionID]="sectionID"></app-table-column>
+            </ng-container>
+
+            <app-table-add-section [type]="'panel'" (addSectionEvent)="addSection($event)"></app-table-add-section>
+        </div>
+    </div>
+    <!-- table -->
 </div>

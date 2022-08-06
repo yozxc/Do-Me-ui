@@ -1,6 +1,6 @@
 <div class="header">
     <div class="container _end">
-        <ng-container *ngIf="isOnEdit && _editableTitle; else titleContainer">
+        <ng-container *ngIf="isOnEdit && editableTitle; else titleContainer">
             <div class="title__edit">
                 <input class="edit__input" type="text" [formControl]="titleControl" />
 
@@ -12,7 +12,7 @@
         </ng-container>
 
         <ng-template #titleContainer>
-            <div class="title" (click)="_editableTitle && (isOnEdit = true)">{{ title }}</div>
+            <div class="title" (click)="editableTitle && (isOnEdit = true)">{{ title }}</div>
             <div *ngIf="_dateDisplay" class="date">{{ date | date: 'EEEEEE' }} {{ date | date: 'd' }} {{ date | date: 'LLL' }}</div>
         </ng-template>
     </div>
@@ -22,7 +22,7 @@
             <svg-wp-view></svg-wp-view>
             <div class="icon__text">View</div>
 
-            <ui-view-menu-dropdown #viewMenu class="view__dropdown"></ui-view-menu-dropdown>
+            <ui-view-menu-dropdown #viewMenu class="view__dropdown" (viewAsEvent)="viewAsEvent.emit($event)"></ui-view-menu-dropdown>
         </div>
         <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible()">
             <svg-wp-more></svg-wp-more>

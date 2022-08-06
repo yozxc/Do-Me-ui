@@ -1,7 +1,7 @@
 import { TitleEdit } from '@core/types/realization/titleEdit';
 import { ProjectsService } from '@app/core/store/projects/projects.service';
 import { Observable } from 'rxjs';
-import { Project } from '@app/core/types/domain/project';
+import { Project, ProjectType } from '@app/core/types/domain/project';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MAIN_PLACE_ROUTE } from '@app/core/router/nav-constants';
@@ -58,6 +58,10 @@ export class ProjectComponent implements OnInit {
 
     updateTitle(titleEdit: TitleEdit) {
         this.projectsService.updateTitle(this.projectId, titleEdit.newValue);
+    }
+
+    updateType(projectType: ProjectType) {
+        this.projectsService.updateType(this.projectId, projectType);
     }
 
     setProjectID(obj: any) {

@@ -18,13 +18,12 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { ListTaskComponent } from './_type-list/list-task/list-task.component';
 import { ListSectionComponent } from './_type-list/list-section/list-section.component';
 import { ListAddSectionComponent } from './_type-list/list-add-section/list-add-section.component';
-import { TableHeaderComponent } from './_type-table/table-header/table-header.component';
 import { TableColumnComponent } from './_type-table/table-column/table-column.component';
 import { TableColumnHeaderComponent } from './_type-table/table-column-header/table-column-header.component';
 
 import { TodayComponent } from './views/today/today.component';
 import { InboxComponent } from './views/inbox/inbox.component';
-import { ListHeaderComponent } from './_type-list/list-header/list-header.component';
+import { ViewHeaderComponent } from './view-header/view-header.component';
 import { ProjectComponent } from './views/project/project.component';
 import { LabelComponent } from './views/label/label.component';
 import { FilterComponent } from './views/filter/filter.component';
@@ -63,13 +62,12 @@ import { LeftMenuStore } from './left-menu/left-menu.state/left-menu.store';
         ListTaskComponent,
         ListSectionComponent,
         ListAddSectionComponent,
-        TableHeaderComponent,
         TableColumnComponent,
         TableColumnHeaderComponent,
         //
         TodayComponent,
         InboxComponent,
-        ListHeaderComponent,
+        ViewHeaderComponent,
         ProjectComponent,
         LabelComponent,
         FilterComponent,

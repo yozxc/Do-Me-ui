@@ -28,8 +28,6 @@ export class ListTaskComponent implements OnInit {
     ngOnInit(): void {
         this.task$ = this.tasksQuery.selectTask(this.taskID);
 
-        this.task$.subscribe((val) => console.log(val));
-
         // todo : check for wtf is this :D
         this.initDDSchema();
     }

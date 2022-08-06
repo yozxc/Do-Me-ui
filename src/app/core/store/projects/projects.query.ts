@@ -1,3 +1,4 @@
+import { TasksQuery } from '@core/store/tasks/tasks.query';
 import { Injectable } from '@angular/core';
 import { QueryEntity } from '@datorama/akita';
 import { Project } from '@app/core/types/domain/project';
@@ -8,7 +9,7 @@ import { ProjectsState, ProjectsStore } from './projects.store';
 export class ProjectsQuery extends QueryEntity<ProjectsState> {
     projects$ = this.selectAll();
 
-    constructor(protected override store: ProjectsStore) {
+    constructor(protected override store: ProjectsStore, private tasksQuery: TasksQuery) {
         super(store);
     }
 
@@ -18,5 +19,9 @@ export class ProjectsQuery extends QueryEntity<ProjectsState> {
 
     selectProject(id: string) {
         return this.selectEntity(id) as Observable<Project>;
+    }
+
+    selectNoSectionTasksID(projectID: string) {
+        return this.selectEntity(projectID, 'noSectionTasksID') as Observable<string[]>;
     }
 }

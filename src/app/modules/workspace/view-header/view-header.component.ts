@@ -2,14 +2,15 @@ import { UntypedFormControl } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DropdownSchema } from '@app/core/types/domain/dropdown';
 import { TitleEdit } from '@app/core/types/realization/titleEdit';
+import { ProjectType } from '@app/core/types/domain/project';
 
 @Component({
-    selector: 'app-list-header',
-    templateUrl: './list-header.component.html',
-    styleUrls: ['./list-header.component.scss'],
+    selector: 'app-view-header',
+    templateUrl: './view-header.component.html',
+    styleUrls: ['./view-header.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListHeaderComponent implements OnInit {
+export class ViewHeaderComponent implements OnInit {
     isOnEdit: boolean = false;
     disabledSave: boolean = true;
     date: number = Date.now();
@@ -19,9 +20,11 @@ export class ListHeaderComponent implements OnInit {
     @Input() title!: string;
     @Input() dropdownSchema!: DropdownSchema;
     @Input() _dateDisplay: boolean = false;
-    @Input() _editableTitle: boolean = true;
+    @Input() editableTitle: boolean = true;
 
-    @Output() titleEdit: EventEmitter<TitleEdit> = new EventEmitter();
+    @Output() titleEditEvent: EventEmitter<TitleEdit> = new EventEmitter();
+
+    @Output() viewAsEvent: EventEmitter<ProjectType> = new EventEmitter();
 
     constructor() {}
 
@@ -39,7 +42,7 @@ export class ListHeaderComponent implements OnInit {
         if (this.titleControl.value.length) {
             this.isOnEdit = false;
 
-            this.titleEdit.emit({ oldValue: this.title, newValue: this.titleControl.value });
+            this.titleEditEvent.emit({ oldValue: this.title, newValue: this.titleControl.value });
             // this.title = this.titleControl.value;
         }
     }

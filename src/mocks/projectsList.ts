@@ -6,6 +6,7 @@ export const projectsList: Project[] = [
         title: 'project_1',
         colorCls: 'berryRed',
         todoTasks: 4,
+        // type: 'BOARD',
         type: 'LIST',
         favorite: false,
         noSectionTasksID: [],

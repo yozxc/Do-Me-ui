@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-table-column-header',
@@ -7,14 +7,17 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TableColumnHeaderComponent {
-    title: string = '(No Section)';
-
     isChangingTitle: boolean = false;
+
+    @Input() title!: string;
+    @Input() editableTitle: boolean = true;
+
+    @Output() setTitleEvent: EventEmitter<string> = new EventEmitter();
 
     constructor() {}
 
     saveTitle(title: string) {
-        this.title = title;
+        this.setTitleEvent.emit(title);
         this.isChangingTitle = false;
     }
 }

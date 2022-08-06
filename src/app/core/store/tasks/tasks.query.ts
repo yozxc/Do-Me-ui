@@ -10,6 +10,10 @@ export class TasksQuery extends QueryEntity<TasksState> {
         super(store);
     }
 
+    getTask(id: string) {
+        return this.getEntity(id);
+    }
+
     selectTask(id: string) {
         return this.selectEntity(id) as Observable<Task>;
     }
