@@ -2,7 +2,7 @@ import { UntypedFormControl } from '@angular/forms';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DropdownSchema } from '@app/core/types/domain/dropdown';
 import { TitleEdit } from '@app/core/types/realization/titleEdit';
-import { ProjectType } from '@app/core/types/domain/project';
+import { ViewType } from '@app/core/types/domain/project';
 
 @Component({
     selector: 'app-view-header',
@@ -24,7 +24,7 @@ export class ViewHeaderComponent implements OnInit {
 
     @Output() titleEditEvent: EventEmitter<TitleEdit> = new EventEmitter();
 
-    @Output() viewAsEvent: EventEmitter<ProjectType> = new EventEmitter();
+    @Output() viewAsEvent: EventEmitter<ViewType> = new EventEmitter();
 
     constructor() {}
 

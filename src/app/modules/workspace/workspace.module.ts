@@ -34,6 +34,9 @@ import { AddTaskLabelComponent } from './add-task-label/add-task-label.component
 import { LeftMenuQuery } from './left-menu/left-menu.state/left-menu.query';
 import { LeftMenuService } from './left-menu/left-menu.state/left-menu.service';
 import { LeftMenuStore } from './left-menu/left-menu.state/left-menu.store';
+import { InboxStore } from './views/inbox/inbox.state/inbox.store';
+import { InboxService } from './views/inbox/inbox.state/inbox.service';
+import { InboxQuery } from './views/inbox/inbox.state/inbox.query';
 
 @NgModule({
     imports: [
@@ -52,7 +55,10 @@ import { LeftMenuStore } from './left-menu/left-menu.state/left-menu.store';
         // state ↓
         LeftMenuStore,
         LeftMenuService,
-        LeftMenuQuery
+        LeftMenuQuery,
+        InboxStore,
+        InboxService,
+        InboxQuery
     ],
     declarations: [
         HeaderComponent,

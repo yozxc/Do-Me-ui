@@ -1,7 +1,7 @@
 import { TitleEdit } from '@core/types/realization/titleEdit';
 import { ProjectsService } from '@app/core/store/projects/projects.service';
 import { Observable } from 'rxjs';
-import { Project, ProjectType } from '@app/core/types/domain/project';
+import { Project, ViewType } from '@app/core/types/domain/project';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MAIN_PLACE_ROUTE } from '@app/core/router/nav-constants';
@@ -18,7 +18,7 @@ import { TasksService } from '@app/core/store/tasks/tasks.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectComponent implements OnInit {
-    __addNoSectionTask: boolean = false;
+    addNoSecTask: boolean = false;
 
     projectId!: string;
 
@@ -60,7 +60,7 @@ export class ProjectComponent implements OnInit {
         this.projectsService.updateTitle(this.projectId, titleEdit.newValue);
     }
 
-    updateType(projectType: ProjectType) {
+    updateType(projectType: ViewType) {
         this.projectsService.updateType(this.projectId, projectType);
     }
 

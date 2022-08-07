@@ -6,8 +6,8 @@
         <app-list-task *ngFor="let taskID of project.noSectionTasksID" [taskID]="taskID"></app-list-task>
 
         <!-- add task --- -->
-        <app-add-task-label *ngIf="!__addNoSectionTask" [text]="'Add Task'" (click)="__addNoSectionTask = true"></app-add-task-label>
-        <app-add-task *ngIf="__addNoSectionTask" (closeEvent)="__addNoSectionTask = false" (addTaskEvent)="addNoSectionTask($event)"></app-add-task>
+        <app-add-task-label *ngIf="!addNoSecTask" [text]="'Add Task'" (click)="addNoSecTask = true"></app-add-task-label>
+        <app-add-task *ngIf="addNoSecTask" (closeEvent)="addNoSecTask = false" (addTaskEvent)="addNoSectionTask($event)"></app-add-task>
         <!--  --- add task -->
 
         <app-list-section *ngFor="let sectionID of project.sectionsID" [sectionID]="sectionID"></app-list-section>

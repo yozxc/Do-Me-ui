@@ -1,3 +1,4 @@
+import { TasksQuery } from '@core/store/tasks/tasks.query';
 import { SectionsService } from '@core/store/sections/sections.service';
 import { ProjectsQuery } from '@app/core/store/projects/projects.query';
 import { SectionsQuery } from '@core/store/sections/sections.query';
@@ -20,6 +21,7 @@ export class TableColumnComponent implements OnInit {
     @Input() editableTitle: boolean = true;
     @Input() sectionID!: string;
     @Input() projectID!: string;
+    @Input() inbox: boolean = false;
 
     section$!: Observable<Section>;
 
@@ -28,6 +30,7 @@ export class TableColumnComponent implements OnInit {
     constructor(
         private sectionsService: SectionsService,
         private tasksService: TasksService,
+        private tasksQuery: TasksQuery,
         private sectionsQuery: SectionsQuery,
         private projectsQuery: ProjectsQuery
     ) {}
@@ -35,7 +38,9 @@ export class TableColumnComponent implements OnInit {
     ngOnInit(): void {
         this.section$ = this.sectionsQuery.selectSection(this.sectionID);
 
-        const noSecTasksID$ = this.projectsQuery.selectNoSectionTasksID(this.projectID);
+        this.inbox && (this.noSecTasksID$ = this.tasksQuery.selectInboxTasksID());
+
+        const noSecTasksID$ = this.projectID && this.projectsQuery.selectNoSectionTasksID(this.projectID);
         noSecTasksID$ && (this.noSecTasksID$ = noSecTasksID$);
     }
 

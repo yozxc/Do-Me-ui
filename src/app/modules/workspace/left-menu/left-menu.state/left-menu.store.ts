@@ -10,7 +10,7 @@ export function createInitialState(): LeftMenuState {
     };
 }
 
-@StoreConfig({ name: 'left-menu' })
+@StoreConfig({ name: 'left_menu' })
 export class LeftMenuStore extends Store<LeftMenuState> {
     constructor() {
         super(createInitialState());

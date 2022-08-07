@@ -9,7 +9,7 @@ import {
     Renderer2,
     ViewChild
 } from '@angular/core';
-import { ProjectType } from '@app/core/types/domain/project';
+import { ViewType } from '@app/core/types/domain/project';
 
 @Component({
     selector: 'ui-view-menu-dropdown',
@@ -29,7 +29,7 @@ export class ViewMenuDropdownComponent implements AfterViewChecked {
     sortByValue: string = 'Default';
 
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
-    @Output() viewAsEvent: EventEmitter<ProjectType> = new EventEmitter();
+    @Output() viewAsEvent: EventEmitter<ViewType> = new EventEmitter();
 
     @ViewChild('menuView') menuView?: ElementRef;
 
@@ -40,7 +40,7 @@ export class ViewMenuDropdownComponent implements AfterViewChecked {
         this.cdr.detectChanges();
     }
 
-    viewAs(projectType: ProjectType) {
+    viewAs(projectType: ViewType) {
         this.viewAsEvent.emit(projectType);
     }
 
