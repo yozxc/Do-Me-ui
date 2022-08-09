@@ -1,18 +1,19 @@
 <div class="left__menu" [ngClass]="{ _closed: (leftMenuQuery.collapsed$ | async) === false }">
     <a class="main__tab" routerLink="/workspace/inbox">
-        <svg-lm-inbox styleCls="blue"></svg-lm-inbox>
+        <svg-lm-inbox class="wh-24" styleCls="blue"></svg-lm-inbox>
         <div class="tab__title">Inbox</div>
         <div class="tab__num _gray">10</div>
     </a>
 
-    <a class="main__tab" routerLink="/workspace/today">
-        <svg-lm-today></svg-lm-today>
+    <!-- routerLink="/workspace/today" -->
+    <a class="main__tab _unavailable">
+        <svg-lm-today class="wh-24"></svg-lm-today>
         <div class="tab__title">Today</div>
         <div class="tab__num _red">7</div>
     </a>
 
     <div class="main__tab _unavailable">
-        <svg-lm-upcoming></svg-lm-upcoming>
+        <svg-lm-upcoming class="wh-24"></svg-lm-upcoming>
         <div class="tab__title">Upcoming</div>
     </div>
 
@@ -52,11 +53,7 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <div
-                *ngFor="let project of projectsQuery.projects$ | async; let i = index"
-                (click)="navTo('/workspace/project/' + project.id)"
-                class="menu__proj"
-            >
+            <div *ngFor="let project of projectsQuery.projects$ | async" (click)="navTo('/workspace/project/' + project.id)" class="menu__proj">
                 <svg-lm-dot [styleCls]="project.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ project.title }}</div>
@@ -83,11 +80,11 @@
         </div>
 
         <div class="menu__proj__wrapper">
-            <div *ngFor="let label of labels; let i = index" (click)="navTo('/workspace/label/' + i)" class="menu__proj">
+            <div *ngFor="let label of labelsQuery.labels$ | async" (click)="navTo('/workspace/label/' + label.id)" class="menu__proj">
                 <svg-lm-label [styleCls]="label.colorCls"></svg-lm-label>
 
                 <div class="menu__proj__title">{{ label.name }}</div>
-                <div class="menu__proj__num _gray">{{ label._todoTasks }}</div>
+                <div class="menu__proj__num _gray">173</div>
 
                 <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
                 <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>

@@ -7,12 +7,12 @@
 
         <!-- add task --- -->
         <app-add-task-label *ngIf="!addNoSecTask" [text]="'Add Task'" (click)="addNoSecTask = true"></app-add-task-label>
-        <app-add-task *ngIf="addNoSecTask" (closeEvent)="addNoSecTask = false" (addTaskEvent)="addNoSectionTask($event)"></app-add-task>
+        <app-add-task *ngIf="addNoSecTask" [projectID]="project.id" (closeEvent)="addNoSecTask = false"></app-add-task>
         <!--  --- add task -->
 
-        <app-list-section *ngFor="let sectionID of project.sectionsID" [sectionID]="sectionID"></app-list-section>
+        <app-list-section *ngFor="let sectionID of project.sectionsID" [sectionID]="sectionID" [projectID]="project.id"></app-list-section>
 
-        <app-list-add-section (addSectionEvent)="addSection($event)"></app-list-add-section>
+        <app-list-add-section [projectID]="project.id"></app-list-add-section>
     </div>
     <!-- list -->
 
@@ -21,7 +21,7 @@
 
         <div class="columns__wrapper">
             <app-table-column
-                *ngIf="project.noSectionTasksID.length"
+                *ngIf="project.noSectionTasksID?.length"
                 [title]="'(No Section)'"
                 [editableTitle]="false"
                 [projectID]="project.id"
@@ -29,14 +29,14 @@
 
             <ng-container *ngFor="let sectionID of project.sectionsID; let i = index">
                 <app-table-add-section
-                    *ngIf="project.noSectionTasksID.length || i !== 0"
+                    *ngIf="project.noSectionTasksID?.length || i !== 0"
                     [type]="'bar'"
-                    (addSectionEvent)="addSection($event)"
+                    [projectID]="project.id"
                 ></app-table-add-section>
                 <app-table-column [sectionID]="sectionID"></app-table-column>
             </ng-container>
 
-            <app-table-add-section [type]="'panel'" (addSectionEvent)="addSection($event)"></app-table-add-section>
+            <app-table-add-section [type]="'panel'" [projectID]="project.id"></app-table-add-section>
         </div>
     </div>
     <!-- table -->

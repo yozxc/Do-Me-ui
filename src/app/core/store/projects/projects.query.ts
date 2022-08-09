@@ -13,7 +13,7 @@ export class ProjectsQuery extends QueryEntity<ProjectsState> {
         super(store);
     }
 
-    getProject(id: string) {
+    getProject(id: string): Project | undefined {
         return this.getEntity(id);
     }
 

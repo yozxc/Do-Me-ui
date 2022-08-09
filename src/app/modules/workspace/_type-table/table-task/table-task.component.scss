@@ -90,6 +90,32 @@
     right: 50px;
 }
 
+.aditional__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 18px;
+}
+
+.flex__container {
+    display: flex;
+    align-items: center;
+}
+
+.info__label {
+    display: flex;
+    align-items: center;
+
+    margin-right: 8px;
+}
+
+.info__label__text {
+    font-family: $gFont;
+    font-size: 0.75em;
+    margin-left: 2px;
+}
+
 .task__late {
     display: flex;
     align-items: center;

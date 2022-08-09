@@ -5,7 +5,7 @@
 
     <!-- add task --- -->
     <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
-    <app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false" (addTaskEvent)="addTask($event)"></app-add-task>
+    <app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false"></app-add-task>
     <!-- --- add task -->
 </ng-container>
 
@@ -18,6 +18,6 @@
     <!-- todo : check for methods MVVM -->
     <!-- add task --- -->
     <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
-    <app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false" (addTaskEvent)="addNoSectionTask($event)"></app-add-task>
+    <app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false"></app-add-task>
     <!-- --- add task -->
 </ng-container>

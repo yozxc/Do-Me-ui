@@ -9,7 +9,7 @@
             </div>
 
             <div class="container">
-                <div class="selected__value">{{ viewAsValue }}</div>
+                <div class="selected__value">{{ viewAsValue === 'LIST' ? 'List' : 'Board' }}</div>
                 <svg-drop-arrow class="wh-24 mt4"></svg-drop-arrow>
             </div>
 
@@ -17,11 +17,11 @@
                 <div class="submenu">
                     <div class="submenu__item" (click)="viewAs('LIST')">
                         <div class="sub_item__text">List</div>
-                        <svg-drop-sub-tick *ngIf="viewAsValue === 'List'" class="wh-12 m7"></svg-drop-sub-tick>
+                        <svg-drop-sub-tick *ngIf="viewAsValue === 'LIST'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
                     <div class="submenu__item" (click)="viewAs('BOARD')">
                         <div class="sub_item__text">Board</div>
-                        <svg-drop-sub-tick *ngIf="viewAsValue === 'Board'" class="wh-12 m7"></svg-drop-sub-tick>
+                        <svg-drop-sub-tick *ngIf="viewAsValue === 'BOARD'" class="wh-12 m7"></svg-drop-sub-tick>
                     </div>
                 </div>
             </div>

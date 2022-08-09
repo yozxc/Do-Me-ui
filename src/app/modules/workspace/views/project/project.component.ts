@@ -5,8 +5,8 @@ import { Project, ViewType } from '@app/core/types/domain/project';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MAIN_PLACE_ROUTE } from '@app/core/router/nav-constants';
-import { AddTaskData } from '@app/core/types/domain/task';
-import { AddSectionData } from '@app/core/types/domain/section';
+import { AddTaskDTO } from '@app/core/types/domain/task';
+import { AddSectionDTO } from '@app/core/types/domain/section';
 import { ProjectsQuery } from '@app/core/store/projects/projects.query';
 import { SectionsService } from '@app/core/store/sections/sections.service';
 import { TasksService } from '@app/core/store/tasks/tasks.service';
@@ -20,7 +20,7 @@ import { TasksService } from '@app/core/store/tasks/tasks.service';
 export class ProjectComponent implements OnInit {
     addNoSecTask: boolean = false;
 
-    projectId!: string;
+    projectID!: string;
 
     project$!: Observable<Project>;
 
@@ -36,35 +36,35 @@ export class ProjectComponent implements OnInit {
     ngOnInit(): void {
         this.route.paramMap.subscribe((params) => {
             const projectID = params.get(MAIN_PLACE_ROUTE.ID);
-            if (projectID !== this.projectId) {
-                projectID && (this.projectId = projectID);
+            if (projectID !== this.projectID) {
+                projectID && (this.projectID = projectID);
 
-                this.project$ = this.projectsQuery.selectProject(this.projectId);
+                this.project$ = this.projectsQuery.selectProject(this.projectID);
 
                 this.cdr.detectChanges();
             }
         });
     }
 
-    addNoSectionTask(taskData: AddTaskData) {
+    addNoSectionTask(taskData: AddTaskDTO) {
         this.setProjectID(taskData);
         this.tasksService.addTask(taskData);
     }
 
-    addSection(sectionData: AddSectionData) {
+    addSection(sectionData: AddSectionDTO) {
         this.setProjectID(sectionData);
         this.sectionsService.addSection(sectionData);
     }
 
     updateTitle(titleEdit: TitleEdit) {
-        this.projectsService.updateTitle(this.projectId, titleEdit.newValue);
+        this.projectsService.updateTitle(this.projectID, titleEdit.newValue);
     }
 
     updateType(projectType: ViewType) {
-        this.projectsService.updateType(this.projectId, projectType);
+        this.projectsService.updateType(this.projectID, projectType);
     }
 
     setProjectID(obj: any) {
-        obj.projectID = this.projectId;
+        obj.projectID = this.projectID;
     }
 }

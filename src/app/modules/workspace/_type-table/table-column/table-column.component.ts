@@ -5,7 +5,7 @@ import { SectionsQuery } from '@core/store/sections/sections.query';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Section } from '@app/core/types/domain/section';
 import { Observable } from 'rxjs';
-import { AddTaskData } from '@app/core/types/domain/task';
+import { AddTaskDTO } from '@app/core/types/domain/task';
 import { TasksService } from '@app/core/store/tasks/tasks.service';
 
 @Component({
@@ -49,12 +49,12 @@ export class TableColumnComponent implements OnInit {
         this.sectionsService.updateTitle(this.sectionID, title);
     }
 
-    addTask(taskData: AddTaskData) {
+    addTask(taskData: AddTaskDTO) {
         this.setSectionID(taskData);
         this.tasksService.addTask(taskData);
     }
 
-    addNoSectionTask(taskData: AddTaskData) {
+    addNoSectionTask(taskData: AddTaskDTO) {
         this.setProjectID(taskData);
         this.tasksService.addTask(taskData);
     }

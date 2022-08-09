@@ -1,7 +1,7 @@
 import { ProjectsStore } from './../projects/projects.store';
 /* eslint-disable no-unused-labels */
 import { Injectable } from '@angular/core';
-import { AddSectionData, Section } from '@app/core/types/domain/section';
+import { AddSectionDTO, Section } from '@app/core/types/domain/section';
 import { v4 } from 'uuid';
 import { SectionsStore } from './sections.store';
 import { arrayAdd } from '@datorama/akita';
@@ -10,7 +10,7 @@ import { arrayAdd } from '@datorama/akita';
 export class SectionsService {
     constructor(private sectionsStore: SectionsStore, private projectsStore: ProjectsStore) {}
 
-    addSection(sectionData: AddSectionData) {
+    addSection(sectionData: AddSectionDTO) {
         const addSection: Section = { ...sectionData, id: v4(), tasksID: [] };
         this.sectionsStore.add(addSection);
 

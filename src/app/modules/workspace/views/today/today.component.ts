@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AddSectionData } from '@app/core/types/domain/section';
-import { AddTaskData } from '@app/core/types/domain/task';
+import { AddSectionDTO } from '@app/core/types/domain/section';
+import { AddTaskDTO } from '@app/core/types/domain/task';
 import { DropdownIconType, DropdownSchema } from '@app/core/types/domain/dropdown';
 
 @Component({
@@ -20,7 +20,7 @@ export class TodayComponent {
 
     constructor() {}
 
-    addTask(event: AddTaskData) {
+    addTask(event: AddTaskDTO) {
         // this.taskID.push({
         //     id: v4(),
         //     name: event.name,
@@ -30,7 +30,7 @@ export class TodayComponent {
         // });
     }
 
-    addSection(event: AddSectionData) {
+    addSection(event: AddSectionDTO) {
         // this.sectionsList.push({
         //     id: v4(),
         //     title: event.title,

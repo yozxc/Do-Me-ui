@@ -27,18 +27,18 @@
                 <div class="label">View</div>
 
                 <div class="view__type__wrapper">
-                    <div class="view__type _list" (click)="changeType('List')">
-                        <div class="type__list" [ngClass]="{ _active: form.value.type === 'List' }"></div>
+                    <div class="view__type _list" (click)="changeType('LIST')">
+                        <div class="type__list" [ngClass]="{ _active: form.value.type === 'LIST' }"></div>
 
                         <div class="type__check__wrapper">
-                            <ui-checkbox [label]="'List'" [checked]="form.value.type === 'List'"></ui-checkbox>
+                            <ui-checkbox [label]="'LIST'" [checked]="form.value.type === 'LIST'"></ui-checkbox>
                         </div>
                     </div>
-                    <div class="view__type _table" (click)="changeType('Board')">
-                        <div class="type__table" [ngClass]="{ _active: form.value.type === 'Board' }"></div>
+                    <div class="view__type _table" (click)="changeType('BOARD')">
+                        <div class="type__table" [ngClass]="{ _active: form.value.type === 'BOARD' }"></div>
 
                         <div class="type__check__wrapper">
-                            <ui-checkbox [label]="'Board'" [checked]="form.value.type === 'Board'"></ui-checkbox>
+                            <ui-checkbox [label]="'BOARD'" [checked]="form.value.type === 'BOARD'"></ui-checkbox>
                         </div>
                     </div>
                 </div>

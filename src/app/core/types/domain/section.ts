@@ -3,11 +3,11 @@ export interface Section {
     title: string;
     tasksID: string[];
     // ---
-    projectID?: string;
+    projectID: string | null;
 }
 
-export interface AddSectionData {
+export interface AddSectionDTO {
     title: string;
     // ---
-    projectID?: string;
+    projectID: string | null;
 }

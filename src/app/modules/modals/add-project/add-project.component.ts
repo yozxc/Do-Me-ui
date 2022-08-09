@@ -2,8 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UntypedFormBuilder } from '@angular/forms';
 import { ProjectsService } from '@app/core/store/projects/projects.service';
-
-type projectType = 'List' | 'Board';
+import { ViewType } from '@app/core/types/domain/project';
 
 @Component({
     selector: 'app-add-project',
@@ -17,7 +16,7 @@ export class AddProjectComponent implements OnInit {
     form = this.fb.group({
         title: '',
         colorCls: 'berryRed',
-        type: 'List',
+        type: 'LIST',
         favorites: false
     });
 
@@ -27,7 +26,7 @@ export class AddProjectComponent implements OnInit {
         this.form.get('title')?.valueChanges.subscribe((value) => (this.__addButtonDisabled = !value.length));
     }
 
-    changeType(type: projectType) {
+    changeType(type: ViewType) {
         this.form.patchValue({
             type: type
         });

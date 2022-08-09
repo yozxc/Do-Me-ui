@@ -1,10 +1,14 @@
-<div class="main__place">
+<div *ngIf="label$ | async as label" class="main__place">
     <div class="type__list">
-        <app-view-header [title]="'label'"></app-view-header>
+        <!-- todo : check for header input start value bug -->
+        <app-view-header [title]="label.name" (titleEditEvent)="updateName($event)"></app-view-header>
         <!-- list header -->
 
-        <app-list-task></app-list-task>
-        <app-list-task></app-list-task>
+        <app-list-task *ngFor="let taskID of label.tasksID" [taskID]="taskID" [labelID]="labelID"></app-list-task>
+
+        <!-- add task --- -->
+        <app-add-task-label *ngIf="!__addTask" [text]="'Add Task'" (click)="__addTask = true"></app-add-task-label>
+        <app-add-task *ngIf="__addTask" (closeEvent)="__addTask = false" [activeLabelsID]="[labelID]"></app-add-task>
+        <!--  --- add task -->
     </div>
-    <!-- list -->
 </div>

@@ -1,5 +1,6 @@
 export enum StoreFields {
     PROJECTS = 'PROJECTS',
+    SECTIONS = 'SECTIONS',
     TASKS = 'TASKS',
-    SECTIONS = 'SECTIONS'
+    LABELS = 'LABELS'
 }

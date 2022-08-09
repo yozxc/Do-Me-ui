@@ -11,55 +11,55 @@ import {
     Renderer2,
     forwardRef
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { PriorityType } from '@app/core/types/domain/priority';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { LabelsQuery } from '@core/store/labels/labels.query';
 
-// todo : ngvalue accesor
 @Component({
-    selector: 'ui-priority-dropdown',
-    templateUrl: './priority-dropdown.component.html',
-    styleUrls: ['./priority-dropdown.component.scss'],
+    selector: 'ui-label-dropdown',
+    templateUrl: './label-dropdown.component.html',
+    styleUrls: ['./label-dropdown.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => PriorityDropdownComponent),
+            useExisting: forwardRef(() => LabelDropdownComponent),
             multi: true
         }
     ]
 })
-export class PriorityDropdownComponent implements AfterViewChecked, ControlValueAccessor {
+export class LabelDropdownComponent implements AfterViewChecked, ControlValueAccessor {
     isVisible: boolean = false;
 
-    priorityList: PriorityType[] = [1, 2, 3, 4];
-
-    @Input() priority: PriorityType = 4;
-
+    @Input() activeLabelsID: string[] = [];
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
-    @Output() changePriorityEvent: EventEmitter<any> = new EventEmitter();
 
     @ViewChild('menuView') menuView?: ElementRef;
 
-    private onChange!: (value: PriorityType) => void;
+    private onChange!: (value: string[]) => void;
     private onTouched!: () => void;
 
-    constructor(private cdr: ChangeDetectorRef, private render: Renderer2) {}
+    constructor(private cdr: ChangeDetectorRef, private render: Renderer2, public labelsQuery: LabelsQuery) {}
 
     toggleIsVisible() {
         this.isVisible = !this.isVisible;
         this.cdr.detectChanges();
     }
 
-    changePriority(p: PriorityType) {
-        this.priority = p;
-        this.changePriorityEvent.emit(p);
-        this.onChange(this.priority);
-        this.close();
-    }
-
     close() {
         this.isVisible = false;
+        this.onChange(this.activeLabelsID);
         this.closeEvent.emit();
+    }
+
+    checkActiveID(id: string) {
+        return this.activeLabelsID.includes(id);
+    }
+
+    setID(id: string) {
+        const index = this.activeLabelsID.indexOf(id);
+        index !== -1 ? this.activeLabelsID.splice(index, 1) : this.activeLabelsID.push(id);
+
+        this.onChange(this.activeLabelsID);
     }
 
     writeValue(): void {}

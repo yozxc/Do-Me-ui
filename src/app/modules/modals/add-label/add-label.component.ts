@@ -1,5 +1,7 @@
+import { LabelsService } from '@app/core/store/labels/labels.service';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-add-label',
@@ -7,38 +9,25 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     styleUrls: ['./add-label.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AddLabelComponent {
-    colors = [
-        { name: 'Berry Red', styleCls: 'bg-berryRed' },
-        { name: 'Red', styleCls: 'bg-red' },
-        { name: 'Orange', styleCls: 'bg-orange' },
-        { name: 'Yellow', styleCls: 'bg-yellow' },
-        { name: 'Olive Green', styleCls: 'bg-oliveGreen' },
-        { name: 'Lime Green', styleCls: 'bg-limeGreen' },
-        { name: 'Green', styleCls: 'bg-green' },
-        { name: 'Mint Green', styleCls: 'bg-mintGreen' },
-        { name: 'Teal', styleCls: 'bg-teal' },
-        { name: 'Sky Blue', styleCls: 'bg-skyBlue' },
-        { name: 'Light Blue', styleCls: 'bg-lightBlue' },
-        { name: 'Blue', styleCls: 'bg-blue' },
-        { name: 'Grape', styleCls: 'bg-grape' },
-        { name: 'Violet', styleCls: 'bg-violet' },
-        { name: 'Lavender', styleCls: 'bg-lavender' },
-        { name: 'Magenta', styleCls: 'bg-magenta' },
-        { name: 'Salmon', styleCls: 'bg-salmon' },
-        { name: 'Charcoal', styleCls: 'bg-charcoal' },
-        { name: 'Grey', styleCls: 'bg-grey' },
-        { name: 'Taupe', styleCls: 'bg-taupe' }
-    ];
-    currentColorID: number = 0;
+export class AddLabelComponent implements OnInit {
+    __addButtonDisabled: boolean = true;
 
-    isColorListActive: boolean = false;
+    form = this.fb.group({
+        name: '',
+        colorCls: 'berryRed',
+        favorites: false
+    });
 
-    constructor(private router: Router) {}
+    constructor(private router: Router, private fb: UntypedFormBuilder, private labelsService: LabelsService) {}
 
-    setCurrentColorID(id: number) {
-        this.currentColorID = id;
-        this.isColorListActive = false;
+    ngOnInit(): void {
+        this.form.get('name')?.valueChanges.subscribe((value) => (this.__addButtonDisabled = !value.length));
+    }
+
+    onSave() {
+        this.labelsService.addLabel(this.form.value);
+
+        this.router.navigateByUrl(this.router.url.replace('(', '').split('//')[0]);
     }
 
     onCancel() {

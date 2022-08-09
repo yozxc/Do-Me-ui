@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ColorType } from '@app/core/types/domain/color';
 
 @Component({
     selector: 'svg-lm-label',
@@ -21,7 +22,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     `
 })
 export class LmLabelComponent {
-    @Input() styleCls: string = 'gray';
+    @Input() styleCls: ColorType = 'grey';
 
     constructor() {}
 }

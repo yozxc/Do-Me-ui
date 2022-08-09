@@ -1,9 +1,7 @@
-import { TasksService } from './../../../../core/store/tasks/tasks.service';
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { SectionsQuery } from '@core/store/sections/sections.query';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { AddTaskData } from '@app/core/types/domain/task';
 import { Section } from '@app/core/types/domain/section';
 import { SectionsService } from '@core/store/sections/sections.service';
 
@@ -20,6 +18,7 @@ export class ListSectionComponent implements OnInit, OnDestroy {
     isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     @Input() sectionID!: string;
+    @Input() projectID: string | null = null;
 
     section$!: Observable<Section>;
     sectionSub!: Subscription;
@@ -27,7 +26,7 @@ export class ListSectionComponent implements OnInit, OnDestroy {
 
     titleFormControl!: UntypedFormControl;
 
-    constructor(private tasksService: TasksService, private sectionsService: SectionsService, private sectionsQuery: SectionsQuery) {}
+    constructor(private sectionsService: SectionsService, private sectionsQuery: SectionsQuery) {}
 
     ngOnInit(): void {
         this.section$ = this.sectionsQuery.selectSection(this.sectionID);
@@ -48,15 +47,6 @@ export class ListSectionComponent implements OnInit, OnDestroy {
 
     toggleIsClosed() {
         this.isClosed$.next(!this.isClosed$.getValue());
-    }
-
-    addTask(taskData: AddTaskData) {
-        this.setSectionID(taskData);
-        this.tasksService.addTask(taskData);
-    }
-
-    setSectionID(obj: any) {
-        obj.sectionID = this.sectionID;
     }
 
     onSave() {

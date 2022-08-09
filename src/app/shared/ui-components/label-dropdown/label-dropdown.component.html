@@ -1,0 +1,12 @@
+<div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
+    <div #menuView class="menu" (click)="$event.stopPropagation()">
+        <!-- todo : refactor svg`s modules -->
+        <div *ngFor="let label of labelsQuery.labels$ | async" class="item" (click)="setID(label.id)">
+            <svg-lm-label class="wh-24" [styleCls]="label.colorCls"></svg-lm-label>
+            <div class="item__text">{{ label.name }}</div>
+            <div class="custom-checkbox" [ngClass]="{ _active: checkActiveID(label.id) }">
+                <svg-drop-sub-tick class="wh-14"></svg-drop-sub-tick>
+            </div>
+        </div>
+    </div>
+</div>

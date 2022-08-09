@@ -30,10 +30,13 @@
             </div>
 
             <div class="flex__container">
-                <svg-wp-label></svg-wp-label>
+                <div class="icon__wrapper" (click)="labelDropdown.toggleIsVisible()">
+                    <svg-wp-label></svg-wp-label>
+                    <ui-label-dropdown #labelDropdown [activeLabelsID]="activeLabelsID" formControlName="labelsID"></ui-label-dropdown>
+                </div>
                 <div class="icon__wrapper" (click)="priorityDropdown.toggleIsVisible()">
                     <svg-wp-priority [prior]="addTaskForm.value.priority"></svg-wp-priority>
-                    <ui-priority-dropdown #priorityDropdown (changePriorityEvent)="changePriority($event)"></ui-priority-dropdown>
+                    <ui-priority-dropdown #priorityDropdown formControlName="priority"></ui-priority-dropdown>
                 </div>
             </div>
         </div>

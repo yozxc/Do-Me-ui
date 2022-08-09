@@ -5,12 +5,12 @@
 </div>
 
 <ng-template #addEditor>
-    <div class="editor">
-        <input class="edit__input" type="text" placeholder="Name this section" [formControl]="sectionTitleForm" />
+    <form class="editor" [formGroup]="addSectionForm">
+        <input class="edit__input" type="text" placeholder="Name this section" formControlName="title" />
 
         <div class="btns__wrapper">
             <ui-button styleCls="black mr10" [disabled]="true" [disabled]="addButtonDisabled" (clickEvent)="onSave()">Save</ui-button>
             <ui-button styleCls="white" (clickEvent)="isOnAdd = false" (clickEvent)="onCancel()">Cancel</ui-button>
         </div>
-    </div>
+    </form>
 </ng-template>

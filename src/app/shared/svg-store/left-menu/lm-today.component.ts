@@ -6,10 +6,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     styles: [
         `
             svg {
-                width: 24px;
-                height: 24px;
-
-                margin-right: 7px;
+                width: 100%;
+                height: 100%;
 
                 fill: #058527;
             }

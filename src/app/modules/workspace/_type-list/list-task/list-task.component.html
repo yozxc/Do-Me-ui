@@ -19,6 +19,34 @@
 
             <div class="task_late__text">15 Oct</div>
         </div> -->
+
+        <div *ngIf="task.labelsID.length" class="aditional__info">
+            <div class="flex__container">
+                <div *ngFor="let labelID of task.labelsID" class="info__label">
+                    <ng-container *ngIf="getLabel(labelID) as label">
+                        <svg-wp-empty-label class="wh-12" [styleCls]="label.colorCls"></svg-wp-empty-label>
+                        <!-- todo : colors pipe -->
+                        <div [class]="'info__label__text' + ' c-' + label.colorCls">{{ label.name }}</div>
+                    </ng-container>
+                </div>
+            </div>
+            <div *ngIf="labelID" class="flex__container">
+                <!-- todo : add router link -->
+                <ng-container *ngIf="getProject(task.projectID) as project; else inboxInfo">
+                    <div class="project__info">
+                        <div [class]="'info__project__text'">{{ project.title }}</div>
+                        <div *ngIf="getSection(task.sectionID) as section" [class]="'info__project__text'">&nbsp;/ {{ section.title }}</div>
+                        <svg-lm-dot class="wh-18" [styleCls]="project.colorCls"></svg-lm-dot>
+                    </div>
+                </ng-container>
+                <ng-template #inboxInfo>
+                    <div class="project__info">
+                        <div [class]="'info__project__text mr3'">Inbox</div>
+                        <svg-wp-inbox class="wh-14" styleCls="blue"></svg-wp-inbox>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
     </div>
 
     <div class="icons__container" [ngClass]="{ _visible: areControlsVisible }">

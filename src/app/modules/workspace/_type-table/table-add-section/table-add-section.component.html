@@ -14,12 +14,12 @@
 </ng-container>
 
 <ng-template #addSection>
-    <div class="title__editor">
-        <input #titleInput class="editor__input" type="text" placeholder="Name this section" />
+    <form class="title__editor" [formGroup]="addSectionForm">
+        <input class="editor__input" type="text" placeholder="Name this section" formControlName="title" />
 
         <div class="btns__wrapper">
-            <ui-button styleCls="black mr10" (clickEvent)="isOnAdd = true; onSave(titleInput.value)">Save</ui-button>
-            <ui-button styleCls="white" (clickEvent)="isOnAdd = false">Cancel</ui-button>
+            <ui-button styleCls="black mr10" [disabled]="saveBtnDisable" (clickEvent)="onSave()">Save</ui-button>
+            <ui-button styleCls="white" (clickEvent)="onCancel()">Cancel</ui-button>
         </div>
-    </div>
+    </form>
 </ng-template>

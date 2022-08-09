@@ -24,7 +24,7 @@ export class ViewMenuDropdownComponent implements AfterViewChecked {
     viewGroupBy: boolean = false;
     viewSortBy: boolean = false;
 
-    viewAsValue: string = 'List';
+    viewAsValue: string = 'LIST';
     groupByValue: string = 'Default';
     sortByValue: string = 'Default';
 

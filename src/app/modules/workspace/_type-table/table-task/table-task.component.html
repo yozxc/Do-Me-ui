@@ -1,16 +1,16 @@
 <div class="task">
     <div class="flex">
-        <label class="check__label" [for]="taskData.id">
-            <input class="hidden__checkbox" type="checkbox" name="" [id]="taskData.id" (change)="isChecked = !isChecked" />
+        <label class="check__label" [for]="task.id">
+            <input class="hidden__checkbox" type="checkbox" name="" [id]="task.id" (change)="isChecked = !isChecked" />
 
             <div class="custom__check">
-                <svg-wp-tick *ngIf="taskData.isChecked" class="wh-18"></svg-wp-tick>
+                <svg-wp-tick *ngIf="task.isChecked" class="wh-18"></svg-wp-tick>
             </div>
         </label>
         <!-- checkbox label -->
 
         <div class="flex__betwen">
-            <div class="task__title">{{ taskData.name }}</div>
+            <div class="task__title">{{ task.name }}</div>
 
             <div class="more__wrapper" (click)="dropMenu.toggleIsVisible()">
                 <svg-wp-more class="wp-24"></svg-wp-more>
@@ -23,12 +23,20 @@
     <div class="flex">
         <div class="w-26"></div>
 
-        <div class="additional">
-            <div class="task__late">
+        <div class="aditional__info">
+            <div class="flex__container">
+                <div *ngFor="let labelID of task.labelsID" class="info__label">
+                    <ng-container *ngIf="getLabel(labelID) as label">
+                        <svg-wp-empty-label class="wh-12" [styleCls]="label.colorCls"></svg-wp-empty-label>
+                        <div [class]="'info__label__text' + ' c-' + label.colorCls">{{ label.name }}</div>
+                    </ng-container>
+                </div>
+            </div>
+            <!-- <div class="task__late">
                 <svg-wp-task-late class="wh-12"></svg-wp-task-late>
 
                 <div class="task_late__text">15 Oct</div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

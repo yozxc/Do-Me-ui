@@ -16,6 +16,7 @@ import { WpTaskMoreComponent } from './wp-task-more.component';
 import { WpTaskScheduleComponent } from './wp-task-schedule.component';
 import { WpTickComponent } from './wp-tick.component';
 import { WpViewComponent } from './wp-view.component';
+import { WpEmptyLabelComponent } from './wp-empty-label.component';
 
 @NgModule({
     imports: [CommonModule],
@@ -34,7 +35,8 @@ import { WpViewComponent } from './wp-view.component';
         WpLabelComponent,
         WpPriorityComponent,
         WpHeaderMoreComponent,
-        WpHeaderArrowComponent
+        WpHeaderArrowComponent,
+        WpEmptyLabelComponent
     ],
     exports: [
         WpViewComponent,
@@ -51,7 +53,8 @@ import { WpViewComponent } from './wp-view.component';
         WpLabelComponent,
         WpPriorityComponent,
         WpHeaderMoreComponent,
-        WpHeaderArrowComponent
+        WpHeaderArrowComponent,
+        WpEmptyLabelComponent
     ]
 })
 export class SvgWorkspacePlaceModule {}

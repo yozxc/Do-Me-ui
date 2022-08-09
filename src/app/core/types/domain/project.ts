@@ -12,11 +12,14 @@ export interface Project {
     noSectionTasksID: string[];
 }
 
-export interface AddProjectData {
+export interface AddProjectDTO {
     title: string;
     colorCls: ColorType;
     type: 'BOARD' | 'LIST';
-    favorite?: boolean;
+    favorite: boolean;
+    // ---
+    sectionsID: string[];
+    noSectionTasksID: string[];
 }
 
 export type ViewType = 'BOARD' | 'LIST';

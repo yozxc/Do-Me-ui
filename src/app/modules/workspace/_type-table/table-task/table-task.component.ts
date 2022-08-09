@@ -2,6 +2,8 @@ import { TasksQuery } from '@core/store/tasks/tasks.query';
 import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
 import { v4 } from 'uuid';
 import { Task } from '@app/core/types/domain/task';
+import { LabelsQuery } from '@app/core/store/labels/labels.query';
+import { Label } from '@app/core/types/domain/label';
 
 @Component({
     selector: 'app-table-task',
@@ -16,13 +18,15 @@ export class TableTaskComponent implements OnInit {
     title: string = 'zxc';
 
     @Input() taskID!: string;
-    taskData!: Task;
+    task!: Task;
 
-    constructor(private tasksQuery: TasksQuery) {}
+    constructor(private tasksQuery: TasksQuery, private labelsQuery: LabelsQuery) {}
 
     ngOnInit(): void {
-        this.taskData = this.tasksQuery.getTask(this.taskID) || this.taskData;
+        this.task = this.tasksQuery.getTask(this.taskID) || this.task;
+    }
 
-        console.log(this.taskData);
+    getLabel(id: string): Label | undefined {
+        return this.labelsQuery.getLabel(id);
     }
 }

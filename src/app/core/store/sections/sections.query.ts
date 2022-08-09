@@ -19,4 +19,8 @@ export class SectionsQuery extends QueryEntity<SectionsState> {
             filterBy: ({ projectID }) => !projectID
         }).pipe(map((sections) => sections.map((section) => section.id)));
     }
+
+    getSection(id: string): Section | undefined {
+        return this.getEntity(id);
+    }
 }
