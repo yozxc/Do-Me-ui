@@ -34,8 +34,8 @@
                             <ui-checkbox [label]="'List'" [checked]="form.value.type === 'LIST'"></ui-checkbox>
                         </div>
                     </div>
-                    <div class="view__type _table" (click)="changeType('BOARD')">
-                        <div class="type__table" [ngClass]="{ _active: form.value.type === 'BOARD' }"></div>
+                    <div class="view__type _board" (click)="changeType('BOARD')">
+                        <div class="type__board" [ngClass]="{ _active: form.value.type === 'BOARD' }"></div>
 
                         <div class="type__check__wrapper">
                             <ui-checkbox [label]="'Board'" [checked]="form.value.type === 'BOARD'"></ui-checkbox>

@@ -4,12 +4,12 @@ import { FormBuilder } from '@angular/forms';
 import { AddSectionDTO } from '@app/core/types/domain/section';
 
 @Component({
-    selector: 'app-table-add-section',
-    templateUrl: './table-add-section.component.html',
-    styleUrls: ['./table-add-section.component.scss'],
+    selector: 'app-board-add-section',
+    templateUrl: './board-add-section.component.html',
+    styleUrls: ['./board-add-section.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TableAddSectionComponent implements OnInit {
+export class BoardAddSectionComponent implements OnInit {
     saveBtnDisable: boolean = true;
     isOnAdd: boolean = false;
 

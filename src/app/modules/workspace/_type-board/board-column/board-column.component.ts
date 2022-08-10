@@ -9,12 +9,12 @@ import { AddTaskDTO } from '@app/core/types/domain/task';
 import { TasksService } from '@app/core/store/tasks/tasks.service';
 
 @Component({
-    selector: 'app-table-column',
-    templateUrl: './table-column.component.html',
-    styleUrls: ['./table-column.component.scss'],
+    selector: 'app-board-column',
+    templateUrl: './board-column.component.html',
+    styleUrls: ['./board-column.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TableColumnComponent implements OnInit {
+export class BoardColumnComponent implements OnInit {
     taskEditorState: boolean = false;
 
     @Input() title!: string;

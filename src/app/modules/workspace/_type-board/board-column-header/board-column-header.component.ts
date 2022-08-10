@@ -1,12 +1,12 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'app-table-column-header',
-    templateUrl: './table-column-header.component.html',
-    styleUrls: ['./table-column-header.component.scss'],
+    selector: 'app-board-column-header',
+    templateUrl: './board-column-header.component.html',
+    styleUrls: ['./board-column-header.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TableColumnHeaderComponent {
+export class BoardColumnHeaderComponent {
     isChangingTitle: boolean = false;
 
     @Input() title!: string;

@@ -6,12 +6,12 @@ import { LabelsQuery } from '@app/core/store/labels/labels.query';
 import { Label } from '@app/core/types/domain/label';
 
 @Component({
-    selector: 'app-table-task',
-    templateUrl: './table-task.component.html',
-    styleUrls: ['./table-task.component.scss'],
+    selector: 'app-board-task',
+    templateUrl: './board-task.component.html',
+    styleUrls: ['./board-task.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TableTaskComponent implements OnInit {
+export class BoardTaskComponent implements OnInit {
     isChecked!: boolean;
 
     checkboxID = v4();

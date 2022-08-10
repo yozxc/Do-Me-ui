@@ -18,8 +18,8 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { ListTaskComponent } from './_type-list/list-task/list-task.component';
 import { ListSectionComponent } from './_type-list/list-section/list-section.component';
 import { ListAddSectionComponent } from './_type-list/list-add-section/list-add-section.component';
-import { TableColumnComponent } from './_type-table/table-column/table-column.component';
-import { TableColumnHeaderComponent } from './_type-table/table-column-header/table-column-header.component';
+import { BoardColumnComponent } from './_type-board/board-column/board-column.component';
+import { BoardColumnHeaderComponent } from './_type-board/board-column-header/board-column-header.component';
 
 import { TodayComponent } from './views/today/today.component';
 import { InboxComponent } from './views/inbox/inbox.component';
@@ -27,8 +27,8 @@ import { ViewHeaderComponent } from './view-header/view-header.component';
 import { ProjectComponent } from './views/project/project.component';
 import { LabelComponent } from './views/label/label.component';
 import { FilterComponent } from './views/filter/filter.component';
-import { TableTaskComponent } from './_type-table/table-task/table-task.component';
-import { TableAddSectionComponent } from './_type-table/table-add-section/table-add-section.component';
+import { BoardTaskComponent } from './_type-board/board-task/board-task.component';
+import { BoardAddSectionComponent } from './_type-board/board-add-section/board-add-section.component';
 import { AddTaskLabelComponent } from './add-task-label/add-task-label.component';
 
 import { LeftMenuQuery } from './left-menu/left-menu.state/left-menu.query';
@@ -68,8 +68,8 @@ import { InboxQuery } from './views/inbox/inbox.state/inbox.query';
         ListTaskComponent,
         ListSectionComponent,
         ListAddSectionComponent,
-        TableColumnComponent,
-        TableColumnHeaderComponent,
+        BoardColumnComponent,
+        BoardColumnHeaderComponent,
         //
         TodayComponent,
         InboxComponent,
@@ -77,8 +77,8 @@ import { InboxQuery } from './views/inbox/inbox.state/inbox.query';
         ProjectComponent,
         LabelComponent,
         FilterComponent,
-        TableTaskComponent,
-        TableAddSectionComponent,
+        BoardTaskComponent,
+        BoardAddSectionComponent,
         AddTaskComponent,
         AddTaskLabelComponent
     ],

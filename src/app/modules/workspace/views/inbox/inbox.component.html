@@ -17,26 +17,26 @@
         </div>
         <!-- list -->
 
-        <div *ngIf="type === 'BOARD'" class="type__table">
+        <div *ngIf="type === 'BOARD'" class="type__board">
             <app-view-header [title]="'Inbox'" [editableTitle]="false" (viewAsEvent)="updateType($event)"></app-view-header>
 
             <div class="columns__wrapper">
-                <app-table-column
+                <app-board-column
                     *ngIf="(tasksID$ | async)?.length"
                     [title]="'(No Section)'"
                     [editableTitle]="false"
                     [inbox]="true"
-                ></app-table-column>
+                ></app-board-column>
 
                 <ng-container *ngFor="let sectionID of sectionsID$ | async; let i = index">
                     <!-- todo : check for tasksID double sub remove -->
-                    <app-table-add-section *ngIf="(tasksID$ | async)?.length || i !== 0" [type]="'bar'"></app-table-add-section>
-                    <app-table-column [sectionID]="sectionID"></app-table-column>
+                    <app-board-add-section *ngIf="(tasksID$ | async)?.length || i !== 0" [type]="'bar'"></app-board-add-section>
+                    <app-board-column [sectionID]="sectionID"></app-board-column>
                 </ng-container>
 
-                <app-table-add-section [type]="'panel'"></app-table-add-section>
+                <app-board-add-section [type]="'panel'"></app-board-add-section>
             </div>
         </div>
-        <!-- table -->
+        <!-- board -->
     </ng-container>
 </div>

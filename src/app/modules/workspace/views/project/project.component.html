@@ -16,28 +16,28 @@
     </div>
     <!-- list -->
 
-    <div *ngIf="project.type === 'BOARD'" class="type__table">
+    <div *ngIf="project.type === 'BOARD'" class="type__board">
         <app-view-header [title]="project.title" (titleEditEvent)="updateTitle($event)" (viewAsEvent)="updateType($event)"></app-view-header>
 
         <div class="columns__wrapper">
-            <app-table-column
+            <app-board-column
                 *ngIf="project.noSectionTasksID?.length"
                 [title]="'(No Section)'"
                 [editableTitle]="false"
                 [projectID]="project.id"
-            ></app-table-column>
+            ></app-board-column>
 
             <ng-container *ngFor="let sectionID of project.sectionsID; let i = index">
-                <app-table-add-section
+                <app-board-add-section
                     *ngIf="project.noSectionTasksID?.length || i !== 0"
                     [type]="'bar'"
                     [projectID]="project.id"
-                ></app-table-add-section>
-                <app-table-column [sectionID]="sectionID"></app-table-column>
+                ></app-board-add-section>
+                <app-board-column [sectionID]="sectionID"></app-board-column>
             </ng-container>
 
-            <app-table-add-section [type]="'panel'" [projectID]="project.id"></app-table-add-section>
+            <app-board-add-section [type]="'panel'" [projectID]="project.id"></app-board-add-section>
         </div>
     </div>
-    <!-- table -->
+    <!-- board -->
 </div>

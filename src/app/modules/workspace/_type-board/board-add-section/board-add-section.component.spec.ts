@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableAddSectionComponent } from './table-add-section.component';
+import { BoardAddSectionComponent } from './board-add-section.component';
 
-describe('TableAddSectionComponent', () => {
-    let component: TableAddSectionComponent;
-    let fixture: ComponentFixture<TableAddSectionComponent>;
+describe('BoardAddSectionComponent', () => {
+    let component: BoardAddSectionComponent;
+    let fixture: ComponentFixture<BoardAddSectionComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [TableAddSectionComponent]
+            declarations: [BoardAddSectionComponent]
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(TableAddSectionComponent);
+        fixture = TestBed.createComponent(BoardAddSectionComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

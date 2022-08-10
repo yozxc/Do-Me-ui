@@ -115,7 +115,7 @@
 
 .view__type:hover {
     cursor: pointer;
-    & .type__table {
+    & .type__board {
         border-color: #808080;
     }
     & .type__list {
@@ -124,8 +124,8 @@
     &._list .type__list {
         background-image: url('../../../../assets/svg/proj-type/list-type-hover.svg');
     }
-    &._table .type__table {
-        background-image: url('../../../../assets/svg/proj-type/table-type-hover.svg');
+    &._board .type__board {
+        background-image: url('../../../../assets/svg/proj-type/board-type-hover.svg');
     }
 }
 
@@ -152,7 +152,7 @@
     }
 }
 
-.type__table {
+.type__board {
     border: 1px solid #ddd;
     border-radius: 5px;
 
@@ -163,15 +163,15 @@
     padding: 5px 0 0 5px;
     overflow: hidden;
 
-    background-image: url('../../../../assets/svg/proj-type/table-type.svg');
+    background-image: url('../../../../assets/svg/proj-type/board-type.svg');
     background-repeat: no-repeat;
     background-position: 5px 5px;
 
     &:hover {
-        background-image: url('../../../../assets/svg/proj-type/table-type-hover.svg');
+        background-image: url('../../../../assets/svg/proj-type/board-type-hover.svg');
     }
     &._active {
-        background-image: url('../../../../assets/svg/proj-type/table-type-hover.svg');
+        background-image: url('../../../../assets/svg/proj-type/board-type-hover.svg');
         border-color: #dd4b39 !important;
     }
 }

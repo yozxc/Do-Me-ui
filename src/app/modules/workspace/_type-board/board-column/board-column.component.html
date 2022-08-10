@@ -1,7 +1,7 @@
 <ng-container *ngIf="section$ | async as section">
-    <app-table-column-header [title]="section.title" [editableTitle]="editableTitle" (setTitleEvent)="updateTitle($event)"></app-table-column-header>
+    <app-board-column-header [title]="section.title" [editableTitle]="editableTitle" (setTitleEvent)="updateTitle($event)"></app-board-column-header>
 
-    <app-table-task *ngFor="let taskID of section.tasksID" [taskID]="taskID"></app-table-task>
+    <app-board-task *ngFor="let taskID of section.tasksID" [taskID]="taskID"></app-board-task>
 
     <!-- add task --- -->
     <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
@@ -11,9 +11,9 @@
 
 <!-- todo : check for DRY -->
 <ng-container *ngIf="noSecTasksID$ | async as noSecTasksID">
-    <app-table-column-header [title]="'(No Section)'" [editableTitle]="false"></app-table-column-header>
+    <app-board-column-header [title]="'(No Section)'" [editableTitle]="false"></app-board-column-header>
 
-    <app-table-task *ngFor="let taskID of noSecTasksID" [taskID]="taskID"></app-table-task>
+    <app-board-task *ngFor="let taskID of noSecTasksID" [taskID]="taskID"></app-board-task>
 
     <!-- todo : check for methods MVVM -->
     <!-- add task --- -->
