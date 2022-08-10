@@ -45,21 +45,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .flex__container {
     display: flex;
     align-items: center;
+
+    &.h36 {
+        height: 36px;
+    }
 }
 
 .bottom__butt {
-    padding: 6px;
+    padding: 0 6px;
+    height: 36px;
     margin-right: 8px;
 
     display: flex;
     align-items: center;
     border: 1px solid #ddd;
     border-radius: 5px;
+
+    position: relative;
 
     user-select: none;
     cursor: pointer;
@@ -95,6 +103,10 @@
 .right__icons {
     padding: 2px;
     margin-left: 6px;
+
+    &:first-child {
+        margin-left: 0;
+    }
 }
 
 // --- task editor

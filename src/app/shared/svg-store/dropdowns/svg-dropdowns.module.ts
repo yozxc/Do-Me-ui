@@ -20,6 +20,7 @@ import { SvgDropSecNextWeekComponent } from './drop-sec-next-week.component';
 import { SvgDropSecNoDateComponent } from './drop-sec-no-date.component';
 import { SvgDropSecPriorityComponent } from './drop-sec-priority.component';
 import { SvgDropSecTickComponent } from './drop-sec-tick.component';
+import { SvgAddTaskSectionComponent } from './drop-add-task-section';
 
 import { SvgDropViewAsComponent } from './drop-view-as.component';
 import { SvgDropArrowComponent } from './drop-arrow.component';
@@ -50,6 +51,7 @@ import { SvgDropSubTickComponent } from './drop-sub-tick.component';
         SvgDropSecNoDateComponent,
         SvgDropSecPriorityComponent,
         SvgDropSecTickComponent,
+        SvgAddTaskSectionComponent,
         //
         SvgDropArrowComponent,
         SvgDropViewAsComponent,
@@ -78,6 +80,7 @@ import { SvgDropSubTickComponent } from './drop-sub-tick.component';
         SvgDropSecNoDateComponent,
         SvgDropSecPriorityComponent,
         SvgDropSecTickComponent,
+        SvgAddTaskSectionComponent,
         //
         SvgDropArrowComponent,
         SvgDropViewAsComponent,

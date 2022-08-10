@@ -23,4 +23,10 @@ export class SectionsQuery extends QueryEntity<SectionsState> {
     getSection(id: string): Section | undefined {
         return this.getEntity(id);
     }
+
+    selectInboxSections(): Observable<Section[]> {
+        return this.selectAll({
+            filterBy: (section) => !section.projectID
+        });
+    }
 }

@@ -1,5 +1,5 @@
 <div class="task__editor__wrapper">
-    <form class="editor__container" [formGroup]="addTaskForm" [ngClass]="{ _active: isFocused }">
+    <form class="editor__container" [formGroup]="form" [ngClass]="{ _active: isFocused }">
         <input
             class="task__title"
             type="text"
@@ -23,19 +23,41 @@
                     <svg-wp-schedule class="wh-16" styleCls="charcoal"></svg-wp-schedule>
                     <div class="bot_but__text">Scheduled</div>
                 </div>
-                <div class="bottom__butt">
-                    <svg-wp-inbox class="wh-16" styleCls="blue"></svg-wp-inbox>
-                    <div class="bot_but__text">Inbox</div>
+                <div class="bottom__butt" (click)="projectSelectDropdown.toggleIsVisible()">
+                    <ng-container *ngIf="!form.value.projectID && !form.value.sectionID">
+                        <svg-wp-inbox class="wh-16" styleCls="blue"></svg-wp-inbox>
+                        <div class="bot_but__text">Inbox</div>
+                    </ng-container>
+                    <ng-container *ngIf="!form.value.projectID && form.value.sectionID">
+                        <svg-wp-inbox class="wh-16" styleCls="blue"></svg-wp-inbox>
+                        <div class="bot_but__text">
+                            Inbox
+                            <ng-container *ngIf="sectionsQuery.getSection(form.value.sectionID) as section">/ {{ section.title }}</ng-container>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="form.value.projectID && projectsQuery.getProject(form.value.projectID) as project">
+                        <svg-lm-dot class="wh-22" [styleCls]="project.colorCls"></svg-lm-dot>
+                        <div class="bot_but__text">
+                            {{ project.title }}
+                            <ng-container *ngIf="sectionsQuery.getSection(form.value.sectionID) as section">/ {{ section.title }}</ng-container>
+                        </div>
+                    </ng-container>
+                    <ui-project-select-dropdown
+                        #projectSelectDropdown
+                        [projectID]="projectID"
+                        [sectionID]="sectionID"
+                        (setSelectedEvent)="setSelected($event)"
+                    ></ui-project-select-dropdown>
                 </div>
             </div>
 
-            <div class="flex__container">
+            <div class="flex__container h36">
                 <div class="icon__wrapper" (click)="labelDropdown.toggleIsVisible()">
                     <svg-wp-label class="right__icons wh-28"></svg-wp-label>
                     <ui-label-dropdown #labelDropdown [activeLabelsID]="activeLabelsID" formControlName="labelsID"></ui-label-dropdown>
                 </div>
                 <div class="icon__wrapper" (click)="priorityDropdown.toggleIsVisible()">
-                    <svg-wp-priority class="right__icons wh-28" [prior]="addTaskForm.value.priority"></svg-wp-priority>
+                    <svg-wp-priority class="right__icons wh-28" [prior]="form.value.priority"></svg-wp-priority>
                     <ui-priority-dropdown #priorityDropdown formControlName="priority"></ui-priority-dropdown>
                 </div>
             </div>

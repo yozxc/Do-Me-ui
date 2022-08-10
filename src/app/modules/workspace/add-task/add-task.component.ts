@@ -1,7 +1,10 @@
+import { SectionsQuery } from '@core/store/sections/sections.query';
+import { ProjectsQuery } from '@core/store/projects/projects.query';
 import { TasksService } from '@core/store/tasks/tasks.service';
 import { Component, ChangeDetectionStrategy, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { AddTaskDTO } from '@app/core/types/domain/task';
+import { SelectedProject } from '@app/core/types/realization/selectedProject';
 
 @Component({
     selector: 'app-add-task',
@@ -19,7 +22,7 @@ export class AddTaskComponent implements OnInit {
 
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
 
-    addTaskForm = this.fb.group({
+    form = this.fb.group({
         name: null,
         description: null,
         priority: 4,
@@ -28,25 +31,32 @@ export class AddTaskComponent implements OnInit {
         sectionID: null
     });
 
-    constructor(private fb: UntypedFormBuilder, private tasksService: TasksService) {}
+    constructor(
+        private fb: UntypedFormBuilder,
+        private tasksService: TasksService,
+        public projectsQuery: ProjectsQuery,
+        public sectionsQuery: SectionsQuery
+    ) {}
 
     ngOnInit(): void {
-        this.addTaskForm.get('name')?.valueChanges.subscribe((value) => (this.addButtonDisabled = !value?.length));
+        this.form.get('name')?.valueChanges.subscribe((value) => (this.addButtonDisabled = !value?.length));
 
-        this.addTaskForm.patchValue({ labelsID: this.activeLabelsID, projectID: this.projectID, sectionID: this.sectionID });
+        this.form.patchValue({ labelsID: this.activeLabelsID, projectID: this.projectID, sectionID: this.sectionID });
     }
 
     resetForm() {
-        if (!this.addButtonDisabled) {
-            this.addTaskForm.setValue({
-                name: null,
-                description: null,
-                priority: 4,
-                labelsID: [[]],
-                projectID: null,
-                sectionID: null
-            });
-        }
+        this.form.patchValue({
+            name: null,
+            description: null,
+            priority: 4,
+            labelsID: [[]],
+            projectID: this.projectID,
+            sectionID: this.sectionID
+        });
+    }
+
+    setSelected(selected: SelectedProject) {
+        this.form.patchValue(selected);
     }
 
     onCancel() {
@@ -57,7 +67,7 @@ export class AddTaskComponent implements OnInit {
 
     onSave() {
         // todo : check for form validation
-        this.addTaskForm.value.name && this.tasksService.addTask(this.addTaskForm.value as AddTaskDTO);
+        this.form.value.name && this.tasksService.addTask(this.form.value as AddTaskDTO);
 
         this.resetForm();
 

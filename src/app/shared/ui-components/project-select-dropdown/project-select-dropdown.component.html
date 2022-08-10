@@ -1,0 +1,38 @@
+<div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
+    <div #menuView class="menu" (click)="$event.stopPropagation()">
+        <div class="item" (click)="setSelected({ projectID: null, sectionID: null })">
+            <svg-wp-inbox class="inbox__icon wh-18" styleCls="blue"></svg-wp-inbox>
+            <div class="item__text">Inbox</div>
+            <svg-drop-sub-tick *ngIf="!selectedProject.projectID" class="wh-14"></svg-drop-sub-tick>
+        </div>
+
+        <div *ngFor="let section of inboxSections$ | async" class="item" (click)="setSelected({ projectID: null, sectionID: section.id })">
+            <div class="w10"></div>
+            <svg-add-task-section class="wh-20"></svg-add-task-section>
+            <div class="item__text">{{ section.title }}</div>
+            <svg-drop-sub-tick *ngIf="!selectedProject.projectID && selectedProject.sectionID === section.id" class="wh-14"></svg-drop-sub-tick>
+        </div>
+
+        <ng-container *ngFor="let project of projects$ | async">
+            <div class="item" (click)="setSelected({ projectID: project.id, sectionID: null })">
+                <svg-lm-dot class="wh-22" [styleCls]="project.colorCls"></svg-lm-dot>
+                <div class="item__text">{{ project.title }}</div>
+                <svg-drop-sub-tick *ngIf="selectedProject.projectID === project.id" class="wh-14"></svg-drop-sub-tick>
+            </div>
+
+            <div
+                *ngFor="let section of getSectionObs(project.sectionsID) | async"
+                class="item"
+                (click)="setSelected({ projectID: project.id, sectionID: section.id })"
+            >
+                <div class="w10"></div>
+                <svg-add-task-section class="wh-20"></svg-add-task-section>
+                <div class="item__text">{{ section.title }}</div>
+                <svg-drop-sub-tick
+                    *ngIf="selectedProject.projectID === project.id && selectedProject.sectionID === section.id"
+                    class="wh-14"
+                ></svg-drop-sub-tick>
+            </div>
+        </ng-container>
+    </div>
+</div>
