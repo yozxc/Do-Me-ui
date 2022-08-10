@@ -17,11 +17,11 @@
                 {{ titleFormControl.value }}
             </div>
 
-            <svg-wp-header-arrow [isClosed]="isClosed$ | async" (clickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
+            <svg-wp-header-arrow class="header__arrow wh-24" [isClosed]="isClosed$ | async" (clickEvent)="toggleIsClosed()"></svg-wp-header-arrow>
 
             <div class="icons__container" (click)="dropMenu.toggleIsVisible()">
                 <div class="icon__wrapper">
-                    <svg-wp-header-more></svg-wp-header-more>
+                    <svg-wp-header-more class="wh-24"></svg-wp-header-more>
 
                     <ui-menu-dropdown #dropMenu class="more__dropdown"></ui-menu-dropdown>
                 </div>

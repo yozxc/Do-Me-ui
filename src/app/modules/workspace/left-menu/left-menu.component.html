@@ -25,17 +25,17 @@
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let item of favorites" class="menu__proj">
-                <svg-lm-dot *ngIf="item.type === 'project'" [styleCls]="item.colorCls"></svg-lm-dot>
-                <svg-lm-label *ngIf="item.type === 'label'" [styleCls]="item.colorCls"></svg-lm-label>
-                <svg-lm-filter *ngIf="item.type === 'filter'" [styleCls]="item.colorCls"></svg-lm-filter>
+                <svg-lm-dot *ngIf="item.type === 'project'" class="item__icon wh-24" [styleCls]="item.colorCls"></svg-lm-dot>
+                <svg-lm-label *ngIf="item.type === 'label'" class="item__icon wh-24" [styleCls]="item.colorCls"></svg-lm-label>
+                <svg-lm-filter *ngIf="item.type === 'filter'" class="item__icon wh-24" [styleCls]="item.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ item.name }}</div>
                 <div class="menu__proj__num _gray">{{ item._todoTasks }}</div>
 
-                <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
+                <svg-lm-more class="item__more" (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
                 <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>
 
-                <svg-lm-drag></svg-lm-drag>
+                <!-- <svg-lm-drag class="item__drag wh-20"></svg-lm-drag> -->
             </div>
         </div>
         <!-- favorites ngFor -->
@@ -48,21 +48,21 @@
             <div class="menu__group_tab__text">Projects</div>
 
             <a [routerLink]="[{ outlets: { modals: 'addProject' } }]" [skipLocationChange]="true" (click)="$event.stopPropagation()"
-                ><svg-lm-plus></svg-lm-plus
+                ><svg-lm-plus class="item__plus wh-22"></svg-lm-plus
             ></a>
         </div>
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let project of projectsQuery.projects$ | async" (click)="navTo('/workspace/project/' + project.id)" class="menu__proj">
-                <svg-lm-dot [styleCls]="project.colorCls"></svg-lm-dot>
+                <svg-lm-dot class="item__icon wh-24" [styleCls]="project.colorCls"></svg-lm-dot>
 
                 <div class="menu__proj__title">{{ project.title }}</div>
                 <div class="menu__proj__num _gray">{{ project.todoTasks }}</div>
 
-                <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
+                <svg-lm-more class="item__more" (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
                 <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>
 
-                <svg-lm-drag></svg-lm-drag>
+                <!-- <svg-lm-drag class="item__drag wh-20"></svg-lm-drag> -->
             </div>
         </div>
         <!-- projects ngFor -->
@@ -75,21 +75,21 @@
             <div class="menu__group_tab__text">Labels</div>
 
             <a [routerLink]="[{ outlets: { modals: 'addLabel' } }]" [skipLocationChange]="true" (click)="$event.stopPropagation()"
-                ><svg-lm-plus></svg-lm-plus
+                ><svg-lm-plus class="item__plus wh-22"></svg-lm-plus
             ></a>
         </div>
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let label of labelsQuery.labels$ | async" (click)="navTo('/workspace/label/' + label.id)" class="menu__proj">
-                <svg-lm-label [styleCls]="label.colorCls"></svg-lm-label>
+                <svg-lm-label class="item__icon wh-24" [styleCls]="label.colorCls"></svg-lm-label>
 
                 <div class="menu__proj__title">{{ label.name }}</div>
                 <div class="menu__proj__num _gray">173</div>
 
-                <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
+                <svg-lm-more class="item__more" (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
                 <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>
 
-                <svg-lm-drag></svg-lm-drag>
+                <!-- <svg-lm-drag class="item__drag wh-20"></svg-lm-drag> -->
             </div>
         </div>
         <!-- labels ngFor -->
@@ -102,21 +102,21 @@
             <div class="menu__group_tab__text">Filters</div>
 
             <a [routerLink]="[{ outlets: { modals: 'addFilter' } }]" [skipLocationChange]="true" (click)="$event.stopPropagation()"
-                ><svg-lm-plus></svg-lm-plus
+                ><svg-lm-plus class="item__plus wh-22"></svg-lm-plus
             ></a>
         </div>
 
         <div class="menu__proj__wrapper">
             <div *ngFor="let filter of filters; let i = index" (click)="navTo('/workspace/filter/' + i)" class="menu__proj">
-                <svg-lm-filter [styleCls]="filter.colorCls"></svg-lm-filter>
+                <svg-lm-filter class="item__icon wh-24" [styleCls]="filter.colorCls"></svg-lm-filter>
 
                 <div class="menu__proj__title">{{ filter.name }}</div>
                 <div class="menu__proj__num _gray">{{ filter._todoTasks }}</div>
 
-                <svg-lm-more (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
+                <svg-lm-more class="item__more" (click)="dropMenu.toggleIsVisible(); $event.stopPropagation()"></svg-lm-more>
                 <ui-menu-dropdown #dropMenu class="lm__dropdown"></ui-menu-dropdown>
 
-                <svg-lm-drag></svg-lm-drag>
+                <!-- <svg-lm-drag class="item__drag wh-20"></svg-lm-drag> -->
             </div>
         </div>
         <!-- filters ngFor -->

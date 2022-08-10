@@ -19,13 +19,13 @@
 
     <div class="container">
         <div class="icon__wrapper" (click)="viewMenu.toggleIsVisible()">
-            <svg-wp-view></svg-wp-view>
+            <svg-wp-view class="wh-24"></svg-wp-view>
             <div class="icon__text">View</div>
 
             <ui-view-menu-dropdown #viewMenu class="view__dropdown" (viewAsEvent)="viewAsEvent.emit($event)"></ui-view-menu-dropdown>
         </div>
         <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible()">
-            <svg-wp-more></svg-wp-more>
+            <svg-wp-more class="wh-24"></svg-wp-more>
             <ui-menu-dropdown #dropMenu class="more__dropdown" [dropdownSchema]="dropdownSchema"></ui-menu-dropdown>
         </div>
     </div>

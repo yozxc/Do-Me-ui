@@ -193,50 +193,16 @@
     right: 0;
 }
 
+// todo : to atomic
 // svg positions | sizes
 
-svg-wp-tick {
-    width: 18px;
-    height: 18px;
-
+.task__tick {
     position: absolute;
     top: -3.5px;
     left: -4.5px;
 }
 
-// todo : to atomic
-// atomic css
-
-.mr3 {
-    margin-right: 3px;
-}
-
-.wh-12 {
-    width: 12px;
-    height: 12px;
-}
-
-.wh-14 {
-    width: 14px;
-    height: 14px;
-}
-
-.wh-18 {
-    width: 18px;
-    height: 18px;
-}
-
-svg-wp-task-edit,
-svg-wp-task-schedule,
-svg-wp-task-more {
-    width: 24px;
-    height: 24px;
-}
-
-svg-wp-task-drag {
-    width: 24px;
-    height: 24px;
-
+.task__drag {
     position: absolute;
     top: 7px;
     left: -35px;

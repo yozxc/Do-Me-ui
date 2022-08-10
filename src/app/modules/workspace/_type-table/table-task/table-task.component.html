@@ -4,7 +4,7 @@
             <input class="hidden__checkbox" type="checkbox" name="" [id]="task.id" (change)="isChecked = !isChecked" />
 
             <div class="custom__check">
-                <svg-wp-tick *ngIf="task.isChecked" class="wh-18"></svg-wp-tick>
+                <svg-wp-tick *ngIf="task.isChecked" class="tick wh-18"></svg-wp-tick>
             </div>
         </label>
         <!-- checkbox label -->
@@ -13,7 +13,7 @@
             <div class="task__title">{{ task.name }}</div>
 
             <div class="more__wrapper" (click)="dropMenu.toggleIsVisible()">
-                <svg-wp-more class="wp-24"></svg-wp-more>
+                <svg-wp-more class="wh-24"></svg-wp-more>
 
                 <ui-menu-dropdown #dropMenu class="more__dropdown"></ui-menu-dropdown>
             </div>

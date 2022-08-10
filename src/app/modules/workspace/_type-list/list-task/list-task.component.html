@@ -3,7 +3,7 @@
         <input class="hidden__checkbox" type="checkbox" name="" [id]="task.id" (change)="task.isChecked = !task.isChecked" />
 
         <div [class]="'custom__check' + ' p' + task.priority" [ngClass]="{ _active: task.isChecked }">
-            <svg-wp-tick *ngIf="task.isChecked" [activeWhite]="task.priority !== 4"></svg-wp-tick>
+            <svg-wp-tick *ngIf="task.isChecked" class="task__tick wh-18" [activeWhite]="task.priority !== 4"></svg-wp-tick>
         </div>
     </label>
     <!-- checkbox label -->
@@ -51,15 +51,15 @@
 
     <div class="icons__container" [ngClass]="{ _visible: areControlsVisible }">
         <div class="icon__wrapper">
-            <svg-wp-task-edit></svg-wp-task-edit>
+            <svg-wp-task-edit class="wh-24"></svg-wp-task-edit>
         </div>
 
         <div class="icon__wrapper">
-            <svg-wp-task-schedule></svg-wp-task-schedule>
+            <svg-wp-task-schedule class="wh-24"></svg-wp-task-schedule>
         </div>
 
         <div class="icon__wrapper" (click)="dropMenu.toggleIsVisible(); areControlsVisible = true">
-            <svg-wp-task-more></svg-wp-task-more>
+            <svg-wp-task-more class="wh-24"></svg-wp-task-more>
 
             <ui-menu-dropdown
                 #dropMenu
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <svg-wp-task-drag></svg-wp-task-drag>
+    <!-- <svg-wp-task-drag class="task__drag wh-24"></svg-wp-task-drag> -->
 
     <div class="bottom__bar"></div>
 </div>

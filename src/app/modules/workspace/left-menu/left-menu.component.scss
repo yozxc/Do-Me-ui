@@ -207,13 +207,34 @@
     }
 }
 
-.menu__proj__icon {
-    width: 24px;
-    height: 24px;
-
+.item__icon {
     position: absolute;
     top: 50%;
     left: 6px;
+    transform: translate(0, -50%);
+}
+
+.item__drag {
+    position: absolute;
+    top: 42%;
+    left: -24px;
+    transform: translate(0, -50%);
+}
+
+.item__more {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translate(0, -50%);
+
+    height: calc(3px + 10px * 2);
+    width: calc(15px + 4px * 2);
+}
+
+.item__plus {
+    position: absolute;
+    top: 50%;
+    right: 10px;
     transform: translate(0, -50%);
 }
 
@@ -240,55 +261,4 @@
 .lm__dropdown {
     bottom: 10px;
     right: 0;
-}
-
-// svg positions | sizes
-
-svg-lm-dot,
-svg-lm-label,
-svg-lm-filter {
-    position: absolute;
-    top: 50%;
-    left: 6px;
-    transform: translate(0, -50%);
-
-    width: 24px;
-    height: 24px;
-}
-
-svg-lm-drag {
-    position: absolute;
-    top: 42%;
-    left: -24px;
-    transform: translate(0, -50%);
-
-    height: 20px;
-    width: 20px;
-}
-
-svg-lm-more {
-    position: absolute;
-    top: 50%;
-    right: 6px;
-    transform: translate(0, -50%);
-
-    height: calc(3px + 10px * 2);
-    width: calc(15px + 4px * 2);
-}
-
-svg-lm-plus {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translate(0, -50%);
-
-    width: 22px;
-    height: 22px;
-}
-
-// atomic css
-
-.wh-24 {
-    width: 24px;
-    height: 24px;
 }

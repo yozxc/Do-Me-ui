@@ -92,20 +92,9 @@
     align-items: center;
 }
 
-// --- task editor
-
-// svg positions | sizes
-
-.wh-16 {
-    width: 16px;
-    height: 16px;
-}
-
-svg-wp-label,
-svg-wp-priority {
-    height: 28px;
-    width: 28px;
-
+.right__icons {
     padding: 2px;
     margin-left: 6px;
 }
+
+// --- task editor

@@ -129,28 +129,7 @@
     color: #d1453b;
 }
 
-// svg components sizes
-
-.wh-12 {
-    width: 12px;
-    height: 12px;
-}
-
-.wh-18 {
-    width: 18px;
-    height: 18px;
-}
-
-.wp-24 {
-    width: 24px;
-    height: 24px;
-}
-
-.w-26 {
-    width: 26px;
-}
-
-svg-wp-tick {
+.tick {
     position: absolute;
     top: -3px;
     left: -4px;
