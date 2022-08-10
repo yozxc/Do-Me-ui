@@ -5,7 +5,7 @@ import { TitleEdit } from '@app/core/types/realization/titleEdit';
 import { ViewType } from '@app/core/types/domain/project';
 
 @Component({
-    selector: 'app-view-header',
+    selector: 'app-view-header[title]',
     templateUrl: './view-header.component.html',
     styleUrls: ['./view-header.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

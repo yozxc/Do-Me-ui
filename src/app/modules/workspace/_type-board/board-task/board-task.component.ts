@@ -7,7 +7,7 @@ import { Label } from '@app/core/types/domain/label';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'app-board-task',
+    selector: 'app-board-task[taskID]',
     templateUrl: './board-task.component.html',
     styleUrls: ['./board-task.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -19,8 +19,6 @@ export class BoardTaskComponent implements OnInit {
     title: string = 'zxc';
 
     @Input() taskID!: string;
-    @Input() sectionID: string | null = null;
-    @Input() projectID: string | null = null;
 
     task$!: Observable<Task>;
 

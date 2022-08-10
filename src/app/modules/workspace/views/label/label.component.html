@@ -7,7 +7,7 @@
         <app-list-task *ngFor="let taskID of label.tasksID" [taskID]="taskID" [labelID]="labelID"></app-list-task>
 
         <!-- add task --- -->
-        <app-add-task-label *ngIf="!__addTask" [text]="'Add Task'" (click)="__addTask = true"></app-add-task-label>
+        <app-add-task-label *ngIf="!__addTask" (click)="__addTask = true"></app-add-task-label>
         <app-add-task *ngIf="__addTask" (closeEvent)="__addTask = false" [activeLabelsID]="[labelID]"></app-add-task>
         <!--  --- add task -->
     </div>

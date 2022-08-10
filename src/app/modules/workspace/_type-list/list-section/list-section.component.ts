@@ -6,7 +6,7 @@ import { Section } from '@app/core/types/domain/section';
 import { SectionsService } from '@core/store/sections/sections.service';
 
 @Component({
-    selector: 'app-list-section',
+    selector: 'app-list-section[sectionID]',
     templateUrl: './list-section.component.html',
     styleUrls: ['./list-section.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -18,7 +18,6 @@ export class ListSectionComponent implements OnInit, OnDestroy {
     isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     @Input() sectionID!: string;
-    @Input() projectID: string | null = null;
 
     section$!: Observable<Section>;
     sectionSub!: Subscription;

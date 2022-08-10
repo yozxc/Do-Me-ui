@@ -4,7 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { AddSectionDTO } from '@app/core/types/domain/section';
 
 @Component({
-    selector: 'app-board-add-section',
+    selector: 'app-board-add-section[type]',
     templateUrl: './board-add-section.component.html',
     styleUrls: ['./board-add-section.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush

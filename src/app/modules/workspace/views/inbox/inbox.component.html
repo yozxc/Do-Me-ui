@@ -7,7 +7,7 @@
             <app-list-task *ngFor="let taskID of tasksID$ | async" [taskID]="taskID"></app-list-task>
 
             <!-- add task --- -->
-            <app-add-task-label *ngIf="!addNoSecTask" [text]="'Add Task'" (click)="addNoSecTask = true"></app-add-task-label>
+            <app-add-task-label *ngIf="!addNoSecTask" (click)="addNoSecTask = true"></app-add-task-label>
             <app-add-task *ngIf="addNoSecTask" (closeEvent)="addNoSecTask = false"></app-add-task>
             <!--  --- add task -->
 
@@ -21,7 +21,7 @@
             <app-view-header [title]="'Inbox'" [editableTitle]="false" (viewAsEvent)="updateType($event)"></app-view-header>
 
             <div class="columns__wrapper">
-                <app-board-column *ngIf="(tasksID$ | async)?.length" [title]="'(No Section)'" [editableTitle]="false"></app-board-column>
+                <app-board-column *ngIf="(tasksID$ | async)?.length" [editableTitle]="false"></app-board-column>
 
                 <ng-container *ngFor="let sectionID of sectionsID$ | async; let i = index">
                     <!-- todo : check for tasksID double sub remove -->

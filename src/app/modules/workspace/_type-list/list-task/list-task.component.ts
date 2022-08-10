@@ -14,7 +14,7 @@ import { Label } from '@app/core/types/domain/label';
 import { Project } from '@app/core/types/domain/project';
 
 @Component({
-    selector: 'app-list-task',
+    selector: 'app-list-task[taskID]',
     templateUrl: './list-task.component.html',
     styleUrls: ['./list-task.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -23,10 +23,8 @@ export class ListTaskComponent implements OnInit {
     areControlsVisible: boolean = false;
     checkboxID = v4();
 
-    @Input() taskID!: string;
-    @Input() sectionID: string | null = null;
-    @Input() projectID: string | null = null;
     @Input() labelID: string | null = null;
+    @Input() taskID!: string;
 
     task$!: Observable<Task>;
 

@@ -5,9 +5,9 @@ import { SectionsQuery } from '@core/store/sections/sections.query';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Section } from '@app/core/types/domain/section';
 import { Observable } from 'rxjs';
-import { AddTaskDTO } from '@app/core/types/domain/task';
 import { TasksService } from '@app/core/store/tasks/tasks.service';
 
+// todo : refactor component
 @Component({
     selector: 'app-board-column',
     templateUrl: './board-column.component.html',
@@ -40,31 +40,9 @@ export class BoardColumnComponent implements OnInit {
         !this.sectionID && this.projectID && (this.noSecTasksID$ = this.projectsQuery.selectNoSectionTasksID(this.projectID));
 
         !this.projectID && !this.sectionID && (this.noSecTasksID$ = this.tasksQuery.selectInboxTasksID());
-
-        // const noSecTasksID$ = this.projectID && this.projectsQuery.selectNoSectionTasksID(this.projectID);
-        // noSecTasksID$ && (this.noSecTasksID$ = noSecTasksID$);
     }
 
     updateTitle(title: string) {
-        console.log('qwe');
         this.sectionsService.updateTitle(this.sectionID, title);
-    }
-
-    addTask(taskData: AddTaskDTO) {
-        this.setSectionID(taskData);
-        this.tasksService.addTask(taskData);
-    }
-
-    addNoSectionTask(taskData: AddTaskDTO) {
-        this.setProjectID(taskData);
-        this.tasksService.addTask(taskData);
-    }
-
-    setProjectID(obj: any) {
-        obj.projectID = this.projectID;
-    }
-
-    setSectionID(obj: any) {
-        obj.sectionID = this.sectionID;
     }
 }

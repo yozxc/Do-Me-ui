@@ -11,7 +11,7 @@
     <div class="task__main">
         <div class="task__text">{{ task.name }}</div>
 
-        <div class="task__desc">{{ task.description }}</div>
+        <div *ngIf="task.description" class="task__desc">{{ task.description }}</div>
 
         <!-- todo : do tasklate functional -->
         <!-- <div class="task__late">

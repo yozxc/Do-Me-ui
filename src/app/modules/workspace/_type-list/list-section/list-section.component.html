@@ -33,12 +33,17 @@
     </div>
 
     <div *ngIf="(isClosed$ | async) === false" class="task__list">
-        <app-list-task *ngFor="let taskID of section.tasksID" [taskID]="taskID" [sectionID]="sectionID" [projectID]="projectID"></app-list-task>
+        <app-list-task *ngFor="let taskID of section.tasksID" [taskID]="taskID"></app-list-task>
 
         <!-- todo : change to get | set instead of modify vars in view -->
         <!-- add task --- -->
-        <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
-        <app-add-task *ngIf="taskEditorState" [sectionID]="sectionID" [projectID]="projectID" (closeEvent)="taskEditorState = false"></app-add-task>
+        <app-add-task-label *ngIf="!taskEditorState" (click)="taskEditorState = true"></app-add-task-label>
+        <app-add-task
+            *ngIf="taskEditorState"
+            [sectionID]="sectionID"
+            [projectID]="section.projectID"
+            (closeEvent)="taskEditorState = false"
+        ></app-add-task>
         <!-- --- add task -->
     </div>
 </div>
