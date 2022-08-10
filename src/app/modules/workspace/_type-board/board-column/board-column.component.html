@@ -1,11 +1,11 @@
 <ng-container *ngIf="section$ | async as section">
     <app-board-column-header [title]="section.title" [editableTitle]="editableTitle" (setTitleEvent)="updateTitle($event)"></app-board-column-header>
 
-    <app-board-task *ngFor="let taskID of section.tasksID" [taskID]="taskID"></app-board-task>
+    <app-board-task *ngFor="let taskID of section.tasksID" [taskID]="taskID" [sectionID]="sectionID" [projectID]="projectID"></app-board-task>
 
     <!-- add task --- -->
     <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
-    <app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false"></app-add-task>
+    <app-add-task *ngIf="taskEditorState" [sectionID]="sectionID" [projectID]="projectID" (closeEvent)="taskEditorState = false"></app-add-task>
     <!-- --- add task -->
 </ng-container>
 
@@ -13,11 +13,11 @@
 <ng-container *ngIf="noSecTasksID$ | async as noSecTasksID">
     <app-board-column-header [title]="'(No Section)'" [editableTitle]="false"></app-board-column-header>
 
-    <app-board-task *ngFor="let taskID of noSecTasksID" [taskID]="taskID"></app-board-task>
+    <app-board-task *ngFor="let taskID of noSecTasksID" [taskID]="taskID" [sectionID]="sectionID" [projectID]="projectID"></app-board-task>
 
     <!-- todo : check for methods MVVM -->
     <!-- add task --- -->
     <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
-    <app-add-task *ngIf="taskEditorState" (closeEvent)="taskEditorState = false"></app-add-task>
+    <app-add-task *ngIf="taskEditorState" [sectionID]="sectionID" [projectID]="projectID" (closeEvent)="taskEditorState = false"></app-add-task>
     <!-- --- add task -->
 </ng-container>

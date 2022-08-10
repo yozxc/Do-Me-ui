@@ -1,4 +1,4 @@
-<div class="task">
+<div *ngIf="task$ | async as task" class="task">
     <div class="flex">
         <label class="check__label" [for]="task.id">
             <input class="hidden__checkbox" type="checkbox" name="" [id]="task.id" (change)="isChecked = !isChecked" />
@@ -23,7 +23,7 @@
     <div class="flex">
         <div class="w-26"></div>
 
-        <div class="aditional__info">
+        <div *ngIf="task.labelsID.length" class="aditional__info">
             <div class="flex__container">
                 <div *ngFor="let labelID of task.labelsID" class="info__label">
                     <ng-container *ngIf="getLabel(labelID) as label">

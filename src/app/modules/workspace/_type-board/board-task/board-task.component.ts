@@ -4,6 +4,7 @@ import { v4 } from 'uuid';
 import { Task } from '@app/core/types/domain/task';
 import { LabelsQuery } from '@app/core/store/labels/labels.query';
 import { Label } from '@app/core/types/domain/label';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-board-task',
@@ -18,12 +19,15 @@ export class BoardTaskComponent implements OnInit {
     title: string = 'zxc';
 
     @Input() taskID!: string;
-    task!: Task;
+    @Input() sectionID: string | null = null;
+    @Input() projectID: string | null = null;
+
+    task$!: Observable<Task>;
 
     constructor(private tasksQuery: TasksQuery, private labelsQuery: LabelsQuery) {}
 
     ngOnInit(): void {
-        this.task = this.tasksQuery.getTask(this.taskID) || this.task;
+        this.task$ = this.tasksQuery.selectTask(this.taskID);
     }
 
     getLabel(id: string): Label | undefined {

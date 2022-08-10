@@ -21,12 +21,7 @@
             <app-view-header [title]="'Inbox'" [editableTitle]="false" (viewAsEvent)="updateType($event)"></app-view-header>
 
             <div class="columns__wrapper">
-                <app-board-column
-                    *ngIf="(tasksID$ | async)?.length"
-                    [title]="'(No Section)'"
-                    [editableTitle]="false"
-                    [inbox]="true"
-                ></app-board-column>
+                <app-board-column *ngIf="(tasksID$ | async)?.length" [title]="'(No Section)'" [editableTitle]="false"></app-board-column>
 
                 <ng-container *ngFor="let sectionID of sectionsID$ | async; let i = index">
                     <!-- todo : check for tasksID double sub remove -->

@@ -21,7 +21,7 @@ export class BoardColumnComponent implements OnInit {
     @Input() editableTitle: boolean = true;
     @Input() sectionID!: string;
     @Input() projectID!: string;
-    @Input() inbox: boolean = false;
+    // @Input() inbox: boolean = false;
 
     section$!: Observable<Section>;
 
@@ -36,12 +36,13 @@ export class BoardColumnComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.section$ = this.sectionsQuery.selectSection(this.sectionID);
+        this.sectionID && (this.section$ = this.sectionsQuery.selectSection(this.sectionID));
+        !this.sectionID && this.projectID && (this.noSecTasksID$ = this.projectsQuery.selectNoSectionTasksID(this.projectID));
 
-        this.inbox && (this.noSecTasksID$ = this.tasksQuery.selectInboxTasksID());
+        !this.projectID && !this.sectionID && (this.noSecTasksID$ = this.tasksQuery.selectInboxTasksID());
 
-        const noSecTasksID$ = this.projectID && this.projectsQuery.selectNoSectionTasksID(this.projectID);
-        noSecTasksID$ && (this.noSecTasksID$ = noSecTasksID$);
+        // const noSecTasksID$ = this.projectID && this.projectsQuery.selectNoSectionTasksID(this.projectID);
+        // noSecTasksID$ && (this.noSecTasksID$ = noSecTasksID$);
     }
 
     updateTitle(title: string) {
