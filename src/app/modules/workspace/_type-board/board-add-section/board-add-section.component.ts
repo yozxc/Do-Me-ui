@@ -31,6 +31,7 @@ export class BoardAddSectionComponent implements OnInit {
     onSave() {
         // todo : check validation
         this.addSectionForm.value.title && this.sectionsService.addSection(this.addSectionForm.value as AddSectionData);
+        this.addSectionForm.patchValue({ title: '' });
         this.isOnAdd = false;
     }
 

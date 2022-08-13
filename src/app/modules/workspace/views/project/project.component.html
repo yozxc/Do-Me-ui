@@ -20,11 +20,12 @@
             <app-board-column *ngIf="project.noSectionTasksID?.length" [editableTitle]="false" [projectID]="project.id"></app-board-column>
 
             <ng-container *ngFor="let sectionID of project.sectionsID; let i = index">
-                <app-board-add-section
+                <!-- todo : check for order -->
+                <!-- <app-board-add-section
                     *ngIf="project.noSectionTasksID?.length || i !== 0"
                     [type]="'bar'"
                     [projectID]="project.id"
-                ></app-board-add-section>
+                ></app-board-add-section> -->
                 <app-board-column [sectionID]="sectionID"></app-board-column>
             </ng-container>
 

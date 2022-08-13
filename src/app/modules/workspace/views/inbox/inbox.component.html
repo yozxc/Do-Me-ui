@@ -21,7 +21,9 @@
                 <app-board-column *ngIf="(tasksID$ | async)?.length" [editableTitle]="false"></app-board-column>
 
                 <ng-container *ngFor="let sectionID of sectionsID$ | async; let i = index">
-                    <app-board-add-section *ngIf="(tasksID$ | async)?.length || i !== 0" [type]="'bar'"></app-board-add-section>
+                    <!-- todo : check for order -->
+                    <div class="todo_temp__w22"></div>
+                    <!-- <app-board-add-section *ngIf="(tasksID$ | async)?.length || i !== 0" [type]="'bar'"></app-board-add-section> -->
                     <app-board-column [sectionID]="sectionID"></app-board-column>
                 </ng-container>
 

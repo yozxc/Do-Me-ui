@@ -1,26 +1,26 @@
 <pre>
-TODO app to emulate enterprise development
+Do Me UI
 
-TODO | Environment :
+v1.0 ---> in progress
 
-Angular UI     : 42/100%
-React UI       : 0/100%
-Node/Nest Back : 0/100%
-Go(lang) Back  : 0/100%
-Databases      : ..? :/
-CI/CD          : ..? :/
-
-Other unknown stuff : ..? :/
-
-TODO | Angular :
-
-v1.0
+Tech/Realization features
 (+) | use HTML/CSS style guide 'BEM' like
 (+) | config prettier + esLint (files)
-(-) | check for ngrx | ngxs
-(-) | custom ui lib + storybook
-(-) | cover 95% tests
+(+) | use akita storage instead of (ngrx | ngxs)
+(-) | custom ui components module
+(-) | test coverage
+
+v2.0
+
+Tech/Realization features
+(-) | refactor ui component module + use storybook
+(-) | SSR angular universal | nest/fastify core
 (-) | PWA
-(-) | angular universal (SSR) | nest core (this for back)
-(-) | graphql + rest | check for appolo rest cache
+(-) | graphQL client + apollo cashing
+(-) | websockets support
+
+Bizz features
+ - need to inspect, more probably most part of all pay todoist features :D
+ ...
+
 </pre>

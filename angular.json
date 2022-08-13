@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "todo-angular": {
+        "Do-Me-ui": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -21,7 +21,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/todo-angular",
+                        "outputPath": "dist/Do-Me-ui",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "todo-angular:build:production"
+                            "browserTarget": "Do-Me-ui:build:production"
                         },
                         "development": {
-                            "browserTarget": "todo-angular:build:development"
+                            "browserTarget": "Do-Me-ui:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "todo-angular:build"
+                        "browserTarget": "Do-Me-ui:build"
                     }
                 },
                 "test": {
