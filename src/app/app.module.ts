@@ -5,9 +5,9 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 // import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 
 import { AppRoutingModule } from './app-routing.module';
-import { WorkspaceModule } from './modules/workspace/workspace.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ModalsModule } from './modules/modals/modals.module';
+import { WorkspaceModule } from './modules/workspace/workspace.module';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';

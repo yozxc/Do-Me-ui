@@ -1,14 +1,14 @@
-import { InboxService } from './inbox.state/inbox.service';
-import { SectionsService } from '@core/store/sections/sections.service';
-import { SectionsQuery } from '@core/store/sections/sections.query';
-import { TasksService } from '@app/core/store/tasks/tasks.service';
-import { TasksQuery } from '@core/store/tasks/tasks.query';
-import { InboxQuery } from './inbox.state/inbox.query';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AddTaskDTO } from '@app/core/types/domain/task';
-import { AddSectionDTO } from '@app/core/types/domain/section';
+import { TasksService } from '@app/core/store/tasks/tasks.service';
 import { ViewType } from '@app/core/types/domain/project';
+import { AddSectionDTO } from '@app/core/types/domain/section';
+import { AddTaskDTO } from '@app/core/types/domain/task';
+import { SectionsQuery } from '@core/store/sections/sections.query';
+import { SectionsService } from '@core/store/sections/sections.service';
+import { TasksQuery } from '@core/store/tasks/tasks.query';
+import { Observable } from 'rxjs';
+import { InboxQuery } from './inbox.state/inbox.query';
+import { InboxService } from './inbox.state/inbox.service';
 
 @Component({
     selector: 'app-inbox',
@@ -17,8 +17,6 @@ import { ViewType } from '@app/core/types/domain/project';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InboxComponent implements OnInit {
-    addNoSecTask: boolean = false;
-
     tasksID$!: Observable<string[]>;
     sectionsID$!: Observable<string[]>;
 

@@ -3,10 +3,7 @@
 
     <app-board-task *ngFor="let taskID of section.tasksID" [taskID]="taskID"></app-board-task>
 
-    <!-- add task --- -->
-    <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
-    <app-add-task *ngIf="taskEditorState" [sectionID]="sectionID" [projectID]="projectID" (closeEvent)="taskEditorState = false"></app-add-task>
-    <!-- --- add task -->
+    <app-add-task [sectionID]="sectionID" [projectID]="projectID"></app-add-task>
 </ng-container>
 
 <!-- todo : check for DRY -->
@@ -15,9 +12,5 @@
 
     <app-board-task *ngFor="let taskID of noSecTasksID" [taskID]="taskID"></app-board-task>
 
-    <!-- todo : check for methods MVVM -->
-    <!-- add task --- -->
-    <app-add-task-label *ngIf="!taskEditorState" [text]="'Add Task'" (click)="taskEditorState = true"></app-add-task-label>
-    <app-add-task *ngIf="taskEditorState" [sectionID]="sectionID" [projectID]="projectID" (closeEvent)="taskEditorState = false"></app-add-task>
-    <!-- --- add task -->
+    <app-add-task [sectionID]="sectionID" [projectID]="projectID"></app-add-task>
 </ng-container>

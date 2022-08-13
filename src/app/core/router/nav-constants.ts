@@ -40,7 +40,7 @@ export enum SETTINGS_ROUTE {
     DELETE_ACCOUNT = 'deleteAccount'
 }
 
-export enum MAIN_PLACE_ROUTE {
+export enum WORKSPACE_ROUTE {
     TODAY = 'today',
     INBOX = 'inbox',
 

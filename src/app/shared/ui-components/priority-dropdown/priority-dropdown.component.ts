@@ -1,20 +1,7 @@
-import {
-    Component,
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
-    EventEmitter,
-    Output,
-    AfterViewChecked,
-    ElementRef,
-    ViewChild,
-    Input,
-    Renderer2,
-    forwardRef
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, forwardRef, Input, Output, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { PriorityType } from '@app/core/types/domain/priority';
 
-// todo : ngvalue accesor
 @Component({
     selector: 'ui-priority-dropdown',
     templateUrl: './priority-dropdown.component.html',
@@ -28,7 +15,7 @@ import { PriorityType } from '@app/core/types/domain/priority';
         }
     ]
 })
-export class PriorityDropdownComponent implements AfterViewChecked, ControlValueAccessor {
+export class PriorityDropdownComponent implements ControlValueAccessor {
     isVisible: boolean = false;
 
     priorityList: PriorityType[] = [1, 2, 3, 4];
@@ -37,8 +24,6 @@ export class PriorityDropdownComponent implements AfterViewChecked, ControlValue
 
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
     @Output() changePriorityEvent: EventEmitter<any> = new EventEmitter();
-
-    @ViewChild('menuView') menuView?: ElementRef;
 
     private onChange!: (value: PriorityType) => void;
     private onTouched!: () => void;
@@ -70,28 +55,5 @@ export class PriorityDropdownComponent implements AfterViewChecked, ControlValue
 
     registerOnTouched(fn: any): void {
         this.onTouched = fn;
-    }
-
-    //
-
-    // this is setting menu to be visible in viewport
-    ngAfterViewChecked(): void {
-        if (!this.menuView) return;
-
-        const element = this.menuView.nativeElement;
-        const coordinates = this.menuView.nativeElement.getBoundingClientRect();
-
-        if (coordinates.bottom > window.innerHeight) {
-            this.render.setStyle(element, 'top', `calc(50% - ${coordinates.bottom - window.innerHeight + 5}px)`);
-        }
-        if (coordinates.top < 0) {
-            this.render.setStyle(element, 'top', `calc(50% + ${coordinates.top * -1 + 5}px)`);
-        }
-        if (coordinates.left < 0) {
-            this.render.setStyle(element, 'left', `calc(50% + ${coordinates.left * -1 + 5}px)`);
-        }
-        if (coordinates.right > window.innerWidth) {
-            this.render.setStyle(element, 'left', `calc(50% - ${coordinates.right - window.innerWidth + 5}px)`);
-        }
     }
 }

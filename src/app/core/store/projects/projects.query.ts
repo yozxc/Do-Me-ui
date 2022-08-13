@@ -1,7 +1,7 @@
-import { TasksQuery } from '@core/store/tasks/tasks.query';
 import { Injectable } from '@angular/core';
-import { QueryEntity } from '@datorama/akita';
 import { Project } from '@app/core/types/domain/project';
+import { TasksQuery } from '@core/store/tasks/tasks.query';
+import { QueryEntity } from '@datorama/akita';
 import { Observable } from 'rxjs';
 import { ProjectsState, ProjectsStore } from './projects.store';
 

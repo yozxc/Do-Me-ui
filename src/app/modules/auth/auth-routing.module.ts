@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PAGES_ROUTE } from '@app/core/router/nav-constants';
 
-import { SignPageComponent } from '@modules/auth/sign-page/sign-page.component';
-import { RegisterPageComponent } from '@modules/auth/register-page/register-page.component';
 import { ForgotPasswordPageComponent } from '@modules/auth/forgot-pass-page/forgot-password-page.component';
+import { RegisterPageComponent } from '@modules/auth/register-page/register-page.component';
 import { ResetPassPageComponent } from '@modules/auth/reset-pass-page/reset-pass-page.component';
+import { SignPageComponent } from '@modules/auth/sign-page/sign-page.component';
 
 const pagesRoutes: Routes = [
     { path: ``, redirectTo: `${PAGES_ROUTE.AUTH}/${PAGES_ROUTE.SIGNIN}`, pathMatch: 'full' },

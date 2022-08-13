@@ -1,15 +1,15 @@
-import { TitleEdit } from '@core/types/realization/titleEdit';
-import { ProjectsService } from '@app/core/store/projects/projects.service';
-import { Observable } from 'rxjs';
-import { Project, ViewType } from '@app/core/types/domain/project';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MAIN_PLACE_ROUTE } from '@app/core/router/nav-constants';
-import { AddTaskDTO } from '@app/core/types/domain/task';
-import { AddSectionDTO } from '@app/core/types/domain/section';
+import { WORKSPACE_ROUTE } from '@app/core/router/nav-constants';
 import { ProjectsQuery } from '@app/core/store/projects/projects.query';
+import { ProjectsService } from '@app/core/store/projects/projects.service';
 import { SectionsService } from '@app/core/store/sections/sections.service';
 import { TasksService } from '@app/core/store/tasks/tasks.service';
+import { Project, ViewType } from '@app/core/types/domain/project';
+import { AddSectionDTO } from '@app/core/types/domain/section';
+import { AddTaskDTO } from '@app/core/types/domain/task';
+import { TitleEdit } from '@core/types/realization/titleEdit';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-project',
@@ -18,8 +18,6 @@ import { TasksService } from '@app/core/store/tasks/tasks.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectComponent implements OnInit {
-    addNoSecTask: boolean = false;
-
     projectID!: string;
 
     project$!: Observable<Project>;
@@ -35,7 +33,7 @@ export class ProjectComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.paramMap.subscribe((params) => {
-            const projectID = params.get(MAIN_PLACE_ROUTE.ID);
+            const projectID = params.get(WORKSPACE_ROUTE.ID);
             if (projectID !== this.projectID) {
                 projectID && (this.projectID = projectID);
 

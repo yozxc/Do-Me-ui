@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { UntypedFormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProjectsService } from '@app/core/store/projects/projects.service';
 import { ViewType } from '@app/core/types/domain/project';
 

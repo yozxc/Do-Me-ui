@@ -1,10 +1,10 @@
-import { TasksQuery } from '@core/store/tasks/tasks.query';
-import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
-import { v4 } from 'uuid';
-import { Task } from '@app/core/types/domain/task';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { LabelsQuery } from '@app/core/store/labels/labels.query';
 import { Label } from '@app/core/types/domain/label';
+import { Task } from '@app/core/types/domain/task';
+import { TasksQuery } from '@core/store/tasks/tasks.query';
 import { Observable } from 'rxjs';
+import { v4 } from 'uuid';
 
 @Component({
     selector: 'app-board-task[taskID]',

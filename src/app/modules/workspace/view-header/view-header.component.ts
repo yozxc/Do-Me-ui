@@ -1,8 +1,8 @@
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DropdownSchema } from '@app/core/types/domain/dropdown';
-import { TitleEdit } from '@app/core/types/realization/titleEdit';
 import { ViewType } from '@app/core/types/domain/project';
+import { TitleEdit } from '@app/core/types/realization/titleEdit';
 
 @Component({
     selector: 'app-view-header[title]',
@@ -10,12 +10,12 @@ import { ViewType } from '@app/core/types/domain/project';
     styleUrls: ['./view-header.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ViewHeaderComponent implements OnInit {
+export class ViewHeaderComponent implements OnInit, OnChanges {
     isOnEdit: boolean = false;
     disabledSave: boolean = true;
     date: number = Date.now();
 
-    titleControl!: UntypedFormControl;
+    titleControl: UntypedFormControl = new UntypedFormControl();
 
     @Input() title!: string;
     @Input() dropdownSchema!: DropdownSchema;
@@ -28,8 +28,11 @@ export class ViewHeaderComponent implements OnInit {
 
     constructor() {}
 
+    ngOnChanges(changes: SimpleChanges): void {
+        this.titleControl.setValue(changes['title'].currentValue);
+    }
+
     ngOnInit(): void {
-        this.titleControl = new UntypedFormControl(this.title);
         this.titleControl.valueChanges.subscribe((value) => (this.disabledSave = value.length));
     }
 

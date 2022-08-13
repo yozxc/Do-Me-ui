@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { LmDotComponent } from './lm-dot.component';
 import { LmDragComponent } from './lm-drag.component';

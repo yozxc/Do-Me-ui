@@ -1,5 +1,5 @@
-import { LeftMenuService } from './../left-menu/left-menu.state/left-menu.service';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { LeftMenuService } from './../left-menu/left-menu.state/left-menu.service';
 
 @Component({
     selector: 'app-header',

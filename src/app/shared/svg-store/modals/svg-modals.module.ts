@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { MoCloseComponent } from './mo-close.component';
 import { MoLmAccountComponent } from './mo-lm-account.component';

@@ -1,13 +1,13 @@
-import { TasksService } from '@core/store/tasks/tasks.service';
-import { TitleEdit } from '@core/types/realization/titleEdit';
-import { LabelsQuery } from '@core/store/labels/labels.query';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Label } from '@app/core/types/domain/label';
-import { Observable } from 'rxjs';
-import { MAIN_PLACE_ROUTE } from '@app/core/router/nav-constants';
+import { WORKSPACE_ROUTE } from '@app/core/router/nav-constants';
 import { LabelsService } from '@app/core/store/labels/labels.service';
+import { Label } from '@app/core/types/domain/label';
 import { AddTaskDTO } from '@app/core/types/domain/task';
+import { LabelsQuery } from '@core/store/labels/labels.query';
+import { TasksService } from '@core/store/tasks/tasks.service';
+import { TitleEdit } from '@core/types/realization/titleEdit';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-label',
@@ -16,9 +16,6 @@ import { AddTaskDTO } from '@app/core/types/domain/task';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LabelComponent implements OnInit {
-    // todo : check for local state var names
-    __addTask: boolean = false;
-
     labelID!: string;
 
     label$!: Observable<Label>;
@@ -34,7 +31,7 @@ export class LabelComponent implements OnInit {
     ngOnInit(): void {
         // todo : check for simpify
         this.route.paramMap.subscribe((params) => {
-            const labelID = params.get(MAIN_PLACE_ROUTE.ID);
+            const labelID = params.get(WORKSPACE_ROUTE.ID);
             if (labelID !== this.labelID) {
                 labelID && (this.labelID = labelID);
 

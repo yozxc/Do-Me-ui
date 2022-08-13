@@ -2,9 +2,9 @@ import { ProjectsStore } from './../projects/projects.store';
 /* eslint-disable no-unused-labels */
 import { Injectable } from '@angular/core';
 import { AddSectionDTO, Section } from '@app/core/types/domain/section';
+import { arrayAdd } from '@datorama/akita';
 import { v4 } from 'uuid';
 import { SectionsStore } from './sections.store';
-import { arrayAdd } from '@datorama/akita';
 
 @Injectable({ providedIn: 'root' })
 export class SectionsService {

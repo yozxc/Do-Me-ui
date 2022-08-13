@@ -1,6 +1,5 @@
 <div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
-    <div #menuView class="menu" (click)="$event.stopPropagation()">
-        <!-- todo : refactor svg`s modules -->
+    <div appDropdownPosition class="menu" (click)="$event.stopPropagation()">
         <div *ngFor="let label of labelsQuery.labels$ | async" class="item" (click)="setID(label.id)">
             <svg-lm-label class="wh-24" [styleCls]="label.colorCls"></svg-lm-label>
             <div class="item__text">{{ label.name }}</div>

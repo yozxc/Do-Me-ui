@@ -11,7 +11,6 @@
             </div>
         </ng-container>
 
-        <!-- todo : check for section update title -->
         <ng-template #titleContainer>
             <div class="title" (click)="isChangingTitle = true; section.title = titleFormControl.value">
                 {{ titleFormControl.value }}
@@ -27,7 +26,6 @@
                 </div>
             </div>
         </ng-template>
-        <!-- change title -->
 
         <div class="bottom__bar"></div>
     </div>
@@ -35,15 +33,6 @@
     <div *ngIf="(isClosed$ | async) === false" class="task__list">
         <app-list-task *ngFor="let taskID of section.tasksID" [taskID]="taskID"></app-list-task>
 
-        <!-- todo : change to get | set instead of modify vars in view -->
-        <!-- add task --- -->
-        <app-add-task-label *ngIf="!taskEditorState" (click)="taskEditorState = true"></app-add-task-label>
-        <app-add-task
-            *ngIf="taskEditorState"
-            [sectionID]="sectionID"
-            [projectID]="section.projectID"
-            (closeEvent)="taskEditorState = false"
-        ></app-add-task>
-        <!-- --- add task -->
+        <app-add-task [sectionID]="sectionID" [projectID]="section.projectID"></app-add-task>
     </div>
 </div>

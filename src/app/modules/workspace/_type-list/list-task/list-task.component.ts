@@ -1,17 +1,17 @@
-import { SectionsQuery } from '@core/store/sections/sections.query';
-import { Section } from '@core/types/domain/section';
-import { ProjectsQuery } from '@core/store/projects/projects.query';
-import { LabelsQuery } from '@core/store/labels/labels.query';
-import { TasksQuery } from '@core/store/tasks/tasks.query';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { LabelsQuery } from '@core/store/labels/labels.query';
+import { ProjectsQuery } from '@core/store/projects/projects.query';
+import { SectionsQuery } from '@core/store/sections/sections.query';
+import { TasksQuery } from '@core/store/tasks/tasks.query';
+import { Section } from '@core/types/domain/section';
 import { v4 } from 'uuid';
 
-import { Task } from '@app/core/types/domain/task';
 import { DropdownIconType, DropdownSchema } from '@app/core/types/domain/dropdown';
-import { PriorityType } from '@app/core/types/domain/priority';
-import { Observable } from 'rxjs';
 import { Label } from '@app/core/types/domain/label';
+import { PriorityType } from '@app/core/types/domain/priority';
 import { Project } from '@app/core/types/domain/project';
+import { Task } from '@app/core/types/domain/task';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-list-task[taskID]',

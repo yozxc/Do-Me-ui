@@ -5,7 +5,7 @@
 
 <div *ngIf="__isColorListActive" class="color__list">
     <div *ngFor="let color of colors" class="color" (click)="setCurrentColor(color)">
-        <div [class]="'dot ' + color.styleCls"></div>
+        <div [class]="'dot ' + +color.colorType"></div>
         <span class="color__text">{{ color.name }}</span>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, forwardRef, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ColorType } from '@app/core/types/domain/color';
 
@@ -50,7 +50,6 @@ export class ColorPickerComponent implements ControlValueAccessor {
     }
 }
 
-// todo : check for insert into service/interface
 const colors = [
     { name: 'Berry Red', styleCls: 'bg-berryRed', colorType: 'berryRed' },
     { name: 'Red', styleCls: 'bg-red', colorType: 'red' },

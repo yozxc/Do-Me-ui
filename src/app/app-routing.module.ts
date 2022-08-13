@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PAGES_ROUTE } from './core/router/nav-constants';
 import { modalsRoutes } from './core/router/modals-injectable-routes';
-import { mainPlaceRoutes } from './core/router/main-place-injectable-routes';
+import { PAGES_ROUTE } from './core/router/nav-constants';
+import { workspaceRoutes } from './core/router/workspace-injectable-routes';
 import { AuthRoutingModule } from './modules/auth/auth-routing.module';
 
 import { WorkspaceComponent } from './modules/workspace/workspace.component';
@@ -12,7 +12,7 @@ const mainRoutes: Routes = [
     {
         path: `${PAGES_ROUTE.WORKSPACE}`,
         component: WorkspaceComponent,
-        children: [...modalsRoutes, ...mainPlaceRoutes]
+        children: [...modalsRoutes, ...workspaceRoutes]
     },
 
     // todo : dev temp | should be 404 page

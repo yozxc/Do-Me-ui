@@ -1,5 +1,5 @@
 <div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
-    <div #menuView class="menu" (click)="$event.stopPropagation()">
+    <div appDropdownPosition class="menu" (click)="$event.stopPropagation()">
         <div *ngFor="let priorityEL of priorityList" class="item" (click)="changePriority(priorityEL); $event.stopPropagation()">
             <div class="flex__container">
                 <svg-drop-sec-priority class="wh-24" [prior]="priorityEL" [_description]="false"></svg-drop-sec-priority>

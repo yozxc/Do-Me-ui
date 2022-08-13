@@ -1,5 +1,6 @@
 <div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
-    <div #menuView class="menu" (click)="$event.stopPropagation()">
+    <!-- todo : appDropdownPosition check for positioning -->
+    <div appDropdownPosition class="menu" (click)="$event.stopPropagation()">
         <div class="header">View</div>
 
         <div class="item" (click)="viewAsVisible = true">

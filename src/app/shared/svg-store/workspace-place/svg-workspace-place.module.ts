@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
+import { WpEmptyLabelComponent } from './wp-empty-label.component';
 import { WpHeaderArrowComponent } from './wp-header-arrow.component';
 import { WpHeaderMoreComponent } from './wp-header-more.component';
 import { WpInboxComponent } from './wp-inbox.component';
@@ -16,7 +17,6 @@ import { WpTaskMoreComponent } from './wp-task-more.component';
 import { WpTaskScheduleComponent } from './wp-task-schedule.component';
 import { WpTickComponent } from './wp-tick.component';
 import { WpViewComponent } from './wp-view.component';
-import { WpEmptyLabelComponent } from './wp-empty-label.component';
 
 @NgModule({
     imports: [CommonModule],

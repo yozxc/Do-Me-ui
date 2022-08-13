@@ -35,8 +35,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class WpPriorityComponent {
     @Input() styleCls = '';
-    // todo :
-    @Input() prior?: number = 4;
+    @Input() prior: number = 4;
 
     constructor() {}
 }

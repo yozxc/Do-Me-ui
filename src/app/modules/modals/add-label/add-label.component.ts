@@ -1,7 +1,7 @@
-import { LabelsService } from '@app/core/store/labels/labels.service';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { LabelsService } from '@app/core/store/labels/labels.service';
 
 @Component({
     selector: 'app-add-label',

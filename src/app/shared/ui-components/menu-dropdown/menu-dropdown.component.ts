@@ -1,17 +1,6 @@
-import {
-    AfterViewChecked,
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
-    Component,
-    ElementRef,
-    EventEmitter,
-    Input,
-    Output,
-    Renderer2,
-    ViewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 import { PriorityType } from '@app/core/types/domain/priority';
-import { DropdownField, DropdownPriority, DropdownSchema, DropdownBar, DropdownSchedule, DropdownIconType } from '@core/types/domain/dropdown';
+import { DropdownBar, DropdownField, DropdownIconType, DropdownPriority, DropdownSchedule, DropdownSchema } from '@core/types/domain/dropdown';
 
 @Component({
     selector: 'ui-menu-dropdown',
@@ -19,7 +8,7 @@ import { DropdownField, DropdownPriority, DropdownSchema, DropdownBar, DropdownS
     styleUrls: ['./menu-dropdown.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MenuDropdownComponent implements AfterViewChecked {
+export class MenuDropdownComponent {
     isVisible: boolean = false;
 
     priorityList: PriorityType[] = [1, 2, 3, 4];
@@ -29,8 +18,6 @@ export class MenuDropdownComponent implements AfterViewChecked {
     @Output() itemClickEvent: EventEmitter<DropdownIconType> = new EventEmitter();
     @Output() changePriorityEvent: EventEmitter<PriorityType> = new EventEmitter();
     @Output() closeEvent: EventEmitter<any> = new EventEmitter();
-
-    @ViewChild('menuView') menuView?: ElementRef;
 
     constructor(private cdr: ChangeDetectorRef, private render: Renderer2) {}
 
@@ -62,28 +49,5 @@ export class MenuDropdownComponent implements AfterViewChecked {
     }
     checkForScheduleType(dropdownField: any): dropdownField is DropdownSchedule {
         return 'typeSchedule' in dropdownField;
-    }
-
-    //
-
-    // this is setting menu to be visible in viewport
-    ngAfterViewChecked(): void {
-        if (!this.menuView) return;
-
-        const element = this.menuView.nativeElement;
-        const coordinates = this.menuView.nativeElement.getBoundingClientRect();
-
-        if (coordinates.bottom > window.innerHeight) {
-            this.render.setStyle(element, 'top', `calc(50% - ${coordinates.bottom - window.innerHeight + 5}px)`);
-        }
-        if (coordinates.top < 0) {
-            this.render.setStyle(element, 'top', `calc(50% + ${coordinates.top * -1 + 5}px)`);
-        }
-        if (coordinates.left < 0) {
-            this.render.setStyle(element, 'left', `calc(50% + ${coordinates.left * -1 + 5}px)`);
-        }
-        if (coordinates.right > window.innerWidth) {
-            this.render.setStyle(element, 'left', `calc(50% - ${coordinates.right - window.innerWidth + 5}px)`);
-        }
     }
 }

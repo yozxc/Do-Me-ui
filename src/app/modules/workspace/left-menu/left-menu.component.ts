@@ -1,14 +1,14 @@
-import { LabelsQuery } from './../../../core/store/labels/labels.query';
-import { LeftMenuQuery } from './left-menu.state/left-menu.query';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LabelsQuery } from '@core/store/labels/labels.query';
+import { LeftMenuQuery } from './left-menu.state/left-menu.query';
 
 import { ProjectsService } from '@app/core/store/projects/projects.service';
 
 // todo : delete
-import { favorites, filters, labels } from '@assets/mock/lm-projects';
-import { ProjectsQuery } from '@app/core/store/projects/projects.query';
 import { LabelsService } from '@app/core/store/labels/labels.service';
+import { ProjectsQuery } from '@app/core/store/projects/projects.query';
+import { favorites, filters, labels } from '@assets/mock/lm-projects';
 
 @Component({
     selector: 'app-left-menu',

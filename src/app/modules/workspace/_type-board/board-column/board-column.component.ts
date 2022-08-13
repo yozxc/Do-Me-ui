@@ -1,11 +1,11 @@
-import { TasksQuery } from '@core/store/tasks/tasks.query';
-import { SectionsService } from '@core/store/sections/sections.service';
-import { ProjectsQuery } from '@app/core/store/projects/projects.query';
-import { SectionsQuery } from '@core/store/sections/sections.query';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Section } from '@app/core/types/domain/section';
-import { Observable } from 'rxjs';
+import { ProjectsQuery } from '@app/core/store/projects/projects.query';
 import { TasksService } from '@app/core/store/tasks/tasks.service';
+import { Section } from '@app/core/types/domain/section';
+import { SectionsQuery } from '@core/store/sections/sections.query';
+import { SectionsService } from '@core/store/sections/sections.service';
+import { TasksQuery } from '@core/store/tasks/tasks.query';
+import { Observable } from 'rxjs';
 
 // todo : refactor component
 @Component({
@@ -15,13 +15,10 @@ import { TasksService } from '@app/core/store/tasks/tasks.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BoardColumnComponent implements OnInit {
-    taskEditorState: boolean = false;
-
     @Input() title!: string;
     @Input() editableTitle: boolean = true;
     @Input() sectionID!: string;
     @Input() projectID!: string;
-    // @Input() inbox: boolean = false;
 
     section$!: Observable<Section>;
 

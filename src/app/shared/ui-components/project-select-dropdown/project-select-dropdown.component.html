@@ -1,5 +1,5 @@
 <div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
-    <div #menuView class="menu" (click)="$event.stopPropagation()">
+    <div appDropdownPosition class="menu">
         <div class="item" (click)="setSelected({ projectID: null, sectionID: null })">
             <svg-wp-inbox class="inbox__icon wh-18" styleCls="blue"></svg-wp-inbox>
             <div class="item__text">Inbox</div>

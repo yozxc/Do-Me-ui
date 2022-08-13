@@ -1,7 +1,7 @@
-import { SectionsService } from '@core/store/sections/sections.service';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ChangeDetectionStrategy, Component, OnInit, Input } from '@angular/core';
 import { AddSectionDTO } from '@app/core/types/domain/section';
+import { SectionsService } from '@core/store/sections/sections.service';
 
 @Component({
     selector: 'app-list-add-section',
@@ -29,7 +29,7 @@ export class ListAddSectionComponent implements OnInit {
 
     onSave() {
         // todo : check validators
-        this.addSectionForm.value.title && this.sectionsService.addSection(this.addSectionForm.value as AddSectionDTO);
+        this.addSectionForm.value.title && this.sectionsService.addSection(this.addSectionForm.value as AddSectionDTO) && this.addSectionForm.reset();
 
         this.isOnAdd = false;
     }

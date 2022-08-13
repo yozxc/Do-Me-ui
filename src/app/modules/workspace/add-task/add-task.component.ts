@@ -1,10 +1,10 @@
-import { SectionsQuery } from '@core/store/sections/sections.query';
-import { ProjectsQuery } from '@core/store/projects/projects.query';
-import { TasksService } from '@core/store/tasks/tasks.service';
-import { Component, ChangeDetectionStrategy, EventEmitter, Output, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { AddTaskDTO } from '@app/core/types/domain/task';
 import { SelectedProject } from '@app/core/types/realization/selectedProject';
+import { ProjectsQuery } from '@core/store/projects/projects.query';
+import { SectionsQuery } from '@core/store/sections/sections.query';
+import { TasksService } from '@core/store/tasks/tasks.service';
 
 @Component({
     selector: 'app-add-task',
@@ -15,12 +15,17 @@ import { SelectedProject } from '@app/core/types/realization/selectedProject';
 export class AddTaskComponent implements OnInit {
     isFocused: boolean = false;
     addButtonDisabled: boolean = true;
+    visibleLabelStart!: boolean;
+
+    @Input() visibleLabel: boolean = true;
+    @Input() label: string = 'Add Task';
 
     @Input() activeLabelsID: string[] = [];
     @Input() projectID: string | null = null;
     @Input() sectionID: string | null = null;
 
-    @Output() closeEvent: EventEmitter<any> = new EventEmitter();
+    @Output() cancelEvent: EventEmitter<any> = new EventEmitter();
+    @Output() saveEvent: EventEmitter<any> = new EventEmitter();
 
     form = this.fb.group({
         name: null,
@@ -39,6 +44,8 @@ export class AddTaskComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
+        this.visibleLabelStart = this.visibleLabel;
+
         this.form.get('name')?.valueChanges.subscribe((value) => (this.addButtonDisabled = !value?.length));
 
         this.form.patchValue({ labelsID: this.activeLabelsID, projectID: this.projectID, sectionID: this.sectionID });
@@ -62,7 +69,9 @@ export class AddTaskComponent implements OnInit {
     onCancel() {
         this.resetForm();
 
-        this.closeEvent.emit();
+        this.cancelEvent.emit();
+
+        this.visibleLabel = true;
     }
 
     onSave() {
@@ -71,6 +80,8 @@ export class AddTaskComponent implements OnInit {
 
         this.resetForm();
 
-        this.closeEvent.emit();
+        this.saveEvent.emit();
+
+        this.visibleLabel = true;
     }
 }

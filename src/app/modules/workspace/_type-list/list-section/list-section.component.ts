@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
-import { SectionsQuery } from '@core/store/sections/sections.query';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { Section } from '@app/core/types/domain/section';
+import { SectionsQuery } from '@core/store/sections/sections.query';
 import { SectionsService } from '@core/store/sections/sections.service';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-list-section[sectionID]',
@@ -12,7 +12,6 @@ import { SectionsService } from '@core/store/sections/sections.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListSectionComponent implements OnInit, OnDestroy {
-    taskEditorState: boolean = false;
     isChangingTitle: boolean = false;
     changeButtonDisabled: boolean = false;
     isClosed$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);

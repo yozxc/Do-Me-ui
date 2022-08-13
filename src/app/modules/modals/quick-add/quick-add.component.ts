@@ -1,7 +1,7 @@
-import { PriorityType } from '@app/core/types/domain/priority';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PriorityType } from '@app/core/types/domain/priority';
 
 // todo : onClose browser console warn
 @Component({

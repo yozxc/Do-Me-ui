@@ -1,5 +1,5 @@
 <div *ngIf="isVisible" class="dropdown__wrapper" (click)="close(); $event.stopPropagation()">
-    <div #menuView class="menu" (click)="$event.stopPropagation()">
+    <div appDropdownPosition class="menu" (click)="$event.stopPropagation()">
         <ng-container *ngFor="let dropdownItem of dropdownSchema">
             <ng-container *ngIf="checkForFieldType(dropdownItem)">
                 <div class="item" (click)="$event.stopPropagation(); itemClickEvent.emit(dropdownItem.iconType); close()">
@@ -49,7 +49,6 @@
                             [prior]="priority"
                             (click)="$event.stopPropagation(); setPriority(priority, dropdownItem)"
                         ></svg-drop-sec-priority>
-                        <!-- todo : check for stopPropagation problem :) -->
                     </div>
                 </div>
             </ng-container>

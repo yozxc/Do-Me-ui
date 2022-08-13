@@ -1,7 +1,7 @@
-import { SectionsService } from '@core/store/sections/sections.service';
-import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AddSectionDTO } from '@app/core/types/domain/section';
+import { SectionsService } from '@core/store/sections/sections.service';
 
 @Component({
     selector: 'app-board-add-section[type]',

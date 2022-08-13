@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { StDarkComponent } from './st-dark.component';
 import { StDefaultComponent } from './st-default.component';

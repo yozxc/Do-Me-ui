@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { DropdownIconType, DropdownSchema } from '@app/core/types/domain/dropdown';
 import { AddSectionDTO } from '@app/core/types/domain/section';
 import { AddTaskDTO } from '@app/core/types/domain/task';
-import { DropdownIconType, DropdownSchema } from '@app/core/types/domain/dropdown';
 
 @Component({
     selector: 'app-today',
@@ -10,7 +10,6 @@ import { DropdownIconType, DropdownSchema } from '@app/core/types/domain/dropdow
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodayComponent {
-    taskEditorState: boolean = false;
     date: number = Date.now();
 
     // taskID: Task[] = taskID;

@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { HeaderAddComponent } from './header-add.component';
 import { HeaderBellComponent } from './header-bell.component';
