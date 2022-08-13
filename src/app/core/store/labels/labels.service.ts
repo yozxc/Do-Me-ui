@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-labels */
 import { Injectable } from '@angular/core';
-import { AddLabelDTO, Label } from '@app/core/types/domain/label';
+import { AddLabelData, Label } from '@app/core/types/domain/label';
 import { labelsList } from '@mocks/labelsList';
 import { v4 } from 'uuid';
 import { LabelsStore } from './labels.store';
@@ -9,7 +9,7 @@ import { LabelsStore } from './labels.store';
 export class LabelsService {
     constructor(private labelsStore: LabelsStore) {}
 
-    addLabel(label: AddLabelDTO) {
+    addLabel(label: AddLabelData) {
         this.labelsStore.add({ ...label, id: v4(), tasksID: [] });
     }
 

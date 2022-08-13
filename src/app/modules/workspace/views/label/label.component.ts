@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { WORKSPACE_ROUTE } from '@app/core/router/nav-constants';
 import { LabelsService } from '@app/core/store/labels/labels.service';
 import { Label } from '@app/core/types/domain/label';
-import { AddTaskDTO } from '@app/core/types/domain/task';
+import { AddTaskData } from '@app/core/types/domain/task';
 import { LabelsQuery } from '@core/store/labels/labels.query';
 import { TasksService } from '@core/store/tasks/tasks.service';
 import { TitleEdit } from '@core/types/realization/titleEdit';
@@ -42,7 +42,7 @@ export class LabelComponent implements OnInit {
         });
     }
 
-    addTask(task: AddTaskDTO) {
+    addTask(task: AddTaskData) {
         this.tasksService.addTask(task);
     }
 

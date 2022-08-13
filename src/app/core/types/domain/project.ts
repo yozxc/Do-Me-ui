@@ -12,7 +12,7 @@ export interface Project {
     noSectionTasksID: string[];
 }
 
-export interface AddProjectDTO {
+export interface AddProjectData {
     title: string;
     colorCls: ColorType;
     type: 'BOARD' | 'LIST';

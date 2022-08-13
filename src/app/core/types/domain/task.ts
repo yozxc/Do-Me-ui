@@ -12,9 +12,9 @@ export interface Task {
     labelsID: string[];
 }
 
-export interface AddTaskDTO {
+export interface AddTaskData {
     name: string;
-    description: string;
+    description: string | null;
     priority: PriorityType;
     // ---
     projectID: string | null;

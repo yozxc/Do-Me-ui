@@ -1,7 +1,7 @@
 import { LabelsStore } from './../labels/labels.store';
 /* eslint-disable no-unused-labels */
 import { Injectable } from '@angular/core';
-import { AddTaskDTO, Task } from '@app/core/types/domain/task';
+import { AddTaskData, Task } from '@app/core/types/domain/task';
 import { arrayAdd } from '@datorama/akita';
 import { v4 } from 'uuid';
 import { ProjectsStore } from '../projects/projects.store';
@@ -17,7 +17,7 @@ export class TasksService {
         private labelsStore: LabelsStore
     ) {}
 
-    addTask(taskData: AddTaskDTO) {
+    addTask(taskData: AddTaskData) {
         const addTask: Task = { ...taskData, id: v4(), isChecked: false };
         this.tasksStore.add(addTask);
 

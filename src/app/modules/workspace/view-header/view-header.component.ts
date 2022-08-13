@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { DropdownSchema } from '@app/core/types/domain/dropdown';
 import { ViewType } from '@app/core/types/domain/project';
 import { TitleEdit } from '@app/core/types/realization/titleEdit';
@@ -15,7 +15,7 @@ export class ViewHeaderComponent implements OnInit, OnChanges {
     disabledSave: boolean = true;
     date: number = Date.now();
 
-    titleControl: UntypedFormControl = new UntypedFormControl();
+    titleControl: FormControl = new FormControl();
 
     @Input() title!: string;
     @Input() dropdownSchema!: DropdownSchema;

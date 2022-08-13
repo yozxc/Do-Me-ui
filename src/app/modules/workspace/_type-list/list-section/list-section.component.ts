@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Section } from '@app/core/types/domain/section';
 import { SectionsQuery } from '@core/store/sections/sections.query';
 import { SectionsService } from '@core/store/sections/sections.service';
@@ -22,7 +22,7 @@ export class ListSectionComponent implements OnInit, OnDestroy {
     sectionSub!: Subscription;
     sectionData!: Section;
 
-    titleFormControl!: UntypedFormControl;
+    titleFormControl!: FormControl;
 
     constructor(private sectionsService: SectionsService, private sectionsQuery: SectionsQuery) {}
 
@@ -30,7 +30,7 @@ export class ListSectionComponent implements OnInit, OnDestroy {
         this.section$ = this.sectionsQuery.selectSection(this.sectionID);
 
         this.sectionSub = this.section$.subscribe((section) => (this.sectionData = section));
-        this.titleFormControl = new UntypedFormControl(this.sectionData.title);
+        this.titleFormControl = new FormControl(this.sectionData.title);
         this.titleFormControl.valueChanges.subscribe((value) => (this.changeButtonDisabled = !value.length));
     }
 

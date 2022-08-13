@@ -6,7 +6,7 @@ export interface Section {
     projectID: string | null;
 }
 
-export interface AddSectionDTO {
+export interface AddSectionData {
     title: string;
     // ---
     projectID: string | null;

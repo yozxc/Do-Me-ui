@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { UntypedFormBuilder } from '@angular/forms';
-import { AddTaskDTO } from '@app/core/types/domain/task';
+import { FormArray, FormBuilder, FormControl } from '@angular/forms';
+import { AddTaskData } from '@app/core/types/domain/task';
 import { SelectedProject } from '@app/core/types/realization/selectedProject';
 import { ProjectsQuery } from '@core/store/projects/projects.query';
 import { SectionsQuery } from '@core/store/sections/sections.query';
@@ -27,17 +27,18 @@ export class AddTaskComponent implements OnInit {
     @Output() cancelEvent: EventEmitter<any> = new EventEmitter();
     @Output() saveEvent: EventEmitter<any> = new EventEmitter();
 
-    form = this.fb.group({
-        name: null,
+    form = this.fb.group<AddTaskForm>({
+        name: '',
         description: null,
         priority: 4,
-        labelsID: [[]],
         projectID: null,
-        sectionID: null
+        sectionID: null,
+        // ---
+        labelsID: this.fb.array<string>([])
     });
 
     constructor(
-        private fb: UntypedFormBuilder,
+        private fb: FormBuilder,
         private tasksService: TasksService,
         public projectsQuery: ProjectsQuery,
         public sectionsQuery: SectionsQuery
@@ -53,10 +54,9 @@ export class AddTaskComponent implements OnInit {
 
     resetForm() {
         this.form.patchValue({
-            name: null,
+            name: '',
             description: null,
             priority: 4,
-            labelsID: [[]],
             projectID: this.projectID,
             sectionID: this.sectionID
         });
@@ -76,7 +76,7 @@ export class AddTaskComponent implements OnInit {
 
     onSave() {
         // todo : check for form validation
-        this.form.value.name && this.tasksService.addTask(this.form.value as AddTaskDTO);
+        this.form.value.name && this.tasksService.addTask(this.form.value as AddTaskData);
 
         this.resetForm();
 
@@ -84,4 +84,8 @@ export class AddTaskComponent implements OnInit {
 
         this.visibleLabel = true;
     }
+}
+
+interface AddTaskForm extends Omit<AddTaskData, 'labelsID'> {
+    labelsID: FormArray<FormControl<string | null>>;
 }

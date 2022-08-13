@@ -48,7 +48,9 @@
                             <svg-lm-dot class="wh-22" [styleCls]="project.colorCls"></svg-lm-dot>
                             <div class="bot_but__text">
                                 {{ project.title }}
-                                <ng-container *ngIf="sectionsQuery.getSection(form.value.sectionID) as section">/ {{ section.title }}</ng-container>
+                                <ng-container *ngIf="form.value.sectionID && sectionsQuery.getSection(form.value.sectionID) as section"
+                                    >/ {{ section.title }}</ng-container
+                                >
                             </div>
                         </ng-container>
                         <ui-project-select-dropdown
@@ -66,7 +68,7 @@
                         <ui-label-dropdown #labelDropdown [activeLabelsID]="activeLabelsID" formControlName="labelsID"></ui-label-dropdown>
                     </div>
                     <div class="icon__wrapper" (click)="priorityDropdown.toggleIsVisible()">
-                        <svg-wp-priority class="right__icons wh-28" [prior]="form.value.priority"></svg-wp-priority>
+                        <svg-wp-priority class="right__icons wh-28" [prior]="form.value.priority || 4"></svg-wp-priority>
                         <ui-priority-dropdown #priorityDropdown formControlName="priority"></ui-priority-dropdown>
                     </div>
                 </div>

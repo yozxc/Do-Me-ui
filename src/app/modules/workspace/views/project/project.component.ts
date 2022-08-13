@@ -6,8 +6,8 @@ import { ProjectsService } from '@app/core/store/projects/projects.service';
 import { SectionsService } from '@app/core/store/sections/sections.service';
 import { TasksService } from '@app/core/store/tasks/tasks.service';
 import { Project, ViewType } from '@app/core/types/domain/project';
-import { AddSectionDTO } from '@app/core/types/domain/section';
-import { AddTaskDTO } from '@app/core/types/domain/task';
+import { AddSectionData } from '@app/core/types/domain/section';
+import { AddTaskData } from '@app/core/types/domain/task';
 import { TitleEdit } from '@core/types/realization/titleEdit';
 import { Observable } from 'rxjs';
 
@@ -44,12 +44,12 @@ export class ProjectComponent implements OnInit {
         });
     }
 
-    addNoSectionTask(taskData: AddTaskDTO) {
+    addNoSectionTask(taskData: AddTaskData) {
         this.setProjectID(taskData);
         this.tasksService.addTask(taskData);
     }
 
-    addSection(sectionData: AddSectionDTO) {
+    addSection(sectionData: AddSectionData) {
         this.setProjectID(sectionData);
         this.sectionsService.addSection(sectionData);
     }

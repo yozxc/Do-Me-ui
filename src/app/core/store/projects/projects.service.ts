@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-labels */
 import { Injectable } from '@angular/core';
-import { AddProjectDTO, Project, ViewType } from '@app/core/types/domain/project';
+import { AddProjectData, Project, ViewType } from '@app/core/types/domain/project';
 import { projectsList } from '@mocks/projectsList';
 import { v4 } from 'uuid';
 import { ProjectsStore } from './projects.store';
@@ -9,7 +9,7 @@ import { ProjectsStore } from './projects.store';
 export class ProjectsService {
     constructor(private projectsStore: ProjectsStore) {}
 
-    addProject(project: AddProjectDTO) {
+    addProject(project: AddProjectData) {
         // todo : id from back
         this.projectsStore.add({ ...project, id: v4(), noSectionTasksID: [], sectionsID: [], todoTasks: 0 } as Project);
     }

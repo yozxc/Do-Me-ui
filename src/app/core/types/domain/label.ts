@@ -9,7 +9,7 @@ export interface Label {
     tasksID: string[];
 }
 
-export interface AddLabelDTO {
+export interface AddLabelData {
     name: string;
     colorCls: ColorType;
     favorites: boolean;

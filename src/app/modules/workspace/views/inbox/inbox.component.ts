@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TasksService } from '@app/core/store/tasks/tasks.service';
 import { ViewType } from '@app/core/types/domain/project';
-import { AddSectionDTO } from '@app/core/types/domain/section';
-import { AddTaskDTO } from '@app/core/types/domain/task';
+import { AddSectionData } from '@app/core/types/domain/section';
+import { AddTaskData } from '@app/core/types/domain/task';
 import { SectionsQuery } from '@core/store/sections/sections.query';
 import { SectionsService } from '@core/store/sections/sections.service';
 import { TasksQuery } from '@core/store/tasks/tasks.query';
@@ -34,11 +34,11 @@ export class InboxComponent implements OnInit {
         this.sectionsID$ = this.sectionsQuery.selectInboxSectionsID();
     }
 
-    addNoSectionTask(taskData: AddTaskDTO) {
+    addNoSectionTask(taskData: AddTaskData) {
         this.tasksService.addTask(taskData);
     }
 
-    addSection(sectionData: AddSectionDTO) {
+    addSection(sectionData: AddSectionData) {
         this.sectionsService.addSection(sectionData);
     }
 
